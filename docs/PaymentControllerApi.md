@@ -1,4 +1,4 @@
-# swagger_client.PaymentControllerApi
+# flexify_api_client.PaymentControllerApi
 
 All URIs are relative to *https://localhost*
 
@@ -17,18 +17,18 @@ getPaymentOptions
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.PaymentControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.PaymentControllerApi(flexify_api_client.ApiClient(configuration))
 currency = 'currency_example' # str | currency
 amount = 1.2 # float | amount
 
@@ -71,18 +71,18 @@ paymentFulfilled
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.PaymentControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.PaymentControllerApi(flexify_api_client.ApiClient(configuration))
 
 try:
     # paymentFulfilled

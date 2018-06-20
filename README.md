@@ -1,4 +1,4 @@
-# Python API Client for Flexify.IO Management
+# Python API Client for Flexify.IO Management Console
 
 With [Flexify.IO](https://flexify.io/), storing your data in a cloud does not imply dependency on a single provider anymore!
 
@@ -23,16 +23,16 @@ Python 2.7 and 3.4+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on Github, you can install directly from Github
+Install directly from Github
 
 ```sh
-pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
+pip install git+https://github.com/flexifyio/flexify-manage-api-client-python.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git`)
+(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/flexifyio/flexify-manage-api-client-python.git`)
 
 Then import the package:
 ```python
-import swagger_client 
+import flexify_api_client 
 ```
 
 ### Setuptools
@@ -46,7 +46,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import swagger_client
+import flexify_api_client
 ```
 
 ## Getting Started
@@ -56,12 +56,12 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationControllerApi()
-authentication_request = swagger_client.AuthenticationRequest() # AuthenticationRequest | authenticationRequest
+api_instance = flexify_api_client.AuthenticationControllerApi()
+authentication_request = flexify_api_client.AuthenticationRequest() # AuthenticationRequest | authenticationRequest
 
 try:
     # Generate access token for user

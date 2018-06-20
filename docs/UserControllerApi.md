@@ -1,4 +1,4 @@
-# swagger_client.UserControllerApi
+# flexify_api_client.UserControllerApi
 
 All URIs are relative to *https://localhost*
 
@@ -17,18 +17,18 @@ Get details information for logged in user
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.UserControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.UserControllerApi(flexify_api_client.ApiClient(configuration))
 silence = false # bool | Return 204 No Content or 401 Unauthorized in case of username not found (optional) (default to false)
 
 try:
@@ -69,19 +69,19 @@ requestResetPassword
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.UserControllerApi(swagger_client.ApiClient(configuration))
-reqeust = swagger_client.RequestResetPasswordReqeust() # RequestResetPasswordReqeust | reqeust
+api_instance = flexify_api_client.UserControllerApi(flexify_api_client.ApiClient(configuration))
+reqeust = flexify_api_client.RequestResetPasswordReqeust() # RequestResetPasswordReqeust | reqeust
 
 try:
     # requestResetPassword

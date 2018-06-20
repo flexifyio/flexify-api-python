@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.io.flexify.apiclient.model.reset_password_request import ResetPasswordRequest  # noqa: E501
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.io.flexify.apiclient.model.reset_password_request import ResetPasswordRequest  # noqa: E501
+from flexify_api_client.rest import ApiException
 
 
 class TestResetPasswordRequest(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestResetPasswordRequest(unittest.TestCase):
     def testResetPasswordRequest(self):
         """Test ResetPasswordRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.reset_password_request.ResetPasswordRequest()  # noqa: E501
+        # model = flexify_api_client.models.reset_password_request.ResetPasswordRequest()  # noqa: E501
         pass
 
 

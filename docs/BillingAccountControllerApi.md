@@ -1,4 +1,4 @@
-# swagger_client.BillingAccountControllerApi
+# flexify_api_client.BillingAccountControllerApi
 
 All URIs are relative to *https://localhost*
 
@@ -18,18 +18,18 @@ Get costs for current user
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BillingAccountControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.BillingAccountControllerApi(flexify_api_client.ApiClient(configuration))
 
 try:
     # Get costs for current user
@@ -66,18 +66,18 @@ Get billing account for current user
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BillingAccountControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.BillingAccountControllerApi(flexify_api_client.ApiClient(configuration))
 
 try:
     # Get billing account for current user
@@ -114,18 +114,18 @@ Get payments for current user
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BillingAccountControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.BillingAccountControllerApi(flexify_api_client.ApiClient(configuration))
 
 try:
     # Get payments for current user

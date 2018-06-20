@@ -1,4 +1,4 @@
-# swagger_client.EndpointsControllerApi
+# flexify_api_client.EndpointsControllerApi
 
 All URIs are relative to *https://localhost*
 
@@ -23,20 +23,20 @@ Attach the storage to the endpoint
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EndpointsControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.EndpointsControllerApi(flexify_api_client.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
-endpoint_storage = swagger_client.EndpointStorage() # EndpointStorage | endpointStorage
+endpoint_storage = flexify_api_client.EndpointStorage() # EndpointStorage | endpointStorage
 
 try:
     # Attach the storage to the endpoint
@@ -76,18 +76,18 @@ Detach the storage from the endpoint
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EndpointsControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.EndpointsControllerApi(flexify_api_client.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
 storage_id = 789 # int | storage-id
 
@@ -129,18 +129,18 @@ Disable the endpoint
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EndpointsControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.EndpointsControllerApi(flexify_api_client.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
 
 try:
@@ -180,18 +180,18 @@ Enable the endpoint
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EndpointsControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.EndpointsControllerApi(flexify_api_client.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
 
 try:
@@ -231,18 +231,18 @@ Get endpoint details
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EndpointsControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.EndpointsControllerApi(flexify_api_client.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
 
 try:
@@ -283,18 +283,18 @@ Get endpoint for current user. This method will create new endpoint if no endpoi
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EndpointsControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.EndpointsControllerApi(flexify_api_client.ApiClient(configuration))
 
 try:
     # Get endpoint for current user. This method will create new endpoint if no endpoints exist for user
@@ -331,18 +331,18 @@ Set given storage as default for the endpoint
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EndpointsControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.EndpointsControllerApi(flexify_api_client.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
 storage_id = 789 # int | storage-id
 
@@ -384,20 +384,20 @@ Update attributes of the endpoint
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.EndpointsControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.EndpointsControllerApi(flexify_api_client.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
-endpoint = swagger_client.Endpoint() # Endpoint | endpoint
+endpoint = flexify_api_client.Endpoint() # Endpoint | endpoint
 
 try:
     # Update attributes of the endpoint

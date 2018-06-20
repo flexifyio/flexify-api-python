@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
+import flexify_api_client
 from io.flexify.apiclient.api.storages_controller_api import StoragesControllerApi  # noqa: E501
-from swagger_client.rest import ApiException
+from flexify_api_client.rest import ApiException
 
 
 class TestStoragesControllerApi(unittest.TestCase):

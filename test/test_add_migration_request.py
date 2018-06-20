@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.io.flexify.apiclient.model.add_migration_request import AddMigrationRequest  # noqa: E501
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.io.flexify.apiclient.model.add_migration_request import AddMigrationRequest  # noqa: E501
+from flexify_api_client.rest import ApiException
 
 
 class TestAddMigrationRequest(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestAddMigrationRequest(unittest.TestCase):
     def testAddMigrationRequest(self):
         """Test AddMigrationRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.add_migration_request.AddMigrationRequest()  # noqa: E501
+        # model = flexify_api_client.models.add_migration_request.AddMigrationRequest()  # noqa: E501
         pass
 
 

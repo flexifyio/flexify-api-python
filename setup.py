@@ -13,8 +13,8 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "swagger-client"
-VERSION = "1.0.0"
+NAME = "flexify-api-client"
+VERSION = "2.4.2"
 # To install the library, run the following
 #
 # python setup.py install
@@ -29,7 +29,7 @@ setup(
     version=VERSION,
     description="Flexify.IO User REST API",
     author_email="info@flexify.io",
-    url="",
+    url="https://github.com/flexifyio/flexify-manage-api-client-python",
     keywords=["Swagger", "Flexify.IO User REST API"],
     install_requires=REQUIRES,
     packages=find_packages(),

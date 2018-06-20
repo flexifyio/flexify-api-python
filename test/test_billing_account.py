@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.io.flexify.apiclient.model.billing_account import BillingAccount  # noqa: E501
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.io.flexify.apiclient.model.billing_account import BillingAccount  # noqa: E501
+from flexify_api_client.rest import ApiException
 
 
 class TestBillingAccount(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestBillingAccount(unittest.TestCase):
     def testBillingAccount(self):
         """Test BillingAccount"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.billing_account.BillingAccount()  # noqa: E501
+        # model = flexify_api_client.models.billing_account.BillingAccount()  # noqa: E501
         pass
 
 

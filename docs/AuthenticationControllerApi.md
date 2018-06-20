@@ -1,4 +1,4 @@
-# swagger_client.AuthenticationControllerApi
+# flexify_api_client.AuthenticationControllerApi
 
 All URIs are relative to *https://localhost*
 
@@ -17,13 +17,13 @@ Generate access token for user
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationControllerApi()
-authentication_request = swagger_client.AuthenticationRequest() # AuthenticationRequest | authenticationRequest
+api_instance = flexify_api_client.AuthenticationControllerApi()
+authentication_request = flexify_api_client.AuthenticationRequest() # AuthenticationRequest | authenticationRequest
 
 try:
     # Generate access token for user
@@ -63,18 +63,18 @@ Logout
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = flexify_api_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationControllerApi(swagger_client.ApiClient(configuration))
+api_instance = flexify_api_client.AuthenticationControllerApi(flexify_api_client.ApiClient(configuration))
 
 try:
     # Logout

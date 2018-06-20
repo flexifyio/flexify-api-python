@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.io.flexify.apiclient.model.storage import Storage  # noqa: E501
-from swagger_client.rest import ApiException
+import flexify_api_client
+from flexify_api_client.io.flexify.apiclient.model.storage import Storage  # noqa: E501
+from flexify_api_client.rest import ApiException
 
 
 class TestStorage(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestStorage(unittest.TestCase):
     def testStorage(self):
         """Test Storage"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.storage.Storage()  # noqa: E501
+        # model = flexify_api_client.models.storage.Storage()  # noqa: E501
         pass
 
 
