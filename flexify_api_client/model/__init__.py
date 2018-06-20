@@ -1,7 +1,6 @@
 # coding: utf-8
 
 # flake8: noqa
-
 """
     Flexify.IO User REST API
 
@@ -15,21 +14,7 @@
 
 from __future__ import absolute_import
 
-# import apis into sdk package
-from api.authentication_controller_api import AuthenticationControllerApi
-from api.billing_account_controller_api import BillingAccountControllerApi
-from api.cloud_locations_controller_api import CloudLocationsControllerApi
-from api.endpoints_controller_api import EndpointsControllerApi
-from api.log_controller_api import LogControllerApi
-from api.migrations_controller_api import MigrationsControllerApi
-from api.payment_controller_api import PaymentControllerApi
-from api.storages_controller_api import StoragesControllerApi
-from api.user_controller_api import UserControllerApi
-
-# import ApiClient
-from flexify_api_client.api_client import ApiClient
-from flexify_api_client.configuration import Configuration
-# import models into sdk package
+# import models into model package
 from flexify_api_client.model.access_keys_pair import AccessKeysPair
 from flexify_api_client.model.add_migration_request import AddMigrationRequest
 from flexify_api_client.model.add_storage_account_request import AddStorageAccountRequest

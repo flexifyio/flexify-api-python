@@ -16,10 +16,10 @@ import re  # noqa: F401
 
 import six
 
-from flexify_api_client.io.flexify.apiclient.model.cloud_location import CloudLocation  # noqa: F401,E501
-from flexify_api_client.io.flexify.apiclient.model.migration_stat import MigrationStat  # noqa: F401,E501
-from flexify_api_client.io.flexify.apiclient.model.storage import Storage  # noqa: F401,E501
-from flexify_api_client.io.flexify.apiclient.model.storage_account import StorageAccount  # noqa: F401,E501
+from flexify_api_client.model.cloud_location import CloudLocation  # noqa: F401,E501
+from flexify_api_client.model.migration_stat import MigrationStat  # noqa: F401,E501
+from flexify_api_client.model.storage import Storage  # noqa: F401,E501
+from flexify_api_client.model.storage_account import StorageAccount  # noqa: F401,E501
 
 
 class Migration(object):

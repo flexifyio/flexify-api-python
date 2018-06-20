@@ -16,7 +16,7 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api_client
-from io.flexify.apiclient.api.storages_controller_api import StoragesControllerApi  # noqa: E501
+from api.storages_controller_api import StoragesControllerApi  # noqa: E501
 from flexify_api_client.rest import ApiException
 
 
@@ -24,7 +24,7 @@ class TestStoragesControllerApi(unittest.TestCase):
     """StoragesControllerApi unit test stubs"""
 
     def setUp(self):
-        self.api = io.flexify.apiclient.api.storages_controller_api.StoragesControllerApi()  # noqa: E501
+        self.api = api.storages_controller_api.StoragesControllerApi()  # noqa: E501
 
     def tearDown(self):
         pass

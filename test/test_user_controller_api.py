@@ -16,7 +16,7 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api_client
-from io.flexify.apiclient.api.user_controller_api import UserControllerApi  # noqa: E501
+from api.user_controller_api import UserControllerApi  # noqa: E501
 from flexify_api_client.rest import ApiException
 
 
@@ -24,7 +24,7 @@ class TestUserControllerApi(unittest.TestCase):
     """UserControllerApi unit test stubs"""
 
     def setUp(self):
-        self.api = io.flexify.apiclient.api.user_controller_api.UserControllerApi()  # noqa: E501
+        self.api = api.user_controller_api.UserControllerApi()  # noqa: E501
 
     def tearDown(self):
         pass

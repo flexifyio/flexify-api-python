@@ -24,7 +24,7 @@ import six
 from six.moves.urllib.parse import quote
 
 from flexify_api_client.configuration import Configuration
-import flexify_api_client.io.flexify.apiclient.model
+import flexify_api_client.model
 from flexify_api_client import rest
 
 
@@ -258,7 +258,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(flexify_api_client.io.flexify.apiclient.model, klass)
+                klass = getattr(flexify_api_client.model, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

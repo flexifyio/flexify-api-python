@@ -16,7 +16,7 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api_client
-from io.flexify.apiclient.api.migrations_controller_api import MigrationsControllerApi  # noqa: E501
+from api.migrations_controller_api import MigrationsControllerApi  # noqa: E501
 from flexify_api_client.rest import ApiException
 
 
@@ -24,7 +24,7 @@ class TestMigrationsControllerApi(unittest.TestCase):
     """MigrationsControllerApi unit test stubs"""
 
     def setUp(self):
-        self.api = io.flexify.apiclient.api.migrations_controller_api.MigrationsControllerApi()  # noqa: E501
+        self.api = api.migrations_controller_api.MigrationsControllerApi()  # noqa: E501
 
     def tearDown(self):
         pass

@@ -16,7 +16,7 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api_client
-from flexify_api_client.io.flexify.apiclient.model.add_storages_response import AddStoragesResponse  # noqa: E501
+from flexify_api_client.model.add_storages_response import AddStoragesResponse  # noqa: E501
 from flexify_api_client.rest import ApiException
 
 

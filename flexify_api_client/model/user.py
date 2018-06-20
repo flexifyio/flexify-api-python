@@ -16,9 +16,9 @@ import re  # noqa: F401
 
 import six
 
-from flexify_api_client.io.flexify.apiclient.model.billing_account import BillingAccount  # noqa: F401,E501
-from flexify_api_client.io.flexify.apiclient.model.describe_organization import DescribeOrganization  # noqa: F401,E501
-from flexify_api_client.io.flexify.apiclient.model.user_profile import UserProfile  # noqa: F401,E501
+from flexify_api_client.model.billing_account import BillingAccount  # noqa: F401,E501
+from flexify_api_client.model.describe_organization import DescribeOrganization  # noqa: F401,E501
+from flexify_api_client.model.user_profile import UserProfile  # noqa: F401,E501
 
 
 class User(object):

@@ -16,7 +16,7 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api_client
-from flexify_api_client.io.flexify.apiclient.model.payment_options import PaymentOptions  # noqa: E501
+from flexify_api_client.model.payment_options import PaymentOptions  # noqa: E501
 from flexify_api_client.rest import ApiException
 
 

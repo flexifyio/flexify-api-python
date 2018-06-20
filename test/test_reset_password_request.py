@@ -16,7 +16,7 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api_client
-from flexify_api_client.io.flexify.apiclient.model.reset_password_request import ResetPasswordRequest  # noqa: E501
+from flexify_api_client.model.reset_password_request import ResetPasswordRequest  # noqa: E501
 from flexify_api_client.rest import ApiException
 
 

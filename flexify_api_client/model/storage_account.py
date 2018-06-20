@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flexify_api_client.io.flexify.apiclient.model.storage_provider import StorageProvider  # noqa: F401,E501
+from flexify_api_client.model.storage_provider import StorageProvider  # noqa: F401,E501
 
 
 class StorageAccount(object):
