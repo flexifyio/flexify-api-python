@@ -541,7 +541,7 @@ class ApiClient(object):
         try:
             return klass(data)
         except UnicodeEncodeError:
-            return six.u(data)
+            return six.text_type(data)
         except TypeError:
             return data
 
@@ -570,16 +570,20 @@ class ApiClient(object):
             )
 
     def __deserialize_datatime(self, string):
-        """Deserializes string to datetime.
+        """Deserializes string or millis to datetime.
 
-        The string should be in iso8601 datetime format.
+        The string should be in iso8601 datetime format or millis
 
         :param string: str.
         :return: datetime.
         """
         try:
-            from dateutil.parser import parse
-            return parse(string)
+            if type(string) == int:
+                import datetime
+                return datetime.datetime.fromtimestamp(string / 1e3)
+            else:
+                from dateutil.parser import parse
+                return parse(string)
         except ImportError:
             return string
         except ValueError:
