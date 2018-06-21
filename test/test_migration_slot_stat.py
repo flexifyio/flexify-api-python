@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.migration_slot_stat import MigrationSlotStat  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.migration_slot_stat import MigrationSlotStat  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestMigrationSlotStat(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestMigrationSlotStat(unittest.TestCase):
     def testMigrationSlotStat(self):
         """Test MigrationSlotStat"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.migration_slot_stat.MigrationSlotStat()  # noqa: E501
+        # model = flexify_api.models.migration_slot_stat.MigrationSlotStat()  # noqa: E501
         pass
 
 

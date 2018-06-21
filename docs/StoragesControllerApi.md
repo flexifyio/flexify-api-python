@@ -1,4 +1,4 @@
-# flexify_api_client.StoragesControllerApi
+# flexify_api.StoragesControllerApi
 
 All URIs are relative to *https://localhost*
 
@@ -27,19 +27,19 @@ Add Storage Account with an optional list of buckets
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
-request = flexify_api_client.AddStorageAccountRequest() # AddStorageAccountRequest | request
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.AddStorageAccountRequest() # AddStorageAccountRequest | request
 
 try:
     # Add Storage Account with an optional list of buckets
@@ -79,20 +79,20 @@ Add buckets to the storage account and optionally attach them to endpoint
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
 storage_account_id = 789 # int | storage-account-id
-request = flexify_api_client.AddStoragesRequest() # AddStoragesRequest | request
+request = flexify_api.AddStoragesRequest() # AddStoragesRequest | request
 
 try:
     # Add buckets to the storage account and optionally attach them to endpoint
@@ -133,18 +133,18 @@ Delete Storage
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
 storage_account_id = 789 # int | storage-account-id
 storage_id = 789 # int | storage-id
 
@@ -186,19 +186,19 @@ Deletes storages
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
-request = flexify_api_client.IdsList() # IdsList | request
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.IdsList() # IdsList | request
 
 try:
     # Deletes storages
@@ -237,18 +237,18 @@ Generate new access keys pair
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
 
 try:
     # Generate new access keys pair
@@ -285,18 +285,18 @@ Get all storage providers
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
 
 try:
     # Get all storage providers
@@ -333,18 +333,18 @@ Get all storage accounts for current user
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
 include_storages = true # bool | Include storages of given storage account to the response (optional) (default to true)
 
 try:
@@ -385,18 +385,18 @@ Get storages of the storage account
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
 storage_account_id = 789 # int | storage-account-id
 
 try:
@@ -437,18 +437,18 @@ Refresh storage
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
 storage_account_id = 789 # int | storage-account-id
 storage_id = 789 # int | storage-id
 
@@ -490,19 +490,19 @@ Refresh storages
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
-request = flexify_api_client.IdsList() # IdsList | request
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.IdsList() # IdsList | request
 
 try:
     # Refresh storages
@@ -541,18 +541,18 @@ Lists buckets of the external storage account
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
 provider_id = 789 # int | Provider ID (Amazon S3, Microsoft Azure, etc) (optional)
 identity = 'identity_example' # str | Account Identity (optional)
 credential = 'credential_example' # str | Account Credential (optional)
@@ -601,18 +601,18 @@ Retrieve buckets from external cloud storage account
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.StoragesControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
 storage_account_id = 789 # int | storage-account-id
 
 try:

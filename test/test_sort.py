@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.sort import Sort  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.sort import Sort  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestSort(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestSort(unittest.TestCase):
     def testSort(self):
         """Test Sort"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.sort.Sort()  # noqa: E501
+        # model = flexify_api.models.sort.Sort()  # noqa: E501
         pass
 
 

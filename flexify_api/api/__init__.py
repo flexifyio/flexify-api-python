@@ -1,0 +1,14 @@
+from __future__ import absolute_import
+
+# flake8: noqa
+
+# import apis into api package
+from flexify_api.api.authentication_controller_api import AuthenticationControllerApi
+from flexify_api.api.billing_account_controller_api import BillingAccountControllerApi
+from flexify_api.api.cloud_locations_controller_api import CloudLocationsControllerApi
+from flexify_api.api.endpoints_controller_api import EndpointsControllerApi
+from flexify_api.api.log_controller_api import LogControllerApi
+from flexify_api.api.migrations_controller_api import MigrationsControllerApi
+from flexify_api.api.payment_controller_api import PaymentControllerApi
+from flexify_api.api.storages_controller_api import StoragesControllerApi
+from flexify_api.api.user_controller_api import UserControllerApi

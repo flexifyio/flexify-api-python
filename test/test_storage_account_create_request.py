@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.storage_account_create_request import StorageAccountCreateRequest  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.storage_account_create_request import StorageAccountCreateRequest  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestStorageAccountCreateRequest(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestStorageAccountCreateRequest(unittest.TestCase):
     def testStorageAccountCreateRequest(self):
         """Test StorageAccountCreateRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.storage_account_create_request.StorageAccountCreateRequest()  # noqa: E501
+        # model = flexify_api.models.storage_account_create_request.StorageAccountCreateRequest()  # noqa: E501
         pass
 
 

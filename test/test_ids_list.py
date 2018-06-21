@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.ids_list import IdsList  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.ids_list import IdsList  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestIdsList(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestIdsList(unittest.TestCase):
     def testIdsList(self):
         """Test IdsList"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.ids_list.IdsList()  # noqa: E501
+        # model = flexify_api.models.ids_list.IdsList()  # noqa: E501
         pass
 
 

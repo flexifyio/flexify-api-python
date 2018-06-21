@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.request_reset_password_reqeust import RequestResetPasswordReqeust  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.request_reset_password_reqeust import RequestResetPasswordReqeust  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestRequestResetPasswordReqeust(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestRequestResetPasswordReqeust(unittest.TestCase):
     def testRequestResetPasswordReqeust(self):
         """Test RequestResetPasswordReqeust"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.request_reset_password_reqeust.RequestResetPasswordReqeust()  # noqa: E501
+        # model = flexify_api.models.request_reset_password_reqeust.RequestResetPasswordReqeust()  # noqa: E501
         pass
 
 

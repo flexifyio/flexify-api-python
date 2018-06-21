@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.cloud_location import CloudLocation  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.cloud_location import CloudLocation  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestCloudLocation(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestCloudLocation(unittest.TestCase):
     def testCloudLocation(self):
         """Test CloudLocation"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.cloud_location.CloudLocation()  # noqa: E501
+        # model = flexify_api.models.cloud_location.CloudLocation()  # noqa: E501
         pass
 
 

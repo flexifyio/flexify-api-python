@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.log_entry import LogEntry  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.log_entry import LogEntry  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestLogEntry(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestLogEntry(unittest.TestCase):
     def testLogEntry(self):
         """Test LogEntry"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.log_entry.LogEntry()  # noqa: E501
+        # model = flexify_api.models.log_entry.LogEntry()  # noqa: E501
         pass
 
 

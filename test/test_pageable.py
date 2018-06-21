@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.pageable import Pageable  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.pageable import Pageable  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestPageable(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPageable(unittest.TestCase):
     def testPageable(self):
         """Test Pageable"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.pageable.Pageable()  # noqa: E501
+        # model = flexify_api.models.pageable.Pageable()  # noqa: E501
         pass
 
 

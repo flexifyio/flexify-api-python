@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.access_keys_pair import AccessKeysPair  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.access_keys_pair import AccessKeysPair  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestAccessKeysPair(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestAccessKeysPair(unittest.TestCase):
     def testAccessKeysPair(self):
         """Test AccessKeysPair"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.access_keys_pair.AccessKeysPair()  # noqa: E501
+        # model = flexify_api.models.access_keys_pair.AccessKeysPair()  # noqa: E501
         pass
 
 

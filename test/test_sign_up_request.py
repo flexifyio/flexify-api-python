@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.sign_up_request import SignUpRequest  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.sign_up_request import SignUpRequest  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestSignUpRequest(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestSignUpRequest(unittest.TestCase):
     def testSignUpRequest(self):
         """Test SignUpRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.sign_up_request.SignUpRequest()  # noqa: E501
+        # model = flexify_api.models.sign_up_request.SignUpRequest()  # noqa: E501
         pass
 
 

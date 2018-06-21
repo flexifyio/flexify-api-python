@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.billing_account_with_money import BillingAccountWithMoney  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.billing_account_with_money import BillingAccountWithMoney  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestBillingAccountWithMoney(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestBillingAccountWithMoney(unittest.TestCase):
     def testBillingAccountWithMoney(self):
         """Test BillingAccountWithMoney"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.billing_account_with_money.BillingAccountWithMoney()  # noqa: E501
+        # model = flexify_api.models.billing_account_with_money.BillingAccountWithMoney()  # noqa: E501
         pass
 
 

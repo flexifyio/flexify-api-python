@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.storage_account import StorageAccount  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.storage_account import StorageAccount  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestStorageAccount(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestStorageAccount(unittest.TestCase):
     def testStorageAccount(self):
         """Test StorageAccount"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.storage_account.StorageAccount()  # noqa: E501
+        # model = flexify_api.models.storage_account.StorageAccount()  # noqa: E501
         pass
 
 

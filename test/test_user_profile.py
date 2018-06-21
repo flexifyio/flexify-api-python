@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.user_profile import UserProfile  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.user_profile import UserProfile  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestUserProfile(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestUserProfile(unittest.TestCase):
     def testUserProfile(self):
         """Test UserProfile"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.user_profile.UserProfile()  # noqa: E501
+        # model = flexify_api.models.user_profile.UserProfile()  # noqa: E501
         pass
 
 

@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from api.cloud_locations_controller_api import CloudLocationsControllerApi  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.api.cloud_locations_controller_api import CloudLocationsControllerApi  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestCloudLocationsControllerApi(unittest.TestCase):
     """CloudLocationsControllerApi unit test stubs"""
 
     def setUp(self):
-        self.api = api.cloud_locations_controller_api.CloudLocationsControllerApi()  # noqa: E501
+        self.api = flexify_api.api.cloud_locations_controller_api.CloudLocationsControllerApi()  # noqa: E501
 
     def tearDown(self):
         pass

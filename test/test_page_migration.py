@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.page_migration import PageMigration  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.page_migration import PageMigration  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestPageMigration(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPageMigration(unittest.TestCase):
     def testPageMigration(self):
         """Test PageMigration"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.page_migration.PageMigration()  # noqa: E501
+        # model = flexify_api.models.page_migration.PageMigration()  # noqa: E501
         pass
 
 

@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.add_storages_response import AddStoragesResponse  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.add_storages_response import AddStoragesResponse  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestAddStoragesResponse(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestAddStoragesResponse(unittest.TestCase):
     def testAddStoragesResponse(self):
         """Test AddStoragesResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.add_storages_response.AddStoragesResponse()  # noqa: E501
+        # model = flexify_api.models.add_storages_response.AddStoragesResponse()  # noqa: E501
         pass
 
 

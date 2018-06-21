@@ -32,7 +32,7 @@ pip install git+https://github.com/flexifyio/flexify-manage-api-client-python.gi
 
 Then import the package:
 ```python
-import flexify_api_client 
+import flexify_api 
 ```
 
 ### Setuptools
@@ -46,7 +46,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import flexify_api_client
+import flexify_api
 ```
 
 ## Getting Started
@@ -56,12 +56,12 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 # create an instance of the API class
-api_instance = flexify_api_client.AuthenticationControllerApi()
-authentication_request = flexify_api_client.AuthenticationRequest() # AuthenticationRequest | authenticationRequest
+api_instance = flexify_api.AuthenticationControllerApi()
+authentication_request = flexify_api.AuthenticationRequest() # AuthenticationRequest | authenticationRequest
 
 try:
     # Generate access token for user

@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.data_storage_stat import DataStorageStat  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.data_storage_stat import DataStorageStat  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestDataStorageStat(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestDataStorageStat(unittest.TestCase):
     def testDataStorageStat(self):
         """Test DataStorageStat"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.data_storage_stat.DataStorageStat()  # noqa: E501
+        # model = flexify_api.models.data_storage_stat.DataStorageStat()  # noqa: E501
         pass
 
 

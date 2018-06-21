@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.id_response import IdResponse  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.id_response import IdResponse  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestIdResponse(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestIdResponse(unittest.TestCase):
     def testIdResponse(self):
         """Test IdResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.id_response.IdResponse()  # noqa: E501
+        # model = flexify_api.models.id_response.IdResponse()  # noqa: E501
         pass
 
 

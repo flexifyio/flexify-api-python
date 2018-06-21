@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from flexify_api_client.model.endpoint_details import EndpointDetails  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.models.endpoint_details import EndpointDetails  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestEndpointDetails(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestEndpointDetails(unittest.TestCase):
     def testEndpointDetails(self):
         """Test EndpointDetails"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api_client.models.endpoint_details.EndpointDetails()  # noqa: E501
+        # model = flexify_api.models.endpoint_details.EndpointDetails()  # noqa: E501
         pass
 
 

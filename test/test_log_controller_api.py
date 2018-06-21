@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import flexify_api_client
-from api.log_controller_api import LogControllerApi  # noqa: E501
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.api.log_controller_api import LogControllerApi  # noqa: E501
+from flexify_api.rest import ApiException
 
 
 class TestLogControllerApi(unittest.TestCase):
     """LogControllerApi unit test stubs"""
 
     def setUp(self):
-        self.api = api.log_controller_api.LogControllerApi()  # noqa: E501
+        self.api = flexify_api.api.log_controller_api.LogControllerApi()  # noqa: E501
 
     def tearDown(self):
         pass

@@ -1,4 +1,4 @@
-# flexify_api_client.MigrationsControllerApi
+# flexify_api.MigrationsControllerApi
 
 All URIs are relative to *https://localhost*
 
@@ -20,19 +20,19 @@ Add new migration
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.MigrationsControllerApi(flexify_api_client.ApiClient(configuration))
-migration_request = flexify_api_client.AddMigrationRequest() # AddMigrationRequest | migrationRequest
+api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
+migration_request = flexify_api.AddMigrationRequest() # AddMigrationRequest | migrationRequest
 
 try:
     # Add new migration
@@ -72,18 +72,18 @@ Get migration by id. Only migration owner or administrator have access to the mi
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.MigrationsControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
 migration_id = 789 # int | Migration Id
 
 try:
@@ -124,18 +124,18 @@ Get all migrations for logged in user in pagged mode
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.MigrationsControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
 active_only = false # bool | Show only active migrations (optional) (default to false)
 include_hidden = true # bool | Include hidden migrations to response (optional) (default to true)
 attributes_to_sort = ['attributes_to_sort_example'] # list[str] | Attributes to sort (optional)
@@ -186,18 +186,18 @@ Hide migration from UI
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.MigrationsControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
 migration_id = 789 # int | migration-id
 
 try:
@@ -238,18 +238,18 @@ Stop (cancel) the migration
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.MigrationsControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
 migration_id = 789 # int | migration-id
 
 try:

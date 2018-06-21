@@ -1,4 +1,4 @@
-# flexify_api_client.LogControllerApi
+# flexify_api.LogControllerApi
 
 All URIs are relative to *https://localhost*
 
@@ -16,18 +16,18 @@ getLogForCurrentUser
 ```python
 from __future__ import print_function
 import time
-import flexify_api_client
-from flexify_api_client.rest import ApiException
+import flexify_api
+from flexify_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = flexify_api_client.Configuration()
+configuration = flexify_api.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = flexify_api_client.LogControllerApi(flexify_api_client.ApiClient(configuration))
+api_instance = flexify_api.LogControllerApi(flexify_api.ApiClient(configuration))
 storage_id = 789 # int | storage-id (optional)
 migration_id = 789 # int | migration-id (optional)
 endpoint_id = 789 # int | endpoint-id (optional)
