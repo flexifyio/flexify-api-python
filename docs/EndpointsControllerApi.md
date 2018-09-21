@@ -4,18 +4,18 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_storage_to_endpoint**](EndpointsControllerApi.md#attach_storage_to_endpoint) | **POST** /rest/endpoints/{endpoint-id}/storages | Attach the storage to the endpoint
+[**attach_storages_to_endpoint**](EndpointsControllerApi.md#attach_storages_to_endpoint) | **POST** /rest/endpoints/{endpoint-id}/storages | Attach the storage to the endpoint
 [**detach_storage_from_endpoint**](EndpointsControllerApi.md#detach_storage_from_endpoint) | **DELETE** /rest/endpoints/{endpoint-id}/storages/{storage-id} | Detach the storage from the endpoint
 [**disable**](EndpointsControllerApi.md#disable) | **PUT** /rest/endpoints/{endpoint-id}/actions/disable | Disable the endpoint
 [**enable**](EndpointsControllerApi.md#enable) | **PUT** /rest/endpoints/{endpoint-id}/actions/enable | Enable the endpoint
 [**get_endpoint_details**](EndpointsControllerApi.md#get_endpoint_details) | **GET** /rest/endpoints/{endpoint-id} | Get endpoint details
 [**get_endpoints_for_current_user**](EndpointsControllerApi.md#get_endpoints_for_current_user) | **GET** /rest/endpoints | Get endpoint for current user. This method will create new endpoint if no endpoints exist for user
-[**set_default_storage**](EndpointsControllerApi.md#set_default_storage) | **PUT** /rest/endpoints/{endpoint-id}/storages/{storage-id}/actions/set-as-default | Set given storage as default for the endpoint
+[**set_storage_put_objects**](EndpointsControllerApi.md#set_storage_put_objects) | **PUT** /rest/endpoints/{endpoint-id}/storages/{storage-id}/put-objects | Set given storage as default for the endpoint
 [**update_endpoint**](EndpointsControllerApi.md#update_endpoint) | **PUT** /rest/endpoints/{endpoint-id} | Update attributes of the endpoint
 
 
-# **attach_storage_to_endpoint**
-> attach_storage_to_endpoint(endpoint_id, endpoint_storage)
+# **attach_storages_to_endpoint**
+> attach_storages_to_endpoint(endpoint_id, request)
 
 Attach the storage to the endpoint
 
@@ -36,13 +36,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = flexify_api.EndpointsControllerApi(flexify_api.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
-endpoint_storage = flexify_api.EndpointStorage() # EndpointStorage | endpointStorage
+request = flexify_api.AttachStoragesToEndpointRequest() # AttachStoragesToEndpointRequest | request
 
 try:
     # Attach the storage to the endpoint
-    api_instance.attach_storage_to_endpoint(endpoint_id, endpoint_storage)
+    api_instance.attach_storages_to_endpoint(endpoint_id, request)
 except ApiException as e:
-    print("Exception when calling EndpointsControllerApi->attach_storage_to_endpoint: %s\n" % e)
+    print("Exception when calling EndpointsControllerApi->attach_storages_to_endpoint: %s\n" % e)
 ```
 
 ### Parameters
@@ -50,7 +50,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_id** | **int**| endpoint-id | 
- **endpoint_storage** | [**EndpointStorage**](EndpointStorage.md)| endpointStorage | 
+ **request** | [**AttachStoragesToEndpointRequest**](AttachStoragesToEndpointRequest.md)| request | 
 
 ### Return type
 
@@ -322,8 +322,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_default_storage**
-> set_default_storage(endpoint_id, storage_id)
+# **set_storage_put_objects**
+> set_storage_put_objects(endpoint_id, storage_id, settings)
 
 Set given storage as default for the endpoint
 
@@ -345,12 +345,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = flexify_api.EndpointsControllerApi(flexify_api.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
 storage_id = 789 # int | storage-id
+settings = flexify_api.EndpointStorageSettings() # EndpointStorageSettings | settings
 
 try:
     # Set given storage as default for the endpoint
-    api_instance.set_default_storage(endpoint_id, storage_id)
+    api_instance.set_storage_put_objects(endpoint_id, storage_id, settings)
 except ApiException as e:
-    print("Exception when calling EndpointsControllerApi->set_default_storage: %s\n" % e)
+    print("Exception when calling EndpointsControllerApi->set_storage_put_objects: %s\n" % e)
 ```
 
 ### Parameters
@@ -359,6 +360,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_id** | **int**| endpoint-id | 
  **storage_id** | **int**| storage-id | 
+ **settings** | [**EndpointStorageSettings**](EndpointStorageSettings.md)| settings | 
 
 ### Return type
 

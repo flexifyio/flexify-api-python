@@ -4,14 +4,15 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**authentication_request**](AuthenticationControllerApi.md#authentication_request) | **POST** /rest/auth | Generate access token for user
+[**authenticate**](AuthenticationControllerApi.md#authenticate) | **POST** /rest/auth | Generate new access token for the user
+[**get_config**](AuthenticationControllerApi.md#get_config) | **GET** /rest/auth/config | Logout
 [**logout**](AuthenticationControllerApi.md#logout) | **POST** /rest/auth/logout | Logout
 
 
-# **authentication_request**
-> AuthenticationResponse authentication_request(authentication_request)
+# **authenticate**
+> AuthenticationResponse authenticate(authentication_request)
 
-Generate access token for user
+Generate new access token for the user
 
 ### Example
 ```python
@@ -26,11 +27,11 @@ api_instance = flexify_api.AuthenticationControllerApi()
 authentication_request = flexify_api.AuthenticationRequest() # AuthenticationRequest | authenticationRequest
 
 try:
-    # Generate access token for user
-    api_response = api_instance.authentication_request(authentication_request)
+    # Generate new access token for the user
+    api_response = api_instance.authenticate(authentication_request)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AuthenticationControllerApi->authentication_request: %s\n" % e)
+    print("Exception when calling AuthenticationControllerApi->authenticate: %s\n" % e)
 ```
 
 ### Parameters
@@ -50,6 +51,54 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_config**
+> PublicAuthenticationConfiguration get_config()
+
+Logout
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.AuthenticationControllerApi(flexify_api.ApiClient(configuration))
+
+try:
+    # Logout
+    api_response = api_instance.get_config()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthenticationControllerApi->get_config: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PublicAuthenticationConfiguration**](PublicAuthenticationConfiguration.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -4,13 +4,13 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_costs_for_current_user**](BillingAccountControllerApi.md#get_costs_for_current_user) | **GET** /rest/account/costs | Get costs for current user
+[**get_costs_for_current_user_billing_account**](BillingAccountControllerApi.md#get_costs_for_current_user_billing_account) | **GET** /rest/account/costs | Get costs for current user
 [**get_current_user_billing_account**](BillingAccountControllerApi.md#get_current_user_billing_account) | **GET** /rest/account | Get billing account for current user
 [**get_payments_for_current_user**](BillingAccountControllerApi.md#get_payments_for_current_user) | **GET** /rest/account/payments | Get payments for current user
 
 
-# **get_costs_for_current_user**
-> list[CostDetails] get_costs_for_current_user()
+# **get_costs_for_current_user_billing_account**
+> list[CostDetails] get_costs_for_current_user_billing_account()
 
 Get costs for current user
 
@@ -33,10 +33,10 @@ api_instance = flexify_api.BillingAccountControllerApi(flexify_api.ApiClient(con
 
 try:
     # Get costs for current user
-    api_response = api_instance.get_costs_for_current_user()
+    api_response = api_instance.get_costs_for_current_user_billing_account()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling BillingAccountControllerApi->get_costs_for_current_user: %s\n" % e)
+    print("Exception when calling BillingAccountControllerApi->get_costs_for_current_user_billing_account: %s\n" % e)
 ```
 
 ### Parameters

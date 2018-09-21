@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_current_user**](UserControllerApi.md#get_current_user) | **GET** /rest/user/current | Get details information for logged in user
+[**get_current_user**](UserControllerApi.md#get_current_user) | **GET** /rest/user/current | Get details of user correponsing to provided auth token
 [**request_reset_password**](UserControllerApi.md#request_reset_password) | **POST** /rest/user/request-reset-password | requestResetPassword
 
 
 # **get_current_user**
-> User get_current_user(silence=silence)
+> User get_current_user()
 
-Get details information for logged in user
+Get details of user correponsing to provided auth token
 
 ### Example
 ```python
@@ -29,21 +29,17 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = flexify_api.UserControllerApi(flexify_api.ApiClient(configuration))
-silence = false # bool | Return 204 No Content or 401 Unauthorized in case of username not found (optional) (default to false)
 
 try:
-    # Get details information for logged in user
-    api_response = api_instance.get_current_user(silence=silence)
+    # Get details of user correponsing to provided auth token
+    api_response = api_instance.get_current_user()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserControllerApi->get_current_user: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **silence** | **bool**| Return 204 No Content or 401 Unauthorized in case of username not found | [optional] [default to false]
+This endpoint does not need any parameter.
 
 ### Return type
 

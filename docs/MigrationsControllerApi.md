@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **add_migration**
-> Migration add_migration(migration_request)
+> IdResponse add_migration(migration_request)
 
 Add new migration
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Migration**](Migration.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_migrations**
-> PageMigration get_migrations(active_only=active_only, include_hidden=include_hidden, attributes_to_sort=attributes_to_sort, page=page, size=size, sort_direction=sort_direction)
+> PageMigration get_migrations(include_hidden=include_hidden, sort=sort, page=page, size=size, sort_direction=sort_direction)
 
 Get all migrations for logged in user in pagged mode
 
@@ -136,16 +136,15 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
-active_only = false # bool | Show only active migrations (optional) (default to false)
 include_hidden = true # bool | Include hidden migrations to response (optional) (default to true)
-attributes_to_sort = ['attributes_to_sort_example'] # list[str] | Attributes to sort (optional)
+sort = ['sort_example'] # list[str] | Attributes to sort (optional)
 page = 0 # int | Page number (optional) (default to 0)
 size = 100 # int | Page size (optional) (default to 100)
 sort_direction = 'ASC' # str | Sort Direction (optional) (default to ASC)
 
 try:
     # Get all migrations for logged in user in pagged mode
-    api_response = api_instance.get_migrations(active_only=active_only, include_hidden=include_hidden, attributes_to_sort=attributes_to_sort, page=page, size=size, sort_direction=sort_direction)
+    api_response = api_instance.get_migrations(include_hidden=include_hidden, sort=sort, page=page, size=size, sort_direction=sort_direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MigrationsControllerApi->get_migrations: %s\n" % e)
@@ -155,9 +154,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **active_only** | **bool**| Show only active migrations | [optional] [default to false]
  **include_hidden** | **bool**| Include hidden migrations to response | [optional] [default to true]
- **attributes_to_sort** | [**list[str]**](str.md)| Attributes to sort | [optional] 
+ **sort** | [**list[str]**](str.md)| Attributes to sort | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **size** | **int**| Page size | [optional] [default to 100]
  **sort_direction** | **str**| Sort Direction | [optional] [default to ASC]
