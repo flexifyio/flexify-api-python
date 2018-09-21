@@ -7,8 +7,12 @@ Name | Type | Description | Notes
 **endpoint** | **str** | Endpoint to access this provider or null for custom providers | [optional] 
 **id** | **int** | Id of the provider in the system | [optional] 
 **name** | **str** | Name of the provider | [optional] 
+**port_http** | **int** | Port for HTTP request (null for default 80) | [optional] 
+**port_https** | **int** | Port for HTTPS request (null for default 443) | [optional] 
 **product_name** | **str** | Name of product/region for this provider | [optional] 
 **protocol** | **str** | Storage protocol this provider uses | [optional] 
+**supports_http** | **bool** | Indicates that HTTP is supported | [optional] 
+**supports_https** | **bool** | Indicates that HTTPS (SSL) is supported | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**billing_account_id** | **int** |  | [optional] 
 **id** | **int** |  | [optional] 
 **username** | **str** |  | [optional] 
 

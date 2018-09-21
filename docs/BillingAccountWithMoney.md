@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **billing_state** | **str** | Billing Account state (Depend on balance and max credit) | [optional] 
 **created_date** | **datetime** | Created Timestamp | [optional] 
 **credit_exceeded** | **bool** | Is credit exceeded | [optional] 
+**distributor** | [**Distributor**](Distributor.md) | Distributor that manages this account | [optional] 
 **id** | **int** | Account Id | [optional] 
 **max_credit** | [**Money**](Money.md) | Account Maximum Credit | [optional] 
 **name** | **str** | Account Name | [optional] 
