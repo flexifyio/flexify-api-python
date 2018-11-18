@@ -84,7 +84,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
-migration_id = 789 # int | Migration Id
+migration_id = 789 # int | migration-id
 
 try:
     # Get migration by id. Only migration owner or administrator have access to the migration
@@ -98,7 +98,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **migration_id** | **int**| Migration Id | 
+ **migration_id** | **int**| migration-id | 
 
 ### Return type
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_migrations**
-> PageMigration get_migrations(include_hidden=include_hidden, sort=sort, page=page, size=size, sort_direction=sort_direction)
+> PageMigration get_migrations(page, size, include_hidden=include_hidden, sort=sort, sort_direction=sort_direction, spring_page_request_offset=spring_page_request_offset, spring_page_request_page_number=spring_page_request_page_number, spring_page_request_page_size=spring_page_request_page_size, spring_page_request_paged=spring_page_request_paged, spring_page_request_sort_sorted=spring_page_request_sort_sorted, spring_page_request_sort_unsorted=spring_page_request_sort_unsorted, spring_page_request_unpaged=spring_page_request_unpaged)
 
 Get all migrations for logged in user in pagged mode
 
@@ -136,15 +136,22 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
+page = 0 # int | Page number
+size = 100 # int | Page size
 include_hidden = true # bool | Include hidden migrations to response (optional) (default to true)
 sort = ['sort_example'] # list[str] | Attributes to sort (optional)
-page = 0 # int | Page number (optional) (default to 0)
-size = 100 # int | Page size (optional) (default to 100)
-sort_direction = 'ASC' # str | Sort Direction (optional) (default to ASC)
+sort_direction = '\"ASC\"' # str | Sort Direction (optional)
+spring_page_request_offset = 789 # int |  (optional)
+spring_page_request_page_number = 56 # int |  (optional)
+spring_page_request_page_size = 56 # int |  (optional)
+spring_page_request_paged = true # bool |  (optional)
+spring_page_request_sort_sorted = true # bool |  (optional)
+spring_page_request_sort_unsorted = true # bool |  (optional)
+spring_page_request_unpaged = true # bool |  (optional)
 
 try:
     # Get all migrations for logged in user in pagged mode
-    api_response = api_instance.get_migrations(include_hidden=include_hidden, sort=sort, page=page, size=size, sort_direction=sort_direction)
+    api_response = api_instance.get_migrations(page, size, include_hidden=include_hidden, sort=sort, sort_direction=sort_direction, spring_page_request_offset=spring_page_request_offset, spring_page_request_page_number=spring_page_request_page_number, spring_page_request_page_size=spring_page_request_page_size, spring_page_request_paged=spring_page_request_paged, spring_page_request_sort_sorted=spring_page_request_sort_sorted, spring_page_request_sort_unsorted=spring_page_request_sort_unsorted, spring_page_request_unpaged=spring_page_request_unpaged)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MigrationsControllerApi->get_migrations: %s\n" % e)
@@ -154,11 +161,18 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number | 
+ **size** | **int**| Page size | 
  **include_hidden** | **bool**| Include hidden migrations to response | [optional] [default to true]
  **sort** | [**list[str]**](str.md)| Attributes to sort | [optional] 
- **page** | **int**| Page number | [optional] [default to 0]
- **size** | **int**| Page size | [optional] [default to 100]
- **sort_direction** | **str**| Sort Direction | [optional] [default to ASC]
+ **sort_direction** | **str**| Sort Direction | [optional] 
+ **spring_page_request_offset** | **int**|  | [optional] 
+ **spring_page_request_page_number** | **int**|  | [optional] 
+ **spring_page_request_page_size** | **int**|  | [optional] 
+ **spring_page_request_paged** | **bool**|  | [optional] 
+ **spring_page_request_sort_sorted** | **bool**|  | [optional] 
+ **spring_page_request_sort_unsorted** | **bool**|  | [optional] 
+ **spring_page_request_unpaged** | **bool**|  | [optional] 
 
 ### Return type
 
