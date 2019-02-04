@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**default_region** | **str** | Default region for this provider | [optional] 
 **disabled_as_destination** | **bool** | Storage is not allowed to be used as a default storage in endpoint or as a migration destination) | [optional] 
 **endpoint** | **str** | Endpoint to access this provider or null for custom providers | [optional] 
 **id** | **int** | Id of the provider in the system | [optional] 
@@ -11,6 +12,7 @@ Name | Type | Description | Notes
 **port_https** | **int** | Port for HTTPS request (null for default 443) | [optional] 
 **product_name** | **str** | Name of product/region for this provider | [optional] 
 **protocol** | **str** | Storage protocol this provider uses | [optional] 
+**regions** | **list[str]** | List of regions supported for this provider (or null if regions are not supported | [optional] 
 **supports_http** | **bool** | Indicates that HTTP is supported | [optional] 
 **supports_https** | **bool** | Indicates that HTTPS (SSL) is supported | [optional] 
 

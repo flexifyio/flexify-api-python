@@ -7,8 +7,10 @@ Method | HTTP request | Description
 [**add_migration**](MigrationsControllerApi.md#add_migration) | **POST** /rest/migrations | Add new migration
 [**get_migration**](MigrationsControllerApi.md#get_migration) | **GET** /rest/migrations/{migration-id} | Get migration by id. Only migration owner or administrator have access to the migration
 [**get_migrations**](MigrationsControllerApi.md#get_migrations) | **GET** /rest/migrations | Get all migrations for logged in user in pagged mode
-[**hide_migration**](MigrationsControllerApi.md#hide_migration) | **POST** /rest/migrations/{migration-id}/hide | Hide migration from UI
-[**stop_migration**](MigrationsControllerApi.md#stop_migration) | **POST** /rest/migrations/{migration-id}/stop | Stop (cancel) the migration
+[**hide_all_migrations**](MigrationsControllerApi.md#hide_all_migrations) | **POST** /rest/migrations/actions/hide-all | Mark all unfinished migrations as hidden UI
+[**hide_migration**](MigrationsControllerApi.md#hide_migration) | **POST** /rest/migrations/{migration-id}/actions/hide | Mark migration as hidden
+[**restart_slot**](MigrationsControllerApi.md#restart_slot) | **POST** /rest/migrations/{migration-id}/mappings/{mapping-id}/slots/{slot}/actions/restart | Mark migration as hidden
+[**stop_migration**](MigrationsControllerApi.md#stop_migration) | **POST** /rest/migrations/{migration-id}/actions/stop | Stop (cancel) the migration
 
 
 # **add_migration**
@@ -189,10 +191,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **hide_migration**
-> Migration hide_migration(migration_id)
+# **hide_all_migrations**
+> hide_all_migrations()
 
-Hide migration from UI
+Mark all unfinished migrations as hidden UI
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
+
+try:
+    # Mark all unfinished migrations as hidden UI
+    api_instance.hide_all_migrations()
+except ApiException as e:
+    print("Exception when calling MigrationsControllerApi->hide_all_migrations: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **hide_migration**
+> hide_migration(migration_id)
+
+Mark migration as hidden
 
 ### Example
 ```python
@@ -213,9 +262,8 @@ api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configu
 migration_id = 789 # int | migration-id
 
 try:
-    # Hide migration from UI
-    api_response = api_instance.hide_migration(migration_id)
-    pprint(api_response)
+    # Mark migration as hidden
+    api_instance.hide_migration(migration_id)
 except ApiException as e:
     print("Exception when calling MigrationsControllerApi->hide_migration: %s\n" % e)
 ```
@@ -228,7 +276,62 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Migration**](Migration.md)
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **restart_slot**
+> restart_slot(mapping_id, migration_id, slot)
+
+Mark migration as hidden
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
+mapping_id = 789 # int | mapping-id
+migration_id = 789 # int | migration-id
+slot = 56 # int | slot
+
+try:
+    # Mark migration as hidden
+    api_instance.restart_slot(mapping_id, migration_id, slot)
+except ApiException as e:
+    print("Exception when calling MigrationsControllerApi->restart_slot: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mapping_id** | **int**| mapping-id | 
+ **migration_id** | **int**| migration-id | 
+ **slot** | **int**| slot | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -242,7 +345,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **stop_migration**
-> Migration stop_migration(migration_id)
+> stop_migration(migration_id)
 
 Stop (cancel) the migration
 
@@ -266,8 +369,7 @@ migration_id = 789 # int | migration-id
 
 try:
     # Stop (cancel) the migration
-    api_response = api_instance.stop_migration(migration_id)
-    pprint(api_response)
+    api_instance.stop_migration(migration_id)
 except ApiException as e:
     print("Exception when calling MigrationsControllerApi->stop_migration: %s\n" % e)
 ```
@@ -280,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Migration**](Migration.md)
+void (empty response body)
 
 ### Authorization
 

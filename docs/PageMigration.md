@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | [**list[Migration]**](Migration.md) |  | [optional] 
+**empty** | **bool** |  | [optional] 
 **first** | **bool** |  | [optional] 
 **last** | **bool** |  | [optional] 
 **number** | **int** |  | [optional] 

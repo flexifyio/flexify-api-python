@@ -5,10 +5,13 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_storage_account**](StorageAccountsControllerApi.md#add_storage_account) | **POST** /rest/storage-accounts | Add Storage Account with an optional list of buckets
-[**delete_storage_account**](StorageAccountsControllerApi.md#delete_storage_account) | **DELETE** /rest/storage-accounts/{storage-account-id} | Deletes (hides) a bucket/container
+[**delete_storage_account**](StorageAccountsControllerApi.md#delete_storage_account) | **DELETE** /rest/storage-accounts/{storage-account-id} | Deletes (hides) storage account and all its buckets/containers
+[**delete_storage_accounts**](StorageAccountsControllerApi.md#delete_storage_accounts) | **POST** /rest/storage-accounts/actions/delete | Deletes (hides) a multiple storage accounts and all their buckets/containers
 [**get_storage_account**](StorageAccountsControllerApi.md#get_storage_account) | **GET** /rest/storage-accounts/storage-accounts/{storage-account-id} | Get storage account by id
 [**get_storage_accounts**](StorageAccountsControllerApi.md#get_storage_accounts) | **GET** /rest/storage-accounts | Get all storage accounts for current user
 [**refresh_storage_account**](StorageAccountsControllerApi.md#refresh_storage_account) | **POST** /rest/storage-accounts/{storage-account-id}/actions/refresh | Requests and updates list of buckets/containers for the storage account
+[**refresh_storage_accounts**](StorageAccountsControllerApi.md#refresh_storage_accounts) | **POST** /rest/storage-accounts/actions/refresh | Requests and updates list of buckets/containers for a list of storage accounts
+[**set_storage_account_settings**](StorageAccountsControllerApi.md#set_storage_account_settings) | **PUT** /rest/storage-accounts/{storage-account-id}/settings | Updates storage account settings
 
 
 # **add_storage_account**
@@ -66,7 +69,7 @@ Name | Type | Description  | Notes
 # **delete_storage_account**
 > delete_storage_account(storage_account_id, force_detach=force_detach)
 
-Deletes (hides) a bucket/container
+Deletes (hides) storage account and all its buckets/containers
 
 ### Example
 ```python
@@ -88,7 +91,7 @@ storage_account_id = 789 # int | storage-account-id
 force_detach = false # bool | force-detach (optional) (default to false)
 
 try:
-    # Deletes (hides) a bucket/container
+    # Deletes (hides) storage account and all its buckets/containers
     api_instance.delete_storage_account(storage_account_id, force_detach=force_detach)
 except ApiException as e:
     print("Exception when calling StorageAccountsControllerApi->delete_storage_account: %s\n" % e)
@@ -112,6 +115,59 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_storage_accounts**
+> delete_storage_accounts(request, force_detach=force_detach)
+
+Deletes (hides) a multiple storage accounts and all their buckets/containers
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.StorageAccountsControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.IdsList() # IdsList | request
+force_detach = false # bool | force-detach (optional) (default to false)
+
+try:
+    # Deletes (hides) a multiple storage accounts and all their buckets/containers
+    api_instance.delete_storage_accounts(request, force_detach=force_detach)
+except ApiException as e:
+    print("Exception when calling StorageAccountsControllerApi->delete_storage_accounts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**IdsList**](IdsList.md)| request | 
+ **force_detach** | **bool**| force-detach | [optional] [default to false]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -254,6 +310,110 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **storage_account_id** | **int**| storage-account-id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **refresh_storage_accounts**
+> refresh_storage_accounts(request)
+
+Requests and updates list of buckets/containers for a list of storage accounts
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.StorageAccountsControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.IdsList() # IdsList | request
+
+try:
+    # Requests and updates list of buckets/containers for a list of storage accounts
+    api_instance.refresh_storage_accounts(request)
+except ApiException as e:
+    print("Exception when calling StorageAccountsControllerApi->refresh_storage_accounts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**IdsList**](IdsList.md)| request | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_storage_account_settings**
+> set_storage_account_settings(settings, storage_account_id)
+
+Updates storage account settings
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.StorageAccountsControllerApi(flexify_api.ApiClient(configuration))
+settings = flexify_api.StorageAccountSettings() # StorageAccountSettings | settings
+storage_account_id = 789 # int | storage-account-id
+
+try:
+    # Updates storage account settings
+    api_instance.set_storage_account_settings(settings, storage_account_id)
+except ApiException as e:
+    print("Exception when calling StorageAccountsControllerApi->set_storage_account_settings: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settings** | [**StorageAccountSettings**](StorageAccountSettings.md)| settings | 
  **storage_account_id** | **int**| storage-account-id | 
 
 ### Return type

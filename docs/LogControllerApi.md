@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_log_for_current_user**
-> PageLogEntry get_log_for_current_user(page, size, endpoint_id=endpoint_id, migration_id=migration_id, sort=sort, sort_direction=sort_direction, spring_page_request_offset=spring_page_request_offset, spring_page_request_page_number=spring_page_request_page_number, spring_page_request_page_size=spring_page_request_page_size, spring_page_request_paged=spring_page_request_paged, spring_page_request_sort_sorted=spring_page_request_sort_sorted, spring_page_request_sort_unsorted=spring_page_request_sort_unsorted, spring_page_request_unpaged=spring_page_request_unpaged, storage_id=storage_id)
+> MarkerPageLogEntry get_log_for_current_user(endpoint_id=endpoint_id, marker=marker, migration_id=migration_id, storage_account_id=storage_account_id, storage_id=storage_id)
 
 getLogForCurrentUser
 
@@ -28,24 +28,15 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = flexify_api.LogControllerApi(flexify_api.ApiClient(configuration))
-page = 0 # int | Page number
-size = 100 # int | Page size
 endpoint_id = 789 # int | endpoint-id (optional)
+marker = 789 # int | marker (optional)
 migration_id = 789 # int | migration-id (optional)
-sort = ['sort_example'] # list[str] | Attributes to sort (optional)
-sort_direction = '\"ASC\"' # str | Sort Direction (optional)
-spring_page_request_offset = 789 # int |  (optional)
-spring_page_request_page_number = 56 # int |  (optional)
-spring_page_request_page_size = 56 # int |  (optional)
-spring_page_request_paged = true # bool |  (optional)
-spring_page_request_sort_sorted = true # bool |  (optional)
-spring_page_request_sort_unsorted = true # bool |  (optional)
-spring_page_request_unpaged = true # bool |  (optional)
+storage_account_id = 789 # int | storage-account-id (optional)
 storage_id = 789 # int | storage-id (optional)
 
 try:
     # getLogForCurrentUser
-    api_response = api_instance.get_log_for_current_user(page, size, endpoint_id=endpoint_id, migration_id=migration_id, sort=sort, sort_direction=sort_direction, spring_page_request_offset=spring_page_request_offset, spring_page_request_page_number=spring_page_request_page_number, spring_page_request_page_size=spring_page_request_page_size, spring_page_request_paged=spring_page_request_paged, spring_page_request_sort_sorted=spring_page_request_sort_sorted, spring_page_request_sort_unsorted=spring_page_request_sort_unsorted, spring_page_request_unpaged=spring_page_request_unpaged, storage_id=storage_id)
+    api_response = api_instance.get_log_for_current_user(endpoint_id=endpoint_id, marker=marker, migration_id=migration_id, storage_account_id=storage_account_id, storage_id=storage_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LogControllerApi->get_log_for_current_user: %s\n" % e)
@@ -55,24 +46,15 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number | 
- **size** | **int**| Page size | 
  **endpoint_id** | **int**| endpoint-id | [optional] 
+ **marker** | **int**| marker | [optional] 
  **migration_id** | **int**| migration-id | [optional] 
- **sort** | [**list[str]**](str.md)| Attributes to sort | [optional] 
- **sort_direction** | **str**| Sort Direction | [optional] 
- **spring_page_request_offset** | **int**|  | [optional] 
- **spring_page_request_page_number** | **int**|  | [optional] 
- **spring_page_request_page_size** | **int**|  | [optional] 
- **spring_page_request_paged** | **bool**|  | [optional] 
- **spring_page_request_sort_sorted** | **bool**|  | [optional] 
- **spring_page_request_sort_unsorted** | **bool**|  | [optional] 
- **spring_page_request_unpaged** | **bool**|  | [optional] 
+ **storage_account_id** | **int**| storage-account-id | [optional] 
  **storage_id** | **int**| storage-id | [optional] 
 
 ### Return type
 
-[**PageLogEntry**](PageLogEntry.md)
+[**MarkerPageLogEntry**](MarkerPageLogEntry.md)
 
 ### Authorization
 
