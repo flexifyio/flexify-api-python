@@ -553,14 +553,18 @@ class ApiClient(object):
         return value
 
     def __deserialize_date(self, string):
-        """Deserializes string to date.
+        """Deserializes string  or millis to date.
 
         :param string: str.
         :return: date.
         """
         try:
-            from dateutil.parser import parse
-            return parse(string).date()
+            if type(string) == int:
+                import datetime
+                return datetime.datetime.fromtimestamp(string / 1e3)
+            else:
+                from dateutil.parser import parse
+                return parse(string).date()
         except ImportError:
             return string
         except ValueError:
