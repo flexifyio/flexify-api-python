@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **default_region** | **str** | Default region for this provider | [optional] 
 **disabled_as_destination** | **bool** | Storage is not allowed to be used as a default storage in endpoint or as a migration destination) | [optional] 
+**dot_encode** | **str** | Indicates that the privder does not support dots in bucket names and how dots should be encoded | [optional] 
 **endpoint** | **str** | Endpoint to access this provider or null for custom providers | [optional] 
 **id** | **int** | Id of the provider in the system | [optional] 
 **name** | **str** | Name of the provider | [optional] 
