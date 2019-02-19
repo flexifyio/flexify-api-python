@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**empty** | **bool** |  | [optional] 
 **sorted** | **bool** |  | [optional] 
 **unsorted** | **bool** |  | [optional] 
 

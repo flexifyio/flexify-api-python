@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dest_bucket** | [**Bucket**](Bucket.md) | Destination bucket/container | 
+**dest_bucket_new_region** | **str** | Region where bucket should be created if missing | [optional] 
 **dest_storage_account** | [**StorageAccount**](StorageAccount.md) | Destination storage account | 
 **id** | **int** | ID of this mapping | 
 **slots** | [**list[Slot]**](Slot.md) | Slots that this mapping is split into | 
