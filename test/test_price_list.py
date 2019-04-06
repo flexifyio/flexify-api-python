@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.models.endpoint_stat import EndpointStat  # noqa: E501
+from flexify_api.models.price_list import PriceList  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestEndpointStat(unittest.TestCase):
-    """EndpointStat unit test stubs"""
+class TestPriceList(unittest.TestCase):
+    """PriceList unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestEndpointStat(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testEndpointStat(self):
-        """Test EndpointStat"""
+    def testPriceList(self):
+        """Test PriceList"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api.models.endpoint_stat.EndpointStat()  # noqa: E501
+        # model = flexify_api.models.price_list.PriceList()  # noqa: E501
         pass
 
 

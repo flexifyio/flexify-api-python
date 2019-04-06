@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **anonymous** | **bool** | True for public account | [optional] 
 **credential** | **str** | Credential (such as Secret Key) of the cloud account | [optional] 
+**custom_endpoint** | **str** | Custom endpoint to be used for reqeusts | [optional] 
 **identity** | **str** | Identity (such as Key ID) of the cloud account | [optional] 
 **name** | **str** | User-defined storage account name | [optional] 
 **refresh_interval_sec** | **int** | Automatic refresh interval in seconds or null to disable automatic refresh | [optional] 
