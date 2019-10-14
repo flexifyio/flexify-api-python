@@ -3,14 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**conflict_resolution** | **str** | Conflict resolution | 
+**conflict_resolution** | **str** | Conflict resolution | [optional] 
 **engines_location** | [**CloudLocation**](CloudLocation.md) | Location of the engines to migrate | [optional] 
 **existing_data_in_destination** | **str** | Keep or clean data in destination before migration (identical with source objects keep in any cases) | [optional] 
-**max_active_slots** | **int** | Maximum number of slots that can be migrated simultaneously (experimental) | [optional] 
-**max_streams_per_slot** | **int** | Maximum Connections per engine | [optional] 
-**migration_mode** | **str** | Migration mode | 
-**name** | **str** | Name of the migration | 
+**max_engines** | **int** | Maximum number of engines this migration uses (experimental) | [optional] 
+**max_retries** | **int** | Maximum number of retries | [optional] 
+**max_retries_for_copy** | **int** | Maximum number of retries after copy started | [optional] 
+**max_retry_timeout** | **int** | Maximum timeout between retries in seconds | [optional] 
+**max_streams** | **int** | Maximum streams that migration will use across all aengines | [optional] 
+**migration_mode** | **str** | Migration mode | [optional] 
+**name** | **str** | Name of the migration | [optional] 
 **object_key_filter** | **str** | Migrate objects matching pattern | [optional] 
+**retry_timeout** | **int** | Initial timeout between retries in seconds | [optional] 
 **skip_if_hash_matches** | **bool** | Skip migration if source and destination object hash match | [optional] 
 **slots_per_mapping** | **int** | Number of slots of storage mapping (bucket) | [optional] 
 

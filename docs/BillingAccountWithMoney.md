@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **id** | **int** | Account Id | [optional] 
 **max_credit** | [**Money**](Money.md) | Account Maximum Credit | [optional] 
 **name** | **str** | Account Name | [optional] 
+**price_list** | [**PriceList**](PriceList.md) | Price list (without prices) | [optional] 
 **total_cost** | [**Money**](Money.md) | Account Total Cost | [optional] 
 **total_paid** | [**Money**](Money.md) | Account Total Paid | [optional] 
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **bytes_processed** | **int** |  | [optional] 
 **bytes_skipped** | **int** |  | [optional] 
 **bytes_uploaded** | **int** |  | [optional] 
+**dst_region** | **str** |  | [optional] 
 **finished** | **datetime** | Finished time | [optional] 
 **objects_failed** | **int** |  | [optional] 
 **objects_not_matching_pattern** | **int** |  | [optional] 
@@ -18,8 +19,10 @@ Name | Type | Description | Notes
 **objects_uploaded** | **int** |  | [optional] 
 **processing_objects_per_second** | **float** | Objects/second processed | [optional] 
 **retried** | **int** | Number of retries | [optional] 
+**src_region** | **str** |  | [optional] 
 **started** | **datetime** | Started time | [optional] 
 **state** | **str** | State of migration on its part | [optional] 
+**total_upload** | **int** |  | [optional] 
 **uploading_bytes_per_second** | **float** |  | [optional] 
 **uploading_objects_per_second** | **float** |  | [optional] 
 

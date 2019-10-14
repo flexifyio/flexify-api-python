@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account** | [**BillingAccount**](BillingAccount.md) | Billing Account | [optional] 
+**delete_requested** | **datetime** | Time when user resueted to delete account | [optional] 
 **id** | **int** | User ID in the system | [optional] 
 **org** | [**Organization**](Organization.md) | Owning Organization | [optional] 
 **profile** | [**UserProfile**](UserProfile.md) | User Profile | [optional] 

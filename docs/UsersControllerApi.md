@@ -5,6 +5,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_current_user**](UsersControllerApi.md#get_current_user) | **GET** /rest/user/current | Get details of user correponsing to provided auth token
+[**request_delete**](UsersControllerApi.md#request_delete) | **POST** /rest/user/request-delete | requestDelete
 [**request_reset_password**](UsersControllerApi.md#request_reset_password) | **POST** /rest/user/request-reset-password | requestResetPassword
 
 
@@ -92,8 +93,55 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **request_delete**
+> request_delete()
+
+requestDelete
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.UsersControllerApi(flexify_api.ApiClient(configuration))
+
+try:
+    # requestDelete
+    api_instance.request_delete()
+except ApiException as e:
+    print("Exception when calling UsersControllerApi->request_delete: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **request_reset_password**
-> request_reset_password(reqeust)
+> request_reset_password(request)
 
 requestResetPassword
 
@@ -113,11 +161,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = flexify_api.UsersControllerApi(flexify_api.ApiClient(configuration))
-reqeust = flexify_api.RequestResetPasswordReqeust() # RequestResetPasswordReqeust | reqeust
+request = flexify_api.RequestResetPasswordRequest() # RequestResetPasswordRequest | request
 
 try:
     # requestResetPassword
-    api_instance.request_reset_password(reqeust)
+    api_instance.request_reset_password(request)
 except ApiException as e:
     print("Exception when calling UsersControllerApi->request_reset_password: %s\n" % e)
 ```
@@ -126,7 +174,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reqeust** | [**RequestResetPasswordReqeust**](RequestResetPasswordReqeust.md)| reqeust | 
+ **request** | [**RequestResetPasswordRequest**](RequestResetPasswordRequest.md)| request | 
 
 ### Return type
 

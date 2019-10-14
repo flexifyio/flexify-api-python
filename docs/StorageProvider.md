@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **dot_encode** | **str** | Indicates that the privder does not support dots in bucket names and how dots should be encoded | [optional] 
 **endpoint** | **str** | Endpoint to access this provider or null for custom providers | [optional] 
 **id** | **int** | Id of the provider in the system | [optional] 
+**multi_regional** | **bool** | This cloud provider supports multiple regions | [optional] 
 **name** | **str** | Name of the provider | [optional] 
 **port_http** | **int** | Port for HTTP request (null for default 80) | [optional] 
 **port_https** | **int** | Port for HTTPS request (null for default 443) | [optional] 
