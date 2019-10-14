@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **display_name** | **str** | Display Name | [optional] 
 **email** | **str** | Email | [optional] 
 **phone** | **str** | Phone | [optional] 
+**send_news** | **bool** | Agreed to receive news and updates | [optional] 
+**send_notifications** | **bool** | If we should send system notifications | [optional] 
 **street_first_line** | **str** | Street First Line | [optional] 
 **street_second_line** | **str** | Street Second Line | [optional] 
 **zip** | **str** | Zip Code | [optional] 
