@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **billing_account_id** | **int** |  | [optional] 
+**external_id** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **username** | **str** |  | [optional] 
 

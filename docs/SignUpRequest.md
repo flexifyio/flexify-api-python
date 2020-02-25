@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**external_id** | **str** |  | [optional] 
 **password** | **str** |  | [optional] 
 **profile** | [**UserProfile**](UserProfile.md) |  | [optional] 
 **signup_code** | **str** |  | [optional] 
