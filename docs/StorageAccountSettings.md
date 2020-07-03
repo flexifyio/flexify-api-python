@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **identity** | **str** | Identity (such as Key ID) of the cloud account | [optional] 
 **name** | **str** | User-defined storage account name | [optional] 
 **refresh_interval_sec** | **int** | Automatic refresh interval in seconds or null to disable automatic refresh | [optional] 
-**refresh_storages_stat** | **bool** | Indicates if statistics for each bucket/container should be calculated on refresh | [optional] 
+**refresh_storages_stat** | **bool** | Indicates if statistics for each bucket/container should be calculated on automatic refresh | [optional] 
 **use_ssl** | **bool** | Encrypt transfer with SSL | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
