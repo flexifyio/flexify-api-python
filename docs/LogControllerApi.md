@@ -1,10 +1,10 @@
 # flexify_api.LogControllerApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.flexify.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_log_for_current_user**](LogControllerApi.md#get_log_for_current_user) | **GET** /rest/log | getLogForCurrentUser
+[**get_log_for_current_user**](LogControllerApi.md#get_log_for_current_user) | **GET** /backend/rest/log | getLogForCurrentUser
 
 
 # **get_log_for_current_user**

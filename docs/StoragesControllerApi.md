@@ -1,15 +1,15 @@
 # flexify_api.StoragesControllerApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.flexify.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_buckets**](StoragesControllerApi.md#add_buckets) | **POST** /rest/storage-accounts/{storage-account-id}/buckets | Add buckets to the storage account
-[**delete_bucket**](StoragesControllerApi.md#delete_bucket) | **DELETE** /rest/storage-accounts/{storage-account-id}/buckets/{bucket-id} | Deletes (hides) a bucket/container
-[**delete_buckets**](StoragesControllerApi.md#delete_buckets) | **POST** /rest/storage-accounts/actions/delete-buckets | Deletes (hides) multiple buckets/containers
-[**get_providers**](StoragesControllerApi.md#get_providers) | **GET** /rest/providers | Get all storage providers
-[**refresh_bucket**](StoragesControllerApi.md#refresh_bucket) | **POST** /rest/storage-accounts/{storage-account-id}/buckets/{bucket-id}/actions/refresh | Refresh statistics of a single bucket
-[**refresh_buckets**](StoragesControllerApi.md#refresh_buckets) | **POST** /rest/storage-accounts/actions/refresh-buckets | Refresh statistics of multiple buckets
+[**add_buckets**](StoragesControllerApi.md#add_buckets) | **POST** /backend/rest/storage-accounts/{storage-account-id}/buckets | Add buckets to the storage account
+[**delete_bucket**](StoragesControllerApi.md#delete_bucket) | **DELETE** /backend/rest/storage-accounts/{storage-account-id}/buckets/{bucket-id} | Deletes (hides) a bucket/container
+[**delete_buckets**](StoragesControllerApi.md#delete_buckets) | **POST** /backend/rest/storage-accounts/actions/delete-buckets | Deletes (hides) multiple buckets/containers
+[**get_providers**](StoragesControllerApi.md#get_providers) | **GET** /backend/rest/providers | Get all storage providers
+[**refresh_bucket**](StoragesControllerApi.md#refresh_bucket) | **POST** /backend/rest/storage-accounts/{storage-account-id}/buckets/{bucket-id}/actions/refresh | Refresh statistics of a single bucket
+[**refresh_buckets**](StoragesControllerApi.md#refresh_buckets) | **POST** /backend/rest/storage-accounts/actions/refresh-buckets | Refresh statistics of multiple buckets
 
 
 # **add_buckets**

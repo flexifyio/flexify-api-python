@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dest_bucket_name** | **str** | Name of source destionation or container | 
+**dest_bucket_name** | **str** | Name of source destination or container | 
 **dest_bucket_new_region** | **str** | Region where the destination bucket will be created if it does not exist. null to use cloud&#39;s default region | [optional] 
 **dest_storage_account_id** | **int** | ID of source destination account | 
 **source_bucket_name** | **str** | Name of source bucket or container | 

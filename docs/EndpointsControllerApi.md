@@ -1,24 +1,26 @@
 # flexify_api.EndpointsControllerApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.flexify.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_accounts**](EndpointsControllerApi.md#attach_accounts) | **POST** /rest/endpoints/{endpoint-id}/storage-accounts | Attach storage accounts to the endpoint
-[**attach_buckets**](EndpointsControllerApi.md#attach_buckets) | **POST** /rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets | Attach storages to the virtual bucket
-[**create_virtual_bucket**](EndpointsControllerApi.md#create_virtual_bucket) | **POST** /rest/endpoints/{endpoint-id}/virtual-buckets | Creates new virtual bucket
-[**delete_virtual_bucket**](EndpointsControllerApi.md#delete_virtual_bucket) | **DELETE** /rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket} | Deletes virtual bucket
-[**detach_account**](EndpointsControllerApi.md#detach_account) | **DELETE** /rest/endpoints/{endpoint-id}/storage-accounts/{storage-account-id} | Detach storage account from the endpoint
-[**detach_bucket**](EndpointsControllerApi.md#detach_bucket) | **DELETE** /rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets/{bucket-id} | Detach storage account from the endpoint
-[**disable**](EndpointsControllerApi.md#disable) | **PUT** /rest/endpoints/{endpoint-id}/actions/disable | Disable the endpoint
-[**enable**](EndpointsControllerApi.md#enable) | **PUT** /rest/endpoints/{endpoint-id}/actions/enable | Enable the endpoint
-[**generate_access_keys**](EndpointsControllerApi.md#generate_access_keys) | **GET** /rest/endpoints/generated-access-keys | Generate new access keys pair
-[**get_endpoint_details**](EndpointsControllerApi.md#get_endpoint_details) | **GET** /rest/endpoints/{endpoint-id} | Get endpoint details
-[**get_endpoints_for_current_user**](EndpointsControllerApi.md#get_endpoints_for_current_user) | **GET** /rest/endpoints | Get endpoint for current user. This method will create new endpoint if no endpoints exist for user
-[**set_attached_account_settings**](EndpointsControllerApi.md#set_attached_account_settings) | **PUT** /rest/endpoints/{endpoint-id}/storage-accounts/{storage-account-id}/settings | Modifies settings of the attached storage account
-[**set_attached_bucket_settings**](EndpointsControllerApi.md#set_attached_bucket_settings) | **PUT** /rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets/{bucket-id}/settings | Modifies settings of the attached storage
-[**set_virtual_bucket_settings**](EndpointsControllerApi.md#set_virtual_bucket_settings) | **PUT** /rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/settings | Modifies virtual bucket configuration
-[**update_endpoint_settings**](EndpointsControllerApi.md#update_endpoint_settings) | **PUT** /rest/endpoints/{endpoint-id}/settings | Update attributes of the endpoint
+[**attach_accounts**](EndpointsControllerApi.md#attach_accounts) | **POST** /backend/rest/endpoints/{endpoint-id}/storage-accounts | Attach storage accounts to the endpoint
+[**attach_buckets**](EndpointsControllerApi.md#attach_buckets) | **POST** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets | Attach storages to the virtual bucket
+[**create_endpoint**](EndpointsControllerApi.md#create_endpoint) | **POST** /backend/rest/endpoints | Creates new endpoint
+[**create_virtual_bucket**](EndpointsControllerApi.md#create_virtual_bucket) | **POST** /backend/rest/endpoints/{endpoint-id}/virtual-buckets | Creates new virtual bucket
+[**delete**](EndpointsControllerApi.md#delete) | **DELETE** /backend/rest/endpoints/{endpoint-id} | Delete the endpoint
+[**delete_virtual_bucket**](EndpointsControllerApi.md#delete_virtual_bucket) | **DELETE** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket} | Deletes virtual bucket
+[**detach_account**](EndpointsControllerApi.md#detach_account) | **DELETE** /backend/rest/endpoints/{endpoint-id}/storage-accounts/{storage-account-id} | Detach storage account from the endpoint
+[**detach_bucket**](EndpointsControllerApi.md#detach_bucket) | **DELETE** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets/{bucket-id} | Detach storage account from the endpoint
+[**disable**](EndpointsControllerApi.md#disable) | **PUT** /backend/rest/endpoints/{endpoint-id}/actions/disable | Disable the endpoint
+[**enable**](EndpointsControllerApi.md#enable) | **PUT** /backend/rest/endpoints/{endpoint-id}/actions/enable | Enable the endpoint
+[**generate_access_keys**](EndpointsControllerApi.md#generate_access_keys) | **GET** /backend/rest/endpoints/generated-access-keys | Generate new access keys pair
+[**get_endpoint_details**](EndpointsControllerApi.md#get_endpoint_details) | **GET** /backend/rest/endpoints/{endpoint-id} | Get endpoint details
+[**get_endpoints_for_current_user**](EndpointsControllerApi.md#get_endpoints_for_current_user) | **GET** /backend/rest/endpoints | Get endpoint for current user. This method will create new endpoint if no endpoints exist for user
+[**set_attached_account_settings**](EndpointsControllerApi.md#set_attached_account_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/storage-accounts/{storage-account-id}/settings | Modifies settings of the attached storage account
+[**set_attached_bucket_settings**](EndpointsControllerApi.md#set_attached_bucket_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets/{bucket-id}/settings | Modifies settings of the attached storage
+[**set_virtual_bucket_settings**](EndpointsControllerApi.md#set_virtual_bucket_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/settings | Modifies virtual bucket configuration
+[**update_endpoint_settings**](EndpointsControllerApi.md#update_endpoint_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/settings | Update attributes of the endpoint
 
 
 # **attach_accounts**
@@ -129,6 +131,54 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_endpoint**
+> IdResponse create_endpoint()
+
+Creates new endpoint
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.EndpointsControllerApi(flexify_api.ApiClient(configuration))
+
+try:
+    # Creates new endpoint
+    api_response = api_instance.create_endpoint()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EndpointsControllerApi->create_endpoint: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**IdResponse**](IdResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_virtual_bucket**
 > create_virtual_bucket(endpoint_id, request)
 
@@ -178,6 +228,57 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete**
+> delete(endpoint_id)
+
+Delete the endpoint
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.EndpointsControllerApi(flexify_api.ApiClient(configuration))
+endpoint_id = 789 # int | endpoint-id
+
+try:
+    # Delete the endpoint
+    api_instance.delete(endpoint_id)
+except ApiException as e:
+    print("Exception when calling EndpointsControllerApi->delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **endpoint_id** | **int**| endpoint-id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

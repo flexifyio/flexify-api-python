@@ -1,16 +1,16 @@
 # flexify_api.MigrationsControllerApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.flexify.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_migration**](MigrationsControllerApi.md#add_migration) | **POST** /rest/migrations | Add new migration
-[**get_migration**](MigrationsControllerApi.md#get_migration) | **GET** /rest/migrations/{migration-id} | Get migration by id. Only migration owner or administrator have access to the migration
-[**get_migrations**](MigrationsControllerApi.md#get_migrations) | **GET** /rest/migrations | Get all migrations for logged in user in pagged mode
-[**hide_all_migrations**](MigrationsControllerApi.md#hide_all_migrations) | **POST** /rest/migrations/actions/hide-all | Mark all unfinished migrations as hidden UI
-[**hide_migration**](MigrationsControllerApi.md#hide_migration) | **POST** /rest/migrations/{migration-id}/actions/hide | Mark migration as hidden
-[**restart_slot**](MigrationsControllerApi.md#restart_slot) | **POST** /rest/migrations/{migration-id}/mappings/{mapping-id}/slots/{slot}/actions/restart | Mark migration as hidden
-[**stop_migration**](MigrationsControllerApi.md#stop_migration) | **POST** /rest/migrations/{migration-id}/actions/stop | Stop (cancel) the migration
+[**add_migration**](MigrationsControllerApi.md#add_migration) | **POST** /backend/rest/migrations | Add new migration
+[**get_migration**](MigrationsControllerApi.md#get_migration) | **GET** /backend/rest/migrations/{migration-id} | Get migration by id. Only migration owner or administrator have access to the migration
+[**get_migrations**](MigrationsControllerApi.md#get_migrations) | **GET** /backend/rest/migrations | Get all migrations for logged in user in paged mode
+[**hide_all_migrations**](MigrationsControllerApi.md#hide_all_migrations) | **POST** /backend/rest/migrations/actions/hide-all | Mark all unfinished migrations as hidden UI
+[**hide_migration**](MigrationsControllerApi.md#hide_migration) | **POST** /backend/rest/migrations/{migration-id}/actions/hide | Mark migration as hidden
+[**restart_slot**](MigrationsControllerApi.md#restart_slot) | **POST** /backend/rest/migrations/{migration-id}/mappings/{mapping-id}/slots/{slot}/actions/restart | Mark migration as hidden
+[**stop_migration**](MigrationsControllerApi.md#stop_migration) | **POST** /backend/rest/migrations/{migration-id}/actions/stop | Stop (cancel) the migration
 
 
 # **add_migration**
@@ -118,9 +118,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_migrations**
-> PageMigration get_migrations(page, size, include_hidden=include_hidden, sort=sort, sort_direction=sort_direction, spring_page_request_offset=spring_page_request_offset, spring_page_request_page_number=spring_page_request_page_number, spring_page_request_page_size=spring_page_request_page_size, spring_page_request_paged=spring_page_request_paged, spring_page_request_sort_sorted=spring_page_request_sort_sorted, spring_page_request_sort_unsorted=spring_page_request_sort_unsorted, spring_page_request_unpaged=spring_page_request_unpaged)
+> PageMigration get_migrations(page, size, include_hidden=include_hidden, sort=sort, sort_direction=sort_direction, spring_page_request_offset=spring_page_request_offset, spring_page_request_paged=spring_page_request_paged, spring_page_request_page_number=spring_page_request_page_number, spring_page_request_page_size=spring_page_request_page_size, spring_page_request_sort_sorted=spring_page_request_sort_sorted, spring_page_request_sort_unsorted=spring_page_request_sort_unsorted, spring_page_request_unpaged=spring_page_request_unpaged)
 
-Get all migrations for logged in user in pagged mode
+Get all migrations for logged in user in paged mode
 
 ### Example
 ```python
@@ -142,18 +142,18 @@ page = 0 # int | Page number
 size = 100 # int | Page size
 include_hidden = true # bool | Include hidden migrations to response (optional) (default to true)
 sort = ['sort_example'] # list[str] | Attributes to sort (optional)
-sort_direction = '\"ASC\"' # str | Sort Direction (optional)
+sort_direction = 'ASC' # str | Sort Direction (optional)
 spring_page_request_offset = 789 # int |  (optional)
+spring_page_request_paged = true # bool |  (optional)
 spring_page_request_page_number = 56 # int |  (optional)
 spring_page_request_page_size = 56 # int |  (optional)
-spring_page_request_paged = true # bool |  (optional)
 spring_page_request_sort_sorted = true # bool |  (optional)
 spring_page_request_sort_unsorted = true # bool |  (optional)
 spring_page_request_unpaged = true # bool |  (optional)
 
 try:
-    # Get all migrations for logged in user in pagged mode
-    api_response = api_instance.get_migrations(page, size, include_hidden=include_hidden, sort=sort, sort_direction=sort_direction, spring_page_request_offset=spring_page_request_offset, spring_page_request_page_number=spring_page_request_page_number, spring_page_request_page_size=spring_page_request_page_size, spring_page_request_paged=spring_page_request_paged, spring_page_request_sort_sorted=spring_page_request_sort_sorted, spring_page_request_sort_unsorted=spring_page_request_sort_unsorted, spring_page_request_unpaged=spring_page_request_unpaged)
+    # Get all migrations for logged in user in paged mode
+    api_response = api_instance.get_migrations(page, size, include_hidden=include_hidden, sort=sort, sort_direction=sort_direction, spring_page_request_offset=spring_page_request_offset, spring_page_request_paged=spring_page_request_paged, spring_page_request_page_number=spring_page_request_page_number, spring_page_request_page_size=spring_page_request_page_size, spring_page_request_sort_sorted=spring_page_request_sort_sorted, spring_page_request_sort_unsorted=spring_page_request_sort_unsorted, spring_page_request_unpaged=spring_page_request_unpaged)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MigrationsControllerApi->get_migrations: %s\n" % e)
@@ -169,9 +169,9 @@ Name | Type | Description  | Notes
  **sort** | [**list[str]**](str.md)| Attributes to sort | [optional] 
  **sort_direction** | **str**| Sort Direction | [optional] 
  **spring_page_request_offset** | **int**|  | [optional] 
+ **spring_page_request_paged** | **bool**|  | [optional] 
  **spring_page_request_page_number** | **int**|  | [optional] 
  **spring_page_request_page_size** | **int**|  | [optional] 
- **spring_page_request_paged** | **bool**|  | [optional] 
  **spring_page_request_sort_sorted** | **bool**|  | [optional] 
  **spring_page_request_sort_unsorted** | **bool**|  | [optional] 
  **spring_page_request_unpaged** | **bool**|  | [optional] 

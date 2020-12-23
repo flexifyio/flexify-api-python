@@ -1,17 +1,17 @@
 # flexify_api.StorageAccountsControllerApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.flexify.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_storage_account**](StorageAccountsControllerApi.md#add_storage_account) | **POST** /rest/storage-accounts | Add Storage Account with an optional list of buckets
-[**delete_storage_account**](StorageAccountsControllerApi.md#delete_storage_account) | **DELETE** /rest/storage-accounts/{storage-account-id} | Deletes (hides) storage account and all its buckets/containers
-[**delete_storage_accounts**](StorageAccountsControllerApi.md#delete_storage_accounts) | **POST** /rest/storage-accounts/actions/delete | Deletes (hides) a multiple storage accounts and all their buckets/containers
-[**get_storage_account**](StorageAccountsControllerApi.md#get_storage_account) | **GET** /rest/storage-accounts/storage-accounts/{storage-account-id} | Get storage account by id
-[**get_storage_accounts**](StorageAccountsControllerApi.md#get_storage_accounts) | **GET** /rest/storage-accounts | Get all storage accounts for current user
-[**refresh_storage_account**](StorageAccountsControllerApi.md#refresh_storage_account) | **POST** /rest/storage-accounts/{storage-account-id}/actions/refresh | Requests and updates list of buckets/containers for the storage account
-[**refresh_storage_accounts**](StorageAccountsControllerApi.md#refresh_storage_accounts) | **POST** /rest/storage-accounts/actions/refresh | Requests and updates list of buckets/containers for a list of storage accounts
-[**set_storage_account_settings**](StorageAccountsControllerApi.md#set_storage_account_settings) | **PUT** /rest/storage-accounts/{storage-account-id}/settings | Updates storage account settings
+[**add_storage_account**](StorageAccountsControllerApi.md#add_storage_account) | **POST** /backend/rest/storage-accounts | Add Storage Account with an optional list of buckets
+[**delete_storage_account**](StorageAccountsControllerApi.md#delete_storage_account) | **DELETE** /backend/rest/storage-accounts/{storage-account-id} | Deletes (hides) storage account and all its buckets/containers
+[**delete_storage_accounts**](StorageAccountsControllerApi.md#delete_storage_accounts) | **POST** /backend/rest/storage-accounts/actions/delete | Deletes (hides) a multiple storage accounts and all their buckets/containers
+[**get_storage_account**](StorageAccountsControllerApi.md#get_storage_account) | **GET** /backend/rest/storage-accounts/storage-accounts/{storage-account-id} | Get storage account by id
+[**get_storage_accounts**](StorageAccountsControllerApi.md#get_storage_accounts) | **GET** /backend/rest/storage-accounts | Get all storage accounts for current user
+[**refresh_storage_account**](StorageAccountsControllerApi.md#refresh_storage_account) | **POST** /backend/rest/storage-accounts/{storage-account-id}/actions/refresh | Requests and updates list of buckets/containers for the storage account
+[**refresh_storage_accounts**](StorageAccountsControllerApi.md#refresh_storage_accounts) | **POST** /backend/rest/storage-accounts/actions/refresh | Requests and updates list of buckets/containers for a list of storage accounts
+[**set_storage_account_settings**](StorageAccountsControllerApi.md#set_storage_account_settings) | **PUT** /backend/rest/storage-accounts/{storage-account-id}/settings | Updates storage account settings
 
 
 # **add_storage_account**
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_storage_accounts**
-> list[StorageAccount] get_storage_accounts(include_storages=include_storages)
+> list[StorageAccount] get_storage_accounts(include_buckets=include_buckets)
 
 Get all storage accounts for current user
 
@@ -245,11 +245,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = flexify_api.StorageAccountsControllerApi(flexify_api.ApiClient(configuration))
-include_storages = true # bool | Include storages of given storage account to the response (optional) (default to true)
+include_buckets = true # bool | Include storages of given storage account to the response (optional) (default to true)
 
 try:
     # Get all storage accounts for current user
-    api_response = api_instance.get_storage_accounts(include_storages=include_storages)
+    api_response = api_instance.get_storage_accounts(include_buckets=include_buckets)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StorageAccountsControllerApi->get_storage_accounts: %s\n" % e)
@@ -259,7 +259,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **include_storages** | **bool**| Include storages of given storage account to the response | [optional] [default to true]
+ **include_buckets** | **bool**| Include storages of given storage account to the response | [optional] [default to true]
 
 ### Return type
 
@@ -399,7 +399,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = flexify_api.StorageAccountsControllerApi(flexify_api.ApiClient(configuration))
-settings = flexify_api.StorageAccountSettings() # StorageAccountSettings | settings
+settings = flexify_api.StorageAccountSettingsReq() # StorageAccountSettingsReq | settings
 storage_account_id = 789 # int | storage-account-id
 
 try:
@@ -413,7 +413,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settings** | [**StorageAccountSettings**](StorageAccountSettings.md)| settings | 
+ **settings** | [**StorageAccountSettingsReq**](StorageAccountSettingsReq.md)| settings | 
  **storage_account_id** | **int**| storage-account-id | 
 
 ### Return type

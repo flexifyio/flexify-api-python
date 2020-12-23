@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **slots** | [**list[Slot]**](Slot.md) | Slots that this mapping is split into | 
 **source_bucket** | [**Bucket**](Bucket.md) | Source bucket/container | 
 **source_storage_account** | [**StorageAccount**](StorageAccount.md) | Source storage account | 
-**stat** | [**MappingStat**](MappingStat.md) | Comulative statistics of this mapping | 
+**stat** | [**MappingStat**](MappingStat.md) | Cumulative statistics of this mapping | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

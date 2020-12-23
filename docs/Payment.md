@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **entry_mode** | **str** | Payment entry mode (automatic or manual) | [optional] 
 **method** | **str** | Payment method | [optional] 
 **payment_date** | **datetime** | Payment date | [optional] 
+**payment_gateway_name** | **str** | Gateway used to make this payment | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
