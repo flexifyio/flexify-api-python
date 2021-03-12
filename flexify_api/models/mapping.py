@@ -35,6 +35,8 @@ class Mapping(object):
         'dest_bucket_new_region': 'str',
         'dest_storage_account': 'StorageAccount',
         'id': 'int',
+        'key_add_prefix': 'str',
+        'key_remove_prefix': 'str',
         'slots': 'list[Slot]',
         'source_bucket': 'Bucket',
         'source_storage_account': 'StorageAccount',
@@ -46,19 +48,23 @@ class Mapping(object):
         'dest_bucket_new_region': 'destBucketNewRegion',
         'dest_storage_account': 'destStorageAccount',
         'id': 'id',
+        'key_add_prefix': 'keyAddPrefix',
+        'key_remove_prefix': 'keyRemovePrefix',
         'slots': 'slots',
         'source_bucket': 'sourceBucket',
         'source_storage_account': 'sourceStorageAccount',
         'stat': 'stat'
     }
 
-    def __init__(self, dest_bucket=None, dest_bucket_new_region=None, dest_storage_account=None, id=None, slots=None, source_bucket=None, source_storage_account=None, stat=None):  # noqa: E501
+    def __init__(self, dest_bucket=None, dest_bucket_new_region=None, dest_storage_account=None, id=None, key_add_prefix=None, key_remove_prefix=None, slots=None, source_bucket=None, source_storage_account=None, stat=None):  # noqa: E501
         """Mapping - a model defined in Swagger"""  # noqa: E501
 
         self._dest_bucket = None
         self._dest_bucket_new_region = None
         self._dest_storage_account = None
         self._id = None
+        self._key_add_prefix = None
+        self._key_remove_prefix = None
         self._slots = None
         self._source_bucket = None
         self._source_storage_account = None
@@ -70,6 +76,10 @@ class Mapping(object):
             self.dest_bucket_new_region = dest_bucket_new_region
         self.dest_storage_account = dest_storage_account
         self.id = id
+        if key_add_prefix is not None:
+            self.key_add_prefix = key_add_prefix
+        if key_remove_prefix is not None:
+            self.key_remove_prefix = key_remove_prefix
         self.slots = slots
         self.source_bucket = source_bucket
         self.source_storage_account = source_storage_account
@@ -172,6 +182,52 @@ class Mapping(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
+
+    @property
+    def key_add_prefix(self):
+        """Gets the key_add_prefix of this Mapping.  # noqa: E501
+
+        Prefix added to each object key  # noqa: E501
+
+        :return: The key_add_prefix of this Mapping.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_add_prefix
+
+    @key_add_prefix.setter
+    def key_add_prefix(self, key_add_prefix):
+        """Sets the key_add_prefix of this Mapping.
+
+        Prefix added to each object key  # noqa: E501
+
+        :param key_add_prefix: The key_add_prefix of this Mapping.  # noqa: E501
+        :type: str
+        """
+
+        self._key_add_prefix = key_add_prefix
+
+    @property
+    def key_remove_prefix(self):
+        """Gets the key_remove_prefix of this Mapping.  # noqa: E501
+
+        Prefix removed from each object key  # noqa: E501
+
+        :return: The key_remove_prefix of this Mapping.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_remove_prefix
+
+    @key_remove_prefix.setter
+    def key_remove_prefix(self, key_remove_prefix):
+        """Sets the key_remove_prefix of this Mapping.
+
+        Prefix removed from each object key  # noqa: E501
+
+        :param key_remove_prefix: The key_remove_prefix of this Mapping.  # noqa: E501
+        :type: str
+        """
+
+        self._key_remove_prefix = key_remove_prefix
 
     @property
     def slots(self):

@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 **dest_bucket_name** | **str** | Name of source destination or container | 
 **dest_bucket_new_region** | **str** | Region where the destination bucket will be created if it does not exist. null to use cloud&#39;s default region | [optional] 
 **dest_storage_account_id** | **int** | ID of source destination account | 
+**key_add_prefix** | **str** | Prefix to to be added to each key when migrating | [optional] 
+**key_remove_prefix** | **str** | Prefix to to be removed from each key when migrating | [optional] 
 **source_bucket_name** | **str** | Name of source bucket or container | 
 **source_storage_account_id** | **int** | ID of source storage account | 
 

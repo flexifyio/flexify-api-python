@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **dest_bucket_new_region** | **str** | Region where bucket should be created if missing | [optional] 
 **dest_storage_account** | [**StorageAccount**](StorageAccount.md) | Destination storage account | 
 **id** | **int** | ID of this mapping | 
+**key_add_prefix** | **str** | Prefix added to each object key | [optional] 
+**key_remove_prefix** | **str** | Prefix removed from each object key | [optional] 
 **slots** | [**list[Slot]**](Slot.md) | Slots that this mapping is split into | 
 **source_bucket** | [**Bucket**](Bucket.md) | Source bucket/container | 
 **source_storage_account** | [**StorageAccount**](StorageAccount.md) | Source storage account | 

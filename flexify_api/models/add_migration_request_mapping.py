@@ -34,6 +34,8 @@ class AddMigrationRequestMapping(object):
         'dest_bucket_name': 'str',
         'dest_bucket_new_region': 'str',
         'dest_storage_account_id': 'int',
+        'key_add_prefix': 'str',
+        'key_remove_prefix': 'str',
         'source_bucket_name': 'str',
         'source_storage_account_id': 'int'
     }
@@ -42,16 +44,20 @@ class AddMigrationRequestMapping(object):
         'dest_bucket_name': 'destBucketName',
         'dest_bucket_new_region': 'destBucketNewRegion',
         'dest_storage_account_id': 'destStorageAccountId',
+        'key_add_prefix': 'keyAddPrefix',
+        'key_remove_prefix': 'keyRemovePrefix',
         'source_bucket_name': 'sourceBucketName',
         'source_storage_account_id': 'sourceStorageAccountId'
     }
 
-    def __init__(self, dest_bucket_name=None, dest_bucket_new_region=None, dest_storage_account_id=None, source_bucket_name=None, source_storage_account_id=None):  # noqa: E501
+    def __init__(self, dest_bucket_name=None, dest_bucket_new_region=None, dest_storage_account_id=None, key_add_prefix=None, key_remove_prefix=None, source_bucket_name=None, source_storage_account_id=None):  # noqa: E501
         """AddMigrationRequestMapping - a model defined in Swagger"""  # noqa: E501
 
         self._dest_bucket_name = None
         self._dest_bucket_new_region = None
         self._dest_storage_account_id = None
+        self._key_add_prefix = None
+        self._key_remove_prefix = None
         self._source_bucket_name = None
         self._source_storage_account_id = None
         self.discriminator = None
@@ -60,6 +66,10 @@ class AddMigrationRequestMapping(object):
         if dest_bucket_new_region is not None:
             self.dest_bucket_new_region = dest_bucket_new_region
         self.dest_storage_account_id = dest_storage_account_id
+        if key_add_prefix is not None:
+            self.key_add_prefix = key_add_prefix
+        if key_remove_prefix is not None:
+            self.key_remove_prefix = key_remove_prefix
         self.source_bucket_name = source_bucket_name
         self.source_storage_account_id = source_storage_account_id
 
@@ -135,6 +145,52 @@ class AddMigrationRequestMapping(object):
             raise ValueError("Invalid value for `dest_storage_account_id`, must not be `None`")  # noqa: E501
 
         self._dest_storage_account_id = dest_storage_account_id
+
+    @property
+    def key_add_prefix(self):
+        """Gets the key_add_prefix of this AddMigrationRequestMapping.  # noqa: E501
+
+        Prefix to to be added to each key when migrating  # noqa: E501
+
+        :return: The key_add_prefix of this AddMigrationRequestMapping.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_add_prefix
+
+    @key_add_prefix.setter
+    def key_add_prefix(self, key_add_prefix):
+        """Sets the key_add_prefix of this AddMigrationRequestMapping.
+
+        Prefix to to be added to each key when migrating  # noqa: E501
+
+        :param key_add_prefix: The key_add_prefix of this AddMigrationRequestMapping.  # noqa: E501
+        :type: str
+        """
+
+        self._key_add_prefix = key_add_prefix
+
+    @property
+    def key_remove_prefix(self):
+        """Gets the key_remove_prefix of this AddMigrationRequestMapping.  # noqa: E501
+
+        Prefix to to be removed from each key when migrating  # noqa: E501
+
+        :return: The key_remove_prefix of this AddMigrationRequestMapping.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_remove_prefix
+
+    @key_remove_prefix.setter
+    def key_remove_prefix(self, key_remove_prefix):
+        """Sets the key_remove_prefix of this AddMigrationRequestMapping.
+
+        Prefix to to be removed from each key when migrating  # noqa: E501
+
+        :param key_remove_prefix: The key_remove_prefix of this AddMigrationRequestMapping.  # noqa: E501
+        :type: str
+        """
+
+        self._key_remove_prefix = key_remove_prefix
 
     @property
     def source_bucket_name(self):
