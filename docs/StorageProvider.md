@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**can_create_buckets_with_uppercase** | **bool** | Indicates that this provider allow creating bucket with uppercase in names | [optional] 
 **code** | **str** | Code of this cloud provider | [optional] 
 **default_region** | **str** | Default region for this provider | [optional] 
 **disabled_as_destination** | **bool** | Storage is not allowed to be used as a default storage in endpoint or as a migration destination) | [optional] 

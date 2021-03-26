@@ -31,6 +31,7 @@ class StorageProvider(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'can_create_buckets_with_uppercase': 'bool',
         'code': 'str',
         'default_region': 'str',
         'disabled_as_destination': 'bool',
@@ -52,6 +53,7 @@ class StorageProvider(object):
     }
 
     attribute_map = {
+        'can_create_buckets_with_uppercase': 'canCreateBucketsWithUppercase',
         'code': 'code',
         'default_region': 'defaultRegion',
         'disabled_as_destination': 'disabledAsDestination',
@@ -72,9 +74,10 @@ class StorageProvider(object):
         'supports_o_auth': 'supportsOAuth'
     }
 
-    def __init__(self, code=None, default_region=None, disabled_as_destination=None, dot_encode=None, endpoint=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, product_name=None, protocol=None, regions=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None):  # noqa: E501
+    def __init__(self, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, dot_encode=None, endpoint=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, product_name=None, protocol=None, regions=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None):  # noqa: E501
         """StorageProvider - a model defined in Swagger"""  # noqa: E501
 
+        self._can_create_buckets_with_uppercase = None
         self._code = None
         self._default_region = None
         self._disabled_as_destination = None
@@ -95,6 +98,8 @@ class StorageProvider(object):
         self._supports_o_auth = None
         self.discriminator = None
 
+        if can_create_buckets_with_uppercase is not None:
+            self.can_create_buckets_with_uppercase = can_create_buckets_with_uppercase
         if code is not None:
             self.code = code
         if default_region is not None:
@@ -131,6 +136,29 @@ class StorageProvider(object):
             self.supports_multipart_upload = supports_multipart_upload
         if supports_o_auth is not None:
             self.supports_o_auth = supports_o_auth
+
+    @property
+    def can_create_buckets_with_uppercase(self):
+        """Gets the can_create_buckets_with_uppercase of this StorageProvider.  # noqa: E501
+
+        Indicates that this provider allow creating bucket with uppercase in names  # noqa: E501
+
+        :return: The can_create_buckets_with_uppercase of this StorageProvider.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_create_buckets_with_uppercase
+
+    @can_create_buckets_with_uppercase.setter
+    def can_create_buckets_with_uppercase(self, can_create_buckets_with_uppercase):
+        """Sets the can_create_buckets_with_uppercase of this StorageProvider.
+
+        Indicates that this provider allow creating bucket with uppercase in names  # noqa: E501
+
+        :param can_create_buckets_with_uppercase: The can_create_buckets_with_uppercase of this StorageProvider.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_create_buckets_with_uppercase = can_create_buckets_with_uppercase
 
     @property
     def code(self):
