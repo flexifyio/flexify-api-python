@@ -99,6 +99,11 @@ Class | Method | HTTP request | Description
 *EndpointsControllerApi* | [**set_attached_bucket_settings**](docs/EndpointsControllerApi.md#set_attached_bucket_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets/{bucket-id}/settings | Modifies settings of the attached storage
 *EndpointsControllerApi* | [**set_virtual_bucket_settings**](docs/EndpointsControllerApi.md#set_virtual_bucket_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/settings | Modifies virtual bucket configuration
 *EndpointsControllerApi* | [**update_endpoint_settings**](docs/EndpointsControllerApi.md#update_endpoint_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/settings | Update attributes of the endpoint
+*ImpersonationControllerApi* | [**add_impersonate_from_user**](docs/ImpersonationControllerApi.md#add_impersonate_from_user) | **POST** /backend/rest/impersonate/from | addImpersonateFromUser
+*ImpersonationControllerApi* | [**get_impersonate_from_list**](docs/ImpersonationControllerApi.md#get_impersonate_from_list) | **GET** /backend/rest/impersonate/from | getImpersonateFromList
+*ImpersonationControllerApi* | [**get_impersonate_to_list**](docs/ImpersonationControllerApi.md#get_impersonate_to_list) | **GET** /backend/rest/impersonate/to | getImpersonateToList
+*ImpersonationControllerApi* | [**impersonate**](docs/ImpersonationControllerApi.md#impersonate) | **POST** /backend/rest/impersonate/as/{userId} | impersonate
+*ImpersonationControllerApi* | [**remove_impersonate_from_user**](docs/ImpersonationControllerApi.md#remove_impersonate_from_user) | **DELETE** /backend/rest/impersonate/from/{user-id} | removeImpersonateFromUser
 *LogControllerApi* | [**get_log_for_current_user**](docs/LogControllerApi.md#get_log_for_current_user) | **GET** /backend/rest/log | getLogForCurrentUser
 *MigrationsControllerApi* | [**add_migration**](docs/MigrationsControllerApi.md#add_migration) | **POST** /backend/rest/migrations | Add new migration
 *MigrationsControllerApi* | [**get_migration**](docs/MigrationsControllerApi.md#get_migration) | **GET** /backend/rest/migrations/{migration-id} | Get migration by id. Only migration owner or administrator have access to the migration
@@ -108,6 +113,58 @@ Class | Method | HTTP request | Description
 *MigrationsControllerApi* | [**restart_slot**](docs/MigrationsControllerApi.md#restart_slot) | **POST** /backend/rest/migrations/{migration-id}/mappings/{mapping-id}/slots/{slot}/actions/restart | Mark migration as hidden
 *MigrationsControllerApi* | [**stop_migration**](docs/MigrationsControllerApi.md#stop_migration) | **POST** /backend/rest/migrations/{migration-id}/actions/stop | Stop (cancel) the migration
 *OAuthControllerApi* | [**get_app_info**](docs/OAuthControllerApi.md#get_app_info) | **GET** /backend/rest/oauth/app-info | getAppInfo
+*PartnerSignUpCodesControllerApi* | [**create_code**](docs/PartnerSignUpCodesControllerApi.md#create_code) | **POST** /backend/rest/distributor/codes | createCode
+*PartnerSignUpCodesControllerApi* | [**create_code1**](docs/PartnerSignUpCodesControllerApi.md#create_code1) | **POST** /backend/rest/partner/codes | createCode
+*PartnerSignUpCodesControllerApi* | [**delete_code**](docs/PartnerSignUpCodesControllerApi.md#delete_code) | **DELETE** /backend/rest/distributor/codes/{code} | deleteCode
+*PartnerSignUpCodesControllerApi* | [**delete_code1**](docs/PartnerSignUpCodesControllerApi.md#delete_code1) | **DELETE** /backend/rest/partner/codes/{code} | deleteCode
+*PartnerSignUpCodesControllerApi* | [**get_all**](docs/PartnerSignUpCodesControllerApi.md#get_all) | **GET** /backend/rest/distributor/codes | getAll
+*PartnerSignUpCodesControllerApi* | [**get_all1**](docs/PartnerSignUpCodesControllerApi.md#get_all1) | **GET** /backend/rest/partner/codes | getAll
+*PartnerUsersControllerApi* | [**change_user_state**](docs/PartnerUsersControllerApi.md#change_user_state) | **PUT** /backend/rest/distributor/users/{userId}/state | Change user state
+*PartnerUsersControllerApi* | [**change_user_state1**](docs/PartnerUsersControllerApi.md#change_user_state1) | **PUT** /backend/rest/partner/users/{userId}/state | Change user state
+*PartnerUsersControllerApi* | [**change_user_state_by_external_id**](docs/PartnerUsersControllerApi.md#change_user_state_by_external_id) | **PUT** /backend/rest/distributor/users/external/{externalId}/state | Change user state by external ID
+*PartnerUsersControllerApi* | [**change_user_state_by_external_id1**](docs/PartnerUsersControllerApi.md#change_user_state_by_external_id1) | **PUT** /backend/rest/partner/users/external/{externalId}/state | Change user state by external ID
+*PartnerUsersControllerApi* | [**change_user_state_by_username**](docs/PartnerUsersControllerApi.md#change_user_state_by_username) | **PUT** /backend/rest/distributor/users/username/{username}/state | Change user state by username
+*PartnerUsersControllerApi* | [**change_user_state_by_username1**](docs/PartnerUsersControllerApi.md#change_user_state_by_username1) | **PUT** /backend/rest/partner/users/username/{username}/state | Change user state by username
+*PartnerUsersControllerApi* | [**create**](docs/PartnerUsersControllerApi.md#create) | **POST** /backend/rest/distributor/users | Create a user
+*PartnerUsersControllerApi* | [**create1**](docs/PartnerUsersControllerApi.md#create1) | **POST** /backend/rest/partner/users | Create a user
+*PartnerUsersControllerApi* | [**create_password_reset_token**](docs/PartnerUsersControllerApi.md#create_password_reset_token) | **POST** /backend/rest/distributor/users/{userId}/actions/create-password-reset-token | Create password reset token
+*PartnerUsersControllerApi* | [**create_password_reset_token1**](docs/PartnerUsersControllerApi.md#create_password_reset_token1) | **POST** /backend/rest/partner/users/{userId}/actions/create-password-reset-token | Create password reset token
+*PartnerUsersControllerApi* | [**create_password_reset_token_by_external_id**](docs/PartnerUsersControllerApi.md#create_password_reset_token_by_external_id) | **POST** /backend/rest/distributor/users/external/{externalId}/actions/create-password-reset-token | Create password reset token by external ID
+*PartnerUsersControllerApi* | [**create_password_reset_token_by_external_id1**](docs/PartnerUsersControllerApi.md#create_password_reset_token_by_external_id1) | **POST** /backend/rest/partner/users/external/{externalId}/actions/create-password-reset-token | Create password reset token by external ID
+*PartnerUsersControllerApi* | [**create_password_reset_token_by_username**](docs/PartnerUsersControllerApi.md#create_password_reset_token_by_username) | **POST** /backend/rest/distributor/users/username/{username}/actions/create-password-reset-token | Create password reset token by username
+*PartnerUsersControllerApi* | [**create_password_reset_token_by_username1**](docs/PartnerUsersControllerApi.md#create_password_reset_token_by_username1) | **POST** /backend/rest/partner/users/username/{username}/actions/create-password-reset-token | Create password reset token by username
+*PartnerUsersControllerApi* | [**delete_user**](docs/PartnerUsersControllerApi.md#delete_user) | **DELETE** /backend/rest/distributor/users/{userId} | Delete user
+*PartnerUsersControllerApi* | [**delete_user1**](docs/PartnerUsersControllerApi.md#delete_user1) | **DELETE** /backend/rest/partner/users/{userId} | Delete user
+*PartnerUsersControllerApi* | [**delete_user_by_external_id**](docs/PartnerUsersControllerApi.md#delete_user_by_external_id) | **DELETE** /backend/rest/distributor/users/external/{externalId} | Delete user by external ID
+*PartnerUsersControllerApi* | [**delete_user_by_external_id1**](docs/PartnerUsersControllerApi.md#delete_user_by_external_id1) | **DELETE** /backend/rest/partner/users/external/{externalId} | Delete user by external ID
+*PartnerUsersControllerApi* | [**delete_user_by_username**](docs/PartnerUsersControllerApi.md#delete_user_by_username) | **DELETE** /backend/rest/distributor/users/username/{username} | Delete user by username
+*PartnerUsersControllerApi* | [**delete_user_by_username1**](docs/PartnerUsersControllerApi.md#delete_user_by_username1) | **DELETE** /backend/rest/partner/users/username/{username} | Delete user by username
+*PartnerUsersControllerApi* | [**generate_token**](docs/PartnerUsersControllerApi.md#generate_token) | **POST** /backend/rest/distributor/users/{userId}/tokens | Create token
+*PartnerUsersControllerApi* | [**generate_token1**](docs/PartnerUsersControllerApi.md#generate_token1) | **POST** /backend/rest/partner/users/{userId}/tokens | Create token
+*PartnerUsersControllerApi* | [**generate_token_by_external_id**](docs/PartnerUsersControllerApi.md#generate_token_by_external_id) | **POST** /backend/rest/distributor/users/external/{externalId}/tokens | Create token by external ID
+*PartnerUsersControllerApi* | [**generate_token_by_external_id1**](docs/PartnerUsersControllerApi.md#generate_token_by_external_id1) | **POST** /backend/rest/partner/users/external/{externalId}/tokens | Create token by external ID
+*PartnerUsersControllerApi* | [**generate_token_by_username**](docs/PartnerUsersControllerApi.md#generate_token_by_username) | **POST** /backend/rest/distributor/users/username/{username}/tokens | Create token by username
+*PartnerUsersControllerApi* | [**generate_token_by_username1**](docs/PartnerUsersControllerApi.md#generate_token_by_username1) | **POST** /backend/rest/partner/users/username/{username}/tokens | Create token by username
+*PartnerUsersControllerApi* | [**get_user**](docs/PartnerUsersControllerApi.md#get_user) | **GET** /backend/rest/distributor/users/{userId} | Get user details
+*PartnerUsersControllerApi* | [**get_user1**](docs/PartnerUsersControllerApi.md#get_user1) | **GET** /backend/rest/partner/users/{userId} | Get user details
+*PartnerUsersControllerApi* | [**get_user_by_external_id**](docs/PartnerUsersControllerApi.md#get_user_by_external_id) | **GET** /backend/rest/distributor/users/external/{externalId} | Get user details by external ID
+*PartnerUsersControllerApi* | [**get_user_by_external_id1**](docs/PartnerUsersControllerApi.md#get_user_by_external_id1) | **GET** /backend/rest/partner/users/external/{externalId} | Get user details by external ID
+*PartnerUsersControllerApi* | [**get_user_by_username**](docs/PartnerUsersControllerApi.md#get_user_by_username) | **GET** /backend/rest/distributor/users/username/{username} | Get user details by username
+*PartnerUsersControllerApi* | [**get_user_by_username1**](docs/PartnerUsersControllerApi.md#get_user_by_username1) | **GET** /backend/rest/partner/users/username/{username} | Get user details by username
+*PartnerUsersControllerApi* | [**get_users**](docs/PartnerUsersControllerApi.md#get_users) | **GET** /backend/rest/distributor/users | Get all users
+*PartnerUsersControllerApi* | [**get_users1**](docs/PartnerUsersControllerApi.md#get_users1) | **GET** /backend/rest/partner/users | Get all users
+*PartnerUsersControllerApi* | [**send_password_reset_email**](docs/PartnerUsersControllerApi.md#send_password_reset_email) | **POST** /backend/rest/distributor/users/{userId}/actions/send-password-reset-email | Set/reset password
+*PartnerUsersControllerApi* | [**send_password_reset_email1**](docs/PartnerUsersControllerApi.md#send_password_reset_email1) | **POST** /backend/rest/partner/users/{userId}/actions/send-password-reset-email | Set/reset password
+*PartnerUsersControllerApi* | [**send_password_reset_email_by_external_id**](docs/PartnerUsersControllerApi.md#send_password_reset_email_by_external_id) | **POST** /backend/rest/distributor/users/external/{externalId}/actions/send-password-reset-email | Set/reset password by external ID
+*PartnerUsersControllerApi* | [**send_password_reset_email_by_external_id1**](docs/PartnerUsersControllerApi.md#send_password_reset_email_by_external_id1) | **POST** /backend/rest/partner/users/external/{externalId}/actions/send-password-reset-email | Set/reset password by external ID
+*PartnerUsersControllerApi* | [**send_password_reset_email_by_username**](docs/PartnerUsersControllerApi.md#send_password_reset_email_by_username) | **POST** /backend/rest/distributor/users/username/{username}/actions/send-password-reset-email | Set/reset password by username
+*PartnerUsersControllerApi* | [**send_password_reset_email_by_username1**](docs/PartnerUsersControllerApi.md#send_password_reset_email_by_username1) | **POST** /backend/rest/partner/users/username/{username}/actions/send-password-reset-email | Set/reset password by username
+*PartnerUsersControllerApi* | [**update_user**](docs/PartnerUsersControllerApi.md#update_user) | **PUT** /backend/rest/distributor/users/{userId} | Update profile
+*PartnerUsersControllerApi* | [**update_user1**](docs/PartnerUsersControllerApi.md#update_user1) | **PUT** /backend/rest/partner/users/{userId} | Update profile
+*PartnerUsersControllerApi* | [**update_user_by_external_id**](docs/PartnerUsersControllerApi.md#update_user_by_external_id) | **PUT** /backend/rest/distributor/users/external/{externalId} | Update profile by external ID
+*PartnerUsersControllerApi* | [**update_user_by_external_id1**](docs/PartnerUsersControllerApi.md#update_user_by_external_id1) | **PUT** /backend/rest/partner/users/external/{externalId} | Update profile by external ID
+*PartnerUsersControllerApi* | [**update_user_by_username**](docs/PartnerUsersControllerApi.md#update_user_by_username) | **PUT** /backend/rest/distributor/users/username/{username} | Update profile by username
+*PartnerUsersControllerApi* | [**update_user_by_username1**](docs/PartnerUsersControllerApi.md#update_user_by_username1) | **PUT** /backend/rest/partner/users/username/{username} | Update profile by username
 *PaymentsControllerApi* | [**get_payment_options**](docs/PaymentsControllerApi.md#get_payment_options) | **GET** /backend/rest/pay/paddle/options | getPaymentOptions
 *PaymentsControllerApi* | [**payment_fulfilled**](docs/PaymentsControllerApi.md#payment_fulfilled) | **GET** /backend/rest/pay/paddle/webhook | paymentFulfilled
 *StorageAccountsControllerApi* | [**add_storage_account**](docs/StorageAccountsControllerApi.md#add_storage_account) | **POST** /backend/rest/storage-accounts | Add Storage Account with an optional list of buckets
@@ -132,6 +189,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccessKeysPair](docs/AccessKeysPair.md)
+ - [AddImpersonateFromUserRequest](docs/AddImpersonateFromUserRequest.md)
  - [AddMigrationRequest](docs/AddMigrationRequest.md)
  - [AddMigrationRequestMapping](docs/AddMigrationRequestMapping.md)
  - [AddStorageAccountRequest](docs/AddStorageAccountRequest.md)
@@ -152,6 +210,7 @@ Class | Method | HTTP request | Description
  - [CloudLocationReq](docs/CloudLocationReq.md)
  - [CloudLocationRes](docs/CloudLocationRes.md)
  - [CostDetails](docs/CostDetails.md)
+ - [CreateUserRequest](docs/CreateUserRequest.md)
  - [CreateVirtualBucketRequest](docs/CreateVirtualBucketRequest.md)
  - [Distributor](docs/Distributor.md)
  - [DtoMappingCostEstimate](docs/DtoMappingCostEstimate.md)
@@ -166,6 +225,8 @@ Class | Method | HTTP request | Description
  - [GrantedAuthority](docs/GrantedAuthority.md)
  - [IdResponse](docs/IdResponse.md)
  - [IdsList](docs/IdsList.md)
+ - [ImpersonateUser](docs/ImpersonateUser.md)
+ - [InformationAboutAuthenticationToken](docs/InformationAboutAuthenticationToken.md)
  - [LogEntry](docs/LogEntry.md)
  - [LogEvent](docs/LogEvent.md)
  - [LogoutRequest](docs/LogoutRequest.md)
@@ -182,6 +243,7 @@ Class | Method | HTTP request | Description
  - [Organization](docs/Organization.md)
  - [PageMigration](docs/PageMigration.md)
  - [Pageable](docs/Pageable.md)
+ - [PasswordResetToken](docs/PasswordResetToken.md)
  - [Payment](docs/Payment.md)
  - [PaymentOptions](docs/PaymentOptions.md)
  - [Price](docs/Price.md)
@@ -190,7 +252,11 @@ Class | Method | HTTP request | Description
  - [PublicAuthenticationConfiguration](docs/PublicAuthenticationConfiguration.md)
  - [RequestResetPasswordRequest](docs/RequestResetPasswordRequest.md)
  - [ResetPasswordRequest](docs/ResetPasswordRequest.md)
+ - [SetUserStateRequest](docs/SetUserStateRequest.md)
  - [SignUpRequest](docs/SignUpRequest.md)
+ - [SignupCodeReq](docs/SignupCodeReq.md)
+ - [SignupCodeRes](docs/SignupCodeRes.md)
+ - [SignupCodeStat](docs/SignupCodeStat.md)
  - [SignupResult](docs/SignupResult.md)
  - [Slot](docs/Slot.md)
  - [SlotStat](docs/SlotStat.md)
@@ -201,10 +267,13 @@ Class | Method | HTTP request | Description
  - [StorageAccountSettingsRes](docs/StorageAccountSettingsRes.md)
  - [StorageAccountStat](docs/StorageAccountStat.md)
  - [StorageProvider](docs/StorageProvider.md)
+ - [TokenConfiguration](docs/TokenConfiguration.md)
+ - [UpdateUserRequest](docs/UpdateUserRequest.md)
  - [User](docs/User.md)
  - [UserConfig](docs/UserConfig.md)
  - [UserProfile](docs/UserProfile.md)
  - [UserSettings](docs/UserSettings.md)
+ - [UserStat](docs/UserStat.md)
  - [VirtualBucket](docs/VirtualBucket.md)
  - [VirtualBucketSettings](docs/VirtualBucketSettings.md)
  - [VirtualBucketStorageReq](docs/VirtualBucketStorageReq.md)

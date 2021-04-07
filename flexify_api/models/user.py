@@ -344,7 +344,7 @@ class User(object):
         :param roles: The roles of this User.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["ROLE_ACTUATOR", "ROLE_ADMIN", "ROLE_BILLING", "ROLE_DISTRIBUTOR", "ROLE_USER"]  # noqa: E501
+        allowed_values = ["ROLE_ACTUATOR", "ROLE_ADMIN", "ROLE_BILLING", "ROLE_DISTRIBUTOR", "ROLE_IMPERSONATOR", "ROLE_PARTNER_ADMIN", "ROLE_USER"]  # noqa: E501
         if not set(roles).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `roles` [{0}], must be a subset of [{1}]"  # noqa: E501

@@ -21,9 +21,12 @@ from flexify_api.api.billing_account_controller_api import BillingAccountControl
 from flexify_api.api.cloud_locations_controller_api import CloudLocationsControllerApi
 from flexify_api.api.cost_estimate_controller_api import CostEstimateControllerApi
 from flexify_api.api.endpoints_controller_api import EndpointsControllerApi
+from flexify_api.api.impersonation_controller_api import ImpersonationControllerApi
 from flexify_api.api.log_controller_api import LogControllerApi
 from flexify_api.api.migrations_controller_api import MigrationsControllerApi
 from flexify_api.api.o_auth_controller_api import OAuthControllerApi
+from flexify_api.api.partner_sign_up_codes_controller_api import PartnerSignUpCodesControllerApi
+from flexify_api.api.partner_users_controller_api import PartnerUsersControllerApi
 from flexify_api.api.payments_controller_api import PaymentsControllerApi
 from flexify_api.api.storage_accounts_controller_api import StorageAccountsControllerApi
 from flexify_api.api.storages_controller_api import StoragesControllerApi
@@ -34,6 +37,7 @@ from flexify_api.api_client import ApiClient
 from flexify_api.configuration import Configuration
 # import models into sdk package
 from flexify_api.models.access_keys_pair import AccessKeysPair
+from flexify_api.models.add_impersonate_from_user_request import AddImpersonateFromUserRequest
 from flexify_api.models.add_migration_request import AddMigrationRequest
 from flexify_api.models.add_migration_request_mapping import AddMigrationRequestMapping
 from flexify_api.models.add_storage_account_request import AddStorageAccountRequest
@@ -54,6 +58,7 @@ from flexify_api.models.cloud_location import CloudLocation
 from flexify_api.models.cloud_location_req import CloudLocationReq
 from flexify_api.models.cloud_location_res import CloudLocationRes
 from flexify_api.models.cost_details import CostDetails
+from flexify_api.models.create_user_request import CreateUserRequest
 from flexify_api.models.create_virtual_bucket_request import CreateVirtualBucketRequest
 from flexify_api.models.distributor import Distributor
 from flexify_api.models.dto_mapping_cost_estimate import DtoMappingCostEstimate
@@ -68,6 +73,8 @@ from flexify_api.models.endpoint_storage_account_settings import EndpointStorage
 from flexify_api.models.granted_authority import GrantedAuthority
 from flexify_api.models.id_response import IdResponse
 from flexify_api.models.ids_list import IdsList
+from flexify_api.models.impersonate_user import ImpersonateUser
+from flexify_api.models.information_about_authentication_token import InformationAboutAuthenticationToken
 from flexify_api.models.log_entry import LogEntry
 from flexify_api.models.log_event import LogEvent
 from flexify_api.models.logout_request import LogoutRequest
@@ -84,6 +91,7 @@ from flexify_api.models.new_storage_account import NewStorageAccount
 from flexify_api.models.organization import Organization
 from flexify_api.models.page_migration import PageMigration
 from flexify_api.models.pageable import Pageable
+from flexify_api.models.password_reset_token import PasswordResetToken
 from flexify_api.models.payment import Payment
 from flexify_api.models.payment_options import PaymentOptions
 from flexify_api.models.price import Price
@@ -92,7 +100,11 @@ from flexify_api.models.price_list import PriceList
 from flexify_api.models.public_authentication_configuration import PublicAuthenticationConfiguration
 from flexify_api.models.request_reset_password_request import RequestResetPasswordRequest
 from flexify_api.models.reset_password_request import ResetPasswordRequest
+from flexify_api.models.set_user_state_request import SetUserStateRequest
 from flexify_api.models.sign_up_request import SignUpRequest
+from flexify_api.models.signup_code_req import SignupCodeReq
+from flexify_api.models.signup_code_res import SignupCodeRes
+from flexify_api.models.signup_code_stat import SignupCodeStat
 from flexify_api.models.signup_result import SignupResult
 from flexify_api.models.slot import Slot
 from flexify_api.models.slot_stat import SlotStat
@@ -103,10 +115,13 @@ from flexify_api.models.storage_account_settings_req import StorageAccountSettin
 from flexify_api.models.storage_account_settings_res import StorageAccountSettingsRes
 from flexify_api.models.storage_account_stat import StorageAccountStat
 from flexify_api.models.storage_provider import StorageProvider
+from flexify_api.models.token_configuration import TokenConfiguration
+from flexify_api.models.update_user_request import UpdateUserRequest
 from flexify_api.models.user import User
 from flexify_api.models.user_config import UserConfig
 from flexify_api.models.user_profile import UserProfile
 from flexify_api.models.user_settings import UserSettings
+from flexify_api.models.user_stat import UserStat
 from flexify_api.models.virtual_bucket import VirtualBucket
 from flexify_api.models.virtual_bucket_settings import VirtualBucketSettings
 from flexify_api.models.virtual_bucket_storage_req import VirtualBucketStorageReq

@@ -31,54 +31,54 @@ class UserSettings(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allow_distributor_impersonate': 'bool',
+        'allow_partner_manage': 'bool',
         'send_news': 'bool',
         'send_notifications': 'bool'
     }
 
     attribute_map = {
-        'allow_distributor_impersonate': 'allowDistributorImpersonate',
+        'allow_partner_manage': 'allowPartnerManage',
         'send_news': 'sendNews',
         'send_notifications': 'sendNotifications'
     }
 
-    def __init__(self, allow_distributor_impersonate=None, send_news=None, send_notifications=None):  # noqa: E501
+    def __init__(self, allow_partner_manage=None, send_news=None, send_notifications=None):  # noqa: E501
         """UserSettings - a model defined in Swagger"""  # noqa: E501
 
-        self._allow_distributor_impersonate = None
+        self._allow_partner_manage = None
         self._send_news = None
         self._send_notifications = None
         self.discriminator = None
 
-        if allow_distributor_impersonate is not None:
-            self.allow_distributor_impersonate = allow_distributor_impersonate
+        if allow_partner_manage is not None:
+            self.allow_partner_manage = allow_partner_manage
         if send_news is not None:
             self.send_news = send_news
         if send_notifications is not None:
             self.send_notifications = send_notifications
 
     @property
-    def allow_distributor_impersonate(self):
-        """Gets the allow_distributor_impersonate of this UserSettings.  # noqa: E501
+    def allow_partner_manage(self):
+        """Gets the allow_partner_manage of this UserSettings.  # noqa: E501
 
-        Indicates that the user allowed his or her distributor to impersonate and manage user's account  # noqa: E501
+        Indicates that the user allowed his or her partner to impersonate and manage user's account  # noqa: E501
 
-        :return: The allow_distributor_impersonate of this UserSettings.  # noqa: E501
+        :return: The allow_partner_manage of this UserSettings.  # noqa: E501
         :rtype: bool
         """
-        return self._allow_distributor_impersonate
+        return self._allow_partner_manage
 
-    @allow_distributor_impersonate.setter
-    def allow_distributor_impersonate(self, allow_distributor_impersonate):
-        """Sets the allow_distributor_impersonate of this UserSettings.
+    @allow_partner_manage.setter
+    def allow_partner_manage(self, allow_partner_manage):
+        """Sets the allow_partner_manage of this UserSettings.
 
-        Indicates that the user allowed his or her distributor to impersonate and manage user's account  # noqa: E501
+        Indicates that the user allowed his or her partner to impersonate and manage user's account  # noqa: E501
 
-        :param allow_distributor_impersonate: The allow_distributor_impersonate of this UserSettings.  # noqa: E501
+        :param allow_partner_manage: The allow_partner_manage of this UserSettings.  # noqa: E501
         :type: bool
         """
 
-        self._allow_distributor_impersonate = allow_distributor_impersonate
+        self._allow_partner_manage = allow_partner_manage
 
     @property
     def send_news(self):
