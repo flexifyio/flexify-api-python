@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **admin_state** | **str** | System Account state (Updated by Administrator) | [optional] 
 **aggregate_state** | **str** | Aggregated Account state (ACTIVE only if admin state and billing state are ACTIVE) | [optional] 
 **billing_state** | **str** | Billing Account state (Depend on balance and max credit) | [optional] 
+**billing_type** | **str** | Type of billing for this account | [optional] 
 **created_date** | **datetime** | Created Timestamp | [optional] 
 **distributor** | [**Distributor**](Distributor.md) | Distributor that manages this account | [optional] 
 **id** | **int** | Account Id | [optional] 

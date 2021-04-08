@@ -48,7 +48,6 @@ from flexify_api.models.authentication_request import AuthenticationRequest
 from flexify_api.models.authentication_response import AuthenticationResponse
 from flexify_api.models.authorization_response import AuthorizationResponse
 from flexify_api.models.billing_account import BillingAccount
-from flexify_api.models.billing_account_with_money import BillingAccountWithMoney
 from flexify_api.models.bucket import Bucket
 from flexify_api.models.bucket_stat import BucketStat
 from flexify_api.models.buckets_request import BucketsRequest

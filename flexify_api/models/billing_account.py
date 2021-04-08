@@ -34,6 +34,7 @@ class BillingAccount(object):
         'admin_state': 'str',
         'aggregate_state': 'str',
         'billing_state': 'str',
+        'billing_type': 'str',
         'created_date': 'datetime',
         'distributor': 'Distributor',
         'id': 'int',
@@ -46,6 +47,7 @@ class BillingAccount(object):
         'admin_state': 'adminState',
         'aggregate_state': 'aggregateState',
         'billing_state': 'billingState',
+        'billing_type': 'billingType',
         'created_date': 'createdDate',
         'distributor': 'distributor',
         'id': 'id',
@@ -54,12 +56,13 @@ class BillingAccount(object):
         'price_list': 'priceList'
     }
 
-    def __init__(self, admin_state=None, aggregate_state=None, billing_state=None, created_date=None, distributor=None, id=None, max_credit=None, name=None, price_list=None):  # noqa: E501
+    def __init__(self, admin_state=None, aggregate_state=None, billing_state=None, billing_type=None, created_date=None, distributor=None, id=None, max_credit=None, name=None, price_list=None):  # noqa: E501
         """BillingAccount - a model defined in Swagger"""  # noqa: E501
 
         self._admin_state = None
         self._aggregate_state = None
         self._billing_state = None
+        self._billing_type = None
         self._created_date = None
         self._distributor = None
         self._id = None
@@ -74,6 +77,8 @@ class BillingAccount(object):
             self.aggregate_state = aggregate_state
         if billing_state is not None:
             self.billing_state = billing_state
+        if billing_type is not None:
+            self.billing_type = billing_type
         if created_date is not None:
             self.created_date = created_date
         if distributor is not None:
@@ -173,6 +178,35 @@ class BillingAccount(object):
             )
 
         self._billing_state = billing_state
+
+    @property
+    def billing_type(self):
+        """Gets the billing_type of this BillingAccount.  # noqa: E501
+
+        Type of billing for this account  # noqa: E501
+
+        :return: The billing_type of this BillingAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._billing_type
+
+    @billing_type.setter
+    def billing_type(self, billing_type):
+        """Sets the billing_type of this BillingAccount.
+
+        Type of billing for this account  # noqa: E501
+
+        :param billing_type: The billing_type of this BillingAccount.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["BILLING_SERVER", "INTEGRATED"]  # noqa: E501
+        if billing_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `billing_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(billing_type, allowed_values)
+            )
+
+        self._billing_type = billing_type
 
     @property
     def created_date(self):

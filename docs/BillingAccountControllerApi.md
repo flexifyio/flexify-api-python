@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_current_user_billing_account**
-> BillingAccountWithMoney get_current_user_billing_account()
+> BillingAccount get_current_user_billing_account()
 
 Get billing account for current user
 
@@ -92,7 +92,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BillingAccountWithMoney**](BillingAccountWithMoney.md)
+[**BillingAccount**](BillingAccount.md)
 
 ### Authorization
 
