@@ -44,6 +44,12 @@ Method | HTTP request | Description
 [**send_password_reset_email_by_external_id1**](PartnerUsersControllerApi.md#send_password_reset_email_by_external_id1) | **POST** /backend/rest/partner/users/external/{externalId}/actions/send-password-reset-email | Set/reset password by external ID
 [**send_password_reset_email_by_username**](PartnerUsersControllerApi.md#send_password_reset_email_by_username) | **POST** /backend/rest/distributor/users/username/{username}/actions/send-password-reset-email | Set/reset password by username
 [**send_password_reset_email_by_username1**](PartnerUsersControllerApi.md#send_password_reset_email_by_username1) | **POST** /backend/rest/partner/users/username/{username}/actions/send-password-reset-email | Set/reset password by username
+[**set_roles**](PartnerUsersControllerApi.md#set_roles) | **PUT** /backend/rest/distributor/users/{userId}/roles | setRoles
+[**set_roles1**](PartnerUsersControllerApi.md#set_roles1) | **PUT** /backend/rest/partner/users/{userId}/roles | setRoles
+[**set_roles_by_external_id**](PartnerUsersControllerApi.md#set_roles_by_external_id) | **PUT** /backend/rest/distributor/users/external/{externalId}/roles | setRolesByExternalId
+[**set_roles_by_external_id1**](PartnerUsersControllerApi.md#set_roles_by_external_id1) | **PUT** /backend/rest/partner/users/external/{externalId}/roles | setRolesByExternalId
+[**set_roles_by_username**](PartnerUsersControllerApi.md#set_roles_by_username) | **PUT** /backend/rest/distributor/users/username/{username}/roles | setRolesByUsername
+[**set_roles_by_username1**](PartnerUsersControllerApi.md#set_roles_by_username1) | **PUT** /backend/rest/partner/users/username/{username}/roles | setRolesByUsername
 [**update_user**](PartnerUsersControllerApi.md#update_user) | **PUT** /backend/rest/distributor/users/{userId} | Update profile
 [**update_user1**](PartnerUsersControllerApi.md#update_user1) | **PUT** /backend/rest/partner/users/{userId} | Update profile
 [**update_user_by_external_id**](PartnerUsersControllerApi.md#update_user_by_external_id) | **PUT** /backend/rest/distributor/users/external/{externalId} | Update profile by external ID
@@ -2181,6 +2187,324 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **username** | **str**| username | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_roles**
+> set_roles(request, user_id)
+
+setRoles
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.SetRolesRequest() # SetRolesRequest | request
+user_id = 789 # int | userId
+
+try:
+    # setRoles
+    api_instance.set_roles(request, user_id)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_roles: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**SetRolesRequest**](SetRolesRequest.md)| request | 
+ **user_id** | **int**| userId | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_roles1**
+> set_roles1(request, user_id)
+
+setRoles
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.SetRolesRequest() # SetRolesRequest | request
+user_id = 789 # int | userId
+
+try:
+    # setRoles
+    api_instance.set_roles1(request, user_id)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_roles1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**SetRolesRequest**](SetRolesRequest.md)| request | 
+ **user_id** | **int**| userId | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_roles_by_external_id**
+> set_roles_by_external_id(external_id, request)
+
+setRolesByExternalId
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+external_id = 'external_id_example' # str | externalId
+request = flexify_api.SetRolesRequest() # SetRolesRequest | request
+
+try:
+    # setRolesByExternalId
+    api_instance.set_roles_by_external_id(external_id, request)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_roles_by_external_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **external_id** | **str**| externalId | 
+ **request** | [**SetRolesRequest**](SetRolesRequest.md)| request | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_roles_by_external_id1**
+> set_roles_by_external_id1(external_id, request)
+
+setRolesByExternalId
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+external_id = 'external_id_example' # str | externalId
+request = flexify_api.SetRolesRequest() # SetRolesRequest | request
+
+try:
+    # setRolesByExternalId
+    api_instance.set_roles_by_external_id1(external_id, request)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_roles_by_external_id1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **external_id** | **str**| externalId | 
+ **request** | [**SetRolesRequest**](SetRolesRequest.md)| request | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_roles_by_username**
+> set_roles_by_username(request, username)
+
+setRolesByUsername
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.SetRolesRequest() # SetRolesRequest | request
+username = 'username_example' # str | username
+
+try:
+    # setRolesByUsername
+    api_instance.set_roles_by_username(request, username)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_roles_by_username: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**SetRolesRequest**](SetRolesRequest.md)| request | 
+ **username** | **str**| username | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_roles_by_username1**
+> set_roles_by_username1(request, username)
+
+setRolesByUsername
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.SetRolesRequest() # SetRolesRequest | request
+username = 'username_example' # str | username
+
+try:
+    # setRolesByUsername
+    api_instance.set_roles_by_username1(request, username)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_roles_by_username1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**SetRolesRequest**](SetRolesRequest.md)| request | 
  **username** | **str**| username | 
 
 ### Return type

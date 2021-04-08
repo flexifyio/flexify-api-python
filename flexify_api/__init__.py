@@ -99,6 +99,7 @@ from flexify_api.models.price_list import PriceList
 from flexify_api.models.public_authentication_configuration import PublicAuthenticationConfiguration
 from flexify_api.models.request_reset_password_request import RequestResetPasswordRequest
 from flexify_api.models.reset_password_request import ResetPasswordRequest
+from flexify_api.models.set_roles_request import SetRolesRequest
 from flexify_api.models.set_user_state_request import SetUserStateRequest
 from flexify_api.models.sign_up_request import SignUpRequest
 from flexify_api.models.signup_code_req import SignupCodeReq

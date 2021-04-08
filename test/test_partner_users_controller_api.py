@@ -309,6 +309,48 @@ class TestPartnerUsersControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_set_roles(self):
+        """Test case for set_roles
+
+        setRoles  # noqa: E501
+        """
+        pass
+
+    def test_set_roles1(self):
+        """Test case for set_roles1
+
+        setRoles  # noqa: E501
+        """
+        pass
+
+    def test_set_roles_by_external_id(self):
+        """Test case for set_roles_by_external_id
+
+        setRolesByExternalId  # noqa: E501
+        """
+        pass
+
+    def test_set_roles_by_external_id1(self):
+        """Test case for set_roles_by_external_id1
+
+        setRolesByExternalId  # noqa: E501
+        """
+        pass
+
+    def test_set_roles_by_username(self):
+        """Test case for set_roles_by_username
+
+        setRolesByUsername  # noqa: E501
+        """
+        pass
+
+    def test_set_roles_by_username1(self):
+        """Test case for set_roles_by_username1
+
+        setRolesByUsername  # noqa: E501
+        """
+        pass
+
     def test_update_user(self):
         """Test case for update_user
 
