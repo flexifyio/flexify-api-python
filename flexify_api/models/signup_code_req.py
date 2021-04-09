@@ -33,29 +33,39 @@ class SignupCodeReq(object):
     swagger_types = {
         'code': 'str',
         'price_list_id': 'int',
-        'single_use': 'bool'
+        'roles': 'list[str]',
+        'single_use': 'bool',
+        'use_my_billing_account': 'bool'
     }
 
     attribute_map = {
         'code': 'code',
         'price_list_id': 'priceListId',
-        'single_use': 'singleUse'
+        'roles': 'roles',
+        'single_use': 'singleUse',
+        'use_my_billing_account': 'useMyBillingAccount'
     }
 
-    def __init__(self, code=None, price_list_id=None, single_use=None):  # noqa: E501
+    def __init__(self, code=None, price_list_id=None, roles=None, single_use=None, use_my_billing_account=None):  # noqa: E501
         """SignupCodeReq - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
         self._price_list_id = None
+        self._roles = None
         self._single_use = None
+        self._use_my_billing_account = None
         self.discriminator = None
 
         if code is not None:
             self.code = code
         if price_list_id is not None:
             self.price_list_id = price_list_id
+        if roles is not None:
+            self.roles = roles
         if single_use is not None:
             self.single_use = single_use
+        if use_my_billing_account is not None:
+            self.use_my_billing_account = use_my_billing_account
 
     @property
     def code(self):
@@ -100,6 +110,34 @@ class SignupCodeReq(object):
         self._price_list_id = price_list_id
 
     @property
+    def roles(self):
+        """Gets the roles of this SignupCodeReq.  # noqa: E501
+
+
+        :return: The roles of this SignupCodeReq.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._roles
+
+    @roles.setter
+    def roles(self, roles):
+        """Sets the roles of this SignupCodeReq.
+
+
+        :param roles: The roles of this SignupCodeReq.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["ROLE_ACTUATOR", "ROLE_ADMIN", "ROLE_BILLING", "ROLE_DISTRIBUTOR", "ROLE_IMPERSONATOR", "ROLE_PARTNER_ADMIN", "ROLE_USER"]  # noqa: E501
+        if not set(roles).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `roles` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(roles) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._roles = roles
+
+    @property
     def single_use(self):
         """Gets the single_use of this SignupCodeReq.  # noqa: E501
 
@@ -119,6 +157,27 @@ class SignupCodeReq(object):
         """
 
         self._single_use = single_use
+
+    @property
+    def use_my_billing_account(self):
+        """Gets the use_my_billing_account of this SignupCodeReq.  # noqa: E501
+
+
+        :return: The use_my_billing_account of this SignupCodeReq.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_my_billing_account
+
+    @use_my_billing_account.setter
+    def use_my_billing_account(self, use_my_billing_account):
+        """Sets the use_my_billing_account of this SignupCodeReq.
+
+
+        :param use_my_billing_account: The use_my_billing_account of this SignupCodeReq.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_my_billing_account = use_my_billing_account
 
     def to_dict(self):
         """Returns the model properties as a dict"""

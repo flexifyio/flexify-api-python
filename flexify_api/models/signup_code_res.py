@@ -32,26 +32,31 @@ class SignupCodeRes(object):
     """
     swagger_types = {
         'code': 'str',
+        'roles': 'list[str]',
         'single_use': 'bool',
         'stat': 'SignupCodeStat'
     }
 
     attribute_map = {
         'code': 'code',
+        'roles': 'roles',
         'single_use': 'singleUse',
         'stat': 'stat'
     }
 
-    def __init__(self, code=None, single_use=None, stat=None):  # noqa: E501
+    def __init__(self, code=None, roles=None, single_use=None, stat=None):  # noqa: E501
         """SignupCodeRes - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
+        self._roles = None
         self._single_use = None
         self._stat = None
         self.discriminator = None
 
         if code is not None:
             self.code = code
+        if roles is not None:
+            self.roles = roles
         if single_use is not None:
             self.single_use = single_use
         if stat is not None:
@@ -77,6 +82,34 @@ class SignupCodeRes(object):
         """
 
         self._code = code
+
+    @property
+    def roles(self):
+        """Gets the roles of this SignupCodeRes.  # noqa: E501
+
+
+        :return: The roles of this SignupCodeRes.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._roles
+
+    @roles.setter
+    def roles(self, roles):
+        """Sets the roles of this SignupCodeRes.
+
+
+        :param roles: The roles of this SignupCodeRes.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["ROLE_ACTUATOR", "ROLE_ADMIN", "ROLE_BILLING", "ROLE_DISTRIBUTOR", "ROLE_IMPERSONATOR", "ROLE_PARTNER_ADMIN", "ROLE_USER"]  # noqa: E501
+        if not set(roles).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `roles` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(roles) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._roles = roles
 
     @property
     def single_use(self):

@@ -32,6 +32,7 @@ class SignupCodeStat(object):
     """
     swagger_types = {
         'available': 'bool',
+        'billing_account': 'BillingAccount',
         'created': 'datetime',
         'price_list': 'PriceList',
         'used_by': 'list[str]'
@@ -39,15 +40,17 @@ class SignupCodeStat(object):
 
     attribute_map = {
         'available': 'available',
+        'billing_account': 'billingAccount',
         'created': 'created',
         'price_list': 'priceList',
         'used_by': 'usedBy'
     }
 
-    def __init__(self, available=None, created=None, price_list=None, used_by=None):  # noqa: E501
+    def __init__(self, available=None, billing_account=None, created=None, price_list=None, used_by=None):  # noqa: E501
         """SignupCodeStat - a model defined in Swagger"""  # noqa: E501
 
         self._available = None
+        self._billing_account = None
         self._created = None
         self._price_list = None
         self._used_by = None
@@ -55,6 +58,8 @@ class SignupCodeStat(object):
 
         if available is not None:
             self.available = available
+        if billing_account is not None:
+            self.billing_account = billing_account
         if created is not None:
             self.created = created
         if price_list is not None:
@@ -82,6 +87,27 @@ class SignupCodeStat(object):
         """
 
         self._available = available
+
+    @property
+    def billing_account(self):
+        """Gets the billing_account of this SignupCodeStat.  # noqa: E501
+
+
+        :return: The billing_account of this SignupCodeStat.  # noqa: E501
+        :rtype: BillingAccount
+        """
+        return self._billing_account
+
+    @billing_account.setter
+    def billing_account(self, billing_account):
+        """Sets the billing_account of this SignupCodeStat.
+
+
+        :param billing_account: The billing_account of this SignupCodeStat.  # noqa: E501
+        :type: BillingAccount
+        """
+
+        self._billing_account = billing_account
 
     @property
     def created(self):

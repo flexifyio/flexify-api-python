@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str** |  | [optional] 
+**roles** | **list[str]** |  | [optional] 
 **single_use** | **bool** |  | [optional] 
 **stat** | [**SignupCodeStat**](SignupCodeStat.md) |  | [optional] 
 
