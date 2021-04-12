@@ -99,11 +99,14 @@ Class | Method | HTTP request | Description
 *EndpointsControllerApi* | [**set_attached_bucket_settings**](docs/EndpointsControllerApi.md#set_attached_bucket_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets/{bucket-id}/settings | Modifies settings of the attached storage
 *EndpointsControllerApi* | [**set_virtual_bucket_settings**](docs/EndpointsControllerApi.md#set_virtual_bucket_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/settings | Modifies virtual bucket configuration
 *EndpointsControllerApi* | [**update_endpoint_settings**](docs/EndpointsControllerApi.md#update_endpoint_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/settings | Update attributes of the endpoint
+*ImpersonationControllerApi* | [**add_impersonate_code**](docs/ImpersonationControllerApi.md#add_impersonate_code) | **POST** /backend/rest/impersonate/codes | addImpersonateCode
 *ImpersonationControllerApi* | [**add_impersonate_from_user**](docs/ImpersonationControllerApi.md#add_impersonate_from_user) | **POST** /backend/rest/impersonate/from | addImpersonateFromUser
+*ImpersonationControllerApi* | [**get_impersonate_codes_list**](docs/ImpersonationControllerApi.md#get_impersonate_codes_list) | **GET** /backend/rest/impersonate/codes | getImpersonateCodesList
 *ImpersonationControllerApi* | [**get_impersonate_from_list**](docs/ImpersonationControllerApi.md#get_impersonate_from_list) | **GET** /backend/rest/impersonate/from | getImpersonateFromList
 *ImpersonationControllerApi* | [**get_impersonate_to_list**](docs/ImpersonationControllerApi.md#get_impersonate_to_list) | **GET** /backend/rest/impersonate/to | getImpersonateToList
 *ImpersonationControllerApi* | [**impersonate**](docs/ImpersonationControllerApi.md#impersonate) | **POST** /backend/rest/impersonate/as/{userId} | impersonate
 *ImpersonationControllerApi* | [**remove_impersonate_from_user**](docs/ImpersonationControllerApi.md#remove_impersonate_from_user) | **DELETE** /backend/rest/impersonate/from/{user-id} | removeImpersonateFromUser
+*ImpersonationControllerApi* | [**remove_impersonate_from_user1**](docs/ImpersonationControllerApi.md#remove_impersonate_from_user1) | **DELETE** /backend/rest/impersonate/codes/{code} | removeImpersonateFromUser
 *LogControllerApi* | [**get_log_for_current_user**](docs/LogControllerApi.md#get_log_for_current_user) | **GET** /backend/rest/log | getLogForCurrentUser
 *MigrationsControllerApi* | [**add_migration**](docs/MigrationsControllerApi.md#add_migration) | **POST** /backend/rest/migrations | Add new migration
 *MigrationsControllerApi* | [**get_migration**](docs/MigrationsControllerApi.md#get_migration) | **GET** /backend/rest/migrations/{migration-id} | Get migration by id. Only migration owner or administrator have access to the migration
@@ -195,6 +198,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccessKeysPair](docs/AccessKeysPair.md)
+ - [AddImpersonateCodeRequest](docs/AddImpersonateCodeRequest.md)
  - [AddImpersonateFromUserRequest](docs/AddImpersonateFromUserRequest.md)
  - [AddMigrationRequest](docs/AddMigrationRequest.md)
  - [AddMigrationRequestMapping](docs/AddMigrationRequestMapping.md)

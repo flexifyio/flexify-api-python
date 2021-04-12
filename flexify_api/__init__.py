@@ -37,6 +37,7 @@ from flexify_api.api_client import ApiClient
 from flexify_api.configuration import Configuration
 # import models into sdk package
 from flexify_api.models.access_keys_pair import AccessKeysPair
+from flexify_api.models.add_impersonate_code_request import AddImpersonateCodeRequest
 from flexify_api.models.add_impersonate_from_user_request import AddImpersonateFromUserRequest
 from flexify_api.models.add_migration_request import AddMigrationRequest
 from flexify_api.models.add_migration_request_mapping import AddMigrationRequestMapping

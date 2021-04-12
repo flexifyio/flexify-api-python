@@ -29,10 +29,24 @@ class TestImpersonationControllerApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_add_impersonate_code(self):
+        """Test case for add_impersonate_code
+
+        addImpersonateCode  # noqa: E501
+        """
+        pass
+
     def test_add_impersonate_from_user(self):
         """Test case for add_impersonate_from_user
 
         addImpersonateFromUser  # noqa: E501
+        """
+        pass
+
+    def test_get_impersonate_codes_list(self):
+        """Test case for get_impersonate_codes_list
+
+        getImpersonateCodesList  # noqa: E501
         """
         pass
 
@@ -59,6 +73,13 @@ class TestImpersonationControllerApi(unittest.TestCase):
 
     def test_remove_impersonate_from_user(self):
         """Test case for remove_impersonate_from_user
+
+        removeImpersonateFromUser  # noqa: E501
+        """
+        pass
+
+    def test_remove_impersonate_from_user1(self):
+        """Test case for remove_impersonate_from_user1
 
         removeImpersonateFromUser  # noqa: E501
         """

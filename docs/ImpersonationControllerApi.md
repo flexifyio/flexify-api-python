@@ -4,12 +4,66 @@ All URIs are relative to *https://api.flexify.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**add_impersonate_code**](ImpersonationControllerApi.md#add_impersonate_code) | **POST** /backend/rest/impersonate/codes | addImpersonateCode
 [**add_impersonate_from_user**](ImpersonationControllerApi.md#add_impersonate_from_user) | **POST** /backend/rest/impersonate/from | addImpersonateFromUser
+[**get_impersonate_codes_list**](ImpersonationControllerApi.md#get_impersonate_codes_list) | **GET** /backend/rest/impersonate/codes | getImpersonateCodesList
 [**get_impersonate_from_list**](ImpersonationControllerApi.md#get_impersonate_from_list) | **GET** /backend/rest/impersonate/from | getImpersonateFromList
 [**get_impersonate_to_list**](ImpersonationControllerApi.md#get_impersonate_to_list) | **GET** /backend/rest/impersonate/to | getImpersonateToList
 [**impersonate**](ImpersonationControllerApi.md#impersonate) | **POST** /backend/rest/impersonate/as/{userId} | impersonate
 [**remove_impersonate_from_user**](ImpersonationControllerApi.md#remove_impersonate_from_user) | **DELETE** /backend/rest/impersonate/from/{user-id} | removeImpersonateFromUser
+[**remove_impersonate_from_user1**](ImpersonationControllerApi.md#remove_impersonate_from_user1) | **DELETE** /backend/rest/impersonate/codes/{code} | removeImpersonateFromUser
 
+
+# **add_impersonate_code**
+> add_impersonate_code(request)
+
+addImpersonateCode
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.ImpersonationControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.AddImpersonateCodeRequest() # AddImpersonateCodeRequest | request
+
+try:
+    # addImpersonateCode
+    api_instance.add_impersonate_code(request)
+except ApiException as e:
+    print("Exception when calling ImpersonationControllerApi->add_impersonate_code: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**AddImpersonateCodeRequest**](AddImpersonateCodeRequest.md)| request | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_impersonate_from_user**
 > add_impersonate_from_user(request)
@@ -58,6 +112,54 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_impersonate_codes_list**
+> list[str] get_impersonate_codes_list()
+
+getImpersonateCodesList
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.ImpersonationControllerApi(flexify_api.ApiClient(configuration))
+
+try:
+    # getImpersonateCodesList
+    api_response = api_instance.get_impersonate_codes_list()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ImpersonationControllerApi->get_impersonate_codes_list: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**list[str]**
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -245,6 +347,57 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **int**| user-id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **remove_impersonate_from_user1**
+> remove_impersonate_from_user1(code)
+
+removeImpersonateFromUser
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.ImpersonationControllerApi(flexify_api.ApiClient(configuration))
+code = 'code_example' # str | code
+
+try:
+    # removeImpersonateFromUser
+    api_instance.remove_impersonate_from_user1(code)
+except ApiException as e:
+    print("Exception when calling ImpersonationControllerApi->remove_impersonate_from_user1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **code** | **str**| code | 
 
 ### Return type
 
