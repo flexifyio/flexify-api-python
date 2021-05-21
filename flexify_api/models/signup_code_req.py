@@ -32,6 +32,7 @@ class SignupCodeReq(object):
     """
     swagger_types = {
         'code': 'str',
+        'org_id': 'int',
         'price_list_id': 'int',
         'roles': 'list[str]',
         'single_use': 'bool',
@@ -40,16 +41,18 @@ class SignupCodeReq(object):
 
     attribute_map = {
         'code': 'code',
+        'org_id': 'orgId',
         'price_list_id': 'priceListId',
         'roles': 'roles',
         'single_use': 'singleUse',
         'use_my_billing_account': 'useMyBillingAccount'
     }
 
-    def __init__(self, code=None, price_list_id=None, roles=None, single_use=None, use_my_billing_account=None):  # noqa: E501
+    def __init__(self, code=None, org_id=None, price_list_id=None, roles=None, single_use=None, use_my_billing_account=None):  # noqa: E501
         """SignupCodeReq - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
+        self._org_id = None
         self._price_list_id = None
         self._roles = None
         self._single_use = None
@@ -58,6 +61,8 @@ class SignupCodeReq(object):
 
         if code is not None:
             self.code = code
+        if org_id is not None:
+            self.org_id = org_id
         if price_list_id is not None:
             self.price_list_id = price_list_id
         if roles is not None:
@@ -87,6 +92,27 @@ class SignupCodeReq(object):
         """
 
         self._code = code
+
+    @property
+    def org_id(self):
+        """Gets the org_id of this SignupCodeReq.  # noqa: E501
+
+
+        :return: The org_id of this SignupCodeReq.  # noqa: E501
+        :rtype: int
+        """
+        return self._org_id
+
+    @org_id.setter
+    def org_id(self, org_id):
+        """Sets the org_id of this SignupCodeReq.
+
+
+        :param org_id: The org_id of this SignupCodeReq.  # noqa: E501
+        :type: int
+        """
+
+        self._org_id = org_id
 
     @property
     def price_list_id(self):

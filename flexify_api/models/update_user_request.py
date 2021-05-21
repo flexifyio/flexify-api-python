@@ -31,20 +31,48 @@ class UpdateUserRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'org_id': 'int',
         'profile': 'UserProfile'
     }
 
     attribute_map = {
+        'org_id': 'orgId',
         'profile': 'profile'
     }
 
-    def __init__(self, profile=None):  # noqa: E501
+    def __init__(self, org_id=None, profile=None):  # noqa: E501
         """UpdateUserRequest - a model defined in Swagger"""  # noqa: E501
 
+        self._org_id = None
         self._profile = None
         self.discriminator = None
 
+        if org_id is not None:
+            self.org_id = org_id
         self.profile = profile
+
+    @property
+    def org_id(self):
+        """Gets the org_id of this UpdateUserRequest.  # noqa: E501
+
+        ID os user's organization  # noqa: E501
+
+        :return: The org_id of this UpdateUserRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._org_id
+
+    @org_id.setter
+    def org_id(self, org_id):
+        """Sets the org_id of this UpdateUserRequest.
+
+        ID os user's organization  # noqa: E501
+
+        :param org_id: The org_id of this UpdateUserRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._org_id = org_id
 
     @property
     def profile(self):

@@ -34,6 +34,7 @@ class SignupCodeStat(object):
         'available': 'bool',
         'billing_account': 'BillingAccount',
         'created': 'datetime',
+        'org': 'Organization',
         'price_list': 'PriceList',
         'used_by': 'list[str]'
     }
@@ -42,16 +43,18 @@ class SignupCodeStat(object):
         'available': 'available',
         'billing_account': 'billingAccount',
         'created': 'created',
+        'org': 'org',
         'price_list': 'priceList',
         'used_by': 'usedBy'
     }
 
-    def __init__(self, available=None, billing_account=None, created=None, price_list=None, used_by=None):  # noqa: E501
+    def __init__(self, available=None, billing_account=None, created=None, org=None, price_list=None, used_by=None):  # noqa: E501
         """SignupCodeStat - a model defined in Swagger"""  # noqa: E501
 
         self._available = None
         self._billing_account = None
         self._created = None
+        self._org = None
         self._price_list = None
         self._used_by = None
         self.discriminator = None
@@ -62,6 +65,8 @@ class SignupCodeStat(object):
             self.billing_account = billing_account
         if created is not None:
             self.created = created
+        if org is not None:
+            self.org = org
         if price_list is not None:
             self.price_list = price_list
         if used_by is not None:
@@ -129,6 +134,27 @@ class SignupCodeStat(object):
         """
 
         self._created = created
+
+    @property
+    def org(self):
+        """Gets the org of this SignupCodeStat.  # noqa: E501
+
+
+        :return: The org of this SignupCodeStat.  # noqa: E501
+        :rtype: Organization
+        """
+        return self._org
+
+    @org.setter
+    def org(self, org):
+        """Sets the org of this SignupCodeStat.
+
+
+        :param org: The org of this SignupCodeStat.  # noqa: E501
+        :type: Organization
+        """
+
+        self._org = org
 
     @property
     def price_list(self):

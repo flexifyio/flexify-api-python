@@ -116,12 +116,13 @@ Class | Method | HTTP request | Description
 *MigrationsControllerApi* | [**restart_slot**](docs/MigrationsControllerApi.md#restart_slot) | **POST** /backend/rest/migrations/{migration-id}/mappings/{mapping-id}/slots/{slot}/actions/restart | Mark migration as hidden
 *MigrationsControllerApi* | [**stop_migration**](docs/MigrationsControllerApi.md#stop_migration) | **POST** /backend/rest/migrations/{migration-id}/actions/stop | Stop (cancel) the migration
 *OAuthControllerApi* | [**get_app_info**](docs/OAuthControllerApi.md#get_app_info) | **GET** /backend/rest/oauth/app-info | getAppInfo
+*PartnerOrganizationsControllerApi* | [**get_all**](docs/PartnerOrganizationsControllerApi.md#get_all) | **GET** /backend/rest/partner/organizations | getAll
 *PartnerSignUpCodesControllerApi* | [**create_code**](docs/PartnerSignUpCodesControllerApi.md#create_code) | **POST** /backend/rest/distributor/codes | createCode
 *PartnerSignUpCodesControllerApi* | [**create_code1**](docs/PartnerSignUpCodesControllerApi.md#create_code1) | **POST** /backend/rest/partner/codes | createCode
 *PartnerSignUpCodesControllerApi* | [**delete_code**](docs/PartnerSignUpCodesControllerApi.md#delete_code) | **DELETE** /backend/rest/distributor/codes/{code} | deleteCode
 *PartnerSignUpCodesControllerApi* | [**delete_code1**](docs/PartnerSignUpCodesControllerApi.md#delete_code1) | **DELETE** /backend/rest/partner/codes/{code} | deleteCode
-*PartnerSignUpCodesControllerApi* | [**get_all**](docs/PartnerSignUpCodesControllerApi.md#get_all) | **GET** /backend/rest/distributor/codes | getAll
-*PartnerSignUpCodesControllerApi* | [**get_all1**](docs/PartnerSignUpCodesControllerApi.md#get_all1) | **GET** /backend/rest/partner/codes | getAll
+*PartnerSignUpCodesControllerApi* | [**get_all1**](docs/PartnerSignUpCodesControllerApi.md#get_all1) | **GET** /backend/rest/distributor/codes | getAll
+*PartnerSignUpCodesControllerApi* | [**get_all2**](docs/PartnerSignUpCodesControllerApi.md#get_all2) | **GET** /backend/rest/partner/codes | getAll
 *PartnerUsersControllerApi* | [**change_user_state**](docs/PartnerUsersControllerApi.md#change_user_state) | **PUT** /backend/rest/distributor/users/{userId}/state | Change user state
 *PartnerUsersControllerApi* | [**change_user_state1**](docs/PartnerUsersControllerApi.md#change_user_state1) | **PUT** /backend/rest/partner/users/{userId}/state | Change user state
 *PartnerUsersControllerApi* | [**change_user_state_by_external_id**](docs/PartnerUsersControllerApi.md#change_user_state_by_external_id) | **PUT** /backend/rest/distributor/users/external/{externalId}/state | Change user state by external ID

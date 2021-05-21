@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str** |  | [optional] 
+**org_id** | **int** |  | [optional] 
 **price_list_id** | **int** |  | [optional] 
 **roles** | **list[str]** |  | [optional] 
 **single_use** | **bool** |  | [optional] 

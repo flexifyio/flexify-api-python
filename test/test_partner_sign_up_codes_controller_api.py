@@ -57,15 +57,15 @@ class TestPartnerSignUpCodesControllerApi(unittest.TestCase):
         """
         pass
 
-    def test_get_all(self):
-        """Test case for get_all
+    def test_get_all1(self):
+        """Test case for get_all1
 
         getAll  # noqa: E501
         """
         pass
 
-    def test_get_all1(self):
-        """Test case for get_all1
+    def test_get_all2(self):
+        """Test case for get_all2
 
         getAll  # noqa: E501
         """

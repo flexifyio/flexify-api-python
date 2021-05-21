@@ -32,26 +32,31 @@ class CreateUserRequest(object):
     """
     swagger_types = {
         'external_id': 'str',
+        'org_id': 'int',
         'price_list_id': 'int',
         'profile': 'UserProfile'
     }
 
     attribute_map = {
         'external_id': 'externalId',
+        'org_id': 'orgId',
         'price_list_id': 'priceListId',
         'profile': 'profile'
     }
 
-    def __init__(self, external_id=None, price_list_id=None, profile=None):  # noqa: E501
+    def __init__(self, external_id=None, org_id=None, price_list_id=None, profile=None):  # noqa: E501
         """CreateUserRequest - a model defined in Swagger"""  # noqa: E501
 
         self._external_id = None
+        self._org_id = None
         self._price_list_id = None
         self._profile = None
         self.discriminator = None
 
         if external_id is not None:
             self.external_id = external_id
+        if org_id is not None:
+            self.org_id = org_id
         if price_list_id is not None:
             self.price_list_id = price_list_id
         self.profile = profile
@@ -78,6 +83,29 @@ class CreateUserRequest(object):
         """
 
         self._external_id = external_id
+
+    @property
+    def org_id(self):
+        """Gets the org_id of this CreateUserRequest.  # noqa: E501
+
+        ID of the organization to assign the user to (or default otherwise)  # noqa: E501
+
+        :return: The org_id of this CreateUserRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._org_id
+
+    @org_id.setter
+    def org_id(self, org_id):
+        """Sets the org_id of this CreateUserRequest.
+
+        ID of the organization to assign the user to (or default otherwise)  # noqa: E501
+
+        :param org_id: The org_id of this CreateUserRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._org_id = org_id
 
     @property
     def price_list_id(self):

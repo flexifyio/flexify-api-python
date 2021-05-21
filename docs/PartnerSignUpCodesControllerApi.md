@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**create_code1**](PartnerSignUpCodesControllerApi.md#create_code1) | **POST** /backend/rest/partner/codes | createCode
 [**delete_code**](PartnerSignUpCodesControllerApi.md#delete_code) | **DELETE** /backend/rest/distributor/codes/{code} | deleteCode
 [**delete_code1**](PartnerSignUpCodesControllerApi.md#delete_code1) | **DELETE** /backend/rest/partner/codes/{code} | deleteCode
-[**get_all**](PartnerSignUpCodesControllerApi.md#get_all) | **GET** /backend/rest/distributor/codes | getAll
-[**get_all1**](PartnerSignUpCodesControllerApi.md#get_all1) | **GET** /backend/rest/partner/codes | getAll
+[**get_all1**](PartnerSignUpCodesControllerApi.md#get_all1) | **GET** /backend/rest/distributor/codes | getAll
+[**get_all2**](PartnerSignUpCodesControllerApi.md#get_all2) | **GET** /backend/rest/partner/codes | getAll
 
 
 # **create_code**
@@ -216,54 +216,6 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all**
-> list[SignupCodeRes] get_all()
-
-getAll
-
-### Example
-```python
-from __future__ import print_function
-import time
-import flexify_api
-from flexify_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: Bearer
-configuration = flexify_api.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = flexify_api.PartnerSignUpCodesControllerApi(flexify_api.ApiClient(configuration))
-
-try:
-    # getAll
-    api_response = api_instance.get_all()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PartnerSignUpCodesControllerApi->get_all: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**list[SignupCodeRes]**](SignupCodeRes.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_all1**
 > list[SignupCodeRes] get_all1()
 
@@ -292,6 +244,54 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PartnerSignUpCodesControllerApi->get_all1: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[SignupCodeRes]**](SignupCodeRes.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all2**
+> list[SignupCodeRes] get_all2()
+
+getAll
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerSignUpCodesControllerApi(flexify_api.ApiClient(configuration))
+
+try:
+    # getAll
+    api_response = api_instance.get_all2()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PartnerSignUpCodesControllerApi->get_all2: %s\n" % e)
 ```
 
 ### Parameters
