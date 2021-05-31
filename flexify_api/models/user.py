@@ -33,6 +33,7 @@ class User(object):
     swagger_types = {
         'account': 'BillingAccount',
         'actual_limits': 'UserConfig',
+        'billing_server_account_id': 'str',
         'delete_requested': 'datetime',
         'external_id': 'str',
         'id': 'int',
@@ -51,6 +52,7 @@ class User(object):
     attribute_map = {
         'account': 'account',
         'actual_limits': 'actualLimits',
+        'billing_server_account_id': 'billingServerAccountId',
         'delete_requested': 'deleteRequested',
         'external_id': 'externalId',
         'id': 'id',
@@ -66,11 +68,12 @@ class User(object):
         'username': 'username'
     }
 
-    def __init__(self, account=None, actual_limits=None, delete_requested=None, external_id=None, id=None, org=None, profile=None, registered=None, require_license_terms=None, roles=None, settings=None, sign_up_code=None, state=None, user_limits=None, username=None):  # noqa: E501
+    def __init__(self, account=None, actual_limits=None, billing_server_account_id=None, delete_requested=None, external_id=None, id=None, org=None, profile=None, registered=None, require_license_terms=None, roles=None, settings=None, sign_up_code=None, state=None, user_limits=None, username=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
 
         self._account = None
         self._actual_limits = None
+        self._billing_server_account_id = None
         self._delete_requested = None
         self._external_id = None
         self._id = None
@@ -90,6 +93,8 @@ class User(object):
             self.account = account
         if actual_limits is not None:
             self.actual_limits = actual_limits
+        if billing_server_account_id is not None:
+            self.billing_server_account_id = billing_server_account_id
         if delete_requested is not None:
             self.delete_requested = delete_requested
         if external_id is not None:
@@ -162,6 +167,29 @@ class User(object):
         """
 
         self._actual_limits = actual_limits
+
+    @property
+    def billing_server_account_id(self):
+        """Gets the billing_server_account_id of this User.  # noqa: E501
+
+        ID of this user's billing account on an external billing server  # noqa: E501
+
+        :return: The billing_server_account_id of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._billing_server_account_id
+
+    @billing_server_account_id.setter
+    def billing_server_account_id(self, billing_server_account_id):
+        """Sets the billing_server_account_id of this User.
+
+        ID of this user's billing account on an external billing server  # noqa: E501
+
+        :param billing_server_account_id: The billing_server_account_id of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._billing_server_account_id = billing_server_account_id
 
     @property
     def delete_requested(self):
