@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **id** | **int** | ID of this mapping | 
 **key_add_prefix** | **str** | Prefix added to each object key | [optional] 
 **key_remove_prefix** | **str** | Prefix removed from each object key | [optional] 
+**objects_list_uri** | **str** | URI of a text file with a list of objects to migrate | [optional] 
 **slots** | [**list[Slot]**](Slot.md) | Slots that this mapping is split into | 
 **source_bucket** | [**Bucket**](Bucket.md) | Source bucket/container | 
 **source_storage_account** | [**StorageAccount**](StorageAccount.md) | Source storage account | 

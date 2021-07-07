@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **dest_storage_account_id** | **int** | ID of source destination account | 
 **key_add_prefix** | **str** | Prefix to to be added to each key when migrating | [optional] 
 **key_remove_prefix** | **str** | Prefix to to be removed from each key when migrating | [optional] 
+**objects_list_uri** | **str** | A URI of a text file to take objects list from | [optional] 
 **source_bucket_name** | **str** | Name of source bucket or container | 
 **source_storage_account_id** | **int** | ID of source storage account | 
 
