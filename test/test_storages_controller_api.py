@@ -50,6 +50,13 @@ class TestStoragesControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_get_bucket(self):
+        """Test case for get_bucket
+
+        Get detailed stats for the bucket  # noqa: E501
+        """
+        pass
+
     def test_get_providers(self):
         """Test case for get_providers
 
