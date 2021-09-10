@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **display_name** | **str** |  | [optional] 
 **distributor_name** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
+**external_id** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **org_name** | **str** |  | [optional] 
 **price_list_name** | **str** |  | [optional] 

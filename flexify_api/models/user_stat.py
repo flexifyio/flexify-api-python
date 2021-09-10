@@ -40,6 +40,7 @@ class UserStat(object):
         'display_name': 'str',
         'distributor_name': 'str',
         'email': 'str',
+        'external_id': 'str',
         'id': 'int',
         'org_name': 'str',
         'price_list_name': 'str',
@@ -59,6 +60,7 @@ class UserStat(object):
         'display_name': 'displayName',
         'distributor_name': 'distributorName',
         'email': 'email',
+        'external_id': 'externalId',
         'id': 'id',
         'org_name': 'orgName',
         'price_list_name': 'priceListName',
@@ -68,7 +70,7 @@ class UserStat(object):
         'user_state': 'userState'
     }
 
-    def __init__(self, active_migrations_count=None, billing_account_admin_state=None, billing_account_name=None, billing_account_state=None, company=None, delete_requested=None, display_name=None, distributor_name=None, email=None, id=None, org_name=None, price_list_name=None, registered=None, storage_accounts_count=None, total_migrations_count=None, user_state=None):  # noqa: E501
+    def __init__(self, active_migrations_count=None, billing_account_admin_state=None, billing_account_name=None, billing_account_state=None, company=None, delete_requested=None, display_name=None, distributor_name=None, email=None, external_id=None, id=None, org_name=None, price_list_name=None, registered=None, storage_accounts_count=None, total_migrations_count=None, user_state=None):  # noqa: E501
         """UserStat - a model defined in Swagger"""  # noqa: E501
 
         self._active_migrations_count = None
@@ -80,6 +82,7 @@ class UserStat(object):
         self._display_name = None
         self._distributor_name = None
         self._email = None
+        self._external_id = None
         self._id = None
         self._org_name = None
         self._price_list_name = None
@@ -107,6 +110,8 @@ class UserStat(object):
             self.distributor_name = distributor_name
         if email is not None:
             self.email = email
+        if external_id is not None:
+            self.external_id = external_id
         if id is not None:
             self.id = id
         if org_name is not None:
@@ -322,6 +327,27 @@ class UserStat(object):
         """
 
         self._email = email
+
+    @property
+    def external_id(self):
+        """Gets the external_id of this UserStat.  # noqa: E501
+
+
+        :return: The external_id of this UserStat.  # noqa: E501
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """Sets the external_id of this UserStat.
+
+
+        :param external_id: The external_id of this UserStat.  # noqa: E501
+        :type: str
+        """
+
+        self._external_id = external_id
 
     @property
     def id(self):
