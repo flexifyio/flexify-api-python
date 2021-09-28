@@ -223,65 +223,61 @@ class MigrationsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_migrations(self, page, size, **kwargs):  # noqa: E501
+    def get_migrations(self, offset, page, size, **kwargs):  # noqa: E501
         """Get all migrations for logged in user in paged mode  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_migrations(page, size, async_req=True)
+        >>> thread = api.get_migrations(offset, page, size, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param int page: Page number (required)
-        :param int size: Page size (required)
+        :param int offset: Position of the first migration in the list (or null to start from the beginning) (required)
+        :param int page: [Deprecated] Page number (required)
+        :param int size: Max number of entries to return (AKA page size) (required)
         :param bool include_hidden: Include hidden migrations to response
-        :param list[str] sort: Attributes to sort
+        :param bool paged:
+        :param int page_number:
+        :param int page_size:
+        :param bool sort_sorted:
+        :param bool sort_unsorted:
         :param str sort_direction: Sort Direction
-        :param int spring_page_request_offset:
-        :param bool spring_page_request_paged:
-        :param int spring_page_request_page_number:
-        :param int spring_page_request_page_size:
-        :param bool spring_page_request_sort_sorted:
-        :param bool spring_page_request_sort_unsorted:
-        :param bool spring_page_request_unpaged:
         :return: PageMigration
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_migrations_with_http_info(page, size, **kwargs)  # noqa: E501
+            return self.get_migrations_with_http_info(offset, page, size, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_migrations_with_http_info(page, size, **kwargs)  # noqa: E501
+            (data) = self.get_migrations_with_http_info(offset, page, size, **kwargs)  # noqa: E501
             return data
 
-    def get_migrations_with_http_info(self, page, size, **kwargs):  # noqa: E501
+    def get_migrations_with_http_info(self, offset, page, size, **kwargs):  # noqa: E501
         """Get all migrations for logged in user in paged mode  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_migrations_with_http_info(page, size, async_req=True)
+        >>> thread = api.get_migrations_with_http_info(offset, page, size, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param int page: Page number (required)
-        :param int size: Page size (required)
+        :param int offset: Position of the first migration in the list (or null to start from the beginning) (required)
+        :param int page: [Deprecated] Page number (required)
+        :param int size: Max number of entries to return (AKA page size) (required)
         :param bool include_hidden: Include hidden migrations to response
-        :param list[str] sort: Attributes to sort
+        :param bool paged:
+        :param int page_number:
+        :param int page_size:
+        :param bool sort_sorted:
+        :param bool sort_unsorted:
         :param str sort_direction: Sort Direction
-        :param int spring_page_request_offset:
-        :param bool spring_page_request_paged:
-        :param int spring_page_request_page_number:
-        :param int spring_page_request_page_size:
-        :param bool spring_page_request_sort_sorted:
-        :param bool spring_page_request_sort_unsorted:
-        :param bool spring_page_request_unpaged:
         :return: PageMigration
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'size', 'include_hidden', 'sort', 'sort_direction', 'spring_page_request_offset', 'spring_page_request_paged', 'spring_page_request_page_number', 'spring_page_request_page_size', 'spring_page_request_sort_sorted', 'spring_page_request_sort_unsorted', 'spring_page_request_unpaged']  # noqa: E501
+        all_params = ['offset', 'page', 'size', 'include_hidden', 'paged', 'page_number', 'page_size', 'sort_sorted', 'sort_unsorted', 'sort_direction']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -296,6 +292,10 @@ class MigrationsControllerApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'offset' is set
+        if ('offset' not in params or
+                params['offset'] is None):
+            raise ValueError("Missing the required parameter `offset` when calling `get_migrations`")  # noqa: E501
         # verify the required parameter 'page' is set
         if ('page' not in params or
                 params['page'] is None):
@@ -312,29 +312,24 @@ class MigrationsControllerApi(object):
         query_params = []
         if 'include_hidden' in params:
             query_params.append(('include-hidden', params['include_hidden']))  # noqa: E501
+        if 'offset' in params:
+            query_params.append(('offset', params['offset']))  # noqa: E501
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
+        if 'paged' in params:
+            query_params.append(('paged', params['paged']))  # noqa: E501
+        if 'page_number' in params:
+            query_params.append(('pageNumber', params['page_number']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('pageSize', params['page_size']))  # noqa: E501
         if 'size' in params:
             query_params.append(('size', params['size']))  # noqa: E501
-        if 'sort' in params:
-            query_params.append(('sort', params['sort']))  # noqa: E501
-            collection_formats['sort'] = 'multi'  # noqa: E501
+        if 'sort_sorted' in params:
+            query_params.append(('sort.sorted', params['sort_sorted']))  # noqa: E501
+        if 'sort_unsorted' in params:
+            query_params.append(('sort.unsorted', params['sort_unsorted']))  # noqa: E501
         if 'sort_direction' in params:
             query_params.append(('sortDirection', params['sort_direction']))  # noqa: E501
-        if 'spring_page_request_offset' in params:
-            query_params.append(('springPageRequest.offset', params['spring_page_request_offset']))  # noqa: E501
-        if 'spring_page_request_paged' in params:
-            query_params.append(('springPageRequest.paged', params['spring_page_request_paged']))  # noqa: E501
-        if 'spring_page_request_page_number' in params:
-            query_params.append(('springPageRequest.pageNumber', params['spring_page_request_page_number']))  # noqa: E501
-        if 'spring_page_request_page_size' in params:
-            query_params.append(('springPageRequest.pageSize', params['spring_page_request_page_size']))  # noqa: E501
-        if 'spring_page_request_sort_sorted' in params:
-            query_params.append(('springPageRequest.sort.sorted', params['spring_page_request_sort_sorted']))  # noqa: E501
-        if 'spring_page_request_sort_unsorted' in params:
-            query_params.append(('springPageRequest.sort.unsorted', params['spring_page_request_sort_unsorted']))  # noqa: E501
-        if 'spring_page_request_unpaged' in params:
-            query_params.append(('springPageRequest.unpaged', params['spring_page_request_unpaged']))  # noqa: E501
 
         header_params = {}
 
