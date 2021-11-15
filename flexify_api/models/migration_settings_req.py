@@ -31,12 +31,14 @@ class MigrationSettingsReq(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'comparison_method': 'str',
         'conflict_resolution': 'str',
         'deployment_type': 'str',
         'dry_run': 'bool',
         'engines_location': 'CloudLocationReq',
         'existing_data_in_destination': 'str',
         'last_modified_from': 'datetime',
+        'log_level': 'str',
         'max_engines': 'int',
         'max_retries': 'int',
         'max_retries_for_copy': 'int',
@@ -54,12 +56,14 @@ class MigrationSettingsReq(object):
     }
 
     attribute_map = {
+        'comparison_method': 'comparisonMethod',
         'conflict_resolution': 'conflictResolution',
         'deployment_type': 'deploymentType',
         'dry_run': 'dryRun',
         'engines_location': 'enginesLocation',
         'existing_data_in_destination': 'existingDataInDestination',
         'last_modified_from': 'lastModifiedFrom',
+        'log_level': 'logLevel',
         'max_engines': 'maxEngines',
         'max_retries': 'maxRetries',
         'max_retries_for_copy': 'maxRetriesForCopy',
@@ -76,15 +80,17 @@ class MigrationSettingsReq(object):
         'slots_per_mapping': 'slotsPerMapping'
     }
 
-    def __init__(self, conflict_resolution=None, deployment_type=None, dry_run=None, engines_location=None, existing_data_in_destination=None, last_modified_from=None, max_engines=None, max_retries=None, max_retries_for_copy=None, max_retry_timeout=None, max_streams=None, migration_mode=None, multipart_concurrency=None, multipart_limit=None, multipart_part_size=None, name=None, object_key_filter=None, retry_timeout=None, skip_if_hash_matches=None, slots_per_mapping=None):  # noqa: E501
+    def __init__(self, comparison_method=None, conflict_resolution=None, deployment_type=None, dry_run=None, engines_location=None, existing_data_in_destination=None, last_modified_from=None, log_level=None, max_engines=None, max_retries=None, max_retries_for_copy=None, max_retry_timeout=None, max_streams=None, migration_mode=None, multipart_concurrency=None, multipart_limit=None, multipart_part_size=None, name=None, object_key_filter=None, retry_timeout=None, skip_if_hash_matches=None, slots_per_mapping=None):  # noqa: E501
         """MigrationSettingsReq - a model defined in Swagger"""  # noqa: E501
 
+        self._comparison_method = None
         self._conflict_resolution = None
         self._deployment_type = None
         self._dry_run = None
         self._engines_location = None
         self._existing_data_in_destination = None
         self._last_modified_from = None
+        self._log_level = None
         self._max_engines = None
         self._max_retries = None
         self._max_retries_for_copy = None
@@ -101,6 +107,8 @@ class MigrationSettingsReq(object):
         self._slots_per_mapping = None
         self.discriminator = None
 
+        if comparison_method is not None:
+            self.comparison_method = comparison_method
         if conflict_resolution is not None:
             self.conflict_resolution = conflict_resolution
         if deployment_type is not None:
@@ -113,6 +121,8 @@ class MigrationSettingsReq(object):
             self.existing_data_in_destination = existing_data_in_destination
         if last_modified_from is not None:
             self.last_modified_from = last_modified_from
+        if log_level is not None:
+            self.log_level = log_level
         if max_engines is not None:
             self.max_engines = max_engines
         if max_retries is not None:
@@ -141,6 +151,35 @@ class MigrationSettingsReq(object):
             self.skip_if_hash_matches = skip_if_hash_matches
         if slots_per_mapping is not None:
             self.slots_per_mapping = slots_per_mapping
+
+    @property
+    def comparison_method(self):
+        """Gets the comparison_method of this MigrationSettingsReq.  # noqa: E501
+
+        Destination comparison method  # noqa: E501
+
+        :return: The comparison_method of this MigrationSettingsReq.  # noqa: E501
+        :rtype: str
+        """
+        return self._comparison_method
+
+    @comparison_method.setter
+    def comparison_method(self, comparison_method):
+        """Sets the comparison_method of this MigrationSettingsReq.
+
+        Destination comparison method  # noqa: E501
+
+        :param comparison_method: The comparison_method of this MigrationSettingsReq.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["AUTO", "LIST_ONLY", "LIST_PROBE", "PROBE_ONLY"]  # noqa: E501
+        if comparison_method not in allowed_values:
+            raise ValueError(
+                "Invalid value for `comparison_method` ({0}), must be one of {1}"  # noqa: E501
+                .format(comparison_method, allowed_values)
+            )
+
+        self._comparison_method = comparison_method
 
     @property
     def conflict_resolution(self):
@@ -297,6 +336,35 @@ class MigrationSettingsReq(object):
         """
 
         self._last_modified_from = last_modified_from
+
+    @property
+    def log_level(self):
+        """Gets the log_level of this MigrationSettingsReq.  # noqa: E501
+
+        Log level  # noqa: E501
+
+        :return: The log_level of this MigrationSettingsReq.  # noqa: E501
+        :rtype: str
+        """
+        return self._log_level
+
+    @log_level.setter
+    def log_level(self, log_level):
+        """Sets the log_level of this MigrationSettingsReq.
+
+        Log level  # noqa: E501
+
+        :param log_level: The log_level of this MigrationSettingsReq.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["DEBUG", "ERROR", "INFO", "TRACE", "WARNING"]  # noqa: E501
+        if log_level not in allowed_values:
+            raise ValueError(
+                "Invalid value for `log_level` ({0}), must be one of {1}"  # noqa: E501
+                .format(log_level, allowed_values)
+            )
+
+        self._log_level = log_level
 
     @property
     def max_engines(self):

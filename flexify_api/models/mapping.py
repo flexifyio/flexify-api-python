@@ -38,6 +38,7 @@ class Mapping(object):
         'key_add_prefix': 'str',
         'key_remove_prefix': 'str',
         'objects_list_uri': 'str',
+        'selected_comparison_method': 'str',
         'slots': 'list[Slot]',
         'source_bucket': 'Bucket',
         'source_storage_account': 'StorageAccount',
@@ -52,13 +53,14 @@ class Mapping(object):
         'key_add_prefix': 'keyAddPrefix',
         'key_remove_prefix': 'keyRemovePrefix',
         'objects_list_uri': 'objectsListUri',
+        'selected_comparison_method': 'selectedComparisonMethod',
         'slots': 'slots',
         'source_bucket': 'sourceBucket',
         'source_storage_account': 'sourceStorageAccount',
         'stat': 'stat'
     }
 
-    def __init__(self, dest_bucket=None, dest_bucket_new_region=None, dest_storage_account=None, id=None, key_add_prefix=None, key_remove_prefix=None, objects_list_uri=None, slots=None, source_bucket=None, source_storage_account=None, stat=None):  # noqa: E501
+    def __init__(self, dest_bucket=None, dest_bucket_new_region=None, dest_storage_account=None, id=None, key_add_prefix=None, key_remove_prefix=None, objects_list_uri=None, selected_comparison_method=None, slots=None, source_bucket=None, source_storage_account=None, stat=None):  # noqa: E501
         """Mapping - a model defined in Swagger"""  # noqa: E501
 
         self._dest_bucket = None
@@ -68,6 +70,7 @@ class Mapping(object):
         self._key_add_prefix = None
         self._key_remove_prefix = None
         self._objects_list_uri = None
+        self._selected_comparison_method = None
         self._slots = None
         self._source_bucket = None
         self._source_storage_account = None
@@ -85,6 +88,8 @@ class Mapping(object):
             self.key_remove_prefix = key_remove_prefix
         if objects_list_uri is not None:
             self.objects_list_uri = objects_list_uri
+        if selected_comparison_method is not None:
+            self.selected_comparison_method = selected_comparison_method
         self.slots = slots
         self.source_bucket = source_bucket
         self.source_storage_account = source_storage_account
@@ -256,6 +261,35 @@ class Mapping(object):
         """
 
         self._objects_list_uri = objects_list_uri
+
+    @property
+    def selected_comparison_method(self):
+        """Gets the selected_comparison_method of this Mapping.  # noqa: E501
+
+        Method selected for comparison  # noqa: E501
+
+        :return: The selected_comparison_method of this Mapping.  # noqa: E501
+        :rtype: str
+        """
+        return self._selected_comparison_method
+
+    @selected_comparison_method.setter
+    def selected_comparison_method(self, selected_comparison_method):
+        """Sets the selected_comparison_method of this Mapping.
+
+        Method selected for comparison  # noqa: E501
+
+        :param selected_comparison_method: The selected_comparison_method of this Mapping.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["AUTO", "LIST_ONLY", "LIST_PROBE", "PROBE_ONLY"]  # noqa: E501
+        if selected_comparison_method not in allowed_values:
+            raise ValueError(
+                "Invalid value for `selected_comparison_method` ({0}), must be one of {1}"  # noqa: E501
+                .format(selected_comparison_method, allowed_values)
+            )
+
+        self._selected_comparison_method = selected_comparison_method
 
     @property
     def slots(self):
