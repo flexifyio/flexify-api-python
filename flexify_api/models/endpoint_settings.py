@@ -174,7 +174,7 @@ class EndpointSettings(object):
     def selection_break_timeout(self):
         """Gets the selection_break_timeout of this EndpointSettings.  # noqa: E501
 
-        Timeout before canceling rqeusts to non-responing clouds in FASTEST selection policy  # noqa: E501
+        Timeout before canceling requests to non-responding clouds in FASTEST selection policy  # noqa: E501
 
         :return: The selection_break_timeout of this EndpointSettings.  # noqa: E501
         :rtype: int
@@ -185,7 +185,7 @@ class EndpointSettings(object):
     def selection_break_timeout(self, selection_break_timeout):
         """Sets the selection_break_timeout of this EndpointSettings.
 
-        Timeout before canceling rqeusts to non-responing clouds in FASTEST selection policy  # noqa: E501
+        Timeout before canceling requests to non-responding clouds in FASTEST selection policy  # noqa: E501
 
         :param selection_break_timeout: The selection_break_timeout of this EndpointSettings.  # noqa: E501
         :type: int
@@ -213,7 +213,7 @@ class EndpointSettings(object):
         :param selection_policy: The selection_policy of this EndpointSettings.  # noqa: E501
         :type: str
         """
-        allowed_values = ["FASTEST", "NEWEST"]  # noqa: E501
+        allowed_values = ["FASTEST", "NEWEST", "PRIORITY"]  # noqa: E501
         if selection_policy not in allowed_values:
             raise ValueError(
                 "Invalid value for `selection_policy` ({0}), must be one of {1}"  # noqa: E501
