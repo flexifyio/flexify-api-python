@@ -173,7 +173,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_storage_account**
-> StorageAccount get_storage_account(storage_account_id)
+> StorageAccountWithBuckets get_storage_account(storage_account_id)
 
 Get storage account by id
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StorageAccount**](StorageAccount.md)
+[**StorageAccountWithBuckets**](StorageAccountWithBuckets.md)
 
 ### Authorization
 

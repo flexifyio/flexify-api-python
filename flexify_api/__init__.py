@@ -116,6 +116,7 @@ from flexify_api.models.storage_account_settings import StorageAccountSettings
 from flexify_api.models.storage_account_settings_req import StorageAccountSettingsReq
 from flexify_api.models.storage_account_settings_res import StorageAccountSettingsRes
 from flexify_api.models.storage_account_stat import StorageAccountStat
+from flexify_api.models.storage_account_with_buckets import StorageAccountWithBuckets
 from flexify_api.models.storage_provider import StorageProvider
 from flexify_api.models.token_configuration import TokenConfiguration
 from flexify_api.models.update_user_request import UpdateUserRequest
