@@ -33,6 +33,7 @@ class StorageAccountWithBuckets(object):
     swagger_types = {
         'buckets': 'list[Bucket]',
         'id': 'int',
+        'private_url': 'str',
         'provider': 'StorageProvider',
         'settings': 'StorageAccountSettingsRes',
         'stat': 'StorageAccountStat',
@@ -42,17 +43,19 @@ class StorageAccountWithBuckets(object):
     attribute_map = {
         'buckets': 'buckets',
         'id': 'id',
+        'private_url': 'privateUrl',
         'provider': 'provider',
         'settings': 'settings',
         'stat': 'stat',
         'url': 'url'
     }
 
-    def __init__(self, buckets=None, id=None, provider=None, settings=None, stat=None, url=None):  # noqa: E501
+    def __init__(self, buckets=None, id=None, private_url=None, provider=None, settings=None, stat=None, url=None):  # noqa: E501
         """StorageAccountWithBuckets - a model defined in Swagger"""  # noqa: E501
 
         self._buckets = None
         self._id = None
+        self._private_url = None
         self._provider = None
         self._settings = None
         self._stat = None
@@ -63,6 +66,8 @@ class StorageAccountWithBuckets(object):
             self.buckets = buckets
         if id is not None:
             self.id = id
+        if private_url is not None:
+            self.private_url = private_url
         if provider is not None:
             self.provider = provider
         if settings is not None:
@@ -117,6 +122,29 @@ class StorageAccountWithBuckets(object):
         """
 
         self._id = id
+
+    @property
+    def private_url(self):
+        """Gets the private_url of this StorageAccountWithBuckets.  # noqa: E501
+
+        URL used by engines to access the cloud  # noqa: E501
+
+        :return: The private_url of this StorageAccountWithBuckets.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_url
+
+    @private_url.setter
+    def private_url(self, private_url):
+        """Sets the private_url of this StorageAccountWithBuckets.
+
+        URL used by engines to access the cloud  # noqa: E501
+
+        :param private_url: The private_url of this StorageAccountWithBuckets.  # noqa: E501
+        :type: str
+        """
+
+        self._private_url = private_url
 
     @property
     def provider(self):

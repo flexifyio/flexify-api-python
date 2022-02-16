@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **name** | **str** | Name of the provider | [optional] 
 **port_http** | **int** | Port for HTTP request (null for default 80) | [optional] 
 **port_https** | **int** | Port for HTTPS request (null for default 443) | [optional] 
+**private_endpoint** | **str** | Endpoint used by engines (or null if only public endpoint is used) | [optional] 
 **product_name** | **str** | Name of product/region for this provider | [optional] 
 **protocol** | **str** | Storage protocol this provider uses | [optional] 
 **regions** | **list[str]** | List of regions supported for this provider (or null if regions are not supported | [optional] 

@@ -43,6 +43,7 @@ class StorageProvider(object):
         'name': 'str',
         'port_http': 'int',
         'port_https': 'int',
+        'private_endpoint': 'str',
         'product_name': 'str',
         'protocol': 'str',
         'regions': 'list[str]',
@@ -65,6 +66,7 @@ class StorageProvider(object):
         'name': 'name',
         'port_http': 'portHttp',
         'port_https': 'portHttps',
+        'private_endpoint': 'privateEndpoint',
         'product_name': 'productName',
         'protocol': 'protocol',
         'regions': 'regions',
@@ -74,7 +76,7 @@ class StorageProvider(object):
         'supports_o_auth': 'supportsOAuth'
     }
 
-    def __init__(self, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, dot_encode=None, endpoint=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, product_name=None, protocol=None, regions=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None):  # noqa: E501
+    def __init__(self, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, dot_encode=None, endpoint=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, product_name=None, protocol=None, regions=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None):  # noqa: E501
         """StorageProvider - a model defined in Swagger"""  # noqa: E501
 
         self._can_create_buckets_with_uppercase = None
@@ -89,6 +91,7 @@ class StorageProvider(object):
         self._name = None
         self._port_http = None
         self._port_https = None
+        self._private_endpoint = None
         self._product_name = None
         self._protocol = None
         self._regions = None
@@ -122,6 +125,8 @@ class StorageProvider(object):
             self.port_http = port_http
         if port_https is not None:
             self.port_https = port_https
+        if private_endpoint is not None:
+            self.private_endpoint = private_endpoint
         if product_name is not None:
             self.product_name = product_name
         if protocol is not None:
@@ -412,6 +417,29 @@ class StorageProvider(object):
         """
 
         self._port_https = port_https
+
+    @property
+    def private_endpoint(self):
+        """Gets the private_endpoint of this StorageProvider.  # noqa: E501
+
+        Endpoint used by engines (or null if only public endpoint is used)  # noqa: E501
+
+        :return: The private_endpoint of this StorageProvider.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_endpoint
+
+    @private_endpoint.setter
+    def private_endpoint(self, private_endpoint):
+        """Sets the private_endpoint of this StorageProvider.
+
+        Endpoint used by engines (or null if only public endpoint is used)  # noqa: E501
+
+        :param private_endpoint: The private_endpoint of this StorageProvider.  # noqa: E501
+        :type: str
+        """
+
+        self._private_endpoint = private_endpoint
 
     @property
     def product_name(self):
