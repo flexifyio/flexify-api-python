@@ -7,7 +7,7 @@ By unlocking your application from the specific cloud vendor or protocol, you fi
 + Get API token
 + Enjoy Flexify.IO REST API
 
-- API version: 2.12.9
+- API version: 2.12.10-SNAPSHOT
 
 ## Requirements
 
