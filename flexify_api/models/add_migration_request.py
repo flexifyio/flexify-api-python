@@ -32,25 +32,30 @@ class AddMigrationRequest(object):
     """
     swagger_types = {
         'mappings': 'list[AddMigrationRequestMapping]',
-        'settings': 'MigrationSettingsReq'
+        'settings': 'MigrationSettingsReq',
+        'verify_buckets': 'bool'
     }
 
     attribute_map = {
         'mappings': 'mappings',
-        'settings': 'settings'
+        'settings': 'settings',
+        'verify_buckets': 'verifyBuckets'
     }
 
-    def __init__(self, mappings=None, settings=None):  # noqa: E501
+    def __init__(self, mappings=None, settings=None, verify_buckets=None):  # noqa: E501
         """AddMigrationRequest - a model defined in Swagger"""  # noqa: E501
 
         self._mappings = None
         self._settings = None
+        self._verify_buckets = None
         self.discriminator = None
 
         if mappings is not None:
             self.mappings = mappings
         if settings is not None:
             self.settings = settings
+        if verify_buckets is not None:
+            self.verify_buckets = verify_buckets
 
     @property
     def mappings(self):
@@ -97,6 +102,29 @@ class AddMigrationRequest(object):
         """
 
         self._settings = settings
+
+    @property
+    def verify_buckets(self):
+        """Gets the verify_buckets of this AddMigrationRequest.  # noqa: E501
+
+        If buckets should be verified by HEAD request  # noqa: E501
+
+        :return: The verify_buckets of this AddMigrationRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._verify_buckets
+
+    @verify_buckets.setter
+    def verify_buckets(self, verify_buckets):
+        """Sets the verify_buckets of this AddMigrationRequest.
+
+        If buckets should be verified by HEAD request  # noqa: E501
+
+        :param verify_buckets: The verify_buckets of this AddMigrationRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._verify_buckets = verify_buckets
 
     def to_dict(self):
         """Returns the model properties as a dict"""
