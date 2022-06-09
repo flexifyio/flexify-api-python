@@ -29,6 +29,7 @@ from flexify_api.api.partner_organizations_controller_api import PartnerOrganiza
 from flexify_api.api.partner_sign_up_codes_controller_api import PartnerSignUpCodesControllerApi
 from flexify_api.api.partner_users_controller_api import PartnerUsersControllerApi
 from flexify_api.api.payments_controller_api import PaymentsControllerApi
+from flexify_api.api.providers_controller_api import ProvidersControllerApi
 from flexify_api.api.storage_accounts_controller_api import StorageAccountsControllerApi
 from flexify_api.api.storages_controller_api import StoragesControllerApi
 from flexify_api.api.user_controller_api import UserControllerApi

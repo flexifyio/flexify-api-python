@@ -177,6 +177,7 @@ Class | Method | HTTP request | Description
 *PartnerUsersControllerApi* | [**update_user_by_username1**](docs/PartnerUsersControllerApi.md#update_user_by_username1) | **PUT** /backend/rest/partner/users/username/{username} | Update profile by username
 *PaymentsControllerApi* | [**get_payment_options**](docs/PaymentsControllerApi.md#get_payment_options) | **GET** /backend/rest/pay/paddle/options | getPaymentOptions
 *PaymentsControllerApi* | [**payment_fulfilled**](docs/PaymentsControllerApi.md#payment_fulfilled) | **GET** /backend/rest/pay/paddle/webhook | paymentFulfilled
+*ProvidersControllerApi* | [**get_providers**](docs/ProvidersControllerApi.md#get_providers) | **GET** /backend/rest/providers | Get all storage providers
 *StorageAccountsControllerApi* | [**add_storage_account**](docs/StorageAccountsControllerApi.md#add_storage_account) | **POST** /backend/rest/storage-accounts | Add Storage Account with an optional list of buckets
 *StorageAccountsControllerApi* | [**delete_storage_account**](docs/StorageAccountsControllerApi.md#delete_storage_account) | **DELETE** /backend/rest/storage-accounts/{storage-account-id} | Deletes (hides) storage account and all its buckets/containers
 *StorageAccountsControllerApi* | [**delete_storage_accounts**](docs/StorageAccountsControllerApi.md#delete_storage_accounts) | **POST** /backend/rest/storage-accounts/actions/delete | Deletes (hides) a multiple storage accounts and all their buckets/containers
@@ -187,11 +188,8 @@ Class | Method | HTTP request | Description
 *StorageAccountsControllerApi* | [**set_storage_account_settings**](docs/StorageAccountsControllerApi.md#set_storage_account_settings) | **PUT** /backend/rest/storage-accounts/{storage-account-id}/settings | Updates storage account settings
 *StoragesControllerApi* | [**add_buckets**](docs/StoragesControllerApi.md#add_buckets) | **POST** /backend/rest/storage-accounts/{storage-account-id}/buckets | Add buckets to the storage account
 *StoragesControllerApi* | [**delete_bucket**](docs/StoragesControllerApi.md#delete_bucket) | **DELETE** /backend/rest/storage-accounts/{storage-account-id}/buckets/{bucket-id} | Deletes (hides) a bucket/container
-*StoragesControllerApi* | [**delete_buckets**](docs/StoragesControllerApi.md#delete_buckets) | **POST** /backend/rest/storage-accounts/actions/delete-buckets | Deletes (hides) multiple buckets/containers
 *StoragesControllerApi* | [**get_bucket**](docs/StoragesControllerApi.md#get_bucket) | **GET** /backend/rest/storage-accounts/{storage-account-id}/buckets/{bucket-id} | Get detailed stats for the bucket
-*StoragesControllerApi* | [**get_providers**](docs/StoragesControllerApi.md#get_providers) | **GET** /backend/rest/providers | Get all storage providers
 *StoragesControllerApi* | [**refresh_bucket**](docs/StoragesControllerApi.md#refresh_bucket) | **POST** /backend/rest/storage-accounts/{storage-account-id}/buckets/{bucket-id}/actions/refresh | Refresh statistics of a single bucket
-*StoragesControllerApi* | [**refresh_buckets**](docs/StoragesControllerApi.md#refresh_buckets) | **POST** /backend/rest/storage-accounts/actions/refresh-buckets | Refresh statistics of multiple buckets
 *UserControllerApi* | [**get_current_user**](docs/UserControllerApi.md#get_current_user) | **GET** /backend/rest/user/current | Get details of user corresponding to provided auth token
 *UserControllerApi* | [**request_delete**](docs/UserControllerApi.md#request_delete) | **POST** /backend/rest/user/request-delete | requestDelete
 *UserControllerApi* | [**request_reset_password**](docs/UserControllerApi.md#request_reset_password) | **POST** /backend/rest/user/request-reset-password | requestResetPassword

@@ -43,13 +43,6 @@ class TestStoragesControllerApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_buckets(self):
-        """Test case for delete_buckets
-
-        Deletes (hides) multiple buckets/containers  # noqa: E501
-        """
-        pass
-
     def test_get_bucket(self):
         """Test case for get_bucket
 
@@ -57,24 +50,10 @@ class TestStoragesControllerApi(unittest.TestCase):
         """
         pass
 
-    def test_get_providers(self):
-        """Test case for get_providers
-
-        Get all storage providers  # noqa: E501
-        """
-        pass
-
     def test_refresh_bucket(self):
         """Test case for refresh_bucket
 
         Refresh statistics of a single bucket  # noqa: E501
-        """
-        pass
-
-    def test_refresh_buckets(self):
-        """Test case for refresh_buckets
-
-        Refresh statistics of multiple buckets  # noqa: E501
         """
         pass
 
