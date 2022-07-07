@@ -203,7 +203,7 @@ class StorageAccountStat(object):
     def storages_limit_exceeded(self):
         """Gets the storages_limit_exceeded of this StorageAccountStat.  # noqa: E501
 
-        When the limit of the maxmimum number of buckets/containers is exceeed and not all storages are shown  # noqa: E501
+        When the limit of the maximum number of buckets/containers is exceed and not all storages are shown  # noqa: E501
 
         :return: The storages_limit_exceeded of this StorageAccountStat.  # noqa: E501
         :rtype: bool
@@ -214,7 +214,7 @@ class StorageAccountStat(object):
     def storages_limit_exceeded(self, storages_limit_exceeded):
         """Sets the storages_limit_exceeded of this StorageAccountStat.
 
-        When the limit of the maxmimum number of buckets/containers is exceeed and not all storages are shown  # noqa: E501
+        When the limit of the maximum number of buckets/containers is exceed and not all storages are shown  # noqa: E501
 
         :param storages_limit_exceeded: The storages_limit_exceeded of this StorageAccountStat.  # noqa: E501
         :type: bool

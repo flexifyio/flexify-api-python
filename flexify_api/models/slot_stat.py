@@ -34,6 +34,7 @@ class SlotStat(object):
         'active_engines': 'int',
         'active_streams': 'int',
         'bytes_failed': 'int',
+        'bytes_glacier_restore_started': 'int',
         'bytes_not_matching_pattern': 'int',
         'bytes_processed': 'int',
         'bytes_skipped': 'int',
@@ -42,6 +43,7 @@ class SlotStat(object):
         'dst_region': 'str',
         'finished': 'datetime',
         'objects_failed': 'int',
+        'objects_glacier_restore_started': 'int',
         'objects_not_matching_pattern': 'int',
         'objects_processed': 'int',
         'objects_skipped': 'int',
@@ -61,6 +63,7 @@ class SlotStat(object):
         'active_engines': 'activeEngines',
         'active_streams': 'activeStreams',
         'bytes_failed': 'bytesFailed',
+        'bytes_glacier_restore_started': 'bytesGlacierRestoreStarted',
         'bytes_not_matching_pattern': 'bytesNotMatchingPattern',
         'bytes_processed': 'bytesProcessed',
         'bytes_skipped': 'bytesSkipped',
@@ -69,6 +72,7 @@ class SlotStat(object):
         'dst_region': 'dstRegion',
         'finished': 'finished',
         'objects_failed': 'objectsFailed',
+        'objects_glacier_restore_started': 'objectsGlacierRestoreStarted',
         'objects_not_matching_pattern': 'objectsNotMatchingPattern',
         'objects_processed': 'objectsProcessed',
         'objects_skipped': 'objectsSkipped',
@@ -84,12 +88,13 @@ class SlotStat(object):
         'uploading_objects_per_second': 'uploadingObjectsPerSecond'
     }
 
-    def __init__(self, active_engines=None, active_streams=None, bytes_failed=None, bytes_not_matching_pattern=None, bytes_processed=None, bytes_skipped=None, bytes_skipped_glacier=None, bytes_uploaded=None, dst_region=None, finished=None, objects_failed=None, objects_not_matching_pattern=None, objects_processed=None, objects_skipped=None, objects_skipped_glacier=None, objects_uploaded=None, processing_objects_per_second=None, retried=None, src_region=None, started=None, state=None, total_upload=None, uploading_bytes_per_second=None, uploading_objects_per_second=None):  # noqa: E501
+    def __init__(self, active_engines=None, active_streams=None, bytes_failed=None, bytes_glacier_restore_started=None, bytes_not_matching_pattern=None, bytes_processed=None, bytes_skipped=None, bytes_skipped_glacier=None, bytes_uploaded=None, dst_region=None, finished=None, objects_failed=None, objects_glacier_restore_started=None, objects_not_matching_pattern=None, objects_processed=None, objects_skipped=None, objects_skipped_glacier=None, objects_uploaded=None, processing_objects_per_second=None, retried=None, src_region=None, started=None, state=None, total_upload=None, uploading_bytes_per_second=None, uploading_objects_per_second=None):  # noqa: E501
         """SlotStat - a model defined in Swagger"""  # noqa: E501
 
         self._active_engines = None
         self._active_streams = None
         self._bytes_failed = None
+        self._bytes_glacier_restore_started = None
         self._bytes_not_matching_pattern = None
         self._bytes_processed = None
         self._bytes_skipped = None
@@ -98,6 +103,7 @@ class SlotStat(object):
         self._dst_region = None
         self._finished = None
         self._objects_failed = None
+        self._objects_glacier_restore_started = None
         self._objects_not_matching_pattern = None
         self._objects_processed = None
         self._objects_skipped = None
@@ -119,6 +125,8 @@ class SlotStat(object):
             self.active_streams = active_streams
         if bytes_failed is not None:
             self.bytes_failed = bytes_failed
+        if bytes_glacier_restore_started is not None:
+            self.bytes_glacier_restore_started = bytes_glacier_restore_started
         if bytes_not_matching_pattern is not None:
             self.bytes_not_matching_pattern = bytes_not_matching_pattern
         if bytes_processed is not None:
@@ -135,6 +143,8 @@ class SlotStat(object):
             self.finished = finished
         if objects_failed is not None:
             self.objects_failed = objects_failed
+        if objects_glacier_restore_started is not None:
+            self.objects_glacier_restore_started = objects_glacier_restore_started
         if objects_not_matching_pattern is not None:
             self.objects_not_matching_pattern = objects_not_matching_pattern
         if objects_processed is not None:
@@ -228,6 +238,27 @@ class SlotStat(object):
         """
 
         self._bytes_failed = bytes_failed
+
+    @property
+    def bytes_glacier_restore_started(self):
+        """Gets the bytes_glacier_restore_started of this SlotStat.  # noqa: E501
+
+
+        :return: The bytes_glacier_restore_started of this SlotStat.  # noqa: E501
+        :rtype: int
+        """
+        return self._bytes_glacier_restore_started
+
+    @bytes_glacier_restore_started.setter
+    def bytes_glacier_restore_started(self, bytes_glacier_restore_started):
+        """Sets the bytes_glacier_restore_started of this SlotStat.
+
+
+        :param bytes_glacier_restore_started: The bytes_glacier_restore_started of this SlotStat.  # noqa: E501
+        :type: int
+        """
+
+        self._bytes_glacier_restore_started = bytes_glacier_restore_started
 
     @property
     def bytes_not_matching_pattern(self):
@@ -398,6 +429,27 @@ class SlotStat(object):
         """
 
         self._objects_failed = objects_failed
+
+    @property
+    def objects_glacier_restore_started(self):
+        """Gets the objects_glacier_restore_started of this SlotStat.  # noqa: E501
+
+
+        :return: The objects_glacier_restore_started of this SlotStat.  # noqa: E501
+        :rtype: int
+        """
+        return self._objects_glacier_restore_started
+
+    @objects_glacier_restore_started.setter
+    def objects_glacier_restore_started(self, objects_glacier_restore_started):
+        """Sets the objects_glacier_restore_started of this SlotStat.
+
+
+        :param objects_glacier_restore_started: The objects_glacier_restore_started of this SlotStat.  # noqa: E501
+        :type: int
+        """
+
+        self._objects_glacier_restore_started = objects_glacier_restore_started
 
     @property
     def objects_not_matching_pattern(self):

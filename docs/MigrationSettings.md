@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**auto_restore_if_archived** | **bool** | Automatically restore objects from archival tier | [optional] 
 **comparison_method** | **str** | Destination comparison method | [optional] 
 **conflict_resolution** | **str** | Conflict resolution | [optional] 
 **deployment_type** | **str** | The type of engine deployment | [optional] 
@@ -22,6 +23,9 @@ Name | Type | Description | Notes
 **multipart_part_size** | **int** | Part size for multipart upload | [optional] 
 **name** | **str** | Name of the migration | [optional] 
 **object_key_filter** | **str** | Migrate objects matching pattern | [optional] 
+**restore_days** | **int** | Number of days to keep restored objects when automatically restoring objects from archival tier | [optional] 
+**restore_max_size** | **int** | Maximum total size of objects to restore when automatically restoring objects from archival tier | [optional] 
+**restore_tier** | **str** | Restore tier when automatically restoring objects from archival tier | [optional] 
 **retry_timeout** | **int** | Initial timeout between retries in seconds | [optional] 
 **skip_if_hash_matches** | **bool** | Skip migration if source and destination object hash match | [optional] 
 **slots_per_mapping** | **int** | Number of slots of storage mapping (bucket) | [optional] 
