@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bucket_id** | **int** | Id of atatched bucket | [optional] 
+**bucket_id** | **int** | ID of attached bucket | [optional] 
 **settings** | [**VirtualBucketStorageSettings**](VirtualBucketStorageSettings.md) | Attached storage configuration | [optional] 
 **transparent** | **bool** | Transparent proxy is enabled for this storage | [optional] 
 

@@ -21,8 +21,6 @@ from flexify_api.models.add_impersonate_from_user_request import AddImpersonateF
 from flexify_api.models.add_migration_request import AddMigrationRequest
 from flexify_api.models.add_migration_request_mapping import AddMigrationRequestMapping
 from flexify_api.models.add_storage_account_request import AddStorageAccountRequest
-from flexify_api.models.attach_storage_accounts_request import AttachStorageAccountsRequest
-from flexify_api.models.attach_virtual_bucket_storages_request import AttachVirtualBucketStoragesRequest
 from flexify_api.models.auth_app_info import AuthAppInfo
 from flexify_api.models.authentication_request import AuthenticationRequest
 from flexify_api.models.authentication_response import AuthenticationResponse
@@ -95,6 +93,7 @@ from flexify_api.models.storage_account_settings_req import StorageAccountSettin
 from flexify_api.models.storage_account_settings_res import StorageAccountSettingsRes
 from flexify_api.models.storage_account_stat import StorageAccountStat
 from flexify_api.models.storage_account_with_buckets import StorageAccountWithBuckets
+from flexify_api.models.storage_accounts_request import StorageAccountsRequest
 from flexify_api.models.storage_provider import StorageProvider
 from flexify_api.models.token_configuration import TokenConfiguration
 from flexify_api.models.update_user_request import UpdateUserRequest
@@ -108,3 +107,4 @@ from flexify_api.models.virtual_bucket_settings import VirtualBucketSettings
 from flexify_api.models.virtual_bucket_storage_req import VirtualBucketStorageReq
 from flexify_api.models.virtual_bucket_storage_res import VirtualBucketStorageRes
 from flexify_api.models.virtual_bucket_storage_settings import VirtualBucketStorageSettings
+from flexify_api.models.virtual_bucket_storages_request import VirtualBucketStoragesRequest

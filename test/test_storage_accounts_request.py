@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.models.attach_storage_accounts_request import AttachStorageAccountsRequest  # noqa: E501
+from flexify_api.models.storage_accounts_request import StorageAccountsRequest  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestAttachStorageAccountsRequest(unittest.TestCase):
-    """AttachStorageAccountsRequest unit test stubs"""
+class TestStorageAccountsRequest(unittest.TestCase):
+    """StorageAccountsRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAttachStorageAccountsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAttachStorageAccountsRequest(self):
-        """Test AttachStorageAccountsRequest"""
+    def testStorageAccountsRequest(self):
+        """Test StorageAccountsRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api.models.attach_storage_accounts_request.AttachStorageAccountsRequest()  # noqa: E501
+        # model = flexify_api.models.storage_accounts_request.StorageAccountsRequest()  # noqa: E501
         pass
 
 

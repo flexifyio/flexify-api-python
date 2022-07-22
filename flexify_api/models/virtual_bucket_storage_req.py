@@ -56,7 +56,7 @@ class VirtualBucketStorageReq(object):
     def bucket_id(self):
         """Gets the bucket_id of this VirtualBucketStorageReq.  # noqa: E501
 
-        Id of atatched bucket  # noqa: E501
+        ID of attached bucket  # noqa: E501
 
         :return: The bucket_id of this VirtualBucketStorageReq.  # noqa: E501
         :rtype: int
@@ -67,7 +67,7 @@ class VirtualBucketStorageReq(object):
     def bucket_id(self, bucket_id):
         """Sets the bucket_id of this VirtualBucketStorageReq.
 
-        Id of atatched bucket  # noqa: E501
+        ID of attached bucket  # noqa: E501
 
         :param bucket_id: The bucket_id of this VirtualBucketStorageReq.  # noqa: E501
         :type: int

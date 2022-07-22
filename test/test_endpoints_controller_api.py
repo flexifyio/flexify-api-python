@@ -43,6 +43,20 @@ class TestEndpointsControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_change_accounts(self):
+        """Test case for change_accounts
+
+        Modified all storage accounts to the endpoint  # noqa: E501
+        """
+        pass
+
+    def test_change_buckets(self):
+        """Test case for change_buckets
+
+        Replaces the list of storages attached to the virtual bucket  # noqa: E501
+        """
+        pass
+
     def test_create_endpoint(self):
         """Test case for create_endpoint
 

@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_accounts**](EndpointsControllerApi.md#attach_accounts) | **POST** /backend/rest/endpoints/{endpoint-id}/storage-accounts | Attach storage accounts to the endpoint
 [**attach_buckets**](EndpointsControllerApi.md#attach_buckets) | **POST** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets | Attach storages to the virtual bucket
+[**change_accounts**](EndpointsControllerApi.md#change_accounts) | **PUT** /backend/rest/endpoints/{endpoint-id}/storage-accounts | Modified all storage accounts to the endpoint
+[**change_buckets**](EndpointsControllerApi.md#change_buckets) | **PUT** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets | Replaces the list of storages attached to the virtual bucket
 [**create_endpoint**](EndpointsControllerApi.md#create_endpoint) | **POST** /backend/rest/endpoints | Creates new endpoint
 [**create_virtual_bucket**](EndpointsControllerApi.md#create_virtual_bucket) | **POST** /backend/rest/endpoints/{endpoint-id}/virtual-buckets | Creates new virtual bucket
 [**delete**](EndpointsControllerApi.md#delete) | **DELETE** /backend/rest/endpoints/{endpoint-id} | Delete the endpoint
@@ -45,7 +47,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = flexify_api.EndpointsControllerApi(flexify_api.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
-request = flexify_api.AttachStorageAccountsRequest() # AttachStorageAccountsRequest | request
+request = flexify_api.StorageAccountsRequest() # StorageAccountsRequest | request
 
 try:
     # Attach storage accounts to the endpoint
@@ -59,7 +61,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_id** | **int**| endpoint-id | 
- **request** | [**AttachStorageAccountsRequest**](AttachStorageAccountsRequest.md)| request | 
+ **request** | [**StorageAccountsRequest**](StorageAccountsRequest.md)| request | 
 
 ### Return type
 
@@ -98,7 +100,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = flexify_api.EndpointsControllerApi(flexify_api.ApiClient(configuration))
 endpoint_id = 789 # int | endpoint-id
-request = flexify_api.AttachVirtualBucketStoragesRequest() # AttachVirtualBucketStoragesRequest | request
+request = flexify_api.VirtualBucketStoragesRequest() # VirtualBucketStoragesRequest | request
 virtual_bucket = 'virtual_bucket_example' # str | virtual-bucket
 
 try:
@@ -113,7 +115,115 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_id** | **int**| endpoint-id | 
- **request** | [**AttachVirtualBucketStoragesRequest**](AttachVirtualBucketStoragesRequest.md)| request | 
+ **request** | [**VirtualBucketStoragesRequest**](VirtualBucketStoragesRequest.md)| request | 
+ **virtual_bucket** | **str**| virtual-bucket | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **change_accounts**
+> change_accounts(endpoint_id, request)
+
+Modified all storage accounts to the endpoint
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.EndpointsControllerApi(flexify_api.ApiClient(configuration))
+endpoint_id = 789 # int | endpoint-id
+request = flexify_api.StorageAccountsRequest() # StorageAccountsRequest | request
+
+try:
+    # Modified all storage accounts to the endpoint
+    api_instance.change_accounts(endpoint_id, request)
+except ApiException as e:
+    print("Exception when calling EndpointsControllerApi->change_accounts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **endpoint_id** | **int**| endpoint-id | 
+ **request** | [**StorageAccountsRequest**](StorageAccountsRequest.md)| request | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **change_buckets**
+> change_buckets(endpoint_id, request, virtual_bucket)
+
+Replaces the list of storages attached to the virtual bucket
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.EndpointsControllerApi(flexify_api.ApiClient(configuration))
+endpoint_id = 789 # int | endpoint-id
+request = flexify_api.VirtualBucketStoragesRequest() # VirtualBucketStoragesRequest | request
+virtual_bucket = 'virtual_bucket_example' # str | virtual-bucket
+
+try:
+    # Replaces the list of storages attached to the virtual bucket
+    api_instance.change_buckets(endpoint_id, request, virtual_bucket)
+except ApiException as e:
+    print("Exception when calling EndpointsControllerApi->change_buckets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **endpoint_id** | **int**| endpoint-id | 
+ **request** | [**VirtualBucketStoragesRequest**](VirtualBucketStoragesRequest.md)| request | 
  **virtual_bucket** | **str**| virtual-bucket | 
 
 ### Return type

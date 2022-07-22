@@ -50,7 +50,7 @@ class VirtualBucketSettings(object):
     def bucket_name(self):
         """Gets the bucket_name of this VirtualBucketSettings.  # noqa: E501
 
-        Backet name  # noqa: E501
+        Bucket name  # noqa: E501
 
         :return: The bucket_name of this VirtualBucketSettings.  # noqa: E501
         :rtype: str
@@ -61,7 +61,7 @@ class VirtualBucketSettings(object):
     def bucket_name(self, bucket_name):
         """Sets the bucket_name of this VirtualBucketSettings.
 
-        Backet name  # noqa: E501
+        Bucket name  # noqa: E501
 
         :param bucket_name: The bucket_name of this VirtualBucketSettings.  # noqa: E501
         :type: str

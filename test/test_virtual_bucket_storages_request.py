@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.models.attach_virtual_bucket_storages_request import AttachVirtualBucketStoragesRequest  # noqa: E501
+from flexify_api.models.virtual_bucket_storages_request import VirtualBucketStoragesRequest  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestAttachVirtualBucketStoragesRequest(unittest.TestCase):
-    """AttachVirtualBucketStoragesRequest unit test stubs"""
+class TestVirtualBucketStoragesRequest(unittest.TestCase):
+    """VirtualBucketStoragesRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAttachVirtualBucketStoragesRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAttachVirtualBucketStoragesRequest(self):
-        """Test AttachVirtualBucketStoragesRequest"""
+    def testVirtualBucketStoragesRequest(self):
+        """Test VirtualBucketStoragesRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api.models.attach_virtual_bucket_storages_request.AttachVirtualBucketStoragesRequest()  # noqa: E501
+        # model = flexify_api.models.virtual_bucket_storages_request.VirtualBucketStoragesRequest()  # noqa: E501
         pass
 
 
