@@ -31,44 +31,44 @@ class VirtualBucketStoragesRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'storages': 'list[VirtualBucketStorageReq]'
+        'new_storages': 'list[VirtualBucketStorageReq]'
     }
 
     attribute_map = {
-        'storages': 'storages'
+        'new_storages': 'newStorages'
     }
 
-    def __init__(self, storages=None):  # noqa: E501
+    def __init__(self, new_storages=None):  # noqa: E501
         """VirtualBucketStoragesRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._storages = None
+        self._new_storages = None
         self.discriminator = None
 
-        if storages is not None:
-            self.storages = storages
+        if new_storages is not None:
+            self.new_storages = new_storages
 
     @property
-    def storages(self):
-        """Gets the storages of this VirtualBucketStoragesRequest.  # noqa: E501
+    def new_storages(self):
+        """Gets the new_storages of this VirtualBucketStoragesRequest.  # noqa: E501
 
-        A list of storages to accounts to virtual bucket  # noqa: E501
+        A list of storages to set or accounts to virtual bucket  # noqa: E501
 
-        :return: The storages of this VirtualBucketStoragesRequest.  # noqa: E501
+        :return: The new_storages of this VirtualBucketStoragesRequest.  # noqa: E501
         :rtype: list[VirtualBucketStorageReq]
         """
-        return self._storages
+        return self._new_storages
 
-    @storages.setter
-    def storages(self, storages):
-        """Sets the storages of this VirtualBucketStoragesRequest.
+    @new_storages.setter
+    def new_storages(self, new_storages):
+        """Sets the new_storages of this VirtualBucketStoragesRequest.
 
-        A list of storages to accounts to virtual bucket  # noqa: E501
+        A list of storages to set or accounts to virtual bucket  # noqa: E501
 
-        :param storages: The storages of this VirtualBucketStoragesRequest.  # noqa: E501
+        :param new_storages: The new_storages of this VirtualBucketStoragesRequest.  # noqa: E501
         :type: list[VirtualBucketStorageReq]
         """
 
-        self._storages = storages
+        self._new_storages = new_storages
 
     def to_dict(self):
         """Returns the model properties as a dict"""

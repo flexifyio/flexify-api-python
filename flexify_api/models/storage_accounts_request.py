@@ -31,44 +31,44 @@ class StorageAccountsRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'storage_accounts': 'list[EndpointStorageAccountReq]'
+        'new_storage_accounts': 'list[EndpointStorageAccountReq]'
     }
 
     attribute_map = {
-        'storage_accounts': 'storageAccounts'
+        'new_storage_accounts': 'newStorageAccounts'
     }
 
-    def __init__(self, storage_accounts=None):  # noqa: E501
+    def __init__(self, new_storage_accounts=None):  # noqa: E501
         """StorageAccountsRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._storage_accounts = None
+        self._new_storage_accounts = None
         self.discriminator = None
 
-        if storage_accounts is not None:
-            self.storage_accounts = storage_accounts
+        if new_storage_accounts is not None:
+            self.new_storage_accounts = new_storage_accounts
 
     @property
-    def storage_accounts(self):
-        """Gets the storage_accounts of this StorageAccountsRequest.  # noqa: E501
+    def new_storage_accounts(self):
+        """Gets the new_storage_accounts of this StorageAccountsRequest.  # noqa: E501
 
-        A list of endpoint storage accounts to attach  # noqa: E501
+        A list of endpoint storage accounts to set or attach  # noqa: E501
 
-        :return: The storage_accounts of this StorageAccountsRequest.  # noqa: E501
+        :return: The new_storage_accounts of this StorageAccountsRequest.  # noqa: E501
         :rtype: list[EndpointStorageAccountReq]
         """
-        return self._storage_accounts
+        return self._new_storage_accounts
 
-    @storage_accounts.setter
-    def storage_accounts(self, storage_accounts):
-        """Sets the storage_accounts of this StorageAccountsRequest.
+    @new_storage_accounts.setter
+    def new_storage_accounts(self, new_storage_accounts):
+        """Sets the new_storage_accounts of this StorageAccountsRequest.
 
-        A list of endpoint storage accounts to attach  # noqa: E501
+        A list of endpoint storage accounts to set or attach  # noqa: E501
 
-        :param storage_accounts: The storage_accounts of this StorageAccountsRequest.  # noqa: E501
+        :param new_storage_accounts: The new_storage_accounts of this StorageAccountsRequest.  # noqa: E501
         :type: list[EndpointStorageAccountReq]
         """
 
-        self._storage_accounts = storage_accounts
+        self._new_storage_accounts = new_storage_accounts
 
     def to_dict(self):
         """Returns the model properties as a dict"""
