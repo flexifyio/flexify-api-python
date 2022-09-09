@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.models.authorization_response import AuthorizationResponse  # noqa: E501
+from flexify_api.models.auth_check_token_and_get_user_response import AuthCheckTokenAndGetUserResponse  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestAuthorizationResponse(unittest.TestCase):
-    """AuthorizationResponse unit test stubs"""
+class TestAuthCheckTokenAndGetUserResponse(unittest.TestCase):
+    """AuthCheckTokenAndGetUserResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAuthorizationResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAuthorizationResponse(self):
-        """Test AuthorizationResponse"""
+    def testAuthCheckTokenAndGetUserResponse(self):
+        """Test AuthCheckTokenAndGetUserResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api.models.authorization_response.AuthorizationResponse()  # noqa: E501
+        # model = flexify_api.models.auth_check_token_and_get_user_response.AuthCheckTokenAndGetUserResponse()  # noqa: E501
         pass
 
 

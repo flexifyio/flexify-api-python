@@ -43,7 +43,7 @@ class AuthControllerApi(object):
 
         :param async_req bool
         :param AuthenticationRequest authentication_request: authenticationRequest (required)
-        :return: object
+        :return: AuthenticationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -64,7 +64,7 @@ class AuthControllerApi(object):
 
         :param async_req bool
         :param AuthenticationRequest authentication_request: authenticationRequest (required)
-        :return: object
+        :return: AuthenticationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -122,7 +122,7 @@ class AuthControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='AuthenticationResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -130,36 +130,36 @@ class AuthControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def authorize(self, **kwargs):  # noqa: E501
-        """Authorization check of given token  # noqa: E501
+    def check_token_and_get_user(self, **kwargs):  # noqa: E501
+        """Check of given token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.authorize(async_req=True)
+        >>> thread = api.check_token_and_get_user(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: object
+        :return: AuthCheckTokenAndGetUserResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.authorize_with_http_info(**kwargs)  # noqa: E501
+            return self.check_token_and_get_user_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.authorize_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.check_token_and_get_user_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def authorize_with_http_info(self, **kwargs):  # noqa: E501
-        """Authorization check of given token  # noqa: E501
+    def check_token_and_get_user_with_http_info(self, **kwargs):  # noqa: E501
+        """Check of given token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.authorize_with_http_info(async_req=True)
+        >>> thread = api.check_token_and_get_user_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: object
+        :return: AuthCheckTokenAndGetUserResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -175,7 +175,7 @@ class AuthControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method authorize" % key
+                    " to method check_token_and_get_user" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -196,22 +196,18 @@ class AuthControllerApi(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             ['*/*'])  # noqa: E501
 
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/backend/rest/auth/authorize', 'POST',
+            '/backend/rest/auth/user', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='AuthCheckTokenAndGetUserResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -36,10 +36,10 @@ class TestAuthControllerApi(unittest.TestCase):
         """
         pass
 
-    def test_authorize(self):
-        """Test case for authorize
+    def test_check_token_and_get_user(self):
+        """Test case for check_token_and_get_user
 
-        Authorization check of given token  # noqa: E501
+        Check of given token  # noqa: E501
         """
         pass
 
