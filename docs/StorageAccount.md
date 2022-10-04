@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Id of the storage account | [optional] 
-**is_sas** | **bool** |  | [optional] 
 **private_url** | **str** | URL used by engines to access the cloud | [optional] 
 **provider** | [**StorageProvider**](StorageProvider.md) | Link to the storage provider (Amazon, Azure, etc) | [optional] 
 **settings** | [**StorageAccountSettingsRes**](StorageAccountSettingsRes.md) | Configuration of this storage account | [optional] 

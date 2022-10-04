@@ -5,13 +5,13 @@ All URIs are relative to *https://api.flexify.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authenticate**](AuthControllerApi.md#authenticate) | **POST** /backend/rest/auth | Generate new access token for the user
-[**check_token_and_get_user**](AuthControllerApi.md#check_token_and_get_user) | **GET** /backend/rest/auth/user | Check of given token
+[**authorize**](AuthControllerApi.md#authorize) | **POST** /backend/rest/auth/authorize | Authorization check of given token
 [**get_config**](AuthControllerApi.md#get_config) | **GET** /backend/rest/auth/config | Logout
 [**logout**](AuthControllerApi.md#logout) | **POST** /backend/rest/auth/logout | Logout
 
 
 # **authenticate**
-> AuthenticationResponse authenticate(authentication_request)
+> object authenticate(authentication_request)
 
 Generate new access token for the user
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AuthenticationResponse**](AuthenticationResponse.md)
+**object**
 
 ### Authorization
 
@@ -56,10 +56,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **check_token_and_get_user**
-> AuthCheckTokenAndGetUserResponse check_token_and_get_user()
+# **authorize**
+> object authorize()
 
-Check of given token
+Authorization check of given token
 
 ### Example
 ```python
@@ -79,11 +79,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = flexify_api.AuthControllerApi(flexify_api.ApiClient(configuration))
 
 try:
-    # Check of given token
-    api_response = api_instance.check_token_and_get_user()
+    # Authorization check of given token
+    api_response = api_instance.authorize()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AuthControllerApi->check_token_and_get_user: %s\n" % e)
+    print("Exception when calling AuthControllerApi->authorize: %s\n" % e)
 ```
 
 ### Parameters
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AuthCheckTokenAndGetUserResponse**](AuthCheckTokenAndGetUserResponse.md)
+**object**
 
 ### Authorization
 
@@ -99,7 +99,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

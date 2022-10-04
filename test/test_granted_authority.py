@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.models.virtual_bucket_settings import VirtualBucketSettings  # noqa: E501
+from flexify_api.models.granted_authority import GrantedAuthority  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestVirtualBucketSettings(unittest.TestCase):
-    """VirtualBucketSettings unit test stubs"""
+class TestGrantedAuthority(unittest.TestCase):
+    """GrantedAuthority unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestVirtualBucketSettings(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testVirtualBucketSettings(self):
-        """Test VirtualBucketSettings"""
+    def testGrantedAuthority(self):
+        """Test GrantedAuthority"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api.models.virtual_bucket_settings.VirtualBucketSettings()  # noqa: E501
+        # model = flexify_api.models.granted_authority.GrantedAuthority()  # noqa: E501
         pass
 
 
