@@ -7,7 +7,7 @@ By unlocking your application from the specific cloud vendor or protocol, you fi
 + Get API token
 + Enjoy Flexify.IO REST API
 
-- API version: 2.12.10.hf4
+- API version: 2.12.11-SNAPSHOT
 
 ## Requirements
 
@@ -73,7 +73,7 @@ All URIs are relative to *https://api.flexify.io*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthControllerApi* | [**authenticate**](docs/AuthControllerApi.md#authenticate) | **POST** /backend/rest/auth | Generate new access token for the user
-*AuthControllerApi* | [**authorize**](docs/AuthControllerApi.md#authorize) | **POST** /backend/rest/auth/authorize | Authorization check of given token
+*AuthControllerApi* | [**check_token_and_get_user**](docs/AuthControllerApi.md#check_token_and_get_user) | **GET** /backend/rest/auth/user | Check of given token
 *AuthControllerApi* | [**get_config**](docs/AuthControllerApi.md#get_config) | **GET** /backend/rest/auth/config | Logout
 *AuthControllerApi* | [**logout**](docs/AuthControllerApi.md#logout) | **POST** /backend/rest/auth/logout | Logout
 *BillingAccountControllerApi* | [**get_costs_for_current_user_billing_account**](docs/BillingAccountControllerApi.md#get_costs_for_current_user_billing_account) | **GET** /backend/rest/account/costs | Get costs for current user
@@ -206,9 +206,9 @@ Class | Method | HTTP request | Description
  - [AddMigrationRequestMapping](docs/AddMigrationRequestMapping.md)
  - [AddStorageAccountRequest](docs/AddStorageAccountRequest.md)
  - [AuthAppInfo](docs/AuthAppInfo.md)
+ - [AuthCheckTokenAndGetUserResponse](docs/AuthCheckTokenAndGetUserResponse.md)
  - [AuthenticationRequest](docs/AuthenticationRequest.md)
  - [AuthenticationResponse](docs/AuthenticationResponse.md)
- - [AuthorizationResponse](docs/AuthorizationResponse.md)
  - [BillingAccount](docs/BillingAccount.md)
  - [Bucket](docs/Bucket.md)
  - [BucketStat](docs/BucketStat.md)
@@ -231,7 +231,6 @@ Class | Method | HTTP request | Description
  - [EndpointStorageAccountReq](docs/EndpointStorageAccountReq.md)
  - [EndpointStorageAccountRes](docs/EndpointStorageAccountRes.md)
  - [EndpointStorageAccountSettings](docs/EndpointStorageAccountSettings.md)
- - [GrantedAuthority](docs/GrantedAuthority.md)
  - [IdResponse](docs/IdResponse.md)
  - [IdsList](docs/IdsList.md)
  - [ImpersonateUser](docs/ImpersonateUser.md)
