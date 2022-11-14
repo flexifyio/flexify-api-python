@@ -32,23 +32,28 @@ class EndpointStorageAccountSettings(object):
     """
     swagger_types = {
         'create_new_buckets_in': 'str',
+        'delete_objects': 'bool',
         'put_objects': 'bool'
     }
 
     attribute_map = {
         'create_new_buckets_in': 'createNewBucketsIn',
+        'delete_objects': 'deleteObjects',
         'put_objects': 'putObjects'
     }
 
-    def __init__(self, create_new_buckets_in=None, put_objects=None):  # noqa: E501
+    def __init__(self, create_new_buckets_in=None, delete_objects=None, put_objects=None):  # noqa: E501
         """EndpointStorageAccountSettings - a model defined in Swagger"""  # noqa: E501
 
         self._create_new_buckets_in = None
+        self._delete_objects = None
         self._put_objects = None
         self.discriminator = None
 
         if create_new_buckets_in is not None:
             self.create_new_buckets_in = create_new_buckets_in
+        if delete_objects is not None:
+            self.delete_objects = delete_objects
         if put_objects is not None:
             self.put_objects = put_objects
 
@@ -74,6 +79,29 @@ class EndpointStorageAccountSettings(object):
         """
 
         self._create_new_buckets_in = create_new_buckets_in
+
+    @property
+    def delete_objects(self):
+        """Gets the delete_objects of this EndpointStorageAccountSettings.  # noqa: E501
+
+        Delete data from this storage account  # noqa: E501
+
+        :return: The delete_objects of this EndpointStorageAccountSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_objects
+
+    @delete_objects.setter
+    def delete_objects(self, delete_objects):
+        """Sets the delete_objects of this EndpointStorageAccountSettings.
+
+        Delete data from this storage account  # noqa: E501
+
+        :param delete_objects: The delete_objects of this EndpointStorageAccountSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_objects = delete_objects
 
     @property
     def put_objects(self):

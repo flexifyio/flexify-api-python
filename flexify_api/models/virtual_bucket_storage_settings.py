@@ -31,21 +31,49 @@ class VirtualBucketStorageSettings(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'delete_objects': 'bool',
         'put_objects': 'bool'
     }
 
     attribute_map = {
+        'delete_objects': 'deleteObjects',
         'put_objects': 'putObjects'
     }
 
-    def __init__(self, put_objects=None):  # noqa: E501
+    def __init__(self, delete_objects=None, put_objects=None):  # noqa: E501
         """VirtualBucketStorageSettings - a model defined in Swagger"""  # noqa: E501
 
+        self._delete_objects = None
         self._put_objects = None
         self.discriminator = None
 
+        if delete_objects is not None:
+            self.delete_objects = delete_objects
         if put_objects is not None:
             self.put_objects = put_objects
+
+    @property
+    def delete_objects(self):
+        """Gets the delete_objects of this VirtualBucketStorageSettings.  # noqa: E501
+
+        Delete data from this storage  # noqa: E501
+
+        :return: The delete_objects of this VirtualBucketStorageSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._delete_objects
+
+    @delete_objects.setter
+    def delete_objects(self, delete_objects):
+        """Sets the delete_objects of this VirtualBucketStorageSettings.
+
+        Delete data from this storage  # noqa: E501
+
+        :param delete_objects: The delete_objects of this VirtualBucketStorageSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._delete_objects = delete_objects
 
     @property
     def put_objects(self):
