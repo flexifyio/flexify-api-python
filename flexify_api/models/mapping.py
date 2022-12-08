@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class Mapping(object):
@@ -60,8 +62,11 @@ class Mapping(object):
         'stat': 'stat'
     }
 
-    def __init__(self, dest_bucket=None, dest_bucket_new_region=None, dest_storage_account=None, id=None, key_add_prefix=None, key_remove_prefix=None, objects_list_uri=None, selected_comparison_method=None, slots=None, source_bucket=None, source_storage_account=None, stat=None):  # noqa: E501
+    def __init__(self, dest_bucket=None, dest_bucket_new_region=None, dest_storage_account=None, id=None, key_add_prefix=None, key_remove_prefix=None, objects_list_uri=None, selected_comparison_method=None, slots=None, source_bucket=None, source_storage_account=None, stat=None, _configuration=None):  # noqa: E501
         """Mapping - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._dest_bucket = None
         self._dest_bucket_new_region = None
@@ -115,7 +120,7 @@ class Mapping(object):
         :param dest_bucket: The dest_bucket of this Mapping.  # noqa: E501
         :type: Bucket
         """
-        if dest_bucket is None:
+        if self._configuration.client_side_validation and dest_bucket is None:
             raise ValueError("Invalid value for `dest_bucket`, must not be `None`")  # noqa: E501
 
         self._dest_bucket = dest_bucket
@@ -163,7 +168,7 @@ class Mapping(object):
         :param dest_storage_account: The dest_storage_account of this Mapping.  # noqa: E501
         :type: StorageAccount
         """
-        if dest_storage_account is None:
+        if self._configuration.client_side_validation and dest_storage_account is None:
             raise ValueError("Invalid value for `dest_storage_account`, must not be `None`")  # noqa: E501
 
         self._dest_storage_account = dest_storage_account
@@ -188,7 +193,7 @@ class Mapping(object):
         :param id: The id of this Mapping.  # noqa: E501
         :type: int
         """
-        if id is None:
+        if self._configuration.client_side_validation and id is None:
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
@@ -283,7 +288,8 @@ class Mapping(object):
         :type: str
         """
         allowed_values = ["AUTO", "LIST_ONLY", "LIST_PROBE", "PROBE_ONLY"]  # noqa: E501
-        if selected_comparison_method not in allowed_values:
+        if (self._configuration.client_side_validation and
+                selected_comparison_method not in allowed_values):
             raise ValueError(
                 "Invalid value for `selected_comparison_method` ({0}), must be one of {1}"  # noqa: E501
                 .format(selected_comparison_method, allowed_values)
@@ -311,7 +317,7 @@ class Mapping(object):
         :param slots: The slots of this Mapping.  # noqa: E501
         :type: list[Slot]
         """
-        if slots is None:
+        if self._configuration.client_side_validation and slots is None:
             raise ValueError("Invalid value for `slots`, must not be `None`")  # noqa: E501
 
         self._slots = slots
@@ -336,7 +342,7 @@ class Mapping(object):
         :param source_bucket: The source_bucket of this Mapping.  # noqa: E501
         :type: Bucket
         """
-        if source_bucket is None:
+        if self._configuration.client_side_validation and source_bucket is None:
             raise ValueError("Invalid value for `source_bucket`, must not be `None`")  # noqa: E501
 
         self._source_bucket = source_bucket
@@ -361,7 +367,7 @@ class Mapping(object):
         :param source_storage_account: The source_storage_account of this Mapping.  # noqa: E501
         :type: StorageAccount
         """
-        if source_storage_account is None:
+        if self._configuration.client_side_validation and source_storage_account is None:
             raise ValueError("Invalid value for `source_storage_account`, must not be `None`")  # noqa: E501
 
         self._source_storage_account = source_storage_account
@@ -386,7 +392,7 @@ class Mapping(object):
         :param stat: The stat of this Mapping.  # noqa: E501
         :type: MappingStat
         """
-        if stat is None:
+        if self._configuration.client_side_validation and stat is None:
             raise ValueError("Invalid value for `stat`, must not be `None`")  # noqa: E501
 
         self._stat = stat
@@ -431,8 +437,11 @@ class Mapping(object):
         if not isinstance(other, Mapping):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, Mapping):
+            return True
+
+        return self.to_dict() != other.to_dict()

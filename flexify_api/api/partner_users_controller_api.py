@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -89,12 +89,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `change_user_state`")  # noqa: E501
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `change_user_state`")  # noqa: E501
 
         collection_formats = {}
@@ -196,12 +196,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `change_user_state1`")  # noqa: E501
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `change_user_state1`")  # noqa: E501
 
         collection_formats = {}
@@ -303,12 +303,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `change_user_state_by_external_id`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `change_user_state_by_external_id`")  # noqa: E501
 
         collection_formats = {}
@@ -410,12 +410,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `change_user_state_by_external_id1`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `change_user_state_by_external_id1`")  # noqa: E501
 
         collection_formats = {}
@@ -517,12 +517,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `change_user_state_by_username`")  # noqa: E501
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `change_user_state_by_username`")  # noqa: E501
 
         collection_formats = {}
@@ -624,12 +624,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `change_user_state_by_username1`")  # noqa: E501
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `change_user_state_by_username1`")  # noqa: E501
 
         collection_formats = {}
@@ -729,8 +729,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `create`")  # noqa: E501
 
         collection_formats = {}
@@ -828,8 +828,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `create1`")  # noqa: E501
 
         collection_formats = {}
@@ -925,8 +925,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `create_password_reset_token`")  # noqa: E501
 
         collection_formats = {}
@@ -1022,8 +1022,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `create_password_reset_token1`")  # noqa: E501
 
         collection_formats = {}
@@ -1119,8 +1119,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `create_password_reset_token_by_external_id`")  # noqa: E501
 
         collection_formats = {}
@@ -1216,8 +1216,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `create_password_reset_token_by_external_id1`")  # noqa: E501
 
         collection_formats = {}
@@ -1313,8 +1313,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `create_password_reset_token_by_username`")  # noqa: E501
 
         collection_formats = {}
@@ -1410,8 +1410,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `create_password_reset_token_by_username1`")  # noqa: E501
 
         collection_formats = {}
@@ -1509,8 +1509,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `delete_user`")  # noqa: E501
 
         collection_formats = {}
@@ -1604,8 +1604,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `delete_user1`")  # noqa: E501
 
         collection_formats = {}
@@ -1699,8 +1699,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `delete_user_by_external_id`")  # noqa: E501
 
         collection_formats = {}
@@ -1794,8 +1794,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `delete_user_by_external_id1`")  # noqa: E501
 
         collection_formats = {}
@@ -1889,8 +1889,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `delete_user_by_username`")  # noqa: E501
 
         collection_formats = {}
@@ -1984,8 +1984,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `delete_user_by_username1`")  # noqa: E501
 
         collection_formats = {}
@@ -2081,12 +2081,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `generate_token`")  # noqa: E501
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `generate_token`")  # noqa: E501
 
         collection_formats = {}
@@ -2188,12 +2188,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `generate_token1`")  # noqa: E501
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `generate_token1`")  # noqa: E501
 
         collection_formats = {}
@@ -2295,12 +2295,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `generate_token_by_external_id`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `generate_token_by_external_id`")  # noqa: E501
 
         collection_formats = {}
@@ -2402,12 +2402,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `generate_token_by_external_id1`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `generate_token_by_external_id1`")  # noqa: E501
 
         collection_formats = {}
@@ -2509,12 +2509,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `generate_token_by_username`")  # noqa: E501
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `generate_token_by_username`")  # noqa: E501
 
         collection_formats = {}
@@ -2616,12 +2616,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `generate_token_by_username1`")  # noqa: E501
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `generate_token_by_username1`")  # noqa: E501
 
         collection_formats = {}
@@ -2721,8 +2721,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `get_user`")  # noqa: E501
 
         collection_formats = {}
@@ -2816,8 +2816,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `get_user1`")  # noqa: E501
 
         collection_formats = {}
@@ -2911,8 +2911,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `get_user_by_external_id`")  # noqa: E501
 
         collection_formats = {}
@@ -3006,8 +3006,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `get_user_by_external_id1`")  # noqa: E501
 
         collection_formats = {}
@@ -3101,8 +3101,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `get_user_by_username`")  # noqa: E501
 
         collection_formats = {}
@@ -3196,8 +3196,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `get_user_by_username1`")  # noqa: E501
 
         collection_formats = {}
@@ -3465,8 +3465,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `send_password_reset_email`")  # noqa: E501
 
         collection_formats = {}
@@ -3564,8 +3564,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `send_password_reset_email1`")  # noqa: E501
 
         collection_formats = {}
@@ -3663,8 +3663,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `send_password_reset_email_by_external_id`")  # noqa: E501
 
         collection_formats = {}
@@ -3762,8 +3762,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `send_password_reset_email_by_external_id1`")  # noqa: E501
 
         collection_formats = {}
@@ -3861,8 +3861,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `send_password_reset_email_by_username`")  # noqa: E501
 
         collection_formats = {}
@@ -3960,8 +3960,8 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `send_password_reset_email_by_username1`")  # noqa: E501
 
         collection_formats = {}
@@ -4059,12 +4059,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `set_roles`")  # noqa: E501
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `set_roles`")  # noqa: E501
 
         collection_formats = {}
@@ -4164,12 +4164,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `set_roles1`")  # noqa: E501
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `set_roles1`")  # noqa: E501
 
         collection_formats = {}
@@ -4269,12 +4269,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `set_roles_by_external_id`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `set_roles_by_external_id`")  # noqa: E501
 
         collection_formats = {}
@@ -4374,12 +4374,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `set_roles_by_external_id1`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `set_roles_by_external_id1`")  # noqa: E501
 
         collection_formats = {}
@@ -4479,12 +4479,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `set_roles_by_username`")  # noqa: E501
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `set_roles_by_username`")  # noqa: E501
 
         collection_formats = {}
@@ -4584,12 +4584,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `set_roles_by_username1`")  # noqa: E501
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `set_roles_by_username1`")  # noqa: E501
 
         collection_formats = {}
@@ -4691,12 +4691,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `update_user`")  # noqa: E501
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `update_user`")  # noqa: E501
 
         collection_formats = {}
@@ -4798,12 +4798,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `update_user1`")  # noqa: E501
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `update_user1`")  # noqa: E501
 
         collection_formats = {}
@@ -4905,12 +4905,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `update_user_by_external_id`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `update_user_by_external_id`")  # noqa: E501
 
         collection_formats = {}
@@ -5012,12 +5012,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'external_id' is set
-        if ('external_id' not in params or
-                params['external_id'] is None):
+        if self.api_client.client_side_validation and ('external_id' not in params or
+                                                       params['external_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `external_id` when calling `update_user_by_external_id1`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `update_user_by_external_id1`")  # noqa: E501
 
         collection_formats = {}
@@ -5119,12 +5119,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `update_user_by_username`")  # noqa: E501
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `update_user_by_username`")  # noqa: E501
 
         collection_formats = {}
@@ -5226,12 +5226,12 @@ class PartnerUsersControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `update_user_by_username1`")  # noqa: E501
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `update_user_by_username1`")  # noqa: E501
 
         collection_formats = {}

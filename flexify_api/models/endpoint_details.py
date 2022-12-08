@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class EndpointDetails(object):
@@ -48,8 +50,11 @@ class EndpointDetails(object):
         'virtual_buckets': 'virtualBuckets'
     }
 
-    def __init__(self, accounts=None, hostnames=None, id=None, settings=None, stat=None, virtual_buckets=None):  # noqa: E501
+    def __init__(self, accounts=None, hostnames=None, id=None, settings=None, stat=None, virtual_buckets=None, _configuration=None):  # noqa: E501
         """EndpointDetails - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._accounts = None
         self._hostnames = None
@@ -156,7 +161,7 @@ class EndpointDetails(object):
         :param settings: The settings of this EndpointDetails.  # noqa: E501
         :type: EndpointSettings
         """
-        if settings is None:
+        if self._configuration.client_side_validation and settings is None:
             raise ValueError("Invalid value for `settings`, must not be `None`")  # noqa: E501
 
         self._settings = settings
@@ -243,8 +248,11 @@ class EndpointDetails(object):
         if not isinstance(other, EndpointDetails):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, EndpointDetails):
+            return True
+
+        return self.to_dict() != other.to_dict()

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -85,8 +85,8 @@ class CostEstimateControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'migration_request' is set
-        if ('migration_request' not in params or
-                params['migration_request'] is None):
+        if self.api_client.client_side_validation and ('migration_request' not in params or
+                                                       params['migration_request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `migration_request` when calling `estimate_migration_cost`")  # noqa: E501
 
         collection_formats = {}

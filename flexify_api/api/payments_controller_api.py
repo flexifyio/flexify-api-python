@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -87,12 +87,12 @@ class PaymentsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'amount' is set
-        if ('amount' not in params or
-                params['amount'] is None):
+        if self.api_client.client_side_validation and ('amount' not in params or
+                                                       params['amount'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `amount` when calling `get_payment_options`")  # noqa: E501
         # verify the required parameter 'currency' is set
-        if ('currency' not in params or
-                params['currency'] is None):
+        if self.api_client.client_side_validation and ('currency' not in params or
+                                                       params['currency'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `currency` when calling `get_payment_options`")  # noqa: E501
 
         collection_formats = {}

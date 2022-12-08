@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class AddImpersonateFromUserRequest(object):
@@ -38,8 +40,11 @@ class AddImpersonateFromUserRequest(object):
         'username': 'username'
     }
 
-    def __init__(self, username=None):  # noqa: E501
+    def __init__(self, username=None, _configuration=None):  # noqa: E501
         """AddImpersonateFromUserRequest - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._username = None
         self.discriminator = None
@@ -108,8 +113,11 @@ class AddImpersonateFromUserRequest(object):
         if not isinstance(other, AddImpersonateFromUserRequest):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, AddImpersonateFromUserRequest):
+            return True
+
+        return self.to_dict() != other.to_dict()

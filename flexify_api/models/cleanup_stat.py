@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class CleanupStat(object):
@@ -72,8 +74,11 @@ class CleanupStat(object):
         'state': 'state'
     }
 
-    def __init__(self, active_engines=None, active_streams=None, bytes_failed=None, bytes_not_matching_pattern=None, bytes_processed=None, bytes_removed=None, bytes_skipped=None, finished=None, objects_failed=None, objects_not_matching_pattern=None, objects_processed=None, objects_removed=None, objects_skipped=None, processing_objects_per_second=None, removing_objects_per_second=None, retried=None, started=None, state=None):  # noqa: E501
+    def __init__(self, active_engines=None, active_streams=None, bytes_failed=None, bytes_not_matching_pattern=None, bytes_processed=None, bytes_removed=None, bytes_skipped=None, finished=None, objects_failed=None, objects_not_matching_pattern=None, objects_processed=None, objects_removed=None, objects_skipped=None, processing_objects_per_second=None, removing_objects_per_second=None, retried=None, started=None, state=None, _configuration=None):  # noqa: E501
         """CleanupStat - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._active_engines = None
         self._active_streams = None
@@ -522,7 +527,8 @@ class CleanupStat(object):
         :type: str
         """
         allowed_values = ["DEPLOYING", "FAILED", "IN_PROGRESS", "NO_CONNECTION_TO_ENGINE", "RESTARTING", "STARTING", "STOPPED", "STOPPING", "SUCCEEDED", "WAITING"]  # noqa: E501
-        if state not in allowed_values:
+        if (self._configuration.client_side_validation and
+                state not in allowed_values):
             raise ValueError(
                 "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
                 .format(state, allowed_values)
@@ -570,8 +576,11 @@ class CleanupStat(object):
         if not isinstance(other, CleanupStat):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, CleanupStat):
+            return True
+
+        return self.to_dict() != other.to_dict()

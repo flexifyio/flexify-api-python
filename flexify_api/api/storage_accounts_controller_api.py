@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -85,8 +85,8 @@ class StorageAccountsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `add_storage_account`")  # noqa: E501
 
         collection_formats = {}
@@ -184,8 +184,8 @@ class StorageAccountsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'storage_account_id' is set
-        if ('storage_account_id' not in params or
-                params['storage_account_id'] is None):
+        if self.api_client.client_side_validation and ('storage_account_id' not in params or
+                                                       params['storage_account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `storage_account_id` when calling `delete_storage_account`")  # noqa: E501
 
         collection_formats = {}
@@ -281,8 +281,8 @@ class StorageAccountsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `delete_storage_accounts`")  # noqa: E501
 
         collection_formats = {}
@@ -380,8 +380,8 @@ class StorageAccountsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'storage_account_id' is set
-        if ('storage_account_id' not in params or
-                params['storage_account_id'] is None):
+        if self.api_client.client_side_validation and ('storage_account_id' not in params or
+                                                       params['storage_account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `storage_account_id` when calling `get_storage_account`")  # noqa: E501
 
         collection_formats = {}
@@ -562,8 +562,8 @@ class StorageAccountsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'storage_account_id' is set
-        if ('storage_account_id' not in params or
-                params['storage_account_id'] is None):
+        if self.api_client.client_side_validation and ('storage_account_id' not in params or
+                                                       params['storage_account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `storage_account_id` when calling `refresh_storage_account`")  # noqa: E501
 
         collection_formats = {}
@@ -659,8 +659,8 @@ class StorageAccountsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `refresh_storage_accounts`")  # noqa: E501
 
         collection_formats = {}
@@ -758,12 +758,12 @@ class StorageAccountsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'settings' is set
-        if ('settings' not in params or
-                params['settings'] is None):
+        if self.api_client.client_side_validation and ('settings' not in params or
+                                                       params['settings'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `settings` when calling `set_storage_account_settings`")  # noqa: E501
         # verify the required parameter 'storage_account_id' is set
-        if ('storage_account_id' not in params or
-                params['storage_account_id'] is None):
+        if self.api_client.client_side_validation and ('storage_account_id' not in params or
+                                                       params['storage_account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `storage_account_id` when calling `set_storage_account_settings`")  # noqa: E501
 
         collection_formats = {}

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -33,14 +33,14 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="Flexify.IO User REST API",
+    description="Flexify IO User REST API",
     author_email="info@flexify.io",
     url="https://github.com/flexifyio/flexify-manage-api-client-python",
-    keywords=["Swagger", "Flexify.IO User REST API"],
+    keywords=["Swagger", "Flexify IO User REST API"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    + Get API token + Authorize using &#x60;Bearer TOKEN&#x60; + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using &#x60;Bearer TOKEN&#x60; + Enjoy Flexify IO REST API  # noqa: E501
     """
 )

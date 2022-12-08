@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -85,8 +85,8 @@ class PartnerSignUpCodesControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `create_code`")  # noqa: E501
 
         collection_formats = {}
@@ -182,8 +182,8 @@ class PartnerSignUpCodesControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `create_code1`")  # noqa: E501
 
         collection_formats = {}
@@ -279,8 +279,8 @@ class PartnerSignUpCodesControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'code' is set
-        if ('code' not in params or
-                params['code'] is None):
+        if self.api_client.client_side_validation and ('code' not in params or
+                                                       params['code'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `code` when calling `delete_code`")  # noqa: E501
 
         collection_formats = {}
@@ -372,8 +372,8 @@ class PartnerSignUpCodesControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'code' is set
-        if ('code' not in params or
-                params['code'] is None):
+        if self.api_client.client_side_validation and ('code' not in params or
+                                                       params['code'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `code` when calling `delete_code1`")  # noqa: E501
 
         collection_formats = {}

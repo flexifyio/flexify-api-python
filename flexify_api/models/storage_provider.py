@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class StorageProvider(object):
@@ -76,8 +78,11 @@ class StorageProvider(object):
         'supports_o_auth': 'supportsOAuth'
     }
 
-    def __init__(self, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, dot_encode=None, endpoint=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, product_name=None, protocol=None, regions=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None):  # noqa: E501
+    def __init__(self, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, dot_encode=None, endpoint=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, product_name=None, protocol=None, regions=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None, _configuration=None):  # noqa: E501
         """StorageProvider - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._can_create_buckets_with_uppercase = None
         self._code = None
@@ -485,7 +490,8 @@ class StorageProvider(object):
         :type: str
         """
         allowed_values = ["AZURE", "B2", "DROPBOX", "DROPBOX_TEAM", "S3"]  # noqa: E501
-        if protocol not in allowed_values:
+        if (self._configuration.client_side_validation and
+                protocol not in allowed_values):
             raise ValueError(
                 "Invalid value for `protocol` ({0}), must be one of {1}"  # noqa: E501
                 .format(protocol, allowed_values)
@@ -648,8 +654,11 @@ class StorageProvider(object):
         if not isinstance(other, StorageProvider):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, StorageProvider):
+            return True
+
+        return self.to_dict() != other.to_dict()

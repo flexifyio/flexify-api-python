@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class AddMigrationRequestMapping(object):
@@ -52,8 +54,11 @@ class AddMigrationRequestMapping(object):
         'source_storage_account_id': 'sourceStorageAccountId'
     }
 
-    def __init__(self, dest_bucket_name=None, dest_bucket_new_region=None, dest_storage_account_id=None, key_add_prefix=None, key_remove_prefix=None, objects_list_uri=None, source_bucket_name=None, source_storage_account_id=None):  # noqa: E501
+    def __init__(self, dest_bucket_name=None, dest_bucket_new_region=None, dest_storage_account_id=None, key_add_prefix=None, key_remove_prefix=None, objects_list_uri=None, source_bucket_name=None, source_storage_account_id=None, _configuration=None):  # noqa: E501
         """AddMigrationRequestMapping - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._dest_bucket_name = None
         self._dest_bucket_new_region = None
@@ -98,7 +103,7 @@ class AddMigrationRequestMapping(object):
         :param dest_bucket_name: The dest_bucket_name of this AddMigrationRequestMapping.  # noqa: E501
         :type: str
         """
-        if dest_bucket_name is None:
+        if self._configuration.client_side_validation and dest_bucket_name is None:
             raise ValueError("Invalid value for `dest_bucket_name`, must not be `None`")  # noqa: E501
 
         self._dest_bucket_name = dest_bucket_name
@@ -146,7 +151,7 @@ class AddMigrationRequestMapping(object):
         :param dest_storage_account_id: The dest_storage_account_id of this AddMigrationRequestMapping.  # noqa: E501
         :type: int
         """
-        if dest_storage_account_id is None:
+        if self._configuration.client_side_validation and dest_storage_account_id is None:
             raise ValueError("Invalid value for `dest_storage_account_id`, must not be `None`")  # noqa: E501
 
         self._dest_storage_account_id = dest_storage_account_id
@@ -240,7 +245,7 @@ class AddMigrationRequestMapping(object):
         :param source_bucket_name: The source_bucket_name of this AddMigrationRequestMapping.  # noqa: E501
         :type: str
         """
-        if source_bucket_name is None:
+        if self._configuration.client_side_validation and source_bucket_name is None:
             raise ValueError("Invalid value for `source_bucket_name`, must not be `None`")  # noqa: E501
 
         self._source_bucket_name = source_bucket_name
@@ -265,7 +270,7 @@ class AddMigrationRequestMapping(object):
         :param source_storage_account_id: The source_storage_account_id of this AddMigrationRequestMapping.  # noqa: E501
         :type: int
         """
-        if source_storage_account_id is None:
+        if self._configuration.client_side_validation and source_storage_account_id is None:
             raise ValueError("Invalid value for `source_storage_account_id`, must not be `None`")  # noqa: E501
 
         self._source_storage_account_id = source_storage_account_id
@@ -310,8 +315,11 @@ class AddMigrationRequestMapping(object):
         if not isinstance(other, AddMigrationRequestMapping):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, AddMigrationRequestMapping):
+            return True
+
+        return self.to_dict() != other.to_dict()

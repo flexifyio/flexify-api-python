@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -85,8 +85,8 @@ class OAuthControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'provider_id' is set
-        if ('provider_id' not in params or
-                params['provider_id'] is None):
+        if self.api_client.client_side_validation and ('provider_id' not in params or
+                                                       params['provider_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `provider_id` when calling `get_app_info`")  # noqa: E501
 
         collection_formats = {}

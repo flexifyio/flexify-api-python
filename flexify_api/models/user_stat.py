@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class UserStat(object):
@@ -70,8 +72,11 @@ class UserStat(object):
         'user_state': 'userState'
     }
 
-    def __init__(self, active_migrations_count=None, billing_account_admin_state=None, billing_account_name=None, billing_account_state=None, company=None, delete_requested=None, display_name=None, distributor_name=None, email=None, external_id=None, id=None, org_name=None, price_list_name=None, registered=None, storage_accounts_count=None, total_migrations_count=None, user_state=None):  # noqa: E501
+    def __init__(self, active_migrations_count=None, billing_account_admin_state=None, billing_account_name=None, billing_account_state=None, company=None, delete_requested=None, display_name=None, distributor_name=None, email=None, external_id=None, id=None, org_name=None, price_list_name=None, registered=None, storage_accounts_count=None, total_migrations_count=None, user_state=None, _configuration=None):  # noqa: E501
         """UserStat - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._active_migrations_count = None
         self._billing_account_admin_state = None
@@ -167,7 +172,8 @@ class UserStat(object):
         :type: str
         """
         allowed_values = ["ACTIVE", "SUSPENDED"]  # noqa: E501
-        if billing_account_admin_state not in allowed_values:
+        if (self._configuration.client_side_validation and
+                billing_account_admin_state not in allowed_values):
             raise ValueError(
                 "Invalid value for `billing_account_admin_state` ({0}), must be one of {1}"  # noqa: E501
                 .format(billing_account_admin_state, allowed_values)
@@ -215,7 +221,8 @@ class UserStat(object):
         :type: str
         """
         allowed_values = ["ACTIVE", "SUSPENDED"]  # noqa: E501
-        if billing_account_state not in allowed_values:
+        if (self._configuration.client_side_validation and
+                billing_account_state not in allowed_values):
             raise ValueError(
                 "Invalid value for `billing_account_state` ({0}), must be one of {1}"  # noqa: E501
                 .format(billing_account_state, allowed_values)
@@ -494,7 +501,8 @@ class UserStat(object):
         :type: str
         """
         allowed_values = ["ACTIVE", "DELETED", "DISABLED"]  # noqa: E501
-        if user_state not in allowed_values:
+        if (self._configuration.client_side_validation and
+                user_state not in allowed_values):
             raise ValueError(
                 "Invalid value for `user_state` ({0}), must be one of {1}"  # noqa: E501
                 .format(user_state, allowed_values)
@@ -542,8 +550,11 @@ class UserStat(object):
         if not isinstance(other, UserStat):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, UserStat):
+            return True
+
+        return self.to_dict() != other.to_dict()

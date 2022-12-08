@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class Distributor(object):
@@ -42,8 +44,11 @@ class Distributor(object):
         'pay_url': 'payUrl'
     }
 
-    def __init__(self, id=None, name=None, pay_url=None):  # noqa: E501
+    def __init__(self, id=None, name=None, pay_url=None, _configuration=None):  # noqa: E501
         """Distributor - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._id = None
         self._name = None
@@ -166,8 +171,11 @@ class Distributor(object):
         if not isinstance(other, Distributor):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, Distributor):
+            return True
+
+        return self.to_dict() != other.to_dict()

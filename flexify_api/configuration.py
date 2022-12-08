@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -95,6 +95,9 @@ class Configuration(object):
         self.proxy = None
         # Safe chars for path_param
         self.safe_chars_for_path_param = ''
+
+        # Disable client side validation
+        self.client_side_validation = True
 
     @classmethod
     def set_default(cls, default):
@@ -205,7 +208,7 @@ class Configuration(object):
 
         if self.refresh_api_key_hook:
             self.refresh_api_key_hook(self)
-        
+
         key = self.api_key.get(identifier)
         if key:
             prefix = self.api_key_prefix.get(identifier)

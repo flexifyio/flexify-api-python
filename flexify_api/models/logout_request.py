@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class LogoutRequest(object):
@@ -42,8 +44,11 @@ class LogoutRequest(object):
         'delete_all_login_tokens': 'deleteAllLoginTokens'
     }
 
-    def __init__(self, delete_all_impersonation_tokens=None, delete_all_integration_tokens=None, delete_all_login_tokens=None):  # noqa: E501
+    def __init__(self, delete_all_impersonation_tokens=None, delete_all_integration_tokens=None, delete_all_login_tokens=None, _configuration=None):  # noqa: E501
         """LogoutRequest - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._delete_all_impersonation_tokens = None
         self._delete_all_integration_tokens = None
@@ -166,8 +171,11 @@ class LogoutRequest(object):
         if not isinstance(other, LogoutRequest):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, LogoutRequest):
+            return True
+
+        return self.to_dict() != other.to_dict()

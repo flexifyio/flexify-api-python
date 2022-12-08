@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class SetRolesRequest(object):
@@ -38,8 +40,11 @@ class SetRolesRequest(object):
         'roles': 'roles'
     }
 
-    def __init__(self, roles=None):  # noqa: E501
+    def __init__(self, roles=None, _configuration=None):  # noqa: E501
         """SetRolesRequest - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._roles = None
         self.discriminator = None
@@ -66,7 +71,8 @@ class SetRolesRequest(object):
         :type: list[str]
         """
         allowed_values = ["ROLE_ACTUATOR", "ROLE_ADMIN", "ROLE_BILLING", "ROLE_DISTRIBUTOR", "ROLE_IMPERSONATOR", "ROLE_PARTNER_ADMIN", "ROLE_USER"]  # noqa: E501
-        if not set(roles).issubset(set(allowed_values)):
+        if (self._configuration.client_side_validation and
+                not set(roles).issubset(set(allowed_values))):  # noqa: E501
             raise ValueError(
                 "Invalid values for `roles` [{0}], must be a subset of [{1}]"  # noqa: E501
                 .format(", ".join(map(str, set(roles) - set(allowed_values))),  # noqa: E501
@@ -115,8 +121,11 @@ class SetRolesRequest(object):
         if not isinstance(other, SetRolesRequest):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, SetRolesRequest):
+            return True
+
+        return self.to_dict() != other.to_dict()

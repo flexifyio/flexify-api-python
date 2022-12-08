@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class EndpointSettings(object):
@@ -48,8 +50,11 @@ class EndpointSettings(object):
         'selection_policy': 'selectionPolicy'
     }
 
-    def __init__(self, credential=None, identity=None, protocol=None, public_access_read_all_blobs=None, selection_break_timeout=None, selection_policy=None):  # noqa: E501
+    def __init__(self, credential=None, identity=None, protocol=None, public_access_read_all_blobs=None, selection_break_timeout=None, selection_policy=None, _configuration=None):  # noqa: E501
         """EndpointSettings - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._credential = None
         self._identity = None
@@ -139,7 +144,8 @@ class EndpointSettings(object):
         :type: str
         """
         allowed_values = ["AZURE", "B2", "DROPBOX", "DROPBOX_TEAM", "S3"]  # noqa: E501
-        if protocol not in allowed_values:
+        if (self._configuration.client_side_validation and
+                protocol not in allowed_values):
             raise ValueError(
                 "Invalid value for `protocol` ({0}), must be one of {1}"  # noqa: E501
                 .format(protocol, allowed_values)
@@ -214,7 +220,8 @@ class EndpointSettings(object):
         :type: str
         """
         allowed_values = ["FASTEST", "NEWEST", "PRIORITY"]  # noqa: E501
-        if selection_policy not in allowed_values:
+        if (self._configuration.client_side_validation and
+                selection_policy not in allowed_values):
             raise ValueError(
                 "Invalid value for `selection_policy` ({0}), must be one of {1}"  # noqa: E501
                 .format(selection_policy, allowed_values)
@@ -262,8 +269,11 @@ class EndpointSettings(object):
         if not isinstance(other, EndpointSettings):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, EndpointSettings):
+            return True
+
+        return self.to_dict() != other.to_dict()

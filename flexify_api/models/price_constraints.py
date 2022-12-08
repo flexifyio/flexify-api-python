@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class PriceConstraints(object):
@@ -52,8 +54,11 @@ class PriceConstraints(object):
         'valid_to': 'validTo'
     }
 
-    def __init__(self, dest_region=None, dest_storage_provider_id=None, engine_cloud_name=None, engine_cloud_region=None, source_region=None, source_storage_provider_id=None, valid_from=None, valid_to=None):  # noqa: E501
+    def __init__(self, dest_region=None, dest_storage_provider_id=None, engine_cloud_name=None, engine_cloud_region=None, source_region=None, source_storage_provider_id=None, valid_from=None, valid_to=None, _configuration=None):  # noqa: E501
         """PriceConstraints - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._dest_region = None
         self._dest_storage_provider_id = None
@@ -306,8 +311,11 @@ class PriceConstraints(object):
         if not isinstance(other, PriceConstraints):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, PriceConstraints):
+            return True
+
+        return self.to_dict() != other.to_dict()

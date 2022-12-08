@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class VirtualBucketSettings(object):
@@ -38,8 +40,11 @@ class VirtualBucketSettings(object):
         'bucket_name': 'bucketName'
     }
 
-    def __init__(self, bucket_name=None):  # noqa: E501
+    def __init__(self, bucket_name=None, _configuration=None):  # noqa: E501
         """VirtualBucketSettings - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._bucket_name = None
         self.discriminator = None
@@ -66,7 +71,7 @@ class VirtualBucketSettings(object):
         :param bucket_name: The bucket_name of this VirtualBucketSettings.  # noqa: E501
         :type: str
         """
-        if bucket_name is None:
+        if self._configuration.client_side_validation and bucket_name is None:
             raise ValueError("Invalid value for `bucket_name`, must not be `None`")  # noqa: E501
 
         self._bucket_name = bucket_name
@@ -111,8 +116,11 @@ class VirtualBucketSettings(object):
         if not isinstance(other, VirtualBucketSettings):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, VirtualBucketSettings):
+            return True
+
+        return self.to_dict() != other.to_dict()

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class BucketsRequest(object):
@@ -40,8 +42,11 @@ class BucketsRequest(object):
         'refresh': 'refresh'
     }
 
-    def __init__(self, bucket_names=None, refresh=None):  # noqa: E501
+    def __init__(self, bucket_names=None, refresh=None, _configuration=None):  # noqa: E501
         """BucketsRequest - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._bucket_names = None
         self._refresh = None
@@ -69,7 +74,7 @@ class BucketsRequest(object):
         :param bucket_names: The bucket_names of this BucketsRequest.  # noqa: E501
         :type: list[str]
         """
-        if bucket_names is None:
+        if self._configuration.client_side_validation and bucket_names is None:
             raise ValueError("Invalid value for `bucket_names`, must not be `None`")  # noqa: E501
 
         self._bucket_names = bucket_names
@@ -137,8 +142,11 @@ class BucketsRequest(object):
         if not isinstance(other, BucketsRequest):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, BucketsRequest):
+            return True
+
+        return self.to_dict() != other.to_dict()

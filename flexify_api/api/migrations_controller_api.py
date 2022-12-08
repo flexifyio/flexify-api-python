@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -85,8 +85,8 @@ class MigrationsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'migration_request' is set
-        if ('migration_request' not in params or
-                params['migration_request'] is None):
+        if self.api_client.client_side_validation and ('migration_request' not in params or
+                                                       params['migration_request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `migration_request` when calling `add_migration`")  # noqa: E501
 
         collection_formats = {}
@@ -182,8 +182,8 @@ class MigrationsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'migration_id' is set
-        if ('migration_id' not in params or
-                params['migration_id'] is None):
+        if self.api_client.client_side_validation and ('migration_id' not in params or
+                                                       params['migration_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `migration_id` when calling `get_migration`")  # noqa: E501
 
         collection_formats = {}
@@ -293,16 +293,16 @@ class MigrationsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'offset' is set
-        if ('offset' not in params or
-                params['offset'] is None):
+        if self.api_client.client_side_validation and ('offset' not in params or
+                                                       params['offset'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `offset` when calling `get_migrations`")  # noqa: E501
         # verify the required parameter 'page' is set
-        if ('page' not in params or
-                params['page'] is None):
+        if self.api_client.client_side_validation and ('page' not in params or
+                                                       params['page'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `page` when calling `get_migrations`")  # noqa: E501
         # verify the required parameter 'size' is set
-        if ('size' not in params or
-                params['size'] is None):
+        if self.api_client.client_side_validation and ('size' not in params or
+                                                       params['size'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `size` when calling `get_migrations`")  # noqa: E501
 
         collection_formats = {}
@@ -501,8 +501,8 @@ class MigrationsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'migration_id' is set
-        if ('migration_id' not in params or
-                params['migration_id'] is None):
+        if self.api_client.client_side_validation and ('migration_id' not in params or
+                                                       params['migration_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `migration_id` when calling `hide_migration`")  # noqa: E501
 
         collection_formats = {}
@@ -602,16 +602,16 @@ class MigrationsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'mapping_id' is set
-        if ('mapping_id' not in params or
-                params['mapping_id'] is None):
+        if self.api_client.client_side_validation and ('mapping_id' not in params or
+                                                       params['mapping_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `mapping_id` when calling `restart_slot`")  # noqa: E501
         # verify the required parameter 'migration_id' is set
-        if ('migration_id' not in params or
-                params['migration_id'] is None):
+        if self.api_client.client_side_validation and ('migration_id' not in params or
+                                                       params['migration_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `migration_id` when calling `restart_slot`")  # noqa: E501
         # verify the required parameter 'slot' is set
-        if ('slot' not in params or
-                params['slot'] is None):
+        if self.api_client.client_side_validation and ('slot' not in params or
+                                                       params['slot'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `slot` when calling `restart_slot`")  # noqa: E501
 
         collection_formats = {}
@@ -711,8 +711,8 @@ class MigrationsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'migration_id' is set
-        if ('migration_id' not in params or
-                params['migration_id'] is None):
+        if self.api_client.client_side_validation and ('migration_id' not in params or
+                                                       params['migration_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `migration_id` when calling `stop_migration`")  # noqa: E501
 
         collection_formats = {}

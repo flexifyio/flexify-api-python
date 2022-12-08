@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -87,12 +87,12 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `attach_accounts`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `attach_accounts`")  # noqa: E501
 
         collection_formats = {}
@@ -194,16 +194,16 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `attach_buckets`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `attach_buckets`")  # noqa: E501
         # verify the required parameter 'virtual_bucket' is set
-        if ('virtual_bucket' not in params or
-                params['virtual_bucket'] is None):
+        if self.api_client.client_side_validation and ('virtual_bucket' not in params or
+                                                       params['virtual_bucket'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `virtual_bucket` when calling `attach_buckets`")  # noqa: E501
 
         collection_formats = {}
@@ -305,12 +305,12 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `change_accounts`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `change_accounts`")  # noqa: E501
 
         collection_formats = {}
@@ -412,16 +412,16 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `change_buckets`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `change_buckets`")  # noqa: E501
         # verify the required parameter 'virtual_bucket' is set
-        if ('virtual_bucket' not in params or
-                params['virtual_bucket'] is None):
+        if self.api_client.client_side_validation and ('virtual_bucket' not in params or
+                                                       params['virtual_bucket'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `virtual_bucket` when calling `change_buckets`")  # noqa: E501
 
         collection_formats = {}
@@ -612,12 +612,12 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `create_virtual_bucket`")  # noqa: E501
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `create_virtual_bucket`")  # noqa: E501
 
         collection_formats = {}
@@ -715,8 +715,8 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `delete`")  # noqa: E501
 
         collection_formats = {}
@@ -810,12 +810,12 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `delete_virtual_bucket`")  # noqa: E501
         # verify the required parameter 'virtual_bucket' is set
-        if ('virtual_bucket' not in params or
-                params['virtual_bucket'] is None):
+        if self.api_client.client_side_validation and ('virtual_bucket' not in params or
+                                                       params['virtual_bucket'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `virtual_bucket` when calling `delete_virtual_bucket`")  # noqa: E501
 
         collection_formats = {}
@@ -911,12 +911,12 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `detach_account`")  # noqa: E501
         # verify the required parameter 'storage_account_id' is set
-        if ('storage_account_id' not in params or
-                params['storage_account_id'] is None):
+        if self.api_client.client_side_validation and ('storage_account_id' not in params or
+                                                       params['storage_account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `storage_account_id` when calling `detach_account`")  # noqa: E501
 
         collection_formats = {}
@@ -1014,16 +1014,16 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bucket_id' is set
-        if ('bucket_id' not in params or
-                params['bucket_id'] is None):
+        if self.api_client.client_side_validation and ('bucket_id' not in params or
+                                                       params['bucket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `bucket_id` when calling `detach_bucket`")  # noqa: E501
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `detach_bucket`")  # noqa: E501
         # verify the required parameter 'virtual_bucket' is set
-        if ('virtual_bucket' not in params or
-                params['virtual_bucket'] is None):
+        if self.api_client.client_side_validation and ('virtual_bucket' not in params or
+                                                       params['virtual_bucket'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `virtual_bucket` when calling `detach_bucket`")  # noqa: E501
 
         collection_formats = {}
@@ -1119,8 +1119,8 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `disable`")  # noqa: E501
 
         collection_formats = {}
@@ -1216,8 +1216,8 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `enable`")  # noqa: E501
 
         collection_formats = {}
@@ -1398,8 +1398,8 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `get_endpoint_details`")  # noqa: E501
 
         collection_formats = {}
@@ -1580,16 +1580,16 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `set_attached_account_settings`")  # noqa: E501
         # verify the required parameter 'settings' is set
-        if ('settings' not in params or
-                params['settings'] is None):
+        if self.api_client.client_side_validation and ('settings' not in params or
+                                                       params['settings'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `settings` when calling `set_attached_account_settings`")  # noqa: E501
         # verify the required parameter 'storage_account_id' is set
-        if ('storage_account_id' not in params or
-                params['storage_account_id'] is None):
+        if self.api_client.client_side_validation and ('storage_account_id' not in params or
+                                                       params['storage_account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `storage_account_id` when calling `set_attached_account_settings`")  # noqa: E501
 
         collection_formats = {}
@@ -1695,20 +1695,20 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bucket_id' is set
-        if ('bucket_id' not in params or
-                params['bucket_id'] is None):
+        if self.api_client.client_side_validation and ('bucket_id' not in params or
+                                                       params['bucket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `bucket_id` when calling `set_attached_bucket_settings`")  # noqa: E501
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `set_attached_bucket_settings`")  # noqa: E501
         # verify the required parameter 'settings' is set
-        if ('settings' not in params or
-                params['settings'] is None):
+        if self.api_client.client_side_validation and ('settings' not in params or
+                                                       params['settings'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `settings` when calling `set_attached_bucket_settings`")  # noqa: E501
         # verify the required parameter 'virtual_bucket' is set
-        if ('virtual_bucket' not in params or
-                params['virtual_bucket'] is None):
+        if self.api_client.client_side_validation and ('virtual_bucket' not in params or
+                                                       params['virtual_bucket'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `virtual_bucket` when calling `set_attached_bucket_settings`")  # noqa: E501
 
         collection_formats = {}
@@ -1814,16 +1814,16 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `set_virtual_bucket_settings`")  # noqa: E501
         # verify the required parameter 'settings' is set
-        if ('settings' not in params or
-                params['settings'] is None):
+        if self.api_client.client_side_validation and ('settings' not in params or
+                                                       params['settings'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `settings` when calling `set_virtual_bucket_settings`")  # noqa: E501
         # verify the required parameter 'virtual_bucket' is set
-        if ('virtual_bucket' not in params or
-                params['virtual_bucket'] is None):
+        if self.api_client.client_side_validation and ('virtual_bucket' not in params or
+                                                       params['virtual_bucket'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `virtual_bucket` when calling `set_virtual_bucket_settings`")  # noqa: E501
 
         collection_formats = {}
@@ -1925,12 +1925,12 @@ class EndpointsControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'endpoint_id' is set
-        if ('endpoint_id' not in params or
-                params['endpoint_id'] is None):
+        if self.api_client.client_side_validation and ('endpoint_id' not in params or
+                                                       params['endpoint_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `endpoint_id` when calling `update_endpoint_settings`")  # noqa: E501
         # verify the required parameter 'settings' is set
-        if ('settings' not in params or
-                params['settings'] is None):
+        if self.api_client.client_side_validation and ('settings' not in params or
+                                                       params['settings'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `settings` when calling `update_endpoint_settings`")  # noqa: E501
 
         collection_formats = {}

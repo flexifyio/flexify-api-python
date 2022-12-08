@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class Payment(object):
@@ -48,8 +50,11 @@ class Payment(object):
         'payment_gateway_name': 'paymentGatewayName'
     }
 
-    def __init__(self, amount=None, comments=None, entry_mode=None, method=None, payment_date=None, payment_gateway_name=None):  # noqa: E501
+    def __init__(self, amount=None, comments=None, entry_mode=None, method=None, payment_date=None, payment_gateway_name=None, _configuration=None):  # noqa: E501
         """Payment - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._amount = None
         self._comments = None
@@ -139,7 +144,8 @@ class Payment(object):
         :type: str
         """
         allowed_values = ["AUTOMATIC", "MANUAL"]  # noqa: E501
-        if entry_mode not in allowed_values:
+        if (self._configuration.client_side_validation and
+                entry_mode not in allowed_values):
             raise ValueError(
                 "Invalid value for `entry_mode` ({0}), must be one of {1}"  # noqa: E501
                 .format(entry_mode, allowed_values)
@@ -168,7 +174,8 @@ class Payment(object):
         :type: str
         """
         allowed_values = ["ADJUSTMENT", "CASH", "DISTRIBUTOR", "PAYMENT_GATEWAY", "WIRE_TRANSFER"]  # noqa: E501
-        if method not in allowed_values:
+        if (self._configuration.client_side_validation and
+                method not in allowed_values):
             raise ValueError(
                 "Invalid value for `method` ({0}), must be one of {1}"  # noqa: E501
                 .format(method, allowed_values)
@@ -262,8 +269,11 @@ class Payment(object):
         if not isinstance(other, Payment):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, Payment):
+            return True
+
+        return self.to_dict() != other.to_dict()

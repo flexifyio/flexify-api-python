@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class User(object):
@@ -68,8 +70,11 @@ class User(object):
         'username': 'username'
     }
 
-    def __init__(self, account=None, actual_limits=None, billing_server_account_id=None, delete_requested=None, external_id=None, id=None, org=None, profile=None, registered=None, require_license_terms=None, roles=None, settings=None, sign_up_code=None, state=None, user_limits=None, username=None):  # noqa: E501
+    def __init__(self, account=None, actual_limits=None, billing_server_account_id=None, delete_requested=None, external_id=None, id=None, org=None, profile=None, registered=None, require_license_terms=None, roles=None, settings=None, sign_up_code=None, state=None, user_limits=None, username=None, _configuration=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._account = None
         self._actual_limits = None
@@ -373,7 +378,8 @@ class User(object):
         :type: list[str]
         """
         allowed_values = ["ROLE_ACTUATOR", "ROLE_ADMIN", "ROLE_BILLING", "ROLE_DISTRIBUTOR", "ROLE_IMPERSONATOR", "ROLE_PARTNER_ADMIN", "ROLE_USER"]  # noqa: E501
-        if not set(roles).issubset(set(allowed_values)):
+        if (self._configuration.client_side_validation and
+                not set(roles).issubset(set(allowed_values))):  # noqa: E501
             raise ValueError(
                 "Invalid values for `roles` [{0}], must be a subset of [{1}]"  # noqa: E501
                 .format(", ".join(map(str, set(roles) - set(allowed_values))),  # noqa: E501
@@ -449,7 +455,8 @@ class User(object):
         :type: str
         """
         allowed_values = ["ACTIVE", "DELETED", "DISABLED"]  # noqa: E501
-        if state not in allowed_values:
+        if (self._configuration.client_side_validation and
+                state not in allowed_values):
             raise ValueError(
                 "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
                 .format(state, allowed_values)
@@ -543,8 +550,11 @@ class User(object):
         if not isinstance(other, User):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, User):
+            return True
+
+        return self.to_dict() != other.to_dict()

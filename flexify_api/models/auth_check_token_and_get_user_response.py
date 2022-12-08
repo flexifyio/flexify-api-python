@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class AuthCheckTokenAndGetUserResponse(object):
@@ -42,8 +44,11 @@ class AuthCheckTokenAndGetUserResponse(object):
         'username': 'username'
     }
 
-    def __init__(self, roles=None, user_id=None, username=None):  # noqa: E501
+    def __init__(self, roles=None, user_id=None, username=None, _configuration=None):  # noqa: E501
         """AuthCheckTokenAndGetUserResponse - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._roles = None
         self._user_id = None
@@ -74,7 +79,8 @@ class AuthCheckTokenAndGetUserResponse(object):
         :type: list[str]
         """
         allowed_values = ["ROLE_ACTUATOR", "ROLE_ADMIN", "ROLE_BILLING", "ROLE_DISTRIBUTOR", "ROLE_IMPERSONATOR", "ROLE_PARTNER_ADMIN", "ROLE_USER"]  # noqa: E501
-        if not set(roles).issubset(set(allowed_values)):
+        if (self._configuration.client_side_validation and
+                not set(roles).issubset(set(allowed_values))):  # noqa: E501
             raise ValueError(
                 "Invalid values for `roles` [{0}], must be a subset of [{1}]"  # noqa: E501
                 .format(", ".join(map(str, set(roles) - set(allowed_values))),  # noqa: E501
@@ -101,7 +107,7 @@ class AuthCheckTokenAndGetUserResponse(object):
         :param user_id: The user_id of this AuthCheckTokenAndGetUserResponse.  # noqa: E501
         :type: int
         """
-        if user_id is None:
+        if self._configuration.client_side_validation and user_id is None:
             raise ValueError("Invalid value for `user_id`, must not be `None`")  # noqa: E501
 
         self._user_id = user_id
@@ -124,7 +130,7 @@ class AuthCheckTokenAndGetUserResponse(object):
         :param username: The username of this AuthCheckTokenAndGetUserResponse.  # noqa: E501
         :type: str
         """
-        if username is None:
+        if self._configuration.client_side_validation and username is None:
             raise ValueError("Invalid value for `username`, must not be `None`")  # noqa: E501
 
         self._username = username
@@ -169,8 +175,11 @@ class AuthCheckTokenAndGetUserResponse(object):
         if not isinstance(other, AuthCheckTokenAndGetUserResponse):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, AuthCheckTokenAndGetUserResponse):
+            return True
+
+        return self.to_dict() != other.to_dict()

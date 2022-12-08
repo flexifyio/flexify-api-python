@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class MigrationSettingsReq(object):
@@ -88,8 +90,11 @@ class MigrationSettingsReq(object):
         'slots_per_mapping': 'slotsPerMapping'
     }
 
-    def __init__(self, auto_restore_if_archived=None, comparison_method=None, conflict_resolution=None, deployment_type=None, dry_run=None, engines_location=None, existing_data_in_destination=None, last_modified_from=None, log_level=None, max_engines=None, max_retries=None, max_retries_for_copy=None, max_retry_timeout=None, max_streams=None, migration_mode=None, multipart_concurrency=None, multipart_limit=None, multipart_part_size=None, name=None, object_key_filter=None, restore_days=None, restore_max_size=None, restore_tier=None, retry_timeout=None, skip_if_hash_matches=None, slots_per_mapping=None):  # noqa: E501
+    def __init__(self, auto_restore_if_archived=None, comparison_method=None, conflict_resolution=None, deployment_type=None, dry_run=None, engines_location=None, existing_data_in_destination=None, last_modified_from=None, log_level=None, max_engines=None, max_retries=None, max_retries_for_copy=None, max_retry_timeout=None, max_streams=None, migration_mode=None, multipart_concurrency=None, multipart_limit=None, multipart_part_size=None, name=None, object_key_filter=None, restore_days=None, restore_max_size=None, restore_tier=None, retry_timeout=None, skip_if_hash_matches=None, slots_per_mapping=None, _configuration=None):  # noqa: E501
         """MigrationSettingsReq - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._auto_restore_if_archived = None
         self._comparison_method = None
@@ -216,7 +221,8 @@ class MigrationSettingsReq(object):
         :type: str
         """
         allowed_values = ["AUTO", "LIST_ONLY", "LIST_PROBE", "PROBE_ONLY"]  # noqa: E501
-        if comparison_method not in allowed_values:
+        if (self._configuration.client_side_validation and
+                comparison_method not in allowed_values):
             raise ValueError(
                 "Invalid value for `comparison_method` ({0}), must be one of {1}"  # noqa: E501
                 .format(comparison_method, allowed_values)
@@ -245,7 +251,8 @@ class MigrationSettingsReq(object):
         :type: str
         """
         allowed_values = ["BOTH", "DESTINATION", "NEWER", "SOURCE"]  # noqa: E501
-        if conflict_resolution not in allowed_values:
+        if (self._configuration.client_side_validation and
+                conflict_resolution not in allowed_values):
             raise ValueError(
                 "Invalid value for `conflict_resolution` ({0}), must be one of {1}"  # noqa: E501
                 .format(conflict_resolution, allowed_values)
@@ -274,7 +281,8 @@ class MigrationSettingsReq(object):
         :type: str
         """
         allowed_values = ["AUTO", "DEPLOYMENT", "SELECTION"]  # noqa: E501
-        if deployment_type not in allowed_values:
+        if (self._configuration.client_side_validation and
+                deployment_type not in allowed_values):
             raise ValueError(
                 "Invalid value for `deployment_type` ({0}), must be one of {1}"  # noqa: E501
                 .format(deployment_type, allowed_values)
@@ -349,7 +357,8 @@ class MigrationSettingsReq(object):
         :type: str
         """
         allowed_values = ["CLEAN", "KEEP"]  # noqa: E501
-        if existing_data_in_destination not in allowed_values:
+        if (self._configuration.client_side_validation and
+                existing_data_in_destination not in allowed_values):
             raise ValueError(
                 "Invalid value for `existing_data_in_destination` ({0}), must be one of {1}"  # noqa: E501
                 .format(existing_data_in_destination, allowed_values)
@@ -401,7 +410,8 @@ class MigrationSettingsReq(object):
         :type: str
         """
         allowed_values = ["DEBUG", "ERROR", "INFO", "TRACE", "WARNING"]  # noqa: E501
-        if log_level not in allowed_values:
+        if (self._configuration.client_side_validation and
+                log_level not in allowed_values):
             raise ValueError(
                 "Invalid value for `log_level` ({0}), must be one of {1}"  # noqa: E501
                 .format(log_level, allowed_values)
@@ -545,7 +555,8 @@ class MigrationSettingsReq(object):
         :type: str
         """
         allowed_values = ["COPY", "MOVE"]  # noqa: E501
-        if migration_mode not in allowed_values:
+        if (self._configuration.client_side_validation and
+                migration_mode not in allowed_values):
             raise ValueError(
                 "Invalid value for `migration_mode` ({0}), must be one of {1}"  # noqa: E501
                 .format(migration_mode, allowed_values)
@@ -735,7 +746,8 @@ class MigrationSettingsReq(object):
         :type: str
         """
         allowed_values = ["BULK", "EXPEDITED", "STANDARD"]  # noqa: E501
-        if restore_tier not in allowed_values:
+        if (self._configuration.client_side_validation and
+                restore_tier not in allowed_values):
             raise ValueError(
                 "Invalid value for `restore_tier` ({0}), must be one of {1}"  # noqa: E501
                 .format(restore_tier, allowed_values)
@@ -852,8 +864,11 @@ class MigrationSettingsReq(object):
         if not isinstance(other, MigrationSettingsReq):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, MigrationSettingsReq):
+            return True
+
+        return self.to_dict() != other.to_dict()

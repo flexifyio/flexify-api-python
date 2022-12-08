@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class Slot(object):
@@ -40,8 +42,11 @@ class Slot(object):
         'stat': 'stat'
     }
 
-    def __init__(self, slot_number=None, stat=None):  # noqa: E501
+    def __init__(self, slot_number=None, stat=None, _configuration=None):  # noqa: E501
         """Slot - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._slot_number = None
         self._stat = None
@@ -134,8 +139,11 @@ class Slot(object):
         if not isinstance(other, Slot):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, Slot):
+            return True
+
+        return self.to_dict() != other.to_dict()

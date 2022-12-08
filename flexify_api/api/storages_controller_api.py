@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -87,12 +87,12 @@ class StoragesControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'request' is set
-        if ('request' not in params or
-                params['request'] is None):
+        if self.api_client.client_side_validation and ('request' not in params or
+                                                       params['request'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `request` when calling `add_buckets`")  # noqa: E501
         # verify the required parameter 'storage_account_id' is set
-        if ('storage_account_id' not in params or
-                params['storage_account_id'] is None):
+        if self.api_client.client_side_validation and ('storage_account_id' not in params or
+                                                       params['storage_account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `storage_account_id` when calling `add_buckets`")  # noqa: E501
 
         collection_formats = {}
@@ -194,12 +194,12 @@ class StoragesControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bucket_id' is set
-        if ('bucket_id' not in params or
-                params['bucket_id'] is None):
+        if self.api_client.client_side_validation and ('bucket_id' not in params or
+                                                       params['bucket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `bucket_id` when calling `delete_bucket`")  # noqa: E501
         # verify the required parameter 'storage_account_id' is set
-        if ('storage_account_id' not in params or
-                params['storage_account_id'] is None):
+        if self.api_client.client_side_validation and ('storage_account_id' not in params or
+                                                       params['storage_account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `storage_account_id` when calling `delete_bucket`")  # noqa: E501
 
         collection_formats = {}
@@ -297,12 +297,12 @@ class StoragesControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bucket_id' is set
-        if ('bucket_id' not in params or
-                params['bucket_id'] is None):
+        if self.api_client.client_side_validation and ('bucket_id' not in params or
+                                                       params['bucket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `bucket_id` when calling `get_bucket`")  # noqa: E501
         # verify the required parameter 'storage_account_id' is set
-        if ('storage_account_id' not in params or
-                params['storage_account_id'] is None):
+        if self.api_client.client_side_validation and ('storage_account_id' not in params or
+                                                       params['storage_account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `storage_account_id` when calling `get_bucket`")  # noqa: E501
 
         collection_formats = {}
@@ -398,12 +398,12 @@ class StoragesControllerApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'bucket_id' is set
-        if ('bucket_id' not in params or
-                params['bucket_id'] is None):
+        if self.api_client.client_side_validation and ('bucket_id' not in params or
+                                                       params['bucket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `bucket_id` when calling `refresh_bucket`")  # noqa: E501
         # verify the required parameter 'storage_account_id' is set
-        if ('storage_account_id' not in params or
-                params['storage_account_id'] is None):
+        if self.api_client.client_side_validation and ('storage_account_id' not in params or
+                                                       params['storage_account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `storage_account_id` when calling `refresh_bucket`")  # noqa: E501
 
         collection_formats = {}

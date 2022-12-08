@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify.IO User REST API
+    Flexify IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.12.12-SNAPSHOT
     Contact: info@flexify.io
@@ -15,6 +15,8 @@ import pprint
 import re  # noqa: F401
 
 import six
+
+from flexify_api.configuration import Configuration
 
 
 class UserConfig(object):
@@ -70,8 +72,11 @@ class UserConfig(object):
         'skip_auto_undeploy': 'skipAutoUndeploy'
     }
 
-    def __init__(self, max_active_migrations=None, max_auto_deploy_engines_count=None, max_endpoints=None, max_migration_copy_retries=None, max_migration_engines=None, max_migration_mappings=None, max_migration_ram_mb=None, max_migration_retries=None, max_migration_slots=None, max_migration_stream_ram_kb=None, max_migration_streams=None, max_migrations_in_queue=None, max_storage_accounts_per_endpoint=None, max_storages=None, max_storages_per_virtual_bucket=None, max_virtual_buckets_per_endpoint=None, skip_auto_undeploy=None):  # noqa: E501
+    def __init__(self, max_active_migrations=None, max_auto_deploy_engines_count=None, max_endpoints=None, max_migration_copy_retries=None, max_migration_engines=None, max_migration_mappings=None, max_migration_ram_mb=None, max_migration_retries=None, max_migration_slots=None, max_migration_stream_ram_kb=None, max_migration_streams=None, max_migrations_in_queue=None, max_storage_accounts_per_endpoint=None, max_storages=None, max_storages_per_virtual_bucket=None, max_virtual_buckets_per_endpoint=None, skip_auto_undeploy=None, _configuration=None):  # noqa: E501
         """UserConfig - a model defined in Swagger"""  # noqa: E501
+        if _configuration is None:
+            _configuration = Configuration()
+        self._configuration = _configuration
 
         self._max_active_migrations = None
         self._max_auto_deploy_engines_count = None
@@ -524,8 +529,11 @@ class UserConfig(object):
         if not isinstance(other, UserConfig):
             return False
 
-        return self.__dict__ == other.__dict__
+        return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        return not self == other
+        if not isinstance(other, UserConfig):
+            return True
+
+        return self.to_dict() != other.to_dict()
