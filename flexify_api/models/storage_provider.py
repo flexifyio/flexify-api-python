@@ -39,6 +39,7 @@ class StorageProvider(object):
         'disabled_as_destination': 'bool',
         'dot_encode': 'str',
         'endpoint': 'str',
+        'endpoint_pattern': 'str',
         'id': 'int',
         'max_upload_size': 'int',
         'multi_regional': 'bool',
@@ -46,9 +47,9 @@ class StorageProvider(object):
         'port_http': 'int',
         'port_https': 'int',
         'private_endpoint': 'str',
+        'private_endpoint_pattern': 'str',
         'product_name': 'str',
         'protocol': 'str',
-        'regions': 'list[str]',
         'supports_http': 'bool',
         'supports_https': 'bool',
         'supports_multipart_upload': 'bool',
@@ -62,6 +63,7 @@ class StorageProvider(object):
         'disabled_as_destination': 'disabledAsDestination',
         'dot_encode': 'dotEncode',
         'endpoint': 'endpoint',
+        'endpoint_pattern': 'endpointPattern',
         'id': 'id',
         'max_upload_size': 'maxUploadSize',
         'multi_regional': 'multiRegional',
@@ -69,16 +71,16 @@ class StorageProvider(object):
         'port_http': 'portHttp',
         'port_https': 'portHttps',
         'private_endpoint': 'privateEndpoint',
+        'private_endpoint_pattern': 'privateEndpointPattern',
         'product_name': 'productName',
         'protocol': 'protocol',
-        'regions': 'regions',
         'supports_http': 'supportsHttp',
         'supports_https': 'supportsHttps',
         'supports_multipart_upload': 'supportsMultipartUpload',
         'supports_o_auth': 'supportsOAuth'
     }
 
-    def __init__(self, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, dot_encode=None, endpoint=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, product_name=None, protocol=None, regions=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None, _configuration=None):  # noqa: E501
+    def __init__(self, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, dot_encode=None, endpoint=None, endpoint_pattern=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, private_endpoint_pattern=None, product_name=None, protocol=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None, _configuration=None):  # noqa: E501
         """StorageProvider - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -90,6 +92,7 @@ class StorageProvider(object):
         self._disabled_as_destination = None
         self._dot_encode = None
         self._endpoint = None
+        self._endpoint_pattern = None
         self._id = None
         self._max_upload_size = None
         self._multi_regional = None
@@ -97,9 +100,9 @@ class StorageProvider(object):
         self._port_http = None
         self._port_https = None
         self._private_endpoint = None
+        self._private_endpoint_pattern = None
         self._product_name = None
         self._protocol = None
-        self._regions = None
         self._supports_http = None
         self._supports_https = None
         self._supports_multipart_upload = None
@@ -118,6 +121,8 @@ class StorageProvider(object):
             self.dot_encode = dot_encode
         if endpoint is not None:
             self.endpoint = endpoint
+        if endpoint_pattern is not None:
+            self.endpoint_pattern = endpoint_pattern
         if id is not None:
             self.id = id
         if max_upload_size is not None:
@@ -132,12 +137,12 @@ class StorageProvider(object):
             self.port_https = port_https
         if private_endpoint is not None:
             self.private_endpoint = private_endpoint
+        if private_endpoint_pattern is not None:
+            self.private_endpoint_pattern = private_endpoint_pattern
         if product_name is not None:
             self.product_name = product_name
         if protocol is not None:
             self.protocol = protocol
-        if regions is not None:
-            self.regions = regions
         if supports_http is not None:
             self.supports_http = supports_http
         if supports_https is not None:
@@ -284,6 +289,29 @@ class StorageProvider(object):
         """
 
         self._endpoint = endpoint
+
+    @property
+    def endpoint_pattern(self):
+        """Gets the endpoint_pattern of this StorageProvider.  # noqa: E501
+
+        Endpoint pattern to access specific region of this provider  # noqa: E501
+
+        :return: The endpoint_pattern of this StorageProvider.  # noqa: E501
+        :rtype: str
+        """
+        return self._endpoint_pattern
+
+    @endpoint_pattern.setter
+    def endpoint_pattern(self, endpoint_pattern):
+        """Sets the endpoint_pattern of this StorageProvider.
+
+        Endpoint pattern to access specific region of this provider  # noqa: E501
+
+        :param endpoint_pattern: The endpoint_pattern of this StorageProvider.  # noqa: E501
+        :type: str
+        """
+
+        self._endpoint_pattern = endpoint_pattern
 
     @property
     def id(self):
@@ -447,6 +475,29 @@ class StorageProvider(object):
         self._private_endpoint = private_endpoint
 
     @property
+    def private_endpoint_pattern(self):
+        """Gets the private_endpoint_pattern of this StorageProvider.  # noqa: E501
+
+        Endpoint pattern used by engines for specific region  # noqa: E501
+
+        :return: The private_endpoint_pattern of this StorageProvider.  # noqa: E501
+        :rtype: str
+        """
+        return self._private_endpoint_pattern
+
+    @private_endpoint_pattern.setter
+    def private_endpoint_pattern(self, private_endpoint_pattern):
+        """Sets the private_endpoint_pattern of this StorageProvider.
+
+        Endpoint pattern used by engines for specific region  # noqa: E501
+
+        :param private_endpoint_pattern: The private_endpoint_pattern of this StorageProvider.  # noqa: E501
+        :type: str
+        """
+
+        self._private_endpoint_pattern = private_endpoint_pattern
+
+    @property
     def product_name(self):
         """Gets the product_name of this StorageProvider.  # noqa: E501
 
@@ -498,29 +549,6 @@ class StorageProvider(object):
             )
 
         self._protocol = protocol
-
-    @property
-    def regions(self):
-        """Gets the regions of this StorageProvider.  # noqa: E501
-
-        List of regions supported for this provider (or null if regions are not supported  # noqa: E501
-
-        :return: The regions of this StorageProvider.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._regions
-
-    @regions.setter
-    def regions(self, regions):
-        """Sets the regions of this StorageProvider.
-
-        List of regions supported for this provider (or null if regions are not supported  # noqa: E501
-
-        :param regions: The regions of this StorageProvider.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._regions = regions
 
     @property
     def supports_http(self):
