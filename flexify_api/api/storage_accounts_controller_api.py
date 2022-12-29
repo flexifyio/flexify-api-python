@@ -406,7 +406,7 @@ class StorageAccountsControllerApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/backend/rest/storage-accounts/storage-accounts/{storage-account-id}', 'GET',
+            '/backend/rest/storage-accounts/{storage-account-id}', 'GET',
             path_params,
             query_params,
             header_params,

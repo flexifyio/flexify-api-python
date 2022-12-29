@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**add_storage_account**](StorageAccountsControllerApi.md#add_storage_account) | **POST** /backend/rest/storage-accounts | Add Storage Account with an optional list of buckets
 [**delete_storage_account**](StorageAccountsControllerApi.md#delete_storage_account) | **DELETE** /backend/rest/storage-accounts/{storage-account-id} | Deletes (hides) storage account and all its buckets/containers
 [**delete_storage_accounts**](StorageAccountsControllerApi.md#delete_storage_accounts) | **POST** /backend/rest/storage-accounts/actions/delete | Deletes (hides) a multiple storage accounts and all their buckets/containers
-[**get_storage_account**](StorageAccountsControllerApi.md#get_storage_account) | **GET** /backend/rest/storage-accounts/storage-accounts/{storage-account-id} | Get storage account by id
+[**get_storage_account**](StorageAccountsControllerApi.md#get_storage_account) | **GET** /backend/rest/storage-accounts/{storage-account-id} | Get storage account by id
 [**get_storage_accounts**](StorageAccountsControllerApi.md#get_storage_accounts) | **GET** /backend/rest/storage-accounts | Get all storage accounts for current user
 [**refresh_storage_account**](StorageAccountsControllerApi.md#refresh_storage_account) | **POST** /backend/rest/storage-accounts/{storage-account-id}/actions/refresh | Requests and updates list of buckets/containers for the storage account
 [**refresh_storage_accounts**](StorageAccountsControllerApi.md#refresh_storage_accounts) | **POST** /backend/rest/storage-accounts/actions/refresh | Requests and updates list of buckets/containers for a list of storage accounts
