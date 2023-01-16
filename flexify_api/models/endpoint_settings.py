@@ -36,7 +36,6 @@ class EndpointSettings(object):
         'credential': 'str',
         'identity': 'str',
         'protocol': 'str',
-        'public_access_read_all_blobs': 'bool',
         'selection_break_timeout': 'int',
         'selection_policy': 'str'
     }
@@ -45,12 +44,11 @@ class EndpointSettings(object):
         'credential': 'credential',
         'identity': 'identity',
         'protocol': 'protocol',
-        'public_access_read_all_blobs': 'publicAccessReadAllBlobs',
         'selection_break_timeout': 'selectionBreakTimeout',
         'selection_policy': 'selectionPolicy'
     }
 
-    def __init__(self, credential=None, identity=None, protocol=None, public_access_read_all_blobs=None, selection_break_timeout=None, selection_policy=None, _configuration=None):  # noqa: E501
+    def __init__(self, credential=None, identity=None, protocol=None, selection_break_timeout=None, selection_policy=None, _configuration=None):  # noqa: E501
         """EndpointSettings - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -59,7 +57,6 @@ class EndpointSettings(object):
         self._credential = None
         self._identity = None
         self._protocol = None
-        self._public_access_read_all_blobs = None
         self._selection_break_timeout = None
         self._selection_policy = None
         self.discriminator = None
@@ -70,8 +67,6 @@ class EndpointSettings(object):
             self.identity = identity
         if protocol is not None:
             self.protocol = protocol
-        if public_access_read_all_blobs is not None:
-            self.public_access_read_all_blobs = public_access_read_all_blobs
         if selection_break_timeout is not None:
             self.selection_break_timeout = selection_break_timeout
         if selection_policy is not None:
@@ -152,29 +147,6 @@ class EndpointSettings(object):
             )
 
         self._protocol = protocol
-
-    @property
-    def public_access_read_all_blobs(self):
-        """Gets the public_access_read_all_blobs of this EndpointSettings.  # noqa: E501
-
-        Public read access for all objects in virtual buckets  # noqa: E501
-
-        :return: The public_access_read_all_blobs of this EndpointSettings.  # noqa: E501
-        :rtype: bool
-        """
-        return self._public_access_read_all_blobs
-
-    @public_access_read_all_blobs.setter
-    def public_access_read_all_blobs(self, public_access_read_all_blobs):
-        """Sets the public_access_read_all_blobs of this EndpointSettings.
-
-        Public read access for all objects in virtual buckets  # noqa: E501
-
-        :param public_access_read_all_blobs: The public_access_read_all_blobs of this EndpointSettings.  # noqa: E501
-        :type: bool
-        """
-
-        self._public_access_read_all_blobs = public_access_read_all_blobs
 
     @property
     def selection_break_timeout(self):
