@@ -93,7 +93,6 @@ from flexify_api.models.pageable import Pageable
 from flexify_api.models.password_reset_token import PasswordResetToken
 from flexify_api.models.payment import Payment
 from flexify_api.models.payment_options import PaymentOptions
-from flexify_api.models.policy_conditions import PolicyConditions
 from flexify_api.models.policy_rule import PolicyRule
 from flexify_api.models.price import Price
 from flexify_api.models.price_constraints import PriceConstraints

@@ -34,28 +34,33 @@ class PolicyRule(object):
     """
     swagger_types = {
         'action': 'str',
-        'conditions': 'PolicyConditions'
+        'key_pattern': 'str',
+        'operations': 'list[str]'
     }
 
     attribute_map = {
         'action': 'action',
-        'conditions': 'conditions'
+        'key_pattern': 'keyPattern',
+        'operations': 'operations'
     }
 
-    def __init__(self, action=None, conditions=None, _configuration=None):  # noqa: E501
+    def __init__(self, action=None, key_pattern=None, operations=None, _configuration=None):  # noqa: E501
         """PolicyRule - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._action = None
-        self._conditions = None
+        self._key_pattern = None
+        self._operations = None
         self.discriminator = None
 
         if action is not None:
             self.action = action
-        if conditions is not None:
-            self.conditions = conditions
+        if key_pattern is not None:
+            self.key_pattern = key_pattern
+        if operations is not None:
+            self.operations = operations
 
     @property
     def action(self):
@@ -86,25 +91,54 @@ class PolicyRule(object):
         self._action = action
 
     @property
-    def conditions(self):
-        """Gets the conditions of this PolicyRule.  # noqa: E501
+    def key_pattern(self):
+        """Gets the key_pattern of this PolicyRule.  # noqa: E501
 
 
-        :return: The conditions of this PolicyRule.  # noqa: E501
-        :rtype: PolicyConditions
+        :return: The key_pattern of this PolicyRule.  # noqa: E501
+        :rtype: str
         """
-        return self._conditions
+        return self._key_pattern
 
-    @conditions.setter
-    def conditions(self, conditions):
-        """Sets the conditions of this PolicyRule.
+    @key_pattern.setter
+    def key_pattern(self, key_pattern):
+        """Sets the key_pattern of this PolicyRule.
 
 
-        :param conditions: The conditions of this PolicyRule.  # noqa: E501
-        :type: PolicyConditions
+        :param key_pattern: The key_pattern of this PolicyRule.  # noqa: E501
+        :type: str
         """
 
-        self._conditions = conditions
+        self._key_pattern = key_pattern
+
+    @property
+    def operations(self):
+        """Gets the operations of this PolicyRule.  # noqa: E501
+
+
+        :return: The operations of this PolicyRule.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._operations
+
+    @operations.setter
+    def operations(self, operations):
+        """Sets the operations of this PolicyRule.
+
+
+        :param operations: The operations of this PolicyRule.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["DeleteObject", "GetBucketLocation", "GetObject", "HeadBucket", "ListObjects", "PutObject"]  # noqa: E501
+        if (self._configuration.client_side_validation and
+                not set(operations).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                "Invalid values for `operations` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(operations) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._operations = operations
 
     def to_dict(self):
         """Returns the model properties as a dict"""
