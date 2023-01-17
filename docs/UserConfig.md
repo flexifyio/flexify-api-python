@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **max_migration_stream_ram_kb** | **int** |  | [optional] 
 **max_migration_streams** | **int** |  | [optional] 
 **max_migrations_in_queue** | **int** |  | [optional] 
+**max_policy_rules_per_virtual_bucket** | **int** |  | [optional] 
 **max_storage_accounts_per_endpoint** | **int** |  | [optional] 
 **max_storages** | **int** |  | [optional] 
 **max_storages_per_virtual_bucket** | **int** |  | [optional] 

@@ -45,6 +45,7 @@ class UserConfig(object):
         'max_migration_stream_ram_kb': 'int',
         'max_migration_streams': 'int',
         'max_migrations_in_queue': 'int',
+        'max_policy_rules_per_virtual_bucket': 'int',
         'max_storage_accounts_per_endpoint': 'int',
         'max_storages': 'int',
         'max_storages_per_virtual_bucket': 'int',
@@ -65,6 +66,7 @@ class UserConfig(object):
         'max_migration_stream_ram_kb': 'maxMigrationStreamRamKb',
         'max_migration_streams': 'maxMigrationStreams',
         'max_migrations_in_queue': 'maxMigrationsInQueue',
+        'max_policy_rules_per_virtual_bucket': 'maxPolicyRulesPerVirtualBucket',
         'max_storage_accounts_per_endpoint': 'maxStorageAccountsPerEndpoint',
         'max_storages': 'maxStorages',
         'max_storages_per_virtual_bucket': 'maxStoragesPerVirtualBucket',
@@ -72,7 +74,7 @@ class UserConfig(object):
         'skip_auto_undeploy': 'skipAutoUndeploy'
     }
 
-    def __init__(self, max_active_migrations=None, max_auto_deploy_engines_count=None, max_endpoints=None, max_migration_copy_retries=None, max_migration_engines=None, max_migration_mappings=None, max_migration_ram_mb=None, max_migration_retries=None, max_migration_slots=None, max_migration_stream_ram_kb=None, max_migration_streams=None, max_migrations_in_queue=None, max_storage_accounts_per_endpoint=None, max_storages=None, max_storages_per_virtual_bucket=None, max_virtual_buckets_per_endpoint=None, skip_auto_undeploy=None, _configuration=None):  # noqa: E501
+    def __init__(self, max_active_migrations=None, max_auto_deploy_engines_count=None, max_endpoints=None, max_migration_copy_retries=None, max_migration_engines=None, max_migration_mappings=None, max_migration_ram_mb=None, max_migration_retries=None, max_migration_slots=None, max_migration_stream_ram_kb=None, max_migration_streams=None, max_migrations_in_queue=None, max_policy_rules_per_virtual_bucket=None, max_storage_accounts_per_endpoint=None, max_storages=None, max_storages_per_virtual_bucket=None, max_virtual_buckets_per_endpoint=None, skip_auto_undeploy=None, _configuration=None):  # noqa: E501
         """UserConfig - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -90,6 +92,7 @@ class UserConfig(object):
         self._max_migration_stream_ram_kb = None
         self._max_migration_streams = None
         self._max_migrations_in_queue = None
+        self._max_policy_rules_per_virtual_bucket = None
         self._max_storage_accounts_per_endpoint = None
         self._max_storages = None
         self._max_storages_per_virtual_bucket = None
@@ -121,6 +124,8 @@ class UserConfig(object):
             self.max_migration_streams = max_migration_streams
         if max_migrations_in_queue is not None:
             self.max_migrations_in_queue = max_migrations_in_queue
+        if max_policy_rules_per_virtual_bucket is not None:
+            self.max_policy_rules_per_virtual_bucket = max_policy_rules_per_virtual_bucket
         if max_storage_accounts_per_endpoint is not None:
             self.max_storage_accounts_per_endpoint = max_storage_accounts_per_endpoint
         if max_storages is not None:
@@ -383,6 +388,27 @@ class UserConfig(object):
         """
 
         self._max_migrations_in_queue = max_migrations_in_queue
+
+    @property
+    def max_policy_rules_per_virtual_bucket(self):
+        """Gets the max_policy_rules_per_virtual_bucket of this UserConfig.  # noqa: E501
+
+
+        :return: The max_policy_rules_per_virtual_bucket of this UserConfig.  # noqa: E501
+        :rtype: int
+        """
+        return self._max_policy_rules_per_virtual_bucket
+
+    @max_policy_rules_per_virtual_bucket.setter
+    def max_policy_rules_per_virtual_bucket(self, max_policy_rules_per_virtual_bucket):
+        """Sets the max_policy_rules_per_virtual_bucket of this UserConfig.
+
+
+        :param max_policy_rules_per_virtual_bucket: The max_policy_rules_per_virtual_bucket of this UserConfig.  # noqa: E501
+        :type: int
+        """
+
+        self._max_policy_rules_per_virtual_bucket = max_policy_rules_per_virtual_bucket
 
     @property
     def max_storage_accounts_per_endpoint(self):
