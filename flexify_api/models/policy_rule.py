@@ -129,7 +129,7 @@ class PolicyRule(object):
         :param operations: The operations of this PolicyRule.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["DeleteObject", "GetBucketLocation", "GetObject", "HeadBucket", "ListObjects", "PutObject"]  # noqa: E501
+        allowed_values = ["DeleteObject", "GetObject", "HeadBucket", "ListObjects", "PutObject", "RestoreObject"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 not set(operations).issubset(set(allowed_values))):  # noqa: E501
             raise ValueError(
