@@ -130,7 +130,7 @@ class TestEndpointsControllerApi(unittest.TestCase):
     def test_get_endpoints_for_current_user(self):
         """Test case for get_endpoints_for_current_user
 
-        Get endpoint for current user. This method will create new endpoint if no endpoints exist for user  # noqa: E501
+        Get the list of endpoints for current user optionally filtering by name using SQL LIKE syntax  # noqa: E501
         """
         pass
 

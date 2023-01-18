@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**enable**](EndpointsControllerApi.md#enable) | **PUT** /backend/rest/endpoints/{endpoint-id}/actions/enable | Enable the endpoint
 [**generate_access_keys**](EndpointsControllerApi.md#generate_access_keys) | **GET** /backend/rest/endpoints/generated-access-keys | Generate new access keys pair
 [**get_endpoint_details**](EndpointsControllerApi.md#get_endpoint_details) | **GET** /backend/rest/endpoints/{endpoint-id} | Get endpoint details
-[**get_endpoints_for_current_user**](EndpointsControllerApi.md#get_endpoints_for_current_user) | **GET** /backend/rest/endpoints | Get endpoint for current user. This method will create new endpoint if no endpoints exist for user
+[**get_endpoints_for_current_user**](EndpointsControllerApi.md#get_endpoints_for_current_user) | **GET** /backend/rest/endpoints | Get the list of endpoints for current user optionally filtering by name using SQL LIKE syntax
 [**set_attached_account_settings**](EndpointsControllerApi.md#set_attached_account_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/storage-accounts/{storage-account-id}/settings | Modifies settings of the attached storage account
 [**set_attached_bucket_settings**](EndpointsControllerApi.md#set_attached_bucket_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets/{bucket-id}/settings | Modifies settings of the attached storage
 [**set_virtual_bucket_settings**](EndpointsControllerApi.md#set_virtual_bucket_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/settings | Modifies virtual bucket configuration
@@ -761,9 +761,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_endpoints_for_current_user**
-> list[EndpointDetails] get_endpoints_for_current_user()
+> list[EndpointDetails] get_endpoints_for_current_user(name=name)
 
-Get endpoint for current user. This method will create new endpoint if no endpoints exist for user
+Get the list of endpoints for current user optionally filtering by name using SQL LIKE syntax
 
 ### Example
 ```python
@@ -781,17 +781,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = flexify_api.EndpointsControllerApi(flexify_api.ApiClient(configuration))
+name = 'name_example' # str | name (optional)
 
 try:
-    # Get endpoint for current user. This method will create new endpoint if no endpoints exist for user
-    api_response = api_instance.get_endpoints_for_current_user()
+    # Get the list of endpoints for current user optionally filtering by name using SQL LIKE syntax
+    api_response = api_instance.get_endpoints_for_current_user(name=name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EndpointsControllerApi->get_endpoints_for_current_user: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| name | [optional] 
 
 ### Return type
 

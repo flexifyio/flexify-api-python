@@ -1448,7 +1448,7 @@ class EndpointsControllerApi(object):
             collection_formats=collection_formats)
 
     def get_endpoints_for_current_user(self, **kwargs):  # noqa: E501
-        """Get endpoint for current user. This method will create new endpoint if no endpoints exist for user  # noqa: E501
+        """Get the list of endpoints for current user optionally filtering by name using SQL LIKE syntax  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1456,6 +1456,7 @@ class EndpointsControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str name: name
         :return: list[EndpointDetails]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1468,7 +1469,7 @@ class EndpointsControllerApi(object):
             return data
 
     def get_endpoints_for_current_user_with_http_info(self, **kwargs):  # noqa: E501
-        """Get endpoint for current user. This method will create new endpoint if no endpoints exist for user  # noqa: E501
+        """Get the list of endpoints for current user optionally filtering by name using SQL LIKE syntax  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1476,12 +1477,13 @@ class EndpointsControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str name: name
         :return: list[EndpointDetails]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1502,6 +1504,8 @@ class EndpointsControllerApi(object):
         path_params = {}
 
         query_params = []
+        if 'name' in params:
+            query_params.append(('name', params['name']))  # noqa: E501
 
         header_params = {}
 
