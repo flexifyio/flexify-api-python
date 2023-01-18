@@ -469,41 +469,43 @@ class EndpointsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_endpoint(self, **kwargs):  # noqa: E501
+    def create_endpoint(self, settings, **kwargs):  # noqa: E501
         """Creates new endpoint  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_endpoint(async_req=True)
+        >>> thread = api.create_endpoint(settings, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param EndpointSettings settings: settings (required)
         :return: IdResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_endpoint_with_http_info(**kwargs)  # noqa: E501
+            return self.create_endpoint_with_http_info(settings, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_endpoint_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.create_endpoint_with_http_info(settings, **kwargs)  # noqa: E501
             return data
 
-    def create_endpoint_with_http_info(self, **kwargs):  # noqa: E501
+    def create_endpoint_with_http_info(self, settings, **kwargs):  # noqa: E501
         """Creates new endpoint  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_endpoint_with_http_info(async_req=True)
+        >>> thread = api.create_endpoint_with_http_info(settings, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param EndpointSettings settings: settings (required)
         :return: IdResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['settings']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -518,6 +520,10 @@ class EndpointsControllerApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'settings' is set
+        if self.api_client.client_side_validation and ('settings' not in params or
+                                                       params['settings'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `settings` when calling `create_endpoint`")  # noqa: E501
 
         collection_formats = {}
 
@@ -531,6 +537,8 @@ class EndpointsControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'settings' in params:
+            body_params = params['settings']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json;charset=UTF-8'])  # noqa: E501

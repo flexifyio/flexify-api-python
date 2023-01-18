@@ -35,6 +35,7 @@ class EndpointSettings(object):
     swagger_types = {
         'credential': 'str',
         'identity': 'str',
+        'name': 'str',
         'protocol': 'str',
         'selection_break_timeout': 'int',
         'selection_policy': 'str'
@@ -43,12 +44,13 @@ class EndpointSettings(object):
     attribute_map = {
         'credential': 'credential',
         'identity': 'identity',
+        'name': 'name',
         'protocol': 'protocol',
         'selection_break_timeout': 'selectionBreakTimeout',
         'selection_policy': 'selectionPolicy'
     }
 
-    def __init__(self, credential=None, identity=None, protocol=None, selection_break_timeout=None, selection_policy=None, _configuration=None):  # noqa: E501
+    def __init__(self, credential=None, identity=None, name=None, protocol=None, selection_break_timeout=None, selection_policy=None, _configuration=None):  # noqa: E501
         """EndpointSettings - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -56,6 +58,7 @@ class EndpointSettings(object):
 
         self._credential = None
         self._identity = None
+        self._name = None
         self._protocol = None
         self._selection_break_timeout = None
         self._selection_policy = None
@@ -65,6 +68,8 @@ class EndpointSettings(object):
             self.credential = credential
         if identity is not None:
             self.identity = identity
+        if name is not None:
+            self.name = name
         if protocol is not None:
             self.protocol = protocol
         if selection_break_timeout is not None:
@@ -117,6 +122,29 @@ class EndpointSettings(object):
         """
 
         self._identity = identity
+
+    @property
+    def name(self):
+        """Gets the name of this EndpointSettings.  # noqa: E501
+
+        User-define name of the endpoint  # noqa: E501
+
+        :return: The name of this EndpointSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this EndpointSettings.
+
+        User-define name of the endpoint  # noqa: E501
+
+        :param name: The name of this EndpointSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def protocol(self):
