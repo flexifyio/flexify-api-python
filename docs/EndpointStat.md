@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **error_engines** | **int** |  | [optional] 
 **health** | **str** |  | [optional] 
 **state** | **str** |  | [optional] 
+**state_update_requested** | **bool** |  | [optional] 
 **total_engines** | **int** |  | [optional] 
 **up_to_date_engines** | **int** |  | [optional] 
 **user_download_bytes** | **int** |  | [optional] 

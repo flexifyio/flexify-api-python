@@ -38,6 +38,7 @@ class EndpointStat(object):
         'error_engines': 'int',
         'health': 'str',
         'state': 'str',
+        'state_update_requested': 'bool',
         'total_engines': 'int',
         'up_to_date_engines': 'int',
         'user_download_bytes': 'int',
@@ -53,6 +54,7 @@ class EndpointStat(object):
         'error_engines': 'errorEngines',
         'health': 'health',
         'state': 'state',
+        'state_update_requested': 'stateUpdateRequested',
         'total_engines': 'totalEngines',
         'up_to_date_engines': 'upToDateEngines',
         'user_download_bytes': 'userDownloadBytes',
@@ -62,7 +64,7 @@ class EndpointStat(object):
         'warning_engines': 'warningEngines'
     }
 
-    def __init__(self, cloud_download_bytes=None, cloud_upload_bytes=None, error_engines=None, health=None, state=None, total_engines=None, up_to_date_engines=None, user_download_bytes=None, user_speed_download=None, user_speed_upload=None, user_upload_bytes=None, warning_engines=None, _configuration=None):  # noqa: E501
+    def __init__(self, cloud_download_bytes=None, cloud_upload_bytes=None, error_engines=None, health=None, state=None, state_update_requested=None, total_engines=None, up_to_date_engines=None, user_download_bytes=None, user_speed_download=None, user_speed_upload=None, user_upload_bytes=None, warning_engines=None, _configuration=None):  # noqa: E501
         """EndpointStat - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -73,6 +75,7 @@ class EndpointStat(object):
         self._error_engines = None
         self._health = None
         self._state = None
+        self._state_update_requested = None
         self._total_engines = None
         self._up_to_date_engines = None
         self._user_download_bytes = None
@@ -92,6 +95,8 @@ class EndpointStat(object):
             self.health = health
         if state is not None:
             self.state = state
+        if state_update_requested is not None:
+            self.state_update_requested = state_update_requested
         if total_engines is not None:
             self.total_engines = total_engines
         if up_to_date_engines is not None:
@@ -225,6 +230,27 @@ class EndpointStat(object):
             )
 
         self._state = state
+
+    @property
+    def state_update_requested(self):
+        """Gets the state_update_requested of this EndpointStat.  # noqa: E501
+
+
+        :return: The state_update_requested of this EndpointStat.  # noqa: E501
+        :rtype: bool
+        """
+        return self._state_update_requested
+
+    @state_update_requested.setter
+    def state_update_requested(self, state_update_requested):
+        """Sets the state_update_requested of this EndpointStat.
+
+
+        :param state_update_requested: The state_update_requested of this EndpointStat.  # noqa: E501
+        :type: bool
+        """
+
+        self._state_update_requested = state_update_requested
 
     @property
     def total_engines(self):
