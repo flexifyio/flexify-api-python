@@ -35,7 +35,7 @@ setup(
     version=VERSION,
     description="Flexify IO User REST API",
     author_email="info@flexify.io",
-    url="https://github.com/flexifyio/flexify-manage-api-client-python",
+    url="https://github.com/flexifyio/flexify-api-python",
     keywords=["Swagger", "Flexify IO User REST API"],
     install_requires=REQUIRES,
     packages=find_packages(),
