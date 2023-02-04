@@ -33,7 +33,7 @@ class EndpointDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'accounts': 'list[EndpointStorageAccountRes]',
+        'accounts': 'list[EndpointStorageAccount]',
         'hostnames': 'list[str]',
         'id': 'int',
         'settings': 'EndpointSettings',
@@ -82,7 +82,7 @@ class EndpointDetails(object):
 
 
         :return: The accounts of this EndpointDetails.  # noqa: E501
-        :rtype: list[EndpointStorageAccountRes]
+        :rtype: list[EndpointStorageAccount]
         """
         return self._accounts
 
@@ -92,7 +92,7 @@ class EndpointDetails(object):
 
 
         :param accounts: The accounts of this EndpointDetails.  # noqa: E501
-        :type: list[EndpointStorageAccountRes]
+        :type: list[EndpointStorageAccount]
         """
 
         self._accounts = accounts

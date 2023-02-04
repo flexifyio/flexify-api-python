@@ -67,8 +67,7 @@ from flexify_api.models.dto_migration_cost_estimate import DtoMigrationCostEstim
 from flexify_api.models.endpoint_details import EndpointDetails
 from flexify_api.models.endpoint_settings import EndpointSettings
 from flexify_api.models.endpoint_stat import EndpointStat
-from flexify_api.models.endpoint_storage_account_req import EndpointStorageAccountReq
-from flexify_api.models.endpoint_storage_account_res import EndpointStorageAccountRes
+from flexify_api.models.endpoint_storage_account import EndpointStorageAccount
 from flexify_api.models.endpoint_storage_account_settings import EndpointStorageAccountSettings
 from flexify_api.models.id_response import IdResponse
 from flexify_api.models.ids_list import IdsList
@@ -128,7 +127,6 @@ from flexify_api.models.user_stat import UserStat
 from flexify_api.models.virtual_bucket import VirtualBucket
 from flexify_api.models.virtual_bucket_access_policy import VirtualBucketAccessPolicy
 from flexify_api.models.virtual_bucket_settings import VirtualBucketSettings
-from flexify_api.models.virtual_bucket_storage_req import VirtualBucketStorageReq
-from flexify_api.models.virtual_bucket_storage_res import VirtualBucketStorageRes
+from flexify_api.models.virtual_bucket_storage import VirtualBucketStorage
 from flexify_api.models.virtual_bucket_storage_settings import VirtualBucketStorageSettings
 from flexify_api.models.virtual_bucket_storages_request import VirtualBucketStoragesRequest

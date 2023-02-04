@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accounts** | [**list[EndpointStorageAccountRes]**](EndpointStorageAccountRes.md) |  | [optional] 
+**accounts** | [**list[EndpointStorageAccount]**](EndpointStorageAccount.md) |  | [optional] 
 **hostnames** | **list[str]** |  | [optional] 
 **id** | **int** | Id | [optional] 
 **settings** | [**EndpointSettings**](EndpointSettings.md) | Settings of endpoint | 

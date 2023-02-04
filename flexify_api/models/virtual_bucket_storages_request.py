@@ -33,7 +33,7 @@ class VirtualBucketStoragesRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'new_storages': 'list[VirtualBucketStorageReq]'
+        'new_storages': 'list[VirtualBucketStorage]'
     }
 
     attribute_map = {
@@ -59,7 +59,7 @@ class VirtualBucketStoragesRequest(object):
         A list of storages to set or accounts to virtual bucket  # noqa: E501
 
         :return: The new_storages of this VirtualBucketStoragesRequest.  # noqa: E501
-        :rtype: list[VirtualBucketStorageReq]
+        :rtype: list[VirtualBucketStorage]
         """
         return self._new_storages
 
@@ -70,7 +70,7 @@ class VirtualBucketStoragesRequest(object):
         A list of storages to set or accounts to virtual bucket  # noqa: E501
 
         :param new_storages: The new_storages of this VirtualBucketStoragesRequest.  # noqa: E501
-        :type: list[VirtualBucketStorageReq]
+        :type: list[VirtualBucketStorage]
         """
 
         self._new_storages = new_storages

@@ -33,7 +33,7 @@ class StorageAccountsRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'new_storage_accounts': 'list[EndpointStorageAccountReq]'
+        'new_storage_accounts': 'list[EndpointStorageAccount]'
     }
 
     attribute_map = {
@@ -59,7 +59,7 @@ class StorageAccountsRequest(object):
         A list of endpoint storage accounts to set or attach  # noqa: E501
 
         :return: The new_storage_accounts of this StorageAccountsRequest.  # noqa: E501
-        :rtype: list[EndpointStorageAccountReq]
+        :rtype: list[EndpointStorageAccount]
         """
         return self._new_storage_accounts
 
@@ -70,7 +70,7 @@ class StorageAccountsRequest(object):
         A list of endpoint storage accounts to set or attach  # noqa: E501
 
         :param new_storage_accounts: The new_storage_accounts of this StorageAccountsRequest.  # noqa: E501
-        :type: list[EndpointStorageAccountReq]
+        :type: list[EndpointStorageAccount]
         """
 
         self._new_storage_accounts = new_storage_accounts

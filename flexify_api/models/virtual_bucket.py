@@ -34,7 +34,7 @@ class VirtualBucket(object):
     """
     swagger_types = {
         'settings': 'VirtualBucketSettings',
-        'storages': 'list[VirtualBucketStorageRes]'
+        'storages': 'list[VirtualBucketStorage]'
     }
 
     attribute_map = {
@@ -86,7 +86,7 @@ class VirtualBucket(object):
         List of storages mapped to this virtual bucket  # noqa: E501
 
         :return: The storages of this VirtualBucket.  # noqa: E501
-        :rtype: list[VirtualBucketStorageRes]
+        :rtype: list[VirtualBucketStorage]
         """
         return self._storages
 
@@ -97,7 +97,7 @@ class VirtualBucket(object):
         List of storages mapped to this virtual bucket  # noqa: E501
 
         :param storages: The storages of this VirtualBucket.  # noqa: E501
-        :type: list[VirtualBucketStorageRes]
+        :type: list[VirtualBucketStorage]
         """
         if self._configuration.client_side_validation and storages is None:
             raise ValueError("Invalid value for `storages`, must not be `None`")  # noqa: E501

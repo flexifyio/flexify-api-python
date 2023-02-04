@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.models.virtual_bucket_storage_res import VirtualBucketStorageRes  # noqa: E501
+from flexify_api.models.endpoint_storage_account import EndpointStorageAccount  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestVirtualBucketStorageRes(unittest.TestCase):
-    """VirtualBucketStorageRes unit test stubs"""
+class TestEndpointStorageAccount(unittest.TestCase):
+    """EndpointStorageAccount unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestVirtualBucketStorageRes(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testVirtualBucketStorageRes(self):
-        """Test VirtualBucketStorageRes"""
+    def testEndpointStorageAccount(self):
+        """Test EndpointStorageAccount"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api.models.virtual_bucket_storage_res.VirtualBucketStorageRes()  # noqa: E501
+        # model = flexify_api.models.endpoint_storage_account.EndpointStorageAccount()  # noqa: E501
         pass
 
 
