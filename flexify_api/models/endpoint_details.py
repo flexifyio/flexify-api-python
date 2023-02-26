@@ -34,7 +34,6 @@ class EndpointDetails(object):
     """
     swagger_types = {
         'accounts': 'list[EndpointStorageAccount]',
-        'hostnames': 'list[str]',
         'id': 'int',
         'settings': 'EndpointSettings',
         'stat': 'EndpointStat',
@@ -43,21 +42,19 @@ class EndpointDetails(object):
 
     attribute_map = {
         'accounts': 'accounts',
-        'hostnames': 'hostnames',
         'id': 'id',
         'settings': 'settings',
         'stat': 'stat',
         'virtual_buckets': 'virtualBuckets'
     }
 
-    def __init__(self, accounts=None, hostnames=None, id=None, settings=None, stat=None, virtual_buckets=None, _configuration=None):  # noqa: E501
+    def __init__(self, accounts=None, id=None, settings=None, stat=None, virtual_buckets=None, _configuration=None):  # noqa: E501
         """EndpointDetails - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._accounts = None
-        self._hostnames = None
         self._id = None
         self._settings = None
         self._stat = None
@@ -66,8 +63,6 @@ class EndpointDetails(object):
 
         if accounts is not None:
             self.accounts = accounts
-        if hostnames is not None:
-            self.hostnames = hostnames
         if id is not None:
             self.id = id
         self.settings = settings
@@ -96,27 +91,6 @@ class EndpointDetails(object):
         """
 
         self._accounts = accounts
-
-    @property
-    def hostnames(self):
-        """Gets the hostnames of this EndpointDetails.  # noqa: E501
-
-
-        :return: The hostnames of this EndpointDetails.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._hostnames
-
-    @hostnames.setter
-    def hostnames(self, hostnames):
-        """Sets the hostnames of this EndpointDetails.
-
-
-        :param hostnames: The hostnames of this EndpointDetails.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._hostnames = hostnames
 
     @property
     def id(self):

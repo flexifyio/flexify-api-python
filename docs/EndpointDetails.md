@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accounts** | [**list[EndpointStorageAccount]**](EndpointStorageAccount.md) |  | [optional] 
-**hostnames** | **list[str]** |  | [optional] 
 **id** | **int** | Id | [optional] 
 **settings** | [**EndpointSettings**](EndpointSettings.md) | Settings of endpoint | 
 **stat** | [**EndpointStat**](EndpointStat.md) |  | [optional] 

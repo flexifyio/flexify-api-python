@@ -37,6 +37,7 @@ class EndpointStat(object):
         'cloud_upload_bytes': 'int',
         'error_engines': 'int',
         'health': 'str',
+        'hostnames': 'list[str]',
         'state': 'str',
         'state_update_requested': 'bool',
         'total_engines': 'int',
@@ -53,6 +54,7 @@ class EndpointStat(object):
         'cloud_upload_bytes': 'cloudUploadBytes',
         'error_engines': 'errorEngines',
         'health': 'health',
+        'hostnames': 'hostnames',
         'state': 'state',
         'state_update_requested': 'stateUpdateRequested',
         'total_engines': 'totalEngines',
@@ -64,7 +66,7 @@ class EndpointStat(object):
         'warning_engines': 'warningEngines'
     }
 
-    def __init__(self, cloud_download_bytes=None, cloud_upload_bytes=None, error_engines=None, health=None, state=None, state_update_requested=None, total_engines=None, up_to_date_engines=None, user_download_bytes=None, user_speed_download=None, user_speed_upload=None, user_upload_bytes=None, warning_engines=None, _configuration=None):  # noqa: E501
+    def __init__(self, cloud_download_bytes=None, cloud_upload_bytes=None, error_engines=None, health=None, hostnames=None, state=None, state_update_requested=None, total_engines=None, up_to_date_engines=None, user_download_bytes=None, user_speed_download=None, user_speed_upload=None, user_upload_bytes=None, warning_engines=None, _configuration=None):  # noqa: E501
         """EndpointStat - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -74,6 +76,7 @@ class EndpointStat(object):
         self._cloud_upload_bytes = None
         self._error_engines = None
         self._health = None
+        self._hostnames = None
         self._state = None
         self._state_update_requested = None
         self._total_engines = None
@@ -93,6 +96,8 @@ class EndpointStat(object):
             self.error_engines = error_engines
         if health is not None:
             self.health = health
+        if hostnames is not None:
+            self.hostnames = hostnames
         if state is not None:
             self.state = state
         if state_update_requested is not None:
@@ -202,6 +207,27 @@ class EndpointStat(object):
             )
 
         self._health = health
+
+    @property
+    def hostnames(self):
+        """Gets the hostnames of this EndpointStat.  # noqa: E501
+
+
+        :return: The hostnames of this EndpointStat.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._hostnames
+
+    @hostnames.setter
+    def hostnames(self, hostnames):
+        """Sets the hostnames of this EndpointStat.
+
+
+        :param hostnames: The hostnames of this EndpointStat.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._hostnames = hostnames
 
     @property
     def state(self):

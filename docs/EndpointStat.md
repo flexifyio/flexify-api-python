@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **cloud_upload_bytes** | **int** |  | [optional] 
 **error_engines** | **int** |  | [optional] 
 **health** | **str** |  | [optional] 
+**hostnames** | **list[str]** |  | [optional] 
 **state** | **str** |  | [optional] 
 **state_update_requested** | **bool** |  | [optional] 
 **total_engines** | **int** |  | [optional] 
