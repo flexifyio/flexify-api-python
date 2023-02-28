@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 **retry_timeout** | **int** | Initial timeout between retries in seconds | [optional] 
 **skip_if_hash_matches** | **bool** | Skip migration if source and destination object hash match | [optional] 
 **slots_per_mapping** | **int** | Number of slots of storage mapping (bucket) | [optional] 
+**upload_timestamp_mode** | **str** | Specify if to copy original or set specified timestamp when migration to B2 | [optional] 
+**upload_timestamp_value** | **datetime** | The B2 timestamp value to set if uploadTimestampMode is CUSTOM | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

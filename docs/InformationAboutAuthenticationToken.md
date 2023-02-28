@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **comments** | **str** | Comments | [optional] 
+**id** | **int** | Unique token ID | [optional] 
 **ip** | **str** | IP address from which token was requested | [optional] 
 **issued** | **datetime** | When the token was issued | [optional] 
 **last_used** | **datetime** | When the token was last used | [optional] 

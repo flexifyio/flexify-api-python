@@ -58,7 +58,9 @@ class MigrationSettingsReq(object):
         'restore_tier': 'str',
         'retry_timeout': 'int',
         'skip_if_hash_matches': 'bool',
-        'slots_per_mapping': 'int'
+        'slots_per_mapping': 'int',
+        'upload_timestamp_mode': 'str',
+        'upload_timestamp_value': 'datetime'
     }
 
     attribute_map = {
@@ -87,10 +89,12 @@ class MigrationSettingsReq(object):
         'restore_tier': 'restoreTier',
         'retry_timeout': 'retryTimeout',
         'skip_if_hash_matches': 'skipIfHashMatches',
-        'slots_per_mapping': 'slotsPerMapping'
+        'slots_per_mapping': 'slotsPerMapping',
+        'upload_timestamp_mode': 'uploadTimestampMode',
+        'upload_timestamp_value': 'uploadTimestampValue'
     }
 
-    def __init__(self, auto_restore_if_archived=None, comparison_method=None, conflict_resolution=None, deployment_type=None, dry_run=None, engines_location=None, existing_data_in_destination=None, last_modified_from=None, log_level=None, max_engines=None, max_retries=None, max_retries_for_copy=None, max_retry_timeout=None, max_streams=None, migration_mode=None, multipart_concurrency=None, multipart_limit=None, multipart_part_size=None, name=None, object_key_filter=None, restore_days=None, restore_max_size=None, restore_tier=None, retry_timeout=None, skip_if_hash_matches=None, slots_per_mapping=None, _configuration=None):  # noqa: E501
+    def __init__(self, auto_restore_if_archived=None, comparison_method=None, conflict_resolution=None, deployment_type=None, dry_run=None, engines_location=None, existing_data_in_destination=None, last_modified_from=None, log_level=None, max_engines=None, max_retries=None, max_retries_for_copy=None, max_retry_timeout=None, max_streams=None, migration_mode=None, multipart_concurrency=None, multipart_limit=None, multipart_part_size=None, name=None, object_key_filter=None, restore_days=None, restore_max_size=None, restore_tier=None, retry_timeout=None, skip_if_hash_matches=None, slots_per_mapping=None, upload_timestamp_mode=None, upload_timestamp_value=None, _configuration=None):  # noqa: E501
         """MigrationSettingsReq - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -122,6 +126,8 @@ class MigrationSettingsReq(object):
         self._retry_timeout = None
         self._skip_if_hash_matches = None
         self._slots_per_mapping = None
+        self._upload_timestamp_mode = None
+        self._upload_timestamp_value = None
         self.discriminator = None
 
         if auto_restore_if_archived is not None:
@@ -176,6 +182,10 @@ class MigrationSettingsReq(object):
             self.skip_if_hash_matches = skip_if_hash_matches
         if slots_per_mapping is not None:
             self.slots_per_mapping = slots_per_mapping
+        if upload_timestamp_mode is not None:
+            self.upload_timestamp_mode = upload_timestamp_mode
+        if upload_timestamp_value is not None:
+            self.upload_timestamp_value = upload_timestamp_value
 
     @property
     def auto_restore_if_archived(self):
@@ -823,6 +833,59 @@ class MigrationSettingsReq(object):
         """
 
         self._slots_per_mapping = slots_per_mapping
+
+    @property
+    def upload_timestamp_mode(self):
+        """Gets the upload_timestamp_mode of this MigrationSettingsReq.  # noqa: E501
+
+        Specify if to copy original or set specified timestamp when migration to B2  # noqa: E501
+
+        :return: The upload_timestamp_mode of this MigrationSettingsReq.  # noqa: E501
+        :rtype: str
+        """
+        return self._upload_timestamp_mode
+
+    @upload_timestamp_mode.setter
+    def upload_timestamp_mode(self, upload_timestamp_mode):
+        """Sets the upload_timestamp_mode of this MigrationSettingsReq.
+
+        Specify if to copy original or set specified timestamp when migration to B2  # noqa: E501
+
+        :param upload_timestamp_mode: The upload_timestamp_mode of this MigrationSettingsReq.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ACTUAL", "CUSTOM", "ORIGINAL"]  # noqa: E501
+        if (self._configuration.client_side_validation and
+                upload_timestamp_mode not in allowed_values):
+            raise ValueError(
+                "Invalid value for `upload_timestamp_mode` ({0}), must be one of {1}"  # noqa: E501
+                .format(upload_timestamp_mode, allowed_values)
+            )
+
+        self._upload_timestamp_mode = upload_timestamp_mode
+
+    @property
+    def upload_timestamp_value(self):
+        """Gets the upload_timestamp_value of this MigrationSettingsReq.  # noqa: E501
+
+        The B2 timestamp value to set if uploadTimestampMode is CUSTOM  # noqa: E501
+
+        :return: The upload_timestamp_value of this MigrationSettingsReq.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._upload_timestamp_value
+
+    @upload_timestamp_value.setter
+    def upload_timestamp_value(self, upload_timestamp_value):
+        """Sets the upload_timestamp_value of this MigrationSettingsReq.
+
+        The B2 timestamp value to set if uploadTimestampMode is CUSTOM  # noqa: E501
+
+        :param upload_timestamp_value: The upload_timestamp_value of this MigrationSettingsReq.  # noqa: E501
+        :type: datetime
+        """
+
+        self._upload_timestamp_value = upload_timestamp_value
 
     def to_dict(self):
         """Returns the model properties as a dict"""

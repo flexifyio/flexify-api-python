@@ -34,6 +34,7 @@ class InformationAboutAuthenticationToken(object):
     """
     swagger_types = {
         'comments': 'str',
+        'id': 'int',
         'ip': 'str',
         'issued': 'datetime',
         'last_used': 'datetime',
@@ -43,6 +44,7 @@ class InformationAboutAuthenticationToken(object):
 
     attribute_map = {
         'comments': 'comments',
+        'id': 'id',
         'ip': 'ip',
         'issued': 'issued',
         'last_used': 'lastUsed',
@@ -50,13 +52,14 @@ class InformationAboutAuthenticationToken(object):
         'token_type': 'tokenType'
     }
 
-    def __init__(self, comments=None, ip=None, issued=None, last_used=None, token=None, token_type=None, _configuration=None):  # noqa: E501
+    def __init__(self, comments=None, id=None, ip=None, issued=None, last_used=None, token=None, token_type=None, _configuration=None):  # noqa: E501
         """InformationAboutAuthenticationToken - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._comments = None
+        self._id = None
         self._ip = None
         self._issued = None
         self._last_used = None
@@ -66,6 +69,8 @@ class InformationAboutAuthenticationToken(object):
 
         if comments is not None:
             self.comments = comments
+        if id is not None:
+            self.id = id
         if ip is not None:
             self.ip = ip
         if issued is not None:
@@ -99,6 +104,29 @@ class InformationAboutAuthenticationToken(object):
         """
 
         self._comments = comments
+
+    @property
+    def id(self):
+        """Gets the id of this InformationAboutAuthenticationToken.  # noqa: E501
+
+        Unique token ID  # noqa: E501
+
+        :return: The id of this InformationAboutAuthenticationToken.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this InformationAboutAuthenticationToken.
+
+        Unique token ID  # noqa: E501
+
+        :param id: The id of this InformationAboutAuthenticationToken.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
 
     @property
     def ip(self):
