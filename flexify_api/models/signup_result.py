@@ -36,6 +36,7 @@ class SignupResult(object):
         'billing_account_id': 'int',
         'external_id': 'str',
         'id': 'int',
+        'sso_microsoft_email': 'str',
         'username': 'str'
     }
 
@@ -43,10 +44,11 @@ class SignupResult(object):
         'billing_account_id': 'billingAccountId',
         'external_id': 'externalId',
         'id': 'id',
+        'sso_microsoft_email': 'ssoMicrosoftEmail',
         'username': 'username'
     }
 
-    def __init__(self, billing_account_id=None, external_id=None, id=None, username=None, _configuration=None):  # noqa: E501
+    def __init__(self, billing_account_id=None, external_id=None, id=None, sso_microsoft_email=None, username=None, _configuration=None):  # noqa: E501
         """SignupResult - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -55,6 +57,7 @@ class SignupResult(object):
         self._billing_account_id = None
         self._external_id = None
         self._id = None
+        self._sso_microsoft_email = None
         self._username = None
         self.discriminator = None
 
@@ -64,6 +67,8 @@ class SignupResult(object):
             self.external_id = external_id
         if id is not None:
             self.id = id
+        if sso_microsoft_email is not None:
+            self.sso_microsoft_email = sso_microsoft_email
         if username is not None:
             self.username = username
 
@@ -129,6 +134,27 @@ class SignupResult(object):
         """
 
         self._id = id
+
+    @property
+    def sso_microsoft_email(self):
+        """Gets the sso_microsoft_email of this SignupResult.  # noqa: E501
+
+
+        :return: The sso_microsoft_email of this SignupResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._sso_microsoft_email
+
+    @sso_microsoft_email.setter
+    def sso_microsoft_email(self, sso_microsoft_email):
+        """Sets the sso_microsoft_email of this SignupResult.
+
+
+        :param sso_microsoft_email: The sso_microsoft_email of this SignupResult.  # noqa: E501
+        :type: str
+        """
+
+        self._sso_microsoft_email = sso_microsoft_email
 
     @property
     def username(self):

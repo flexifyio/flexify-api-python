@@ -39,7 +39,10 @@ class User(object):
         'delete_requested': 'datetime',
         'external_id': 'str',
         'id': 'int',
+        'microsoft_oid': 'str',
+        'microsoft_user_name': 'str',
         'org': 'Organization',
+        'password_is_empty': 'bool',
         'profile': 'UserProfile',
         'registered': 'datetime',
         'require_license_terms': 'bool',
@@ -58,7 +61,10 @@ class User(object):
         'delete_requested': 'deleteRequested',
         'external_id': 'externalId',
         'id': 'id',
+        'microsoft_oid': 'microsoftOid',
+        'microsoft_user_name': 'microsoftUserName',
         'org': 'org',
+        'password_is_empty': 'passwordIsEmpty',
         'profile': 'profile',
         'registered': 'registered',
         'require_license_terms': 'requireLicenseTerms',
@@ -70,7 +76,7 @@ class User(object):
         'username': 'username'
     }
 
-    def __init__(self, account=None, actual_limits=None, billing_server_account_id=None, delete_requested=None, external_id=None, id=None, org=None, profile=None, registered=None, require_license_terms=None, roles=None, settings=None, sign_up_code=None, state=None, user_limits=None, username=None, _configuration=None):  # noqa: E501
+    def __init__(self, account=None, actual_limits=None, billing_server_account_id=None, delete_requested=None, external_id=None, id=None, microsoft_oid=None, microsoft_user_name=None, org=None, password_is_empty=None, profile=None, registered=None, require_license_terms=None, roles=None, settings=None, sign_up_code=None, state=None, user_limits=None, username=None, _configuration=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -82,7 +88,10 @@ class User(object):
         self._delete_requested = None
         self._external_id = None
         self._id = None
+        self._microsoft_oid = None
+        self._microsoft_user_name = None
         self._org = None
+        self._password_is_empty = None
         self._profile = None
         self._registered = None
         self._require_license_terms = None
@@ -106,8 +115,14 @@ class User(object):
             self.external_id = external_id
         if id is not None:
             self.id = id
+        if microsoft_oid is not None:
+            self.microsoft_oid = microsoft_oid
+        if microsoft_user_name is not None:
+            self.microsoft_user_name = microsoft_user_name
         if org is not None:
             self.org = org
+        if password_is_empty is not None:
+            self.password_is_empty = password_is_empty
         if profile is not None:
             self.profile = profile
         if registered is not None:
@@ -266,6 +281,52 @@ class User(object):
         self._id = id
 
     @property
+    def microsoft_oid(self):
+        """Gets the microsoft_oid of this User.  # noqa: E501
+
+        Microsoft oid  # noqa: E501
+
+        :return: The microsoft_oid of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._microsoft_oid
+
+    @microsoft_oid.setter
+    def microsoft_oid(self, microsoft_oid):
+        """Sets the microsoft_oid of this User.
+
+        Microsoft oid  # noqa: E501
+
+        :param microsoft_oid: The microsoft_oid of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._microsoft_oid = microsoft_oid
+
+    @property
+    def microsoft_user_name(self):
+        """Gets the microsoft_user_name of this User.  # noqa: E501
+
+        Microsoft user name (email)  # noqa: E501
+
+        :return: The microsoft_user_name of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._microsoft_user_name
+
+    @microsoft_user_name.setter
+    def microsoft_user_name(self, microsoft_user_name):
+        """Sets the microsoft_user_name of this User.
+
+        Microsoft user name (email)  # noqa: E501
+
+        :param microsoft_user_name: The microsoft_user_name of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._microsoft_user_name = microsoft_user_name
+
+    @property
     def org(self):
         """Gets the org of this User.  # noqa: E501
 
@@ -287,6 +348,29 @@ class User(object):
         """
 
         self._org = org
+
+    @property
+    def password_is_empty(self):
+        """Gets the password_is_empty of this User.  # noqa: E501
+
+        Indicates that this user does not have a password  # noqa: E501
+
+        :return: The password_is_empty of this User.  # noqa: E501
+        :rtype: bool
+        """
+        return self._password_is_empty
+
+    @password_is_empty.setter
+    def password_is_empty(self, password_is_empty):
+        """Sets the password_is_empty of this User.
+
+        Indicates that this user does not have a password  # noqa: E501
+
+        :param password_is_empty: The password_is_empty of this User.  # noqa: E501
+        :type: bool
+        """
+
+        self._password_is_empty = password_is_empty
 
     @property
     def profile(self):
@@ -338,7 +422,7 @@ class User(object):
     def require_license_terms(self):
         """Gets the require_license_terms of this User.  # noqa: E501
 
-        Indicates that this user does not have a password and needs to accept EULA  # noqa: E501
+        Indicates that this user does not have a password or SSO and needs to accept EULA  # noqa: E501
 
         :return: The require_license_terms of this User.  # noqa: E501
         :rtype: bool
@@ -349,7 +433,7 @@ class User(object):
     def require_license_terms(self, require_license_terms):
         """Sets the require_license_terms of this User.
 
-        Indicates that this user does not have a password and needs to accept EULA  # noqa: E501
+        Indicates that this user does not have a password or SSO and needs to accept EULA  # noqa: E501
 
         :param require_license_terms: The require_license_terms of this User.  # noqa: E501
         :type: bool

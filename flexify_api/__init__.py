@@ -53,6 +53,7 @@ from flexify_api.models.bucket import Bucket
 from flexify_api.models.bucket_stat import BucketStat
 from flexify_api.models.buckets_request import BucketsRequest
 from flexify_api.models.change_password_request import ChangePasswordRequest
+from flexify_api.models.change_sso_microsoft_request import ChangeSsoMicrosoftRequest
 from flexify_api.models.cleanup_stat import CleanupStat
 from flexify_api.models.cloud_location import CloudLocation
 from flexify_api.models.cloud_location_req import CloudLocationReq

@@ -1,10 +1,10 @@
-# PublicAuthenticationConfiguration
+# ChangeSsoMicrosoftRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**microsoft_client_id** | **str** | Required client Id in Microsoft access token | [optional] 
-**microsoft_scope** | **str** | Required scope in Microsoft access token | [optional] 
+**sso_email** | **str** |  | [optional] 
+**sso_id** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

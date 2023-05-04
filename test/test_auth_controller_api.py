@@ -46,7 +46,7 @@ class TestAuthControllerApi(unittest.TestCase):
     def test_get_config(self):
         """Test case for get_config
 
-        Logout  # noqa: E501
+        Get public auth config  # noqa: E501
         """
         pass
 

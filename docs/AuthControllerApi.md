@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authenticate**](AuthControllerApi.md#authenticate) | **POST** /backend/rest/auth | Generate new access token for the user
 [**check_token_and_get_user**](AuthControllerApi.md#check_token_and_get_user) | **GET** /backend/rest/auth/user | Check of given token
-[**get_config**](AuthControllerApi.md#get_config) | **GET** /backend/rest/auth/config | Logout
+[**get_config**](AuthControllerApi.md#get_config) | **GET** /backend/rest/auth/config | Get public auth config
 [**logout**](AuthControllerApi.md#logout) | **POST** /backend/rest/auth/logout | Logout
 
 
@@ -107,7 +107,7 @@ This endpoint does not need any parameter.
 # **get_config**
 > PublicAuthenticationConfiguration get_config()
 
-Logout
+Get public auth config
 
 ### Example
 ```python
@@ -127,7 +127,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = flexify_api.AuthControllerApi(flexify_api.ApiClient(configuration))
 
 try:
-    # Logout
+    # Get public auth config
     api_response = api_instance.get_config()
     pprint(api_response)
 except ApiException as e:

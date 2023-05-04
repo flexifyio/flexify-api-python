@@ -216,7 +216,7 @@ class AuthControllerApi(object):
             collection_formats=collection_formats)
 
     def get_config(self, **kwargs):  # noqa: E501
-        """Logout  # noqa: E501
+        """Get public auth config  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -236,7 +236,7 @@ class AuthControllerApi(object):
             return data
 
     def get_config_with_http_info(self, **kwargs):  # noqa: E501
-        """Logout  # noqa: E501
+        """Get public auth config  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

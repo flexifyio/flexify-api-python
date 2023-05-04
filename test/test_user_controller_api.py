@@ -29,6 +29,13 @@ class TestUserControllerApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_change_microsoft_sso(self):
+        """Test case for change_microsoft_sso
+
+        changeMicrosoftSso  # noqa: E501
+        """
+        pass
+
     def test_get_current_user(self):
         """Test case for get_current_user
 

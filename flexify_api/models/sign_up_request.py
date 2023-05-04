@@ -37,7 +37,10 @@ class SignUpRequest(object):
         'password': 'str',
         'profile': 'UserProfile',
         'settings': 'UserSettings',
-        'signup_code': 'str'
+        'signup_code': 'str',
+        'sso_email': 'str',
+        'sso_id': 'str',
+        'sso_type': 'str'
     }
 
     attribute_map = {
@@ -45,10 +48,13 @@ class SignUpRequest(object):
         'password': 'password',
         'profile': 'profile',
         'settings': 'settings',
-        'signup_code': 'signupCode'
+        'signup_code': 'signupCode',
+        'sso_email': 'ssoEmail',
+        'sso_id': 'ssoId',
+        'sso_type': 'ssoType'
     }
 
-    def __init__(self, external_id=None, password=None, profile=None, settings=None, signup_code=None, _configuration=None):  # noqa: E501
+    def __init__(self, external_id=None, password=None, profile=None, settings=None, signup_code=None, sso_email=None, sso_id=None, sso_type=None, _configuration=None):  # noqa: E501
         """SignUpRequest - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -59,6 +65,9 @@ class SignUpRequest(object):
         self._profile = None
         self._settings = None
         self._signup_code = None
+        self._sso_email = None
+        self._sso_id = None
+        self._sso_type = None
         self.discriminator = None
 
         if external_id is not None:
@@ -71,6 +80,12 @@ class SignUpRequest(object):
             self.settings = settings
         if signup_code is not None:
             self.signup_code = signup_code
+        if sso_email is not None:
+            self.sso_email = sso_email
+        if sso_id is not None:
+            self.sso_id = sso_id
+        if sso_type is not None:
+            self.sso_type = sso_type
 
     @property
     def external_id(self):
@@ -176,6 +191,69 @@ class SignUpRequest(object):
         """
 
         self._signup_code = signup_code
+
+    @property
+    def sso_email(self):
+        """Gets the sso_email of this SignUpRequest.  # noqa: E501
+
+
+        :return: The sso_email of this SignUpRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._sso_email
+
+    @sso_email.setter
+    def sso_email(self, sso_email):
+        """Sets the sso_email of this SignUpRequest.
+
+
+        :param sso_email: The sso_email of this SignUpRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._sso_email = sso_email
+
+    @property
+    def sso_id(self):
+        """Gets the sso_id of this SignUpRequest.  # noqa: E501
+
+
+        :return: The sso_id of this SignUpRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._sso_id
+
+    @sso_id.setter
+    def sso_id(self, sso_id):
+        """Sets the sso_id of this SignUpRequest.
+
+
+        :param sso_id: The sso_id of this SignUpRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._sso_id = sso_id
+
+    @property
+    def sso_type(self):
+        """Gets the sso_type of this SignUpRequest.  # noqa: E501
+
+
+        :return: The sso_type of this SignUpRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._sso_type
+
+    @sso_type.setter
+    def sso_type(self, sso_type):
+        """Sets the sso_type of this SignUpRequest.
+
+
+        :param sso_type: The sso_type of this SignUpRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._sso_type = sso_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""
