@@ -34,15 +34,17 @@ class PublicAuthenticationConfiguration(object):
     """
     swagger_types = {
         'microsoft_client_id': 'str',
-        'microsoft_scope': 'str'
+        'microsoft_scope': 'str',
+        'microsoft_tenant_id': 'str'
     }
 
     attribute_map = {
         'microsoft_client_id': 'microsoftClientId',
-        'microsoft_scope': 'microsoftScope'
+        'microsoft_scope': 'microsoftScope',
+        'microsoft_tenant_id': 'microsoftTenantId'
     }
 
-    def __init__(self, microsoft_client_id=None, microsoft_scope=None, _configuration=None):  # noqa: E501
+    def __init__(self, microsoft_client_id=None, microsoft_scope=None, microsoft_tenant_id=None, _configuration=None):  # noqa: E501
         """PublicAuthenticationConfiguration - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -50,12 +52,15 @@ class PublicAuthenticationConfiguration(object):
 
         self._microsoft_client_id = None
         self._microsoft_scope = None
+        self._microsoft_tenant_id = None
         self.discriminator = None
 
         if microsoft_client_id is not None:
             self.microsoft_client_id = microsoft_client_id
         if microsoft_scope is not None:
             self.microsoft_scope = microsoft_scope
+        if microsoft_tenant_id is not None:
+            self.microsoft_tenant_id = microsoft_tenant_id
 
     @property
     def microsoft_client_id(self):
@@ -102,6 +107,29 @@ class PublicAuthenticationConfiguration(object):
         """
 
         self._microsoft_scope = microsoft_scope
+
+    @property
+    def microsoft_tenant_id(self):
+        """Gets the microsoft_tenant_id of this PublicAuthenticationConfiguration.  # noqa: E501
+
+        Optional tenant Id in Microsoft access token  # noqa: E501
+
+        :return: The microsoft_tenant_id of this PublicAuthenticationConfiguration.  # noqa: E501
+        :rtype: str
+        """
+        return self._microsoft_tenant_id
+
+    @microsoft_tenant_id.setter
+    def microsoft_tenant_id(self, microsoft_tenant_id):
+        """Sets the microsoft_tenant_id of this PublicAuthenticationConfiguration.
+
+        Optional tenant Id in Microsoft access token  # noqa: E501
+
+        :param microsoft_tenant_id: The microsoft_tenant_id of this PublicAuthenticationConfiguration.  # noqa: E501
+        :type: str
+        """
+
+        self._microsoft_tenant_id = microsoft_tenant_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
