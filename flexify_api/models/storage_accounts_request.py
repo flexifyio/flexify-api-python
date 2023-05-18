@@ -49,8 +49,7 @@ class StorageAccountsRequest(object):
         self._new_storage_accounts = None
         self.discriminator = None
 
-        if new_storage_accounts is not None:
-            self.new_storage_accounts = new_storage_accounts
+        self.new_storage_accounts = new_storage_accounts
 
     @property
     def new_storage_accounts(self):
@@ -72,6 +71,8 @@ class StorageAccountsRequest(object):
         :param new_storage_accounts: The new_storage_accounts of this StorageAccountsRequest.  # noqa: E501
         :type: list[EndpointStorageAccount]
         """
+        if self._configuration.client_side_validation and new_storage_accounts is None:
+            raise ValueError("Invalid value for `new_storage_accounts`, must not be `None`")  # noqa: E501
 
         self._new_storage_accounts = new_storage_accounts
 

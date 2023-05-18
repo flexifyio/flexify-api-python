@@ -54,8 +54,7 @@ class EndpointStorageAccount(object):
 
         if settings is not None:
             self.settings = settings
-        if storage_account_id is not None:
-            self.storage_account_id = storage_account_id
+        self.storage_account_id = storage_account_id
 
     @property
     def settings(self):
@@ -100,6 +99,8 @@ class EndpointStorageAccount(object):
         :param storage_account_id: The storage_account_id of this EndpointStorageAccount.  # noqa: E501
         :type: int
         """
+        if self._configuration.client_side_validation and storage_account_id is None:
+            raise ValueError("Invalid value for `storage_account_id`, must not be `None`")  # noqa: E501
 
         self._storage_account_id = storage_account_id
 
