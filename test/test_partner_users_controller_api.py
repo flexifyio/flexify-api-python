@@ -211,6 +211,20 @@ class TestPartnerUsersControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_get_all_users_pageable(self):
+        """Test case for get_all_users_pageable
+
+        Get users with search, sorting and pagination  # noqa: E501
+        """
+        pass
+
+    def test_get_all_users_pageable1(self):
+        """Test case for get_all_users_pageable1
+
+        Get users with search, sorting and pagination  # noqa: E501
+        """
+        pass
+
     def test_get_user(self):
         """Test case for get_user
 

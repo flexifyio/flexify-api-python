@@ -66,6 +66,7 @@ from flexify_api.models.money import Money
 from flexify_api.models.new_storage_account import NewStorageAccount
 from flexify_api.models.organization import Organization
 from flexify_api.models.page_migration import PageMigration
+from flexify_api.models.page_user_stat import PageUserStat
 from flexify_api.models.pageable import Pageable
 from flexify_api.models.password_reset_token import PasswordResetToken
 from flexify_api.models.payment import Payment

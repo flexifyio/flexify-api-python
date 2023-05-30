@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_migrations**
-> PageMigration get_migrations(offset, page, size, include_hidden=include_hidden, paged=paged, page_number=page_number, page_size=page_size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction)
+> PageMigration get_migrations(offset, page, include_hidden=include_hidden, paged=paged, page_number=page_number, page_size=page_size, size=size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction)
 
 Get all migrations for logged in user in paged mode
 
@@ -140,18 +140,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = flexify_api.MigrationsControllerApi(flexify_api.ApiClient(configuration))
 offset = 0 # int | Position of the first migration in the list (or null to start from the beginning)
 page = 0 # int | [Deprecated] Page number
-size = 100 # int | Max number of entries to return (AKA page size)
 include_hidden = true # bool | Include hidden migrations to response (optional) (default to true)
 paged = true # bool |  (optional)
 page_number = 56 # int |  (optional)
 page_size = 56 # int |  (optional)
+size = 100 # int | Max number of entries to return (AKA page size), null means no paging (optional)
 sort_sorted = true # bool |  (optional)
 sort_unsorted = true # bool |  (optional)
 sort_direction = 'ASC' # str | Sort Direction (optional)
 
 try:
     # Get all migrations for logged in user in paged mode
-    api_response = api_instance.get_migrations(offset, page, size, include_hidden=include_hidden, paged=paged, page_number=page_number, page_size=page_size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction)
+    api_response = api_instance.get_migrations(offset, page, include_hidden=include_hidden, paged=paged, page_number=page_number, page_size=page_size, size=size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MigrationsControllerApi->get_migrations: %s\n" % e)
@@ -163,11 +163,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Position of the first migration in the list (or null to start from the beginning) | 
  **page** | **int**| [Deprecated] Page number | 
- **size** | **int**| Max number of entries to return (AKA page size) | 
  **include_hidden** | **bool**| Include hidden migrations to response | [optional] [default to true]
  **paged** | **bool**|  | [optional] 
  **page_number** | **int**|  | [optional] 
  **page_size** | **int**|  | [optional] 
+ **size** | **int**| Max number of entries to return (AKA page size), null means no paging | [optional] 
  **sort_sorted** | **bool**|  | [optional] 
  **sort_unsorted** | **bool**|  | [optional] 
  **sort_direction** | **str**| Sort Direction | [optional] 
