@@ -33,6 +33,7 @@ class StorageAccount(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'azure_key_vault_secret_id': 'str',
         'id': 'int',
         'is_sas': 'bool',
         'private_url': 'str',
@@ -43,6 +44,7 @@ class StorageAccount(object):
     }
 
     attribute_map = {
+        'azure_key_vault_secret_id': 'azureKeyVaultSecretId',
         'id': 'id',
         'is_sas': 'isSas',
         'private_url': 'privateUrl',
@@ -52,12 +54,13 @@ class StorageAccount(object):
         'url': 'url'
     }
 
-    def __init__(self, id=None, is_sas=None, private_url=None, provider=None, settings=None, stat=None, url=None, _configuration=None):  # noqa: E501
+    def __init__(self, azure_key_vault_secret_id=None, id=None, is_sas=None, private_url=None, provider=None, settings=None, stat=None, url=None, _configuration=None):  # noqa: E501
         """StorageAccount - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
+        self._azure_key_vault_secret_id = None
         self._id = None
         self._is_sas = None
         self._private_url = None
@@ -67,6 +70,8 @@ class StorageAccount(object):
         self._url = None
         self.discriminator = None
 
+        if azure_key_vault_secret_id is not None:
+            self.azure_key_vault_secret_id = azure_key_vault_secret_id
         if id is not None:
             self.id = id
         if is_sas is not None:
@@ -81,6 +86,27 @@ class StorageAccount(object):
             self.stat = stat
         if url is not None:
             self.url = url
+
+    @property
+    def azure_key_vault_secret_id(self):
+        """Gets the azure_key_vault_secret_id of this StorageAccount.  # noqa: E501
+
+
+        :return: The azure_key_vault_secret_id of this StorageAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._azure_key_vault_secret_id
+
+    @azure_key_vault_secret_id.setter
+    def azure_key_vault_secret_id(self, azure_key_vault_secret_id):
+        """Sets the azure_key_vault_secret_id of this StorageAccount.
+
+
+        :param azure_key_vault_secret_id: The azure_key_vault_secret_id of this StorageAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._azure_key_vault_secret_id = azure_key_vault_secret_id
 
     @property
     def id(self):

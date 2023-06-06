@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**azure_key_vault_secret_id** | **str** |  | [optional] 
 **buckets** | [**list[Bucket]**](Bucket.md) | Buckets that we have cached for this storage account | [optional] 
 **id** | **int** | Id of the storage account | [optional] 
 **is_sas** | **bool** |  | [optional] 

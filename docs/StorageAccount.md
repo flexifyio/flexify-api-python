@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**azure_key_vault_secret_id** | **str** |  | [optional] 
 **id** | **int** | Id of the storage account | [optional] 
 **is_sas** | **bool** |  | [optional] 
 **private_url** | **str** | URL used by engines to access the cloud | [optional] 
