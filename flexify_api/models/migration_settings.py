@@ -41,6 +41,7 @@ class MigrationSettings(object):
         'engines_location': 'CloudLocationReq',
         'existing_data_in_destination': 'str',
         'last_modified_from': 'datetime',
+        'last_modified_to': 'datetime',
         'log_level': 'str',
         'max_engines': 'int',
         'max_retries': 'int',
@@ -72,6 +73,7 @@ class MigrationSettings(object):
         'engines_location': 'enginesLocation',
         'existing_data_in_destination': 'existingDataInDestination',
         'last_modified_from': 'lastModifiedFrom',
+        'last_modified_to': 'lastModifiedTo',
         'log_level': 'logLevel',
         'max_engines': 'maxEngines',
         'max_retries': 'maxRetries',
@@ -94,7 +96,7 @@ class MigrationSettings(object):
         'upload_timestamp_value': 'uploadTimestampValue'
     }
 
-    def __init__(self, auto_restore_if_archived=None, comparison_method=None, conflict_resolution=None, deployment_type=None, dry_run=None, engines_location=None, existing_data_in_destination=None, last_modified_from=None, log_level=None, max_engines=None, max_retries=None, max_retries_for_copy=None, max_retry_timeout=None, max_streams=None, migration_mode=None, multipart_concurrency=None, multipart_limit=None, multipart_part_size=None, name=None, object_key_filter=None, restore_days=None, restore_max_size=None, restore_tier=None, retry_timeout=None, skip_if_hash_matches=None, slots_per_mapping=None, upload_timestamp_mode=None, upload_timestamp_value=None, _configuration=None):  # noqa: E501
+    def __init__(self, auto_restore_if_archived=None, comparison_method=None, conflict_resolution=None, deployment_type=None, dry_run=None, engines_location=None, existing_data_in_destination=None, last_modified_from=None, last_modified_to=None, log_level=None, max_engines=None, max_retries=None, max_retries_for_copy=None, max_retry_timeout=None, max_streams=None, migration_mode=None, multipart_concurrency=None, multipart_limit=None, multipart_part_size=None, name=None, object_key_filter=None, restore_days=None, restore_max_size=None, restore_tier=None, retry_timeout=None, skip_if_hash_matches=None, slots_per_mapping=None, upload_timestamp_mode=None, upload_timestamp_value=None, _configuration=None):  # noqa: E501
         """MigrationSettings - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -108,6 +110,7 @@ class MigrationSettings(object):
         self._engines_location = None
         self._existing_data_in_destination = None
         self._last_modified_from = None
+        self._last_modified_to = None
         self._log_level = None
         self._max_engines = None
         self._max_retries = None
@@ -146,6 +149,8 @@ class MigrationSettings(object):
             self.existing_data_in_destination = existing_data_in_destination
         if last_modified_from is not None:
             self.last_modified_from = last_modified_from
+        if last_modified_to is not None:
+            self.last_modified_to = last_modified_to
         if log_level is not None:
             self.log_level = log_level
         if max_engines is not None:
@@ -398,6 +403,29 @@ class MigrationSettings(object):
         """
 
         self._last_modified_from = last_modified_from
+
+    @property
+    def last_modified_to(self):
+        """Gets the last_modified_to of this MigrationSettings.  # noqa: E501
+
+        Migrate objects modified before specified date  # noqa: E501
+
+        :return: The last_modified_to of this MigrationSettings.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_to
+
+    @last_modified_to.setter
+    def last_modified_to(self, last_modified_to):
+        """Sets the last_modified_to of this MigrationSettings.
+
+        Migrate objects modified before specified date  # noqa: E501
+
+        :param last_modified_to: The last_modified_to of this MigrationSettings.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_to = last_modified_to
 
     @property
     def log_level(self):
