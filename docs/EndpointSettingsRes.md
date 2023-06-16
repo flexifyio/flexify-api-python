@@ -1,9 +1,8 @@
-# EndpointSettings
+# EndpointSettingsRes
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**credential** | **str** | Storage Credential (Secret Key) | [optional] 
 **identity** | **str** | Storage Identity (Access Key) | [optional] 
 **name** | **str** | User-define name of the endpoint | [optional] 
 **protocol** | **str** | Storage Protocol | [optional] 

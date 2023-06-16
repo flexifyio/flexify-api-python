@@ -7,7 +7,7 @@ By unlocking your application from the specific cloud vendor or protocol, you fi
 + Get API token
 + Enjoy Flexify IO REST API
 
-- API version: 2.12.16.hf1
+- API version: 2.12.17-SNAPSHOT
 
 ## Requirements
 
@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
 *EndpointsControllerApi* | [**enable**](docs/EndpointsControllerApi.md#enable) | **PUT** /backend/rest/endpoints/{endpoint-id}/actions/enable | Enable the endpoint
 *EndpointsControllerApi* | [**generate_access_keys**](docs/EndpointsControllerApi.md#generate_access_keys) | **GET** /backend/rest/endpoints/generated-access-keys | Generate new access keys pair
 *EndpointsControllerApi* | [**get_endpoint_details**](docs/EndpointsControllerApi.md#get_endpoint_details) | **GET** /backend/rest/endpoints/{endpoint-id} | Get endpoint details
+*EndpointsControllerApi* | [**get_endpoint_secret_key**](docs/EndpointsControllerApi.md#get_endpoint_secret_key) | **GET** /backend/rest/endpoints/{endpoint-id}/settings/secret-key | Get endpoint secret key
 *EndpointsControllerApi* | [**get_endpoints_for_current_user**](docs/EndpointsControllerApi.md#get_endpoints_for_current_user) | **GET** /backend/rest/endpoints | Get the list of endpoints for current user optionally filtering by name using SQL LIKE syntax
 *EndpointsControllerApi* | [**set_attached_account_settings**](docs/EndpointsControllerApi.md#set_attached_account_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/storage-accounts/{storage-account-id}/settings | Modifies settings of the attached storage account
 *EndpointsControllerApi* | [**set_attached_bucket_settings**](docs/EndpointsControllerApi.md#set_attached_bucket_settings) | **PUT** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets/{bucket-id}/settings | Modifies settings of the attached storage
@@ -151,6 +152,8 @@ Class | Method | HTTP request | Description
 *PartnerUsersControllerApi* | [**generate_token_by_external_id1**](docs/PartnerUsersControllerApi.md#generate_token_by_external_id1) | **POST** /backend/rest/partner/users/external/{externalId}/tokens | Create token by external ID
 *PartnerUsersControllerApi* | [**generate_token_by_username**](docs/PartnerUsersControllerApi.md#generate_token_by_username) | **POST** /backend/rest/distributor/users/username/{username}/tokens | Create token by username
 *PartnerUsersControllerApi* | [**generate_token_by_username1**](docs/PartnerUsersControllerApi.md#generate_token_by_username1) | **POST** /backend/rest/partner/users/username/{username}/tokens | Create token by username
+*PartnerUsersControllerApi* | [**get_all_users_pageable**](docs/PartnerUsersControllerApi.md#get_all_users_pageable) | **GET** /backend/rest/distributor/users/search | Get users with search, sorting and pagination
+*PartnerUsersControllerApi* | [**get_all_users_pageable1**](docs/PartnerUsersControllerApi.md#get_all_users_pageable1) | **GET** /backend/rest/partner/users/search | Get users with search, sorting and pagination
 *PartnerUsersControllerApi* | [**get_user**](docs/PartnerUsersControllerApi.md#get_user) | **GET** /backend/rest/distributor/users/{userId} | Get user details
 *PartnerUsersControllerApi* | [**get_user1**](docs/PartnerUsersControllerApi.md#get_user1) | **GET** /backend/rest/partner/users/{userId} | Get user details
 *PartnerUsersControllerApi* | [**get_user_by_external_id**](docs/PartnerUsersControllerApi.md#get_user_by_external_id) | **GET** /backend/rest/distributor/users/external/{externalId} | Get user details by external ID
@@ -228,7 +231,9 @@ Class | Method | HTTP request | Description
  - [DtoMappingCostEstimateEntry](docs/DtoMappingCostEstimateEntry.md)
  - [DtoMigrationCostEstimate](docs/DtoMigrationCostEstimate.md)
  - [EndpointDetails](docs/EndpointDetails.md)
- - [EndpointSettings](docs/EndpointSettings.md)
+ - [EndpointSecretResponse](docs/EndpointSecretResponse.md)
+ - [EndpointSettingsReq](docs/EndpointSettingsReq.md)
+ - [EndpointSettingsRes](docs/EndpointSettingsRes.md)
  - [EndpointStat](docs/EndpointStat.md)
  - [EndpointStorageAccount](docs/EndpointStorageAccount.md)
  - [EndpointStorageAccountSettings](docs/EndpointStorageAccountSettings.md)
@@ -251,6 +256,7 @@ Class | Method | HTTP request | Description
  - [NewStorageAccount](docs/NewStorageAccount.md)
  - [Organization](docs/Organization.md)
  - [PageMigration](docs/PageMigration.md)
+ - [PageUserStat](docs/PageUserStat.md)
  - [Pageable](docs/Pageable.md)
  - [PasswordResetToken](docs/PasswordResetToken.md)
  - [Payment](docs/Payment.md)

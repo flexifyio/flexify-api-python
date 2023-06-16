@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accounts** | [**list[EndpointStorageAccount]**](EndpointStorageAccount.md) |  | [optional] 
 **id** | **int** | Id | [optional] 
-**settings** | [**EndpointSettings**](EndpointSettings.md) | Settings of endpoint | 
+**settings** | [**EndpointSettingsRes**](EndpointSettingsRes.md) | Settings of endpoint | 
 **stat** | [**EndpointStat**](EndpointStat.md) |  | [optional] 
 **virtual_buckets** | [**list[VirtualBucket]**](VirtualBucket.md) |  | [optional] 
 
