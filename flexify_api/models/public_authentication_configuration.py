@@ -33,103 +33,159 @@ class PublicAuthenticationConfiguration(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'microsoft_client_id': 'str',
-        'microsoft_scope': 'str',
-        'microsoft_tenant_id': 'str'
+        'anonymous_signup_with_microsoft': 'bool',
+        'anonymous_signup_with_password': 'bool',
+        'have_users': 'bool',
+        'single_user_mode': 'bool',
+        'sso_config': 'PublicAuthenticationConfiguration'
     }
 
     attribute_map = {
-        'microsoft_client_id': 'microsoftClientId',
-        'microsoft_scope': 'microsoftScope',
-        'microsoft_tenant_id': 'microsoftTenantId'
+        'anonymous_signup_with_microsoft': 'anonymousSignupWithMicrosoft',
+        'anonymous_signup_with_password': 'anonymousSignupWithPassword',
+        'have_users': 'haveUsers',
+        'single_user_mode': 'singleUserMode',
+        'sso_config': 'ssoConfig'
     }
 
-    def __init__(self, microsoft_client_id=None, microsoft_scope=None, microsoft_tenant_id=None, _configuration=None):  # noqa: E501
+    def __init__(self, anonymous_signup_with_microsoft=None, anonymous_signup_with_password=None, have_users=None, single_user_mode=None, sso_config=None, _configuration=None):  # noqa: E501
         """PublicAuthenticationConfiguration - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
-        self._microsoft_client_id = None
-        self._microsoft_scope = None
-        self._microsoft_tenant_id = None
+        self._anonymous_signup_with_microsoft = None
+        self._anonymous_signup_with_password = None
+        self._have_users = None
+        self._single_user_mode = None
+        self._sso_config = None
         self.discriminator = None
 
-        if microsoft_client_id is not None:
-            self.microsoft_client_id = microsoft_client_id
-        if microsoft_scope is not None:
-            self.microsoft_scope = microsoft_scope
-        if microsoft_tenant_id is not None:
-            self.microsoft_tenant_id = microsoft_tenant_id
+        if anonymous_signup_with_microsoft is not None:
+            self.anonymous_signup_with_microsoft = anonymous_signup_with_microsoft
+        if anonymous_signup_with_password is not None:
+            self.anonymous_signup_with_password = anonymous_signup_with_password
+        if have_users is not None:
+            self.have_users = have_users
+        if single_user_mode is not None:
+            self.single_user_mode = single_user_mode
+        if sso_config is not None:
+            self.sso_config = sso_config
 
     @property
-    def microsoft_client_id(self):
-        """Gets the microsoft_client_id of this PublicAuthenticationConfiguration.  # noqa: E501
+    def anonymous_signup_with_microsoft(self):
+        """Gets the anonymous_signup_with_microsoft of this PublicAuthenticationConfiguration.  # noqa: E501
 
-        Required client Id in Microsoft access token  # noqa: E501
+        Allow anonymous signup with microsoft  # noqa: E501
 
-        :return: The microsoft_client_id of this PublicAuthenticationConfiguration.  # noqa: E501
-        :rtype: str
+        :return: The anonymous_signup_with_microsoft of this PublicAuthenticationConfiguration.  # noqa: E501
+        :rtype: bool
         """
-        return self._microsoft_client_id
+        return self._anonymous_signup_with_microsoft
 
-    @microsoft_client_id.setter
-    def microsoft_client_id(self, microsoft_client_id):
-        """Sets the microsoft_client_id of this PublicAuthenticationConfiguration.
+    @anonymous_signup_with_microsoft.setter
+    def anonymous_signup_with_microsoft(self, anonymous_signup_with_microsoft):
+        """Sets the anonymous_signup_with_microsoft of this PublicAuthenticationConfiguration.
 
-        Required client Id in Microsoft access token  # noqa: E501
+        Allow anonymous signup with microsoft  # noqa: E501
 
-        :param microsoft_client_id: The microsoft_client_id of this PublicAuthenticationConfiguration.  # noqa: E501
-        :type: str
+        :param anonymous_signup_with_microsoft: The anonymous_signup_with_microsoft of this PublicAuthenticationConfiguration.  # noqa: E501
+        :type: bool
         """
 
-        self._microsoft_client_id = microsoft_client_id
+        self._anonymous_signup_with_microsoft = anonymous_signup_with_microsoft
 
     @property
-    def microsoft_scope(self):
-        """Gets the microsoft_scope of this PublicAuthenticationConfiguration.  # noqa: E501
+    def anonymous_signup_with_password(self):
+        """Gets the anonymous_signup_with_password of this PublicAuthenticationConfiguration.  # noqa: E501
 
-        Required scope in Microsoft access token  # noqa: E501
+        Allow anonymous signup with password  # noqa: E501
 
-        :return: The microsoft_scope of this PublicAuthenticationConfiguration.  # noqa: E501
-        :rtype: str
+        :return: The anonymous_signup_with_password of this PublicAuthenticationConfiguration.  # noqa: E501
+        :rtype: bool
         """
-        return self._microsoft_scope
+        return self._anonymous_signup_with_password
 
-    @microsoft_scope.setter
-    def microsoft_scope(self, microsoft_scope):
-        """Sets the microsoft_scope of this PublicAuthenticationConfiguration.
+    @anonymous_signup_with_password.setter
+    def anonymous_signup_with_password(self, anonymous_signup_with_password):
+        """Sets the anonymous_signup_with_password of this PublicAuthenticationConfiguration.
 
-        Required scope in Microsoft access token  # noqa: E501
+        Allow anonymous signup with password  # noqa: E501
 
-        :param microsoft_scope: The microsoft_scope of this PublicAuthenticationConfiguration.  # noqa: E501
-        :type: str
+        :param anonymous_signup_with_password: The anonymous_signup_with_password of this PublicAuthenticationConfiguration.  # noqa: E501
+        :type: bool
         """
 
-        self._microsoft_scope = microsoft_scope
+        self._anonymous_signup_with_password = anonymous_signup_with_password
 
     @property
-    def microsoft_tenant_id(self):
-        """Gets the microsoft_tenant_id of this PublicAuthenticationConfiguration.  # noqa: E501
+    def have_users(self):
+        """Gets the have_users of this PublicAuthenticationConfiguration.  # noqa: E501
 
-        Optional tenant Id in Microsoft access token  # noqa: E501
+        Specifies if at least one user is configured  # noqa: E501
 
-        :return: The microsoft_tenant_id of this PublicAuthenticationConfiguration.  # noqa: E501
-        :rtype: str
+        :return: The have_users of this PublicAuthenticationConfiguration.  # noqa: E501
+        :rtype: bool
         """
-        return self._microsoft_tenant_id
+        return self._have_users
 
-    @microsoft_tenant_id.setter
-    def microsoft_tenant_id(self, microsoft_tenant_id):
-        """Sets the microsoft_tenant_id of this PublicAuthenticationConfiguration.
+    @have_users.setter
+    def have_users(self, have_users):
+        """Sets the have_users of this PublicAuthenticationConfiguration.
 
-        Optional tenant Id in Microsoft access token  # noqa: E501
+        Specifies if at least one user is configured  # noqa: E501
 
-        :param microsoft_tenant_id: The microsoft_tenant_id of this PublicAuthenticationConfiguration.  # noqa: E501
-        :type: str
+        :param have_users: The have_users of this PublicAuthenticationConfiguration.  # noqa: E501
+        :type: bool
         """
 
-        self._microsoft_tenant_id = microsoft_tenant_id
+        self._have_users = have_users
+
+    @property
+    def single_user_mode(self):
+        """Gets the single_user_mode of this PublicAuthenticationConfiguration.  # noqa: E501
+
+        In the single user mode only one user account is possible  # noqa: E501
+
+        :return: The single_user_mode of this PublicAuthenticationConfiguration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._single_user_mode
+
+    @single_user_mode.setter
+    def single_user_mode(self, single_user_mode):
+        """Sets the single_user_mode of this PublicAuthenticationConfiguration.
+
+        In the single user mode only one user account is possible  # noqa: E501
+
+        :param single_user_mode: The single_user_mode of this PublicAuthenticationConfiguration.  # noqa: E501
+        :type: bool
+        """
+
+        self._single_user_mode = single_user_mode
+
+    @property
+    def sso_config(self):
+        """Gets the sso_config of this PublicAuthenticationConfiguration.  # noqa: E501
+
+        Configuration for SSO  # noqa: E501
+
+        :return: The sso_config of this PublicAuthenticationConfiguration.  # noqa: E501
+        :rtype: PublicAuthenticationConfiguration
+        """
+        return self._sso_config
+
+    @sso_config.setter
+    def sso_config(self, sso_config):
+        """Sets the sso_config of this PublicAuthenticationConfiguration.
+
+        Configuration for SSO  # noqa: E501
+
+        :param sso_config: The sso_config of this PublicAuthenticationConfiguration.  # noqa: E501
+        :type: PublicAuthenticationConfiguration
+        """
+
+        self._sso_config = sso_config
 
     def to_dict(self):
         """Returns the model properties as a dict"""
