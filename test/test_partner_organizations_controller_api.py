@@ -36,6 +36,13 @@ class TestPartnerOrganizationsControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_get_org_limits(self):
+        """Test case for get_org_limits
+
+        getOrgLimits  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

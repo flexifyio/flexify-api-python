@@ -120,6 +120,7 @@ Class | Method | HTTP request | Description
 *MigrationsControllerApi* | [**stop_migration**](docs/MigrationsControllerApi.md#stop_migration) | **POST** /backend/rest/migrations/{migration-id}/actions/stop | Stop (cancel) the migration
 *OAuthControllerApi* | [**get_app_info**](docs/OAuthControllerApi.md#get_app_info) | **GET** /backend/rest/oauth/app-info | getAppInfo
 *PartnerOrganizationsControllerApi* | [**get_all**](docs/PartnerOrganizationsControllerApi.md#get_all) | **GET** /backend/rest/partner/organizations | getAll
+*PartnerOrganizationsControllerApi* | [**get_org_limits**](docs/PartnerOrganizationsControllerApi.md#get_org_limits) | **GET** /backend/rest/partner/organizations/{orgId}/limits | getOrgLimits
 *PartnerSignUpCodesControllerApi* | [**create_code**](docs/PartnerSignUpCodesControllerApi.md#create_code) | **POST** /backend/rest/distributor/codes | createCode
 *PartnerSignUpCodesControllerApi* | [**create_code1**](docs/PartnerSignUpCodesControllerApi.md#create_code1) | **POST** /backend/rest/partner/codes | createCode
 *PartnerSignUpCodesControllerApi* | [**delete_code**](docs/PartnerSignUpCodesControllerApi.md#delete_code) | **DELETE** /backend/rest/distributor/codes/{code} | deleteCode
