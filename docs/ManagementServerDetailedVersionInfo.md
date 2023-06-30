@@ -1,4 +1,4 @@
-# SystemInfo
+# ManagementServerDetailedVersionInfo
 
 ## Properties
 Name | Type | Description | Notes

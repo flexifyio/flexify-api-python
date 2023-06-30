@@ -81,6 +81,7 @@ from flexify_api.models.information_about_authentication_token import Informatio
 from flexify_api.models.log_entry import LogEntry
 from flexify_api.models.log_event import LogEvent
 from flexify_api.models.logout_request import LogoutRequest
+from flexify_api.models.management_server_detailed_version_info import ManagementServerDetailedVersionInfo
 from flexify_api.models.mapping import Mapping
 from flexify_api.models.mapping_stat import MappingStat
 from flexify_api.models.marker_page_log_entry import MarkerPageLogEntry
@@ -125,7 +126,6 @@ from flexify_api.models.storage_account_stat import StorageAccountStat
 from flexify_api.models.storage_account_with_buckets import StorageAccountWithBuckets
 from flexify_api.models.storage_accounts_request import StorageAccountsRequest
 from flexify_api.models.storage_provider import StorageProvider
-from flexify_api.models.system_info import SystemInfo
 from flexify_api.models.token_configuration import TokenConfiguration
 from flexify_api.models.update_user_request import UpdateUserRequest
 from flexify_api.models.user import User

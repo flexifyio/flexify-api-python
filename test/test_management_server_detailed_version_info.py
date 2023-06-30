@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.models.system_info import SystemInfo  # noqa: E501
+from flexify_api.models.management_server_detailed_version_info import ManagementServerDetailedVersionInfo  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestSystemInfo(unittest.TestCase):
-    """SystemInfo unit test stubs"""
+class TestManagementServerDetailedVersionInfo(unittest.TestCase):
+    """ManagementServerDetailedVersionInfo unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestSystemInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testSystemInfo(self):
-        """Test SystemInfo"""
+    def testManagementServerDetailedVersionInfo(self):
+        """Test ManagementServerDetailedVersionInfo"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api.models.system_info.SystemInfo()  # noqa: E501
+        # model = flexify_api.models.management_server_detailed_version_info.ManagementServerDetailedVersionInfo()  # noqa: E501
         pass
 
 

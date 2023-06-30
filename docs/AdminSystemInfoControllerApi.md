@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **system_info**
-> SystemInfo system_info()
+> ManagementServerDetailedVersionInfo system_info()
 
 Request General System Information
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**SystemInfo**](SystemInfo.md)
+[**ManagementServerDetailedVersionInfo**](ManagementServerDetailedVersionInfo.md)
 
 ### Authorization
 
