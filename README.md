@@ -72,15 +72,17 @@ All URIs are relative to *https://api.flexify.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AdminSystemInfoControllerApi* | [**system_info**](docs/AdminSystemInfoControllerApi.md#system_info) | **GET** /backend/rest/admin/system-info | Request General System Information
 *AuthControllerApi* | [**authenticate**](docs/AuthControllerApi.md#authenticate) | **POST** /backend/rest/auth | Generate new access token for the user
 *AuthControllerApi* | [**check_token_and_get_user**](docs/AuthControllerApi.md#check_token_and_get_user) | **GET** /backend/rest/auth/user | Check of given token
-*AuthControllerApi* | [**get_config**](docs/AuthControllerApi.md#get_config) | **GET** /backend/rest/auth/config | Get public auth config
 *AuthControllerApi* | [**logout**](docs/AuthControllerApi.md#logout) | **POST** /backend/rest/auth/logout | Logout
 *BillingAccountControllerApi* | [**get_costs_for_current_user_billing_account**](docs/BillingAccountControllerApi.md#get_costs_for_current_user_billing_account) | **GET** /backend/rest/account/costs | Get costs for current user
 *BillingAccountControllerApi* | [**get_current_user_billing_account**](docs/BillingAccountControllerApi.md#get_current_user_billing_account) | **GET** /backend/rest/account | Get billing account for current user
 *BillingAccountControllerApi* | [**get_payments_for_current_user**](docs/BillingAccountControllerApi.md#get_payments_for_current_user) | **GET** /backend/rest/account/payments | Get payments for current user
 *CloudLocationsControllerApi* | [**get_auto_deploy_available_locations_for_current_user**](docs/CloudLocationsControllerApi.md#get_auto_deploy_available_locations_for_current_user) | **GET** /backend/rest/cloud-locations/auto-deploy | getAutoDeployAvailableLocationsForCurrentUser
 *CloudLocationsControllerApi* | [**get_existing_available_locations_for_current_user**](docs/CloudLocationsControllerApi.md#get_existing_available_locations_for_current_user) | **GET** /backend/rest/cloud-locations | getExistingAvailableLocationsForCurrentUser
+*ConfigControllerApi* | [**get_config**](docs/ConfigControllerApi.md#get_config) | **GET** /backend/rest/auth/config | Get public Management Server config
+*ConfigControllerApi* | [**get_config1**](docs/ConfigControllerApi.md#get_config1) | **GET** /backend/rest/config | Get public Management Server config
 *CostEstimateControllerApi* | [**estimate_migration_cost**](docs/CostEstimateControllerApi.md#estimate_migration_cost) | **POST** /backend/rest/cost/migration | estimateMigrationCost
 *EndpointsControllerApi* | [**attach_accounts**](docs/EndpointsControllerApi.md#attach_accounts) | **POST** /backend/rest/endpoints/{endpoint-id}/storage-accounts | Attach storage accounts to the endpoint
 *EndpointsControllerApi* | [**attach_buckets**](docs/EndpointsControllerApi.md#attach_buckets) | **POST** /backend/rest/endpoints/{endpoint-id}/virtual-buckets/{virtual-bucket}/buckets | Attach storages to the virtual bucket
@@ -267,6 +269,7 @@ Class | Method | HTTP request | Description
  - [PriceConstraints](docs/PriceConstraints.md)
  - [PriceList](docs/PriceList.md)
  - [PublicAuthenticationConfiguration](docs/PublicAuthenticationConfiguration.md)
+ - [PublicManagementServerConfiguration](docs/PublicManagementServerConfiguration.md)
  - [RequestResetPasswordRequest](docs/RequestResetPasswordRequest.md)
  - [ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [ResetSsoRequest](docs/ResetSsoRequest.md)
@@ -288,6 +291,7 @@ Class | Method | HTTP request | Description
  - [StorageAccountWithBuckets](docs/StorageAccountWithBuckets.md)
  - [StorageAccountsRequest](docs/StorageAccountsRequest.md)
  - [StorageProvider](docs/StorageProvider.md)
+ - [SystemInfo](docs/SystemInfo.md)
  - [TokenConfiguration](docs/TokenConfiguration.md)
  - [UpdateUserRequest](docs/UpdateUserRequest.md)
  - [User](docs/User.md)

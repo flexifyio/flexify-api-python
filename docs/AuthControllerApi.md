@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authenticate**](AuthControllerApi.md#authenticate) | **POST** /backend/rest/auth | Generate new access token for the user
 [**check_token_and_get_user**](AuthControllerApi.md#check_token_and_get_user) | **GET** /backend/rest/auth/user | Check of given token
-[**get_config**](AuthControllerApi.md#get_config) | **GET** /backend/rest/auth/config | Get public auth config
 [**logout**](AuthControllerApi.md#logout) | **POST** /backend/rest/auth/logout | Logout
 
 
@@ -92,54 +91,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**AuthCheckTokenAndGetUserResponse**](AuthCheckTokenAndGetUserResponse.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_config**
-> PublicAuthenticationConfiguration get_config()
-
-Get public auth config
-
-### Example
-```python
-from __future__ import print_function
-import time
-import flexify_api
-from flexify_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: Bearer
-configuration = flexify_api.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = flexify_api.AuthControllerApi(flexify_api.ApiClient(configuration))
-
-try:
-    # Get public auth config
-    api_response = api_instance.get_config()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AuthControllerApi->get_config: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**PublicAuthenticationConfiguration**](PublicAuthenticationConfiguration.md)
 
 ### Authorization
 

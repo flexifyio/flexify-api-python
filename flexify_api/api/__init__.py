@@ -3,9 +3,11 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
+from flexify_api.api.admin_system_info_controller_api import AdminSystemInfoControllerApi
 from flexify_api.api.auth_controller_api import AuthControllerApi
 from flexify_api.api.billing_account_controller_api import BillingAccountControllerApi
 from flexify_api.api.cloud_locations_controller_api import CloudLocationsControllerApi
+from flexify_api.api.config_controller_api import ConfigControllerApi
 from flexify_api.api.cost_estimate_controller_api import CostEstimateControllerApi
 from flexify_api.api.endpoints_controller_api import EndpointsControllerApi
 from flexify_api.api.impersonation_controller_api import ImpersonationControllerApi
