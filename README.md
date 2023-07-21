@@ -72,7 +72,6 @@ All URIs are relative to *https://api.flexify.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AdminSystemInfoControllerApi* | [**system_info**](docs/AdminSystemInfoControllerApi.md#system_info) | **GET** /backend/rest/admin/system-info | Request General System Information
 *AuthControllerApi* | [**authenticate**](docs/AuthControllerApi.md#authenticate) | **POST** /backend/rest/auth | Generate new access token for the user
 *AuthControllerApi* | [**check_token_and_get_user**](docs/AuthControllerApi.md#check_token_and_get_user) | **GET** /backend/rest/auth/user | Check of given token
 *AuthControllerApi* | [**logout**](docs/AuthControllerApi.md#logout) | **POST** /backend/rest/auth/logout | Logout
@@ -247,7 +246,6 @@ Class | Method | HTTP request | Description
  - [LogEntry](docs/LogEntry.md)
  - [LogEvent](docs/LogEvent.md)
  - [LogoutRequest](docs/LogoutRequest.md)
- - [ManagementServerDetailedVersionInfo](docs/ManagementServerDetailedVersionInfo.md)
  - [Mapping](docs/Mapping.md)
  - [MappingStat](docs/MappingStat.md)
  - [MarkerPageLogEntry](docs/MarkerPageLogEntry.md)

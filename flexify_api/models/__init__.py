@@ -56,7 +56,6 @@ from flexify_api.models.information_about_authentication_token import Informatio
 from flexify_api.models.log_entry import LogEntry
 from flexify_api.models.log_event import LogEvent
 from flexify_api.models.logout_request import LogoutRequest
-from flexify_api.models.management_server_detailed_version_info import ManagementServerDetailedVersionInfo
 from flexify_api.models.mapping import Mapping
 from flexify_api.models.mapping_stat import MappingStat
 from flexify_api.models.marker_page_log_entry import MarkerPageLogEntry
