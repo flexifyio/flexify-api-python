@@ -33,85 +33,69 @@ class StorageAccountWithBuckets(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'azure_key_vault_secret_id': 'str',
         'buckets': 'list[Bucket]',
         'id': 'int',
         'is_sas': 'bool',
+        'key_vault_secret_id': 'str',
         'private_url': 'str',
         'provider': 'StorageProvider',
+        'secret_in_key_vault': 'bool',
         'settings': 'StorageAccountSettingsRes',
         'stat': 'StorageAccountStat',
         'url': 'str'
     }
 
     attribute_map = {
-        'azure_key_vault_secret_id': 'azureKeyVaultSecretId',
         'buckets': 'buckets',
         'id': 'id',
         'is_sas': 'isSas',
+        'key_vault_secret_id': 'keyVaultSecretId',
         'private_url': 'privateUrl',
         'provider': 'provider',
+        'secret_in_key_vault': 'secretInKeyVault',
         'settings': 'settings',
         'stat': 'stat',
         'url': 'url'
     }
 
-    def __init__(self, azure_key_vault_secret_id=None, buckets=None, id=None, is_sas=None, private_url=None, provider=None, settings=None, stat=None, url=None, _configuration=None):  # noqa: E501
+    def __init__(self, buckets=None, id=None, is_sas=None, key_vault_secret_id=None, private_url=None, provider=None, secret_in_key_vault=None, settings=None, stat=None, url=None, _configuration=None):  # noqa: E501
         """StorageAccountWithBuckets - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
-        self._azure_key_vault_secret_id = None
         self._buckets = None
         self._id = None
         self._is_sas = None
+        self._key_vault_secret_id = None
         self._private_url = None
         self._provider = None
+        self._secret_in_key_vault = None
         self._settings = None
         self._stat = None
         self._url = None
         self.discriminator = None
 
-        if azure_key_vault_secret_id is not None:
-            self.azure_key_vault_secret_id = azure_key_vault_secret_id
         if buckets is not None:
             self.buckets = buckets
         if id is not None:
             self.id = id
         if is_sas is not None:
             self.is_sas = is_sas
+        if key_vault_secret_id is not None:
+            self.key_vault_secret_id = key_vault_secret_id
         if private_url is not None:
             self.private_url = private_url
         if provider is not None:
             self.provider = provider
+        if secret_in_key_vault is not None:
+            self.secret_in_key_vault = secret_in_key_vault
         if settings is not None:
             self.settings = settings
         if stat is not None:
             self.stat = stat
         if url is not None:
             self.url = url
-
-    @property
-    def azure_key_vault_secret_id(self):
-        """Gets the azure_key_vault_secret_id of this StorageAccountWithBuckets.  # noqa: E501
-
-
-        :return: The azure_key_vault_secret_id of this StorageAccountWithBuckets.  # noqa: E501
-        :rtype: str
-        """
-        return self._azure_key_vault_secret_id
-
-    @azure_key_vault_secret_id.setter
-    def azure_key_vault_secret_id(self, azure_key_vault_secret_id):
-        """Sets the azure_key_vault_secret_id of this StorageAccountWithBuckets.
-
-
-        :param azure_key_vault_secret_id: The azure_key_vault_secret_id of this StorageAccountWithBuckets.  # noqa: E501
-        :type: str
-        """
-
-        self._azure_key_vault_secret_id = azure_key_vault_secret_id
 
     @property
     def buckets(self):
@@ -163,6 +147,7 @@ class StorageAccountWithBuckets(object):
     def is_sas(self):
         """Gets the is_sas of this StorageAccountWithBuckets.  # noqa: E501
 
+        For Azure - if credential is SAS signature (not included if storing in key vault)  # noqa: E501
 
         :return: The is_sas of this StorageAccountWithBuckets.  # noqa: E501
         :rtype: bool
@@ -173,12 +158,36 @@ class StorageAccountWithBuckets(object):
     def is_sas(self, is_sas):
         """Sets the is_sas of this StorageAccountWithBuckets.
 
+        For Azure - if credential is SAS signature (not included if storing in key vault)  # noqa: E501
 
         :param is_sas: The is_sas of this StorageAccountWithBuckets.  # noqa: E501
         :type: bool
         """
 
         self._is_sas = is_sas
+
+    @property
+    def key_vault_secret_id(self):
+        """Gets the key_vault_secret_id of this StorageAccountWithBuckets.  # noqa: E501
+
+        Key Vault secret ID where this credential secret is stored (only for admins)  # noqa: E501
+
+        :return: The key_vault_secret_id of this StorageAccountWithBuckets.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_vault_secret_id
+
+    @key_vault_secret_id.setter
+    def key_vault_secret_id(self, key_vault_secret_id):
+        """Sets the key_vault_secret_id of this StorageAccountWithBuckets.
+
+        Key Vault secret ID where this credential secret is stored (only for admins)  # noqa: E501
+
+        :param key_vault_secret_id: The key_vault_secret_id of this StorageAccountWithBuckets.  # noqa: E501
+        :type: str
+        """
+
+        self._key_vault_secret_id = key_vault_secret_id
 
     @property
     def private_url(self):
@@ -225,6 +234,29 @@ class StorageAccountWithBuckets(object):
         """
 
         self._provider = provider
+
+    @property
+    def secret_in_key_vault(self):
+        """Gets the secret_in_key_vault of this StorageAccountWithBuckets.  # noqa: E501
+
+        If secret credential is stored in Key Vault  # noqa: E501
+
+        :return: The secret_in_key_vault of this StorageAccountWithBuckets.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secret_in_key_vault
+
+    @secret_in_key_vault.setter
+    def secret_in_key_vault(self, secret_in_key_vault):
+        """Sets the secret_in_key_vault of this StorageAccountWithBuckets.
+
+        If secret credential is stored in Key Vault  # noqa: E501
+
+        :param secret_in_key_vault: The secret_in_key_vault of this StorageAccountWithBuckets.  # noqa: E501
+        :type: bool
+        """
+
+        self._secret_in_key_vault = secret_in_key_vault
 
     @property
     def settings(self):

@@ -35,6 +35,8 @@ class EndpointDetails(object):
     swagger_types = {
         'accounts': 'list[EndpointStorageAccount]',
         'id': 'int',
+        'key_vault_secret_id': 'str',
+        'secret_in_key_vault': 'bool',
         'settings': 'EndpointSettingsRes',
         'stat': 'EndpointStat',
         'virtual_buckets': 'list[VirtualBucket]'
@@ -43,12 +45,14 @@ class EndpointDetails(object):
     attribute_map = {
         'accounts': 'accounts',
         'id': 'id',
+        'key_vault_secret_id': 'keyVaultSecretId',
+        'secret_in_key_vault': 'secretInKeyVault',
         'settings': 'settings',
         'stat': 'stat',
         'virtual_buckets': 'virtualBuckets'
     }
 
-    def __init__(self, accounts=None, id=None, settings=None, stat=None, virtual_buckets=None, _configuration=None):  # noqa: E501
+    def __init__(self, accounts=None, id=None, key_vault_secret_id=None, secret_in_key_vault=None, settings=None, stat=None, virtual_buckets=None, _configuration=None):  # noqa: E501
         """EndpointDetails - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -56,6 +60,8 @@ class EndpointDetails(object):
 
         self._accounts = None
         self._id = None
+        self._key_vault_secret_id = None
+        self._secret_in_key_vault = None
         self._settings = None
         self._stat = None
         self._virtual_buckets = None
@@ -65,6 +71,10 @@ class EndpointDetails(object):
             self.accounts = accounts
         if id is not None:
             self.id = id
+        if key_vault_secret_id is not None:
+            self.key_vault_secret_id = key_vault_secret_id
+        if secret_in_key_vault is not None:
+            self.secret_in_key_vault = secret_in_key_vault
         self.settings = settings
         if stat is not None:
             self.stat = stat
@@ -114,6 +124,52 @@ class EndpointDetails(object):
         """
 
         self._id = id
+
+    @property
+    def key_vault_secret_id(self):
+        """Gets the key_vault_secret_id of this EndpointDetails.  # noqa: E501
+
+        Key Vault secret ID where this credential secret is stored (only for admins)  # noqa: E501
+
+        :return: The key_vault_secret_id of this EndpointDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._key_vault_secret_id
+
+    @key_vault_secret_id.setter
+    def key_vault_secret_id(self, key_vault_secret_id):
+        """Sets the key_vault_secret_id of this EndpointDetails.
+
+        Key Vault secret ID where this credential secret is stored (only for admins)  # noqa: E501
+
+        :param key_vault_secret_id: The key_vault_secret_id of this EndpointDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._key_vault_secret_id = key_vault_secret_id
+
+    @property
+    def secret_in_key_vault(self):
+        """Gets the secret_in_key_vault of this EndpointDetails.  # noqa: E501
+
+        If secret credential is stored in Key Vault  # noqa: E501
+
+        :return: The secret_in_key_vault of this EndpointDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._secret_in_key_vault
+
+    @secret_in_key_vault.setter
+    def secret_in_key_vault(self, secret_in_key_vault):
+        """Sets the secret_in_key_vault of this EndpointDetails.
+
+        If secret credential is stored in Key Vault  # noqa: E501
+
+        :param secret_in_key_vault: The secret_in_key_vault of this EndpointDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._secret_in_key_vault = secret_in_key_vault
 
     @property
     def settings(self):
