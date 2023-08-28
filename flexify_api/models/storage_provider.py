@@ -33,11 +33,11 @@ class StorageProvider(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'bucket_dot_encode': 'bool',
         'can_create_buckets_with_uppercase': 'bool',
         'code': 'str',
         'default_region': 'str',
         'disabled_as_destination': 'bool',
-        'dot_encode': 'str',
         'endpoint': 'str',
         'endpoint_pattern': 'str',
         'id': 'int',
@@ -57,11 +57,11 @@ class StorageProvider(object):
     }
 
     attribute_map = {
+        'bucket_dot_encode': 'bucketDotEncode',
         'can_create_buckets_with_uppercase': 'canCreateBucketsWithUppercase',
         'code': 'code',
         'default_region': 'defaultRegion',
         'disabled_as_destination': 'disabledAsDestination',
-        'dot_encode': 'dotEncode',
         'endpoint': 'endpoint',
         'endpoint_pattern': 'endpointPattern',
         'id': 'id',
@@ -80,17 +80,17 @@ class StorageProvider(object):
         'supports_o_auth': 'supportsOAuth'
     }
 
-    def __init__(self, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, dot_encode=None, endpoint=None, endpoint_pattern=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, private_endpoint_pattern=None, product_name=None, protocol=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None, _configuration=None):  # noqa: E501
+    def __init__(self, bucket_dot_encode=None, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, endpoint=None, endpoint_pattern=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, private_endpoint_pattern=None, product_name=None, protocol=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None, _configuration=None):  # noqa: E501
         """StorageProvider - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
+        self._bucket_dot_encode = None
         self._can_create_buckets_with_uppercase = None
         self._code = None
         self._default_region = None
         self._disabled_as_destination = None
-        self._dot_encode = None
         self._endpoint = None
         self._endpoint_pattern = None
         self._id = None
@@ -109,6 +109,8 @@ class StorageProvider(object):
         self._supports_o_auth = None
         self.discriminator = None
 
+        if bucket_dot_encode is not None:
+            self.bucket_dot_encode = bucket_dot_encode
         if can_create_buckets_with_uppercase is not None:
             self.can_create_buckets_with_uppercase = can_create_buckets_with_uppercase
         if code is not None:
@@ -117,8 +119,6 @@ class StorageProvider(object):
             self.default_region = default_region
         if disabled_as_destination is not None:
             self.disabled_as_destination = disabled_as_destination
-        if dot_encode is not None:
-            self.dot_encode = dot_encode
         if endpoint is not None:
             self.endpoint = endpoint
         if endpoint_pattern is not None:
@@ -151,6 +151,29 @@ class StorageProvider(object):
             self.supports_multipart_upload = supports_multipart_upload
         if supports_o_auth is not None:
             self.supports_o_auth = supports_o_auth
+
+    @property
+    def bucket_dot_encode(self):
+        """Gets the bucket_dot_encode of this StorageProvider.  # noqa: E501
+
+        Indicates that the provider does not support dots in bucket names and how dots should be encoded  # noqa: E501
+
+        :return: The bucket_dot_encode of this StorageProvider.  # noqa: E501
+        :rtype: bool
+        """
+        return self._bucket_dot_encode
+
+    @bucket_dot_encode.setter
+    def bucket_dot_encode(self, bucket_dot_encode):
+        """Sets the bucket_dot_encode of this StorageProvider.
+
+        Indicates that the provider does not support dots in bucket names and how dots should be encoded  # noqa: E501
+
+        :param bucket_dot_encode: The bucket_dot_encode of this StorageProvider.  # noqa: E501
+        :type: bool
+        """
+
+        self._bucket_dot_encode = bucket_dot_encode
 
     @property
     def can_create_buckets_with_uppercase(self):
@@ -243,29 +266,6 @@ class StorageProvider(object):
         """
 
         self._disabled_as_destination = disabled_as_destination
-
-    @property
-    def dot_encode(self):
-        """Gets the dot_encode of this StorageProvider.  # noqa: E501
-
-        Indicates that the provider does not support dots in bucket names and how dots should be encoded  # noqa: E501
-
-        :return: The dot_encode of this StorageProvider.  # noqa: E501
-        :rtype: str
-        """
-        return self._dot_encode
-
-    @dot_encode.setter
-    def dot_encode(self, dot_encode):
-        """Sets the dot_encode of this StorageProvider.
-
-        Indicates that the provider does not support dots in bucket names and how dots should be encoded  # noqa: E501
-
-        :param dot_encode: The dot_encode of this StorageProvider.  # noqa: E501
-        :type: str
-        """
-
-        self._dot_encode = dot_encode
 
     @property
     def endpoint(self):
