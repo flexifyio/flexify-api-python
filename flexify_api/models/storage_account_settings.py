@@ -34,6 +34,7 @@ class StorageAccountSettings(object):
     """
     swagger_types = {
         'anonymous': 'bool',
+        'bucket_dot_encode_sequence': 'str',
         'custom_endpoint': 'str',
         'identity': 'str',
         'name': 'str',
@@ -44,6 +45,7 @@ class StorageAccountSettings(object):
 
     attribute_map = {
         'anonymous': 'anonymous',
+        'bucket_dot_encode_sequence': 'bucketDotEncodeSequence',
         'custom_endpoint': 'customEndpoint',
         'identity': 'identity',
         'name': 'name',
@@ -52,13 +54,14 @@ class StorageAccountSettings(object):
         'use_ssl': 'useSsl'
     }
 
-    def __init__(self, anonymous=None, custom_endpoint=None, identity=None, name=None, refresh_interval_sec=None, refresh_storages_stat=None, use_ssl=None, _configuration=None):  # noqa: E501
+    def __init__(self, anonymous=None, bucket_dot_encode_sequence=None, custom_endpoint=None, identity=None, name=None, refresh_interval_sec=None, refresh_storages_stat=None, use_ssl=None, _configuration=None):  # noqa: E501
         """StorageAccountSettings - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._anonymous = None
+        self._bucket_dot_encode_sequence = None
         self._custom_endpoint = None
         self._identity = None
         self._name = None
@@ -69,6 +72,8 @@ class StorageAccountSettings(object):
 
         if anonymous is not None:
             self.anonymous = anonymous
+        if bucket_dot_encode_sequence is not None:
+            self.bucket_dot_encode_sequence = bucket_dot_encode_sequence
         if custom_endpoint is not None:
             self.custom_endpoint = custom_endpoint
         if identity is not None:
@@ -104,6 +109,29 @@ class StorageAccountSettings(object):
         """
 
         self._anonymous = anonymous
+
+    @property
+    def bucket_dot_encode_sequence(self):
+        """Gets the bucket_dot_encode_sequence of this StorageAccountSettings.  # noqa: E501
+
+        Dot escape sequence for buckets  # noqa: E501
+
+        :return: The bucket_dot_encode_sequence of this StorageAccountSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._bucket_dot_encode_sequence
+
+    @bucket_dot_encode_sequence.setter
+    def bucket_dot_encode_sequence(self, bucket_dot_encode_sequence):
+        """Sets the bucket_dot_encode_sequence of this StorageAccountSettings.
+
+        Dot escape sequence for buckets  # noqa: E501
+
+        :param bucket_dot_encode_sequence: The bucket_dot_encode_sequence of this StorageAccountSettings.  # noqa: E501
+        :type: str
+        """
+
+        self._bucket_dot_encode_sequence = bucket_dot_encode_sequence
 
     @property
     def custom_endpoint(self):

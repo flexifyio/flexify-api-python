@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bucket_dot_encode_sequence** | **str** | Dot escape sequence for buckets | [optional] 
 **credential** | **str** | Credential (such as Secret Key) of the cloud account | [optional] 
 **custom_endpoint** | **str** | Custom endpoint to be used for requests | [optional] 
 **identity** | **str** | Identity (such as Key ID) of the cloud account | [optional] 

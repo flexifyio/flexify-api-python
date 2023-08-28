@@ -33,6 +33,7 @@ class StorageAccountSettingsReq(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'bucket_dot_encode_sequence': 'str',
         'credential': 'str',
         'custom_endpoint': 'str',
         'identity': 'str',
@@ -43,6 +44,7 @@ class StorageAccountSettingsReq(object):
     }
 
     attribute_map = {
+        'bucket_dot_encode_sequence': 'bucketDotEncodeSequence',
         'credential': 'credential',
         'custom_endpoint': 'customEndpoint',
         'identity': 'identity',
@@ -52,12 +54,13 @@ class StorageAccountSettingsReq(object):
         'use_ssl': 'useSsl'
     }
 
-    def __init__(self, credential=None, custom_endpoint=None, identity=None, name=None, refresh_interval_sec=None, refresh_storages_stat=None, use_ssl=None, _configuration=None):  # noqa: E501
+    def __init__(self, bucket_dot_encode_sequence=None, credential=None, custom_endpoint=None, identity=None, name=None, refresh_interval_sec=None, refresh_storages_stat=None, use_ssl=None, _configuration=None):  # noqa: E501
         """StorageAccountSettingsReq - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
+        self._bucket_dot_encode_sequence = None
         self._credential = None
         self._custom_endpoint = None
         self._identity = None
@@ -67,6 +70,8 @@ class StorageAccountSettingsReq(object):
         self._use_ssl = None
         self.discriminator = None
 
+        if bucket_dot_encode_sequence is not None:
+            self.bucket_dot_encode_sequence = bucket_dot_encode_sequence
         if credential is not None:
             self.credential = credential
         if custom_endpoint is not None:
@@ -81,6 +86,29 @@ class StorageAccountSettingsReq(object):
             self.refresh_storages_stat = refresh_storages_stat
         if use_ssl is not None:
             self.use_ssl = use_ssl
+
+    @property
+    def bucket_dot_encode_sequence(self):
+        """Gets the bucket_dot_encode_sequence of this StorageAccountSettingsReq.  # noqa: E501
+
+        Dot escape sequence for buckets  # noqa: E501
+
+        :return: The bucket_dot_encode_sequence of this StorageAccountSettingsReq.  # noqa: E501
+        :rtype: str
+        """
+        return self._bucket_dot_encode_sequence
+
+    @bucket_dot_encode_sequence.setter
+    def bucket_dot_encode_sequence(self, bucket_dot_encode_sequence):
+        """Sets the bucket_dot_encode_sequence of this StorageAccountSettingsReq.
+
+        Dot escape sequence for buckets  # noqa: E501
+
+        :param bucket_dot_encode_sequence: The bucket_dot_encode_sequence of this StorageAccountSettingsReq.  # noqa: E501
+        :type: str
+        """
+
+        self._bucket_dot_encode_sequence = bucket_dot_encode_sequence
 
     @property
     def credential(self):
