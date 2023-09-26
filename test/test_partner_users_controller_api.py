@@ -323,6 +323,48 @@ class TestPartnerUsersControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_set_limits(self):
+        """Test case for set_limits
+
+        Set custom user limits by partner  # noqa: E501
+        """
+        pass
+
+    def test_set_limits1(self):
+        """Test case for set_limits1
+
+        Set custom user limits by partner  # noqa: E501
+        """
+        pass
+
+    def test_set_limits_by_external_id(self):
+        """Test case for set_limits_by_external_id
+
+        setLimitsByExternalId  # noqa: E501
+        """
+        pass
+
+    def test_set_limits_by_external_id1(self):
+        """Test case for set_limits_by_external_id1
+
+        setLimitsByExternalId  # noqa: E501
+        """
+        pass
+
+    def test_set_limits_by_username(self):
+        """Test case for set_limits_by_username
+
+        setLimitsByUsername  # noqa: E501
+        """
+        pass
+
+    def test_set_limits_by_username1(self):
+        """Test case for set_limits_by_username1
+
+        setLimitsByUsername  # noqa: E501
+        """
+        pass
+
     def test_set_roles(self):
         """Test case for set_roles
 

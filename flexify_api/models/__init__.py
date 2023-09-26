@@ -82,6 +82,7 @@ from flexify_api.models.public_management_server_configuration import PublicMana
 from flexify_api.models.request_reset_password_request import RequestResetPasswordRequest
 from flexify_api.models.reset_password_request import ResetPasswordRequest
 from flexify_api.models.reset_sso_request import ResetSsoRequest
+from flexify_api.models.set_limits_request import SetLimitsRequest
 from flexify_api.models.set_roles_request import SetRolesRequest
 from flexify_api.models.set_user_state_request import SetUserStateRequest
 from flexify_api.models.sign_up_request import SignUpRequest

@@ -46,6 +46,12 @@ Method | HTTP request | Description
 [**send_password_reset_email_by_external_id1**](PartnerUsersControllerApi.md#send_password_reset_email_by_external_id1) | **POST** /backend/rest/partner/users/external/{externalId}/actions/send-password-reset-email | Set/reset password by external ID
 [**send_password_reset_email_by_username**](PartnerUsersControllerApi.md#send_password_reset_email_by_username) | **POST** /backend/rest/distributor/users/username/{username}/actions/send-password-reset-email | Set/reset password by username
 [**send_password_reset_email_by_username1**](PartnerUsersControllerApi.md#send_password_reset_email_by_username1) | **POST** /backend/rest/partner/users/username/{username}/actions/send-password-reset-email | Set/reset password by username
+[**set_limits**](PartnerUsersControllerApi.md#set_limits) | **PUT** /backend/rest/distributor/users/{userId}/limits | Set custom user limits by partner
+[**set_limits1**](PartnerUsersControllerApi.md#set_limits1) | **PUT** /backend/rest/partner/users/{userId}/limits | Set custom user limits by partner
+[**set_limits_by_external_id**](PartnerUsersControllerApi.md#set_limits_by_external_id) | **PUT** /backend/rest/distributor/users/external/{externalId}/limits | setLimitsByExternalId
+[**set_limits_by_external_id1**](PartnerUsersControllerApi.md#set_limits_by_external_id1) | **PUT** /backend/rest/partner/users/external/{externalId}/limits | setLimitsByExternalId
+[**set_limits_by_username**](PartnerUsersControllerApi.md#set_limits_by_username) | **PUT** /backend/rest/distributor/users/username/{username}/limits | setLimitsByUsername
+[**set_limits_by_username1**](PartnerUsersControllerApi.md#set_limits_by_username1) | **PUT** /backend/rest/partner/users/username/{username}/limits | setLimitsByUsername
 [**set_roles**](PartnerUsersControllerApi.md#set_roles) | **PUT** /backend/rest/distributor/users/{userId}/roles | setRoles
 [**set_roles1**](PartnerUsersControllerApi.md#set_roles1) | **PUT** /backend/rest/partner/users/{userId}/roles | setRoles
 [**set_roles_by_external_id**](PartnerUsersControllerApi.md#set_roles_by_external_id) | **PUT** /backend/rest/distributor/users/external/{externalId}/roles | setRolesByExternalId
@@ -2333,6 +2339,324 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **username** | **str**| username | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_limits**
+> set_limits(request, user_id)
+
+Set custom user limits by partner
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.SetLimitsRequest() # SetLimitsRequest | request
+user_id = 789 # int | userId
+
+try:
+    # Set custom user limits by partner
+    api_instance.set_limits(request, user_id)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_limits: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**SetLimitsRequest**](SetLimitsRequest.md)| request | 
+ **user_id** | **int**| userId | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_limits1**
+> set_limits1(request, user_id)
+
+Set custom user limits by partner
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.SetLimitsRequest() # SetLimitsRequest | request
+user_id = 789 # int | userId
+
+try:
+    # Set custom user limits by partner
+    api_instance.set_limits1(request, user_id)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_limits1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**SetLimitsRequest**](SetLimitsRequest.md)| request | 
+ **user_id** | **int**| userId | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_limits_by_external_id**
+> set_limits_by_external_id(external_id, request)
+
+setLimitsByExternalId
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+external_id = 'external_id_example' # str | externalId
+request = flexify_api.SetLimitsRequest() # SetLimitsRequest | request
+
+try:
+    # setLimitsByExternalId
+    api_instance.set_limits_by_external_id(external_id, request)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_limits_by_external_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **external_id** | **str**| externalId | 
+ **request** | [**SetLimitsRequest**](SetLimitsRequest.md)| request | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_limits_by_external_id1**
+> set_limits_by_external_id1(external_id, request)
+
+setLimitsByExternalId
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+external_id = 'external_id_example' # str | externalId
+request = flexify_api.SetLimitsRequest() # SetLimitsRequest | request
+
+try:
+    # setLimitsByExternalId
+    api_instance.set_limits_by_external_id1(external_id, request)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_limits_by_external_id1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **external_id** | **str**| externalId | 
+ **request** | [**SetLimitsRequest**](SetLimitsRequest.md)| request | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_limits_by_username**
+> set_limits_by_username(request, username)
+
+setLimitsByUsername
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.SetLimitsRequest() # SetLimitsRequest | request
+username = 'username_example' # str | username
+
+try:
+    # setLimitsByUsername
+    api_instance.set_limits_by_username(request, username)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_limits_by_username: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**SetLimitsRequest**](SetLimitsRequest.md)| request | 
+ **username** | **str**| username | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_limits_by_username1**
+> set_limits_by_username1(request, username)
+
+setLimitsByUsername
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flexify_api
+from flexify_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = flexify_api.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
+request = flexify_api.SetLimitsRequest() # SetLimitsRequest | request
+username = 'username_example' # str | username
+
+try:
+    # setLimitsByUsername
+    api_instance.set_limits_by_username1(request, username)
+except ApiException as e:
+    print("Exception when calling PartnerUsersControllerApi->set_limits_by_username1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**SetLimitsRequest**](SetLimitsRequest.md)| request | 
  **username** | **str**| username | 
 
 ### Return type
