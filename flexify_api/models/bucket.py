@@ -36,6 +36,7 @@ class Bucket(object):
         'display_name': 'str',
         'id': 'int',
         'name': 'str',
+        'refresh_requested_time': 'datetime',
         'stat': 'BucketStat'
     }
 
@@ -43,10 +44,11 @@ class Bucket(object):
         'display_name': 'displayName',
         'id': 'id',
         'name': 'name',
+        'refresh_requested_time': 'refreshRequestedTime',
         'stat': 'stat'
     }
 
-    def __init__(self, display_name=None, id=None, name=None, stat=None, _configuration=None):  # noqa: E501
+    def __init__(self, display_name=None, id=None, name=None, refresh_requested_time=None, stat=None, _configuration=None):  # noqa: E501
         """Bucket - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -55,6 +57,7 @@ class Bucket(object):
         self._display_name = None
         self._id = None
         self._name = None
+        self._refresh_requested_time = None
         self._stat = None
         self.discriminator = None
 
@@ -63,6 +66,8 @@ class Bucket(object):
         if id is not None:
             self.id = id
         self.name = name
+        if refresh_requested_time is not None:
+            self.refresh_requested_time = refresh_requested_time
         if stat is not None:
             self.stat = stat
 
@@ -136,6 +141,29 @@ class Bucket(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def refresh_requested_time(self):
+        """Gets the refresh_requested_time of this Bucket.  # noqa: E501
+
+        Last time refresh of this bucket was requested  # noqa: E501
+
+        :return: The refresh_requested_time of this Bucket.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._refresh_requested_time
+
+    @refresh_requested_time.setter
+    def refresh_requested_time(self, refresh_requested_time):
+        """Sets the refresh_requested_time of this Bucket.
+
+        Last time refresh of this bucket was requested  # noqa: E501
+
+        :param refresh_requested_time: The refresh_requested_time of this Bucket.  # noqa: E501
+        :type: datetime
+        """
+
+        self._refresh_requested_time = refresh_requested_time
 
     @property
     def stat(self):
