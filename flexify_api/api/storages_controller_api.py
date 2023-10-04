@@ -42,7 +42,7 @@ class StoragesControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param BucketsRequest request: request (required)
+        :param AddBucketsRequest request: request (required)
         :param int storage_account_id: storage-account-id (required)
         :return: IdsList
                  If the method is called asynchronously,
@@ -64,7 +64,7 @@ class StoragesControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param BucketsRequest request: request (required)
+        :param AddBucketsRequest request: request (required)
         :param int storage_account_id: storage-account-id (required)
         :return: IdsList
                  If the method is called asynchronously,

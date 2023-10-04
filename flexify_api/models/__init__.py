@@ -16,6 +16,7 @@ from __future__ import absolute_import
 
 # import models into model package
 from flexify_api.models.access_keys_pair import AccessKeysPair
+from flexify_api.models.add_buckets_request import AddBucketsRequest
 from flexify_api.models.add_impersonate_code_request import AddImpersonateCodeRequest
 from flexify_api.models.add_impersonate_from_user_request import AddImpersonateFromUserRequest
 from flexify_api.models.add_migration_request import AddMigrationRequest
@@ -28,7 +29,6 @@ from flexify_api.models.authentication_response import AuthenticationResponse
 from flexify_api.models.billing_account import BillingAccount
 from flexify_api.models.bucket import Bucket
 from flexify_api.models.bucket_stat import BucketStat
-from flexify_api.models.buckets_request import BucketsRequest
 from flexify_api.models.change_password_request import ChangePasswordRequest
 from flexify_api.models.change_sso_microsoft_request import ChangeSsoMicrosoftRequest
 from flexify_api.models.cleanup_stat import CleanupStat

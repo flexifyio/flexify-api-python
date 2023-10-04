@@ -31,7 +31,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = flexify_api.StoragesControllerApi(flexify_api.ApiClient(configuration))
-request = flexify_api.BucketsRequest() # BucketsRequest | request
+request = flexify_api.AddBucketsRequest() # AddBucketsRequest | request
 storage_account_id = 789 # int | storage-account-id
 
 try:
@@ -46,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**BucketsRequest**](BucketsRequest.md)| request | 
+ **request** | [**AddBucketsRequest**](AddBucketsRequest.md)| request | 
  **storage_account_id** | **int**| storage-account-id | 
 
 ### Return type

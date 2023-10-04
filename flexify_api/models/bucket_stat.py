@@ -184,7 +184,7 @@ class BucketStat(object):
         :param state: The state of this BucketStat.  # noqa: E501
         :type: str
         """
-        allowed_values = ["ERROR", "NONE", "OK", "REFRESHING", "WARNING"]  # noqa: E501
+        allowed_values = ["ERROR", "NONE", "OK", "REFRESHING", "REFRESH_REQUESTED", "WARNING"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 state not in allowed_values):
             raise ValueError(

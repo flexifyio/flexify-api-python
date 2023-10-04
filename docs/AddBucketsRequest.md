@@ -1,4 +1,4 @@
-# BucketsRequest
+# AddBucketsRequest
 
 ## Properties
 Name | Type | Description | Notes

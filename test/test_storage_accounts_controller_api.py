@@ -43,13 +43,6 @@ class TestStorageAccountsControllerApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_storage_accounts(self):
-        """Test case for delete_storage_accounts
-
-        Deletes (hides) a multiple storage accounts and all their buckets/containers  # noqa: E501
-        """
-        pass
-
     def test_get_storage_account(self):
         """Test case for get_storage_account
 
@@ -68,13 +61,6 @@ class TestStorageAccountsControllerApi(unittest.TestCase):
         """Test case for refresh_storage_account
 
         Requests and updates list of buckets/containers for the storage account  # noqa: E501
-        """
-        pass
-
-    def test_refresh_storage_accounts(self):
-        """Test case for refresh_storage_accounts
-
-        Requests and updates list of buckets/containers for a list of storage accounts  # noqa: E501
         """
         pass
 
