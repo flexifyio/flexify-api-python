@@ -20,10 +20,12 @@ Name | Type | Description | Notes
 **private_endpoint_pattern** | **str** | Endpoint pattern used by engines for specific region | [optional] 
 **product_name** | **str** | Name of product/region for this provider | [optional] 
 **protocol** | **str** | Storage protocol this provider uses | [optional] 
+**supports_credential** | **bool** | If the provider supports auth with credential (storage keys) | [optional] 
 **supports_http** | **bool** | Indicates that HTTP is supported | [optional] 
 **supports_https** | **bool** | Indicates that HTTPS (SSL) is supported | [optional] 
 **supports_multipart_upload** | **bool** | Indicates that the provider supports multipart upload | [optional] 
 **supports_o_auth** | **bool** | If the provider supports OAuth (instead of storage keys) | [optional] 
+**supports_o_auth_name** | **str** | Name the provider is using his variation of OAuth | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

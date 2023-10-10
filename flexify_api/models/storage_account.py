@@ -34,6 +34,7 @@ class StorageAccount(object):
     """
     swagger_types = {
         'id': 'int',
+        'is_o_auth': 'bool',
         'is_sas': 'bool',
         'key_vault_secret_id': 'str',
         'private_url': 'str',
@@ -46,6 +47,7 @@ class StorageAccount(object):
 
     attribute_map = {
         'id': 'id',
+        'is_o_auth': 'isOAuth',
         'is_sas': 'isSas',
         'key_vault_secret_id': 'keyVaultSecretId',
         'private_url': 'privateUrl',
@@ -56,13 +58,14 @@ class StorageAccount(object):
         'url': 'url'
     }
 
-    def __init__(self, id=None, is_sas=None, key_vault_secret_id=None, private_url=None, provider=None, secret_in_key_vault=None, settings=None, stat=None, url=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, is_o_auth=None, is_sas=None, key_vault_secret_id=None, private_url=None, provider=None, secret_in_key_vault=None, settings=None, stat=None, url=None, _configuration=None):  # noqa: E501
         """StorageAccount - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._id = None
+        self._is_o_auth = None
         self._is_sas = None
         self._key_vault_secret_id = None
         self._private_url = None
@@ -75,6 +78,8 @@ class StorageAccount(object):
 
         if id is not None:
             self.id = id
+        if is_o_auth is not None:
+            self.is_o_auth = is_o_auth
         if is_sas is not None:
             self.is_sas = is_sas
         if key_vault_secret_id is not None:
@@ -114,6 +119,29 @@ class StorageAccount(object):
         """
 
         self._id = id
+
+    @property
+    def is_o_auth(self):
+        """Gets the is_o_auth of this StorageAccount.  # noqa: E501
+
+        For Azure - if OAuth is used for authentication  # noqa: E501
+
+        :return: The is_o_auth of this StorageAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_o_auth
+
+    @is_o_auth.setter
+    def is_o_auth(self, is_o_auth):
+        """Sets the is_o_auth of this StorageAccount.
+
+        For Azure - if OAuth is used for authentication  # noqa: E501
+
+        :param is_o_auth: The is_o_auth of this StorageAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_o_auth = is_o_auth
 
     @property
     def is_sas(self):

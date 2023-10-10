@@ -50,10 +50,12 @@ class StorageProvider(object):
         'private_endpoint_pattern': 'str',
         'product_name': 'str',
         'protocol': 'str',
+        'supports_credential': 'bool',
         'supports_http': 'bool',
         'supports_https': 'bool',
         'supports_multipart_upload': 'bool',
-        'supports_o_auth': 'bool'
+        'supports_o_auth': 'bool',
+        'supports_o_auth_name': 'str'
     }
 
     attribute_map = {
@@ -74,13 +76,15 @@ class StorageProvider(object):
         'private_endpoint_pattern': 'privateEndpointPattern',
         'product_name': 'productName',
         'protocol': 'protocol',
+        'supports_credential': 'supportsCredential',
         'supports_http': 'supportsHttp',
         'supports_https': 'supportsHttps',
         'supports_multipart_upload': 'supportsMultipartUpload',
-        'supports_o_auth': 'supportsOAuth'
+        'supports_o_auth': 'supportsOAuth',
+        'supports_o_auth_name': 'supportsOAuthName'
     }
 
-    def __init__(self, bucket_dot_encode=None, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, endpoint=None, endpoint_pattern=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, private_endpoint_pattern=None, product_name=None, protocol=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None, _configuration=None):  # noqa: E501
+    def __init__(self, bucket_dot_encode=None, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, endpoint=None, endpoint_pattern=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, private_endpoint_pattern=None, product_name=None, protocol=None, supports_credential=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None, supports_o_auth_name=None, _configuration=None):  # noqa: E501
         """StorageProvider - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -103,10 +107,12 @@ class StorageProvider(object):
         self._private_endpoint_pattern = None
         self._product_name = None
         self._protocol = None
+        self._supports_credential = None
         self._supports_http = None
         self._supports_https = None
         self._supports_multipart_upload = None
         self._supports_o_auth = None
+        self._supports_o_auth_name = None
         self.discriminator = None
 
         if bucket_dot_encode is not None:
@@ -143,6 +149,8 @@ class StorageProvider(object):
             self.product_name = product_name
         if protocol is not None:
             self.protocol = protocol
+        if supports_credential is not None:
+            self.supports_credential = supports_credential
         if supports_http is not None:
             self.supports_http = supports_http
         if supports_https is not None:
@@ -151,6 +159,8 @@ class StorageProvider(object):
             self.supports_multipart_upload = supports_multipart_upload
         if supports_o_auth is not None:
             self.supports_o_auth = supports_o_auth
+        if supports_o_auth_name is not None:
+            self.supports_o_auth_name = supports_o_auth_name
 
     @property
     def bucket_dot_encode(self):
@@ -551,6 +561,29 @@ class StorageProvider(object):
         self._protocol = protocol
 
     @property
+    def supports_credential(self):
+        """Gets the supports_credential of this StorageProvider.  # noqa: E501
+
+        If the provider supports auth with credential (storage keys)  # noqa: E501
+
+        :return: The supports_credential of this StorageProvider.  # noqa: E501
+        :rtype: bool
+        """
+        return self._supports_credential
+
+    @supports_credential.setter
+    def supports_credential(self, supports_credential):
+        """Sets the supports_credential of this StorageProvider.
+
+        If the provider supports auth with credential (storage keys)  # noqa: E501
+
+        :param supports_credential: The supports_credential of this StorageProvider.  # noqa: E501
+        :type: bool
+        """
+
+        self._supports_credential = supports_credential
+
+    @property
     def supports_http(self):
         """Gets the supports_http of this StorageProvider.  # noqa: E501
 
@@ -641,6 +674,29 @@ class StorageProvider(object):
         """
 
         self._supports_o_auth = supports_o_auth
+
+    @property
+    def supports_o_auth_name(self):
+        """Gets the supports_o_auth_name of this StorageProvider.  # noqa: E501
+
+        Name the provider is using his variation of OAuth  # noqa: E501
+
+        :return: The supports_o_auth_name of this StorageProvider.  # noqa: E501
+        :rtype: str
+        """
+        return self._supports_o_auth_name
+
+    @supports_o_auth_name.setter
+    def supports_o_auth_name(self, supports_o_auth_name):
+        """Sets the supports_o_auth_name of this StorageProvider.
+
+        Name the provider is using his variation of OAuth  # noqa: E501
+
+        :param supports_o_auth_name: The supports_o_auth_name of this StorageProvider.  # noqa: E501
+        :type: str
+        """
+
+        self._supports_o_auth_name = supports_o_auth_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

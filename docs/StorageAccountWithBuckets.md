@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **buckets** | [**list[Bucket]**](Bucket.md) | Buckets that we have cached for this storage account | [optional] 
 **id** | **int** | Id of the storage account | [optional] 
+**is_o_auth** | **bool** | For Azure - if OAuth is used for authentication | [optional] 
 **is_sas** | **bool** | For Azure - if credential is SAS signature (not included if storing in key vault) | [optional] 
 **key_vault_secret_id** | **str** | Key Vault secret ID where this credential secret is stored (only for admins) | [optional] 
 **private_url** | **str** | URL used by engines to access the cloud | [optional] 
