@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allow_overwrite_endpoint** | **bool** | If customEndpoint can be used to overwrite the default endpoint | [optional] 
 **bucket_dot_encode** | **bool** | Indicates that the provider does not support dots in bucket names and how dots should be encoded | [optional] 
 **can_create_buckets_with_uppercase** | **bool** | Indicates that this provider allow creating bucket with uppercase in names | [optional] 
 **code** | **str** | Code of this cloud provider | [optional] 

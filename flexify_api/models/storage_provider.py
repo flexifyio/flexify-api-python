@@ -33,6 +33,7 @@ class StorageProvider(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'allow_overwrite_endpoint': 'bool',
         'bucket_dot_encode': 'bool',
         'can_create_buckets_with_uppercase': 'bool',
         'code': 'str',
@@ -59,6 +60,7 @@ class StorageProvider(object):
     }
 
     attribute_map = {
+        'allow_overwrite_endpoint': 'allowOverwriteEndpoint',
         'bucket_dot_encode': 'bucketDotEncode',
         'can_create_buckets_with_uppercase': 'canCreateBucketsWithUppercase',
         'code': 'code',
@@ -84,12 +86,13 @@ class StorageProvider(object):
         'supports_o_auth_name': 'supportsOAuthName'
     }
 
-    def __init__(self, bucket_dot_encode=None, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, endpoint=None, endpoint_pattern=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, private_endpoint_pattern=None, product_name=None, protocol=None, supports_credential=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None, supports_o_auth_name=None, _configuration=None):  # noqa: E501
+    def __init__(self, allow_overwrite_endpoint=None, bucket_dot_encode=None, can_create_buckets_with_uppercase=None, code=None, default_region=None, disabled_as_destination=None, endpoint=None, endpoint_pattern=None, id=None, max_upload_size=None, multi_regional=None, name=None, port_http=None, port_https=None, private_endpoint=None, private_endpoint_pattern=None, product_name=None, protocol=None, supports_credential=None, supports_http=None, supports_https=None, supports_multipart_upload=None, supports_o_auth=None, supports_o_auth_name=None, _configuration=None):  # noqa: E501
         """StorageProvider - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
+        self._allow_overwrite_endpoint = None
         self._bucket_dot_encode = None
         self._can_create_buckets_with_uppercase = None
         self._code = None
@@ -115,6 +118,8 @@ class StorageProvider(object):
         self._supports_o_auth_name = None
         self.discriminator = None
 
+        if allow_overwrite_endpoint is not None:
+            self.allow_overwrite_endpoint = allow_overwrite_endpoint
         if bucket_dot_encode is not None:
             self.bucket_dot_encode = bucket_dot_encode
         if can_create_buckets_with_uppercase is not None:
@@ -161,6 +166,29 @@ class StorageProvider(object):
             self.supports_o_auth = supports_o_auth
         if supports_o_auth_name is not None:
             self.supports_o_auth_name = supports_o_auth_name
+
+    @property
+    def allow_overwrite_endpoint(self):
+        """Gets the allow_overwrite_endpoint of this StorageProvider.  # noqa: E501
+
+        If customEndpoint can be used to overwrite the default endpoint  # noqa: E501
+
+        :return: The allow_overwrite_endpoint of this StorageProvider.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_overwrite_endpoint
+
+    @allow_overwrite_endpoint.setter
+    def allow_overwrite_endpoint(self, allow_overwrite_endpoint):
+        """Sets the allow_overwrite_endpoint of this StorageProvider.
+
+        If customEndpoint can be used to overwrite the default endpoint  # noqa: E501
+
+        :param allow_overwrite_endpoint: The allow_overwrite_endpoint of this StorageProvider.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_overwrite_endpoint = allow_overwrite_endpoint
 
     @property
     def bucket_dot_encode(self):
