@@ -173,7 +173,7 @@ class StorageAccountStat(object):
         :param state: The state of this StorageAccountStat.  # noqa: E501
         :type: str
         """
-        allowed_values = ["ERROR", "NONE", "OK", "REFRESHING", "REFRESH_REQUESTED", "WARNING"]  # noqa: E501
+        allowed_values = ["AUTH_EXPIRED", "ERROR", "NONE", "OK", "REFRESHING", "REFRESH_REQUESTED", "WARNING"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 state not in allowed_values):
             raise ValueError(
