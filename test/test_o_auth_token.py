@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.models.auth_app_info import AuthAppInfo  # noqa: E501
+from flexify_api.models.o_auth_token import OAuthToken  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestAuthAppInfo(unittest.TestCase):
-    """AuthAppInfo unit test stubs"""
+class TestOAuthToken(unittest.TestCase):
+    """OAuthToken unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAuthAppInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAuthAppInfo(self):
-        """Test AuthAppInfo"""
+    def testOAuthToken(self):
+        """Test OAuthToken"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flexify_api.models.auth_app_info.AuthAppInfo()  # noqa: E501
+        # model = flexify_api.models.o_auth_token.OAuthToken()  # noqa: E501
         pass
 
 

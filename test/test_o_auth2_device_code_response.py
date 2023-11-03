@@ -16,24 +16,23 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.api.config_controller_api import ConfigControllerApi  # noqa: E501
+from flexify_api.models.o_auth2_device_code_response import OAuth2DeviceCodeResponse  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestConfigControllerApi(unittest.TestCase):
-    """ConfigControllerApi unit test stubs"""
+class TestOAuth2DeviceCodeResponse(unittest.TestCase):
+    """OAuth2DeviceCodeResponse unit test stubs"""
 
     def setUp(self):
-        self.api = flexify_api.api.config_controller_api.ConfigControllerApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_get_config1(self):
-        """Test case for get_config1
-
-        Get public Management Server config  # noqa: E501
-        """
+    def testOAuth2DeviceCodeResponse(self):
+        """Test OAuth2DeviceCodeResponse"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = flexify_api.models.o_auth2_device_code_response.OAuth2DeviceCodeResponse()  # noqa: E501
         pass
 
 

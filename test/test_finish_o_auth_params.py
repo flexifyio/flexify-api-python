@@ -16,24 +16,23 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.api.o_auth_controller_api import OAuthControllerApi  # noqa: E501
+from flexify_api.models.finish_o_auth_params import FinishOAuthParams  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestOAuthControllerApi(unittest.TestCase):
-    """OAuthControllerApi unit test stubs"""
+class TestFinishOAuthParams(unittest.TestCase):
+    """FinishOAuthParams unit test stubs"""
 
     def setUp(self):
-        self.api = flexify_api.api.o_auth_controller_api.OAuthControllerApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_get_app_info(self):
-        """Test case for get_app_info
-
-        getAppInfo  # noqa: E501
-        """
+    def testFinishOAuthParams(self):
+        """Test FinishOAuthParams"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = flexify_api.models.finish_o_auth_params.FinishOAuthParams()  # noqa: E501
         pass
 
 

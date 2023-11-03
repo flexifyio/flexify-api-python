@@ -16,24 +16,23 @@ from __future__ import absolute_import
 import unittest
 
 import flexify_api
-from flexify_api.api.config_controller_api import ConfigControllerApi  # noqa: E501
+from flexify_api.models.refresh_token_request import RefreshTokenRequest  # noqa: E501
 from flexify_api.rest import ApiException
 
 
-class TestConfigControllerApi(unittest.TestCase):
-    """ConfigControllerApi unit test stubs"""
+class TestRefreshTokenRequest(unittest.TestCase):
+    """RefreshTokenRequest unit test stubs"""
 
     def setUp(self):
-        self.api = flexify_api.api.config_controller_api.ConfigControllerApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_get_config1(self):
-        """Test case for get_config1
-
-        Get public Management Server config  # noqa: E501
-        """
+    def testRefreshTokenRequest(self):
+        """Test RefreshTokenRequest"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = flexify_api.models.refresh_token_request.RefreshTokenRequest()  # noqa: E501
         pass
 
 

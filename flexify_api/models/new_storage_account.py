@@ -33,57 +33,57 @@ class NewStorageAccount(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'auth_code': 'str',
+        'finish_o_auth_params': 'FinishOAuthParams',
         'provider_id': 'int',
         'settings': 'StorageAccountSettingsReq'
     }
 
     attribute_map = {
-        'auth_code': 'authCode',
+        'finish_o_auth_params': 'finishOAuthParams',
         'provider_id': 'providerId',
         'settings': 'settings'
     }
 
-    def __init__(self, auth_code=None, provider_id=None, settings=None, _configuration=None):  # noqa: E501
+    def __init__(self, finish_o_auth_params=None, provider_id=None, settings=None, _configuration=None):  # noqa: E501
         """NewStorageAccount - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
-        self._auth_code = None
+        self._finish_o_auth_params = None
         self._provider_id = None
         self._settings = None
         self.discriminator = None
 
-        if auth_code is not None:
-            self.auth_code = auth_code
+        if finish_o_auth_params is not None:
+            self.finish_o_auth_params = finish_o_auth_params
         if provider_id is not None:
             self.provider_id = provider_id
         if settings is not None:
             self.settings = settings
 
     @property
-    def auth_code(self):
-        """Gets the auth_code of this NewStorageAccount.  # noqa: E501
+    def finish_o_auth_params(self):
+        """Gets the finish_o_auth_params of this NewStorageAccount.  # noqa: E501
 
-        OAuth code used to request credentials if OAuth is used  # noqa: E501
+        OAuth parameters used to request credentials if OAuth is used  # noqa: E501
 
-        :return: The auth_code of this NewStorageAccount.  # noqa: E501
-        :rtype: str
+        :return: The finish_o_auth_params of this NewStorageAccount.  # noqa: E501
+        :rtype: FinishOAuthParams
         """
-        return self._auth_code
+        return self._finish_o_auth_params
 
-    @auth_code.setter
-    def auth_code(self, auth_code):
-        """Sets the auth_code of this NewStorageAccount.
+    @finish_o_auth_params.setter
+    def finish_o_auth_params(self, finish_o_auth_params):
+        """Sets the finish_o_auth_params of this NewStorageAccount.
 
-        OAuth code used to request credentials if OAuth is used  # noqa: E501
+        OAuth parameters used to request credentials if OAuth is used  # noqa: E501
 
-        :param auth_code: The auth_code of this NewStorageAccount.  # noqa: E501
-        :type: str
+        :param finish_o_auth_params: The finish_o_auth_params of this NewStorageAccount.  # noqa: E501
+        :type: FinishOAuthParams
         """
 
-        self._auth_code = auth_code
+        self._finish_o_auth_params = finish_o_auth_params
 
     @property
     def provider_id(self):

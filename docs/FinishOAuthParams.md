@@ -1,13 +1,11 @@
-# ResetSsoRequest
+# FinishOAuthParams
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**settings** | [**UserSettings**](UserSettings.md) |  | [optional] 
-**sso_email** | **str** |  | [optional] 
-**sso_id** | **str** |  | [optional] 
-**sso_provider_id** | **str** |  | [optional] 
-**token** | **str** |  | [optional] 
+**code** | **str** |  | 
+**flow** | **str** |  | 
+**oauth_provider_id** | **str** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
