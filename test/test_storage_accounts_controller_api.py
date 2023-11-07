@@ -57,6 +57,13 @@ class TestStorageAccountsControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_reauth_storage_account(self):
+        """Test case for reauth_storage_account
+
+        Reauthenticate storage account  # noqa: E501
+        """
+        pass
+
     def test_refresh_storage_account(self):
         """Test case for refresh_storage_account
 
