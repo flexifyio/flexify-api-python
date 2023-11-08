@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**finish_o_auth_params** | [**FinishOAuthParams**](FinishOAuthParams.md) | OAuth parameters used to request credentials if OAuth is used | [optional] 
+**auth_code** | **str** | OAuth code used to request credentials if OAuth is used | [optional] 
 **provider_id** | **int** |  | [optional] 
 **settings** | [**StorageAccountSettingsReq**](StorageAccountSettingsReq.md) | Configuration of the storage account | [optional] 
 
