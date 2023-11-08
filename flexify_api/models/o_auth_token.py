@@ -34,7 +34,7 @@ class OAuthToken(object):
     """
     swagger_types = {
         'access_token': 'str',
-        'expires_at': 'datetime',
+        'expires_at': 'str',
         'refresh_token': 'str'
     }
 
@@ -89,7 +89,7 @@ class OAuthToken(object):
 
 
         :return: The expires_at of this OAuthToken.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._expires_at
 
@@ -99,7 +99,7 @@ class OAuthToken(object):
 
 
         :param expires_at: The expires_at of this OAuthToken.  # noqa: E501
-        :type: datetime
+        :type: str
         """
 
         self._expires_at = expires_at
