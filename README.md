@@ -7,7 +7,7 @@ By unlocking your application from the specific cloud vendor or protocol, you fi
 + Get API token
 + Enjoy Flexify IO REST API
 
-- API version: 2.12.19.hf1
+- API version: 2.12.20-SNAPSHOT
 
 ## Requirements
 
@@ -75,12 +75,15 @@ Class | Method | HTTP request | Description
 *AuthControllerApi* | [**authenticate**](docs/AuthControllerApi.md#authenticate) | **POST** /backend/rest/auth | Generate new access token for the user
 *AuthControllerApi* | [**check_token_and_get_user**](docs/AuthControllerApi.md#check_token_and_get_user) | **GET** /backend/rest/auth/user | Check of given token
 *AuthControllerApi* | [**logout**](docs/AuthControllerApi.md#logout) | **POST** /backend/rest/auth/logout | Logout
+*AuthSsoControllerApi* | [**get_config**](docs/AuthSsoControllerApi.md#get_config) | **GET** /backend/rest/auth/sso/config | getConfig
+*AuthSsoControllerApi* | [**get_device_code**](docs/AuthSsoControllerApi.md#get_device_code) | **GET** /backend/rest/auth/sso/device-code | getDeviceCode
+*AuthSsoControllerApi* | [**get_token_by_device_code**](docs/AuthSsoControllerApi.md#get_token_by_device_code) | **POST** /backend/rest/auth/sso/token-by-device-code | getTokenByDeviceCode
+*AuthSsoControllerApi* | [**refresh_token_for_device_code_flow**](docs/AuthSsoControllerApi.md#refresh_token_for_device_code_flow) | **POST** /backend/rest/auth/sso/token-refresh | refreshTokenForDeviceCodeFlow
 *BillingAccountControllerApi* | [**get_costs_for_current_user_billing_account**](docs/BillingAccountControllerApi.md#get_costs_for_current_user_billing_account) | **GET** /backend/rest/account/costs | Get costs for current user
 *BillingAccountControllerApi* | [**get_current_user_billing_account**](docs/BillingAccountControllerApi.md#get_current_user_billing_account) | **GET** /backend/rest/account | Get billing account for current user
 *BillingAccountControllerApi* | [**get_payments_for_current_user**](docs/BillingAccountControllerApi.md#get_payments_for_current_user) | **GET** /backend/rest/account/payments | Get payments for current user
 *CloudLocationsControllerApi* | [**get_auto_deploy_available_locations_for_current_user**](docs/CloudLocationsControllerApi.md#get_auto_deploy_available_locations_for_current_user) | **GET** /backend/rest/cloud-locations/auto-deploy | getAutoDeployAvailableLocationsForCurrentUser
 *CloudLocationsControllerApi* | [**get_existing_available_locations_for_current_user**](docs/CloudLocationsControllerApi.md#get_existing_available_locations_for_current_user) | **GET** /backend/rest/cloud-locations | getExistingAvailableLocationsForCurrentUser
-*ConfigControllerApi* | [**get_config**](docs/ConfigControllerApi.md#get_config) | **GET** /backend/rest/auth/config | Get public Management Server config
 *ConfigControllerApi* | [**get_config1**](docs/ConfigControllerApi.md#get_config1) | **GET** /backend/rest/config | Get public Management Server config
 *CostEstimateControllerApi* | [**estimate_migration_cost**](docs/CostEstimateControllerApi.md#estimate_migration_cost) | **POST** /backend/rest/cost/migration | estimateMigrationCost
 *EndpointsControllerApi* | [**attach_accounts**](docs/EndpointsControllerApi.md#attach_accounts) | **POST** /backend/rest/endpoints/{endpoint-id}/storage-accounts | Attach storage accounts to the endpoint
@@ -119,7 +122,6 @@ Class | Method | HTTP request | Description
 *MigrationsControllerApi* | [**hide_migration**](docs/MigrationsControllerApi.md#hide_migration) | **POST** /backend/rest/migrations/{migration-id}/actions/hide | Mark migration as hidden
 *MigrationsControllerApi* | [**restart_slot**](docs/MigrationsControllerApi.md#restart_slot) | **POST** /backend/rest/migrations/{migration-id}/mappings/{mapping-id}/slots/{slot}/actions/restart | Mark migration as hidden
 *MigrationsControllerApi* | [**stop_migration**](docs/MigrationsControllerApi.md#stop_migration) | **POST** /backend/rest/migrations/{migration-id}/actions/stop | Stop (cancel) the migration
-*OAuthControllerApi* | [**get_app_info**](docs/OAuthControllerApi.md#get_app_info) | **GET** /backend/rest/oauth/app-info | getAppInfo
 *PartnerOrganizationsControllerApi* | [**get_all**](docs/PartnerOrganizationsControllerApi.md#get_all) | **GET** /backend/rest/partner/organizations | getAll
 *PartnerOrganizationsControllerApi* | [**get_org_limits**](docs/PartnerOrganizationsControllerApi.md#get_org_limits) | **GET** /backend/rest/partner/organizations/{orgId}/limits | getOrgLimits
 *PartnerSignUpCodesControllerApi* | [**create_code**](docs/PartnerSignUpCodesControllerApi.md#create_code) | **POST** /backend/rest/distributor/codes | createCode
@@ -195,8 +197,11 @@ Class | Method | HTTP request | Description
 *StorageAccountsControllerApi* | [**delete_storage_account**](docs/StorageAccountsControllerApi.md#delete_storage_account) | **DELETE** /backend/rest/storage-accounts/{storage-account-id} | Deletes (hides) storage account and all its buckets/containers
 *StorageAccountsControllerApi* | [**get_storage_account**](docs/StorageAccountsControllerApi.md#get_storage_account) | **GET** /backend/rest/storage-accounts/{storage-account-id} | Get storage account by id
 *StorageAccountsControllerApi* | [**get_storage_accounts**](docs/StorageAccountsControllerApi.md#get_storage_accounts) | **GET** /backend/rest/storage-accounts | Get all storage accounts for current user
+*StorageAccountsControllerApi* | [**reauth_storage_account**](docs/StorageAccountsControllerApi.md#reauth_storage_account) | **POST** /backend/rest/storage-accounts/{storage-account-id}/reauth | Reauthenticate storage account
 *StorageAccountsControllerApi* | [**refresh_storage_account**](docs/StorageAccountsControllerApi.md#refresh_storage_account) | **POST** /backend/rest/storage-accounts/{storage-account-id}/actions/refresh | Requests and updates list of buckets/containers for the storage account
 *StorageAccountsControllerApi* | [**set_storage_account_settings**](docs/StorageAccountsControllerApi.md#set_storage_account_settings) | **PUT** /backend/rest/storage-accounts/{storage-account-id}/settings | Updates storage account settings
+*StorageAccountsOAuthControllerApi* | [**get_config2**](docs/StorageAccountsOAuthControllerApi.md#get_config2) | **GET** /backend/rest/storage-accounts/oauth/config | getConfig
+*StorageAccountsOAuthControllerApi* | [**get_device_code1**](docs/StorageAccountsOAuthControllerApi.md#get_device_code1) | **GET** /backend/rest/storage-accounts/oauth/device-code | getDeviceCode
 *StoragesControllerApi* | [**add_buckets**](docs/StoragesControllerApi.md#add_buckets) | **POST** /backend/rest/storage-accounts/{storage-account-id}/buckets | Add buckets to the storage account
 *StoragesControllerApi* | [**delete_bucket**](docs/StoragesControllerApi.md#delete_bucket) | **DELETE** /backend/rest/storage-accounts/{storage-account-id}/buckets/{bucket-id} | Deletes (hides) a bucket/container
 *StoragesControllerApi* | [**get_bucket**](docs/StoragesControllerApi.md#get_bucket) | **GET** /backend/rest/storage-accounts/{storage-account-id}/buckets/{bucket-id} | Get detailed stats for the bucket
@@ -216,7 +221,6 @@ Class | Method | HTTP request | Description
  - [AddMigrationRequest](docs/AddMigrationRequest.md)
  - [AddMigrationRequestMapping](docs/AddMigrationRequestMapping.md)
  - [AddStorageAccountRequest](docs/AddStorageAccountRequest.md)
- - [AuthAppInfo](docs/AuthAppInfo.md)
  - [AuthCheckTokenAndGetUserResponse](docs/AuthCheckTokenAndGetUserResponse.md)
  - [AuthenticationRequest](docs/AuthenticationRequest.md)
  - [AuthenticationResponse](docs/AuthenticationResponse.md)
@@ -243,6 +247,7 @@ Class | Method | HTTP request | Description
  - [EndpointStat](docs/EndpointStat.md)
  - [EndpointStorageAccount](docs/EndpointStorageAccount.md)
  - [EndpointStorageAccountSettings](docs/EndpointStorageAccountSettings.md)
+ - [FinishOAuthParams](docs/FinishOAuthParams.md)
  - [IdResponse](docs/IdResponse.md)
  - [IdsList](docs/IdsList.md)
  - [ImpersonateUser](docs/ImpersonateUser.md)
@@ -253,6 +258,7 @@ Class | Method | HTTP request | Description
  - [Mapping](docs/Mapping.md)
  - [MappingStat](docs/MappingStat.md)
  - [MarkerPageLogEntry](docs/MarkerPageLogEntry.md)
+ - [MicrosoftOAuthConfig](docs/MicrosoftOAuthConfig.md)
  - [Migration](docs/Migration.md)
  - [MigrationSettings](docs/MigrationSettings.md)
  - [MigrationSettingsReq](docs/MigrationSettingsReq.md)
@@ -260,6 +266,8 @@ Class | Method | HTTP request | Description
  - [MigrationStat](docs/MigrationStat.md)
  - [Money](docs/Money.md)
  - [NewStorageAccount](docs/NewStorageAccount.md)
+ - [OAuth2DeviceCodeResponse](docs/OAuth2DeviceCodeResponse.md)
+ - [OAuthToken](docs/OAuthToken.md)
  - [Organization](docs/Organization.md)
  - [PageMigration](docs/PageMigration.md)
  - [PageUserStat](docs/PageUserStat.md)
@@ -273,6 +281,7 @@ Class | Method | HTTP request | Description
  - [PriceList](docs/PriceList.md)
  - [PublicAuthenticationConfiguration](docs/PublicAuthenticationConfiguration.md)
  - [PublicManagementServerConfiguration](docs/PublicManagementServerConfiguration.md)
+ - [RefreshTokenRequest](docs/RefreshTokenRequest.md)
  - [RequestResetPasswordRequest](docs/RequestResetPasswordRequest.md)
  - [ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [ResetSsoRequest](docs/ResetSsoRequest.md)
@@ -295,6 +304,7 @@ Class | Method | HTTP request | Description
  - [StorageAccountWithBuckets](docs/StorageAccountWithBuckets.md)
  - [StorageAccountsRequest](docs/StorageAccountsRequest.md)
  - [StorageProvider](docs/StorageProvider.md)
+ - [TokenByDeviceCodeRequest](docs/TokenByDeviceCodeRequest.md)
  - [TokenConfiguration](docs/TokenConfiguration.md)
  - [UpdateUserRequest](docs/UpdateUserRequest.md)
  - [User](docs/User.md)
