@@ -1471,7 +1471,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_users_pageable**
-> PageUserStat get_all_users_pageable(offset, page, paged=paged, page_number=page_number, page_size=page_size, search_string=search_string, size=size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction)
+> PageUserStat get_all_users_pageable(offset, page, page_number=page_number, page_size=page_size, search_string=search_string, size=size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction, unpaged=unpaged)
 
 Get users with search, sorting and pagination
 
@@ -1495,7 +1495,6 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
 offset = 0 # int | Position of the first migration in the list (or null to start from the beginning)
 page = 0 # int | [Deprecated] Page number
-paged = true # bool |  (optional)
 page_number = 56 # int |  (optional)
 page_size = 56 # int |  (optional)
 search_string = 'search_string_example' # str | Search string (optional)
@@ -1503,10 +1502,11 @@ size = 100 # int | Max number of entries to return (AKA page size), null means n
 sort_sorted = true # bool |  (optional)
 sort_unsorted = true # bool |  (optional)
 sort_direction = 'ASC' # str | Sort Direction (optional)
+unpaged = true # bool |  (optional)
 
 try:
     # Get users with search, sorting and pagination
-    api_response = api_instance.get_all_users_pageable(offset, page, paged=paged, page_number=page_number, page_size=page_size, search_string=search_string, size=size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction)
+    api_response = api_instance.get_all_users_pageable(offset, page, page_number=page_number, page_size=page_size, search_string=search_string, size=size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction, unpaged=unpaged)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PartnerUsersControllerApi->get_all_users_pageable: %s\n" % e)
@@ -1518,7 +1518,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Position of the first migration in the list (or null to start from the beginning) | 
  **page** | **int**| [Deprecated] Page number | 
- **paged** | **bool**|  | [optional] 
  **page_number** | **int**|  | [optional] 
  **page_size** | **int**|  | [optional] 
  **search_string** | **str**| Search string | [optional] 
@@ -1526,6 +1525,7 @@ Name | Type | Description  | Notes
  **sort_sorted** | **bool**|  | [optional] 
  **sort_unsorted** | **bool**|  | [optional] 
  **sort_direction** | **str**| Sort Direction | [optional] 
+ **unpaged** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -1543,7 +1543,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_users_pageable1**
-> PageUserStat get_all_users_pageable1(offset, page, paged=paged, page_number=page_number, page_size=page_size, search_string=search_string, size=size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction)
+> PageUserStat get_all_users_pageable1(offset, page, page_number=page_number, page_size=page_size, search_string=search_string, size=size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction, unpaged=unpaged)
 
 Get users with search, sorting and pagination
 
@@ -1567,7 +1567,6 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = flexify_api.PartnerUsersControllerApi(flexify_api.ApiClient(configuration))
 offset = 0 # int | Position of the first migration in the list (or null to start from the beginning)
 page = 0 # int | [Deprecated] Page number
-paged = true # bool |  (optional)
 page_number = 56 # int |  (optional)
 page_size = 56 # int |  (optional)
 search_string = 'search_string_example' # str | Search string (optional)
@@ -1575,10 +1574,11 @@ size = 100 # int | Max number of entries to return (AKA page size), null means n
 sort_sorted = true # bool |  (optional)
 sort_unsorted = true # bool |  (optional)
 sort_direction = 'ASC' # str | Sort Direction (optional)
+unpaged = true # bool |  (optional)
 
 try:
     # Get users with search, sorting and pagination
-    api_response = api_instance.get_all_users_pageable1(offset, page, paged=paged, page_number=page_number, page_size=page_size, search_string=search_string, size=size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction)
+    api_response = api_instance.get_all_users_pageable1(offset, page, page_number=page_number, page_size=page_size, search_string=search_string, size=size, sort_sorted=sort_sorted, sort_unsorted=sort_unsorted, sort_direction=sort_direction, unpaged=unpaged)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PartnerUsersControllerApi->get_all_users_pageable1: %s\n" % e)
@@ -1590,7 +1590,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Position of the first migration in the list (or null to start from the beginning) | 
  **page** | **int**| [Deprecated] Page number | 
- **paged** | **bool**|  | [optional] 
  **page_number** | **int**|  | [optional] 
  **page_size** | **int**|  | [optional] 
  **search_string** | **str**| Search string | [optional] 
@@ -1598,6 +1597,7 @@ Name | Type | Description  | Notes
  **sort_sorted** | **bool**|  | [optional] 
  **sort_unsorted** | **bool**|  | [optional] 
  **sort_direction** | **str**| Sort Direction | [optional] 
+ **unpaged** | **bool**|  | [optional] 
 
 ### Return type
 

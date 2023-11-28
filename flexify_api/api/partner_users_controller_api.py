@@ -2679,7 +2679,6 @@ class PartnerUsersControllerApi(object):
         :param async_req bool
         :param int offset: Position of the first migration in the list (or null to start from the beginning) (required)
         :param int page: [Deprecated] Page number (required)
-        :param bool paged:
         :param int page_number:
         :param int page_size:
         :param str search_string: Search string
@@ -2687,6 +2686,7 @@ class PartnerUsersControllerApi(object):
         :param bool sort_sorted:
         :param bool sort_unsorted:
         :param str sort_direction: Sort Direction
+        :param bool unpaged:
         :return: PageUserStat
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2710,7 +2710,6 @@ class PartnerUsersControllerApi(object):
         :param async_req bool
         :param int offset: Position of the first migration in the list (or null to start from the beginning) (required)
         :param int page: [Deprecated] Page number (required)
-        :param bool paged:
         :param int page_number:
         :param int page_size:
         :param str search_string: Search string
@@ -2718,12 +2717,13 @@ class PartnerUsersControllerApi(object):
         :param bool sort_sorted:
         :param bool sort_unsorted:
         :param str sort_direction: Sort Direction
+        :param bool unpaged:
         :return: PageUserStat
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['offset', 'page', 'paged', 'page_number', 'page_size', 'search_string', 'size', 'sort_sorted', 'sort_unsorted', 'sort_direction']  # noqa: E501
+        all_params = ['offset', 'page', 'page_number', 'page_size', 'search_string', 'size', 'sort_sorted', 'sort_unsorted', 'sort_direction', 'unpaged']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2756,8 +2756,6 @@ class PartnerUsersControllerApi(object):
             query_params.append(('offset', params['offset']))  # noqa: E501
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
-        if 'paged' in params:
-            query_params.append(('paged', params['paged']))  # noqa: E501
         if 'page_number' in params:
             query_params.append(('pageNumber', params['page_number']))  # noqa: E501
         if 'page_size' in params:
@@ -2772,6 +2770,8 @@ class PartnerUsersControllerApi(object):
             query_params.append(('sort.unsorted', params['sort_unsorted']))  # noqa: E501
         if 'sort_direction' in params:
             query_params.append(('sortDirection', params['sort_direction']))  # noqa: E501
+        if 'unpaged' in params:
+            query_params.append(('unpaged', params['unpaged']))  # noqa: E501
 
         header_params = {}
 
@@ -2814,7 +2814,6 @@ class PartnerUsersControllerApi(object):
         :param async_req bool
         :param int offset: Position of the first migration in the list (or null to start from the beginning) (required)
         :param int page: [Deprecated] Page number (required)
-        :param bool paged:
         :param int page_number:
         :param int page_size:
         :param str search_string: Search string
@@ -2822,6 +2821,7 @@ class PartnerUsersControllerApi(object):
         :param bool sort_sorted:
         :param bool sort_unsorted:
         :param str sort_direction: Sort Direction
+        :param bool unpaged:
         :return: PageUserStat
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2845,7 +2845,6 @@ class PartnerUsersControllerApi(object):
         :param async_req bool
         :param int offset: Position of the first migration in the list (or null to start from the beginning) (required)
         :param int page: [Deprecated] Page number (required)
-        :param bool paged:
         :param int page_number:
         :param int page_size:
         :param str search_string: Search string
@@ -2853,12 +2852,13 @@ class PartnerUsersControllerApi(object):
         :param bool sort_sorted:
         :param bool sort_unsorted:
         :param str sort_direction: Sort Direction
+        :param bool unpaged:
         :return: PageUserStat
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['offset', 'page', 'paged', 'page_number', 'page_size', 'search_string', 'size', 'sort_sorted', 'sort_unsorted', 'sort_direction']  # noqa: E501
+        all_params = ['offset', 'page', 'page_number', 'page_size', 'search_string', 'size', 'sort_sorted', 'sort_unsorted', 'sort_direction', 'unpaged']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2891,8 +2891,6 @@ class PartnerUsersControllerApi(object):
             query_params.append(('offset', params['offset']))  # noqa: E501
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
-        if 'paged' in params:
-            query_params.append(('paged', params['paged']))  # noqa: E501
         if 'page_number' in params:
             query_params.append(('pageNumber', params['page_number']))  # noqa: E501
         if 'page_size' in params:
@@ -2907,6 +2905,8 @@ class PartnerUsersControllerApi(object):
             query_params.append(('sort.unsorted', params['sort_unsorted']))  # noqa: E501
         if 'sort_direction' in params:
             query_params.append(('sortDirection', params['sort_direction']))  # noqa: E501
+        if 'unpaged' in params:
+            query_params.append(('unpaged', params['unpaged']))  # noqa: E501
 
         header_params = {}
 

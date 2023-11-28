@@ -235,13 +235,13 @@ class MigrationsControllerApi(object):
         :param int offset: Position of the first migration in the list (or null to start from the beginning) (required)
         :param int page: [Deprecated] Page number (required)
         :param bool include_hidden: Include hidden migrations to response
-        :param bool paged:
         :param int page_number:
         :param int page_size:
         :param int size: Max number of entries to return (AKA page size), null means no paging
         :param bool sort_sorted:
         :param bool sort_unsorted:
         :param str sort_direction: Sort Direction
+        :param bool unpaged:
         :return: PageMigration
                  If the method is called asynchronously,
                  returns the request thread.
@@ -265,19 +265,19 @@ class MigrationsControllerApi(object):
         :param int offset: Position of the first migration in the list (or null to start from the beginning) (required)
         :param int page: [Deprecated] Page number (required)
         :param bool include_hidden: Include hidden migrations to response
-        :param bool paged:
         :param int page_number:
         :param int page_size:
         :param int size: Max number of entries to return (AKA page size), null means no paging
         :param bool sort_sorted:
         :param bool sort_unsorted:
         :param str sort_direction: Sort Direction
+        :param bool unpaged:
         :return: PageMigration
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['offset', 'page', 'include_hidden', 'paged', 'page_number', 'page_size', 'size', 'sort_sorted', 'sort_unsorted', 'sort_direction']  # noqa: E501
+        all_params = ['offset', 'page', 'include_hidden', 'page_number', 'page_size', 'size', 'sort_sorted', 'sort_unsorted', 'sort_direction', 'unpaged']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -312,8 +312,6 @@ class MigrationsControllerApi(object):
             query_params.append(('offset', params['offset']))  # noqa: E501
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
-        if 'paged' in params:
-            query_params.append(('paged', params['paged']))  # noqa: E501
         if 'page_number' in params:
             query_params.append(('pageNumber', params['page_number']))  # noqa: E501
         if 'page_size' in params:
@@ -326,6 +324,8 @@ class MigrationsControllerApi(object):
             query_params.append(('sort.unsorted', params['sort_unsorted']))  # noqa: E501
         if 'sort_direction' in params:
             query_params.append(('sortDirection', params['sort_direction']))  # noqa: E501
+        if 'unpaged' in params:
+            query_params.append(('unpaged', params['unpaged']))  # noqa: E501
 
         header_params = {}
 
