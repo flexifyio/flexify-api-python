@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **total_upload** | **int** |  | [optional] 
 **uploading_bytes_per_second** | **float** |  | [optional] 
 **uploading_objects_per_second** | **float** |  | [optional] 
+**wait_reason** | **str** | The reason why this mapping is in the WAITING state | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

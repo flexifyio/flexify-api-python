@@ -66,7 +66,8 @@ class MigrationStat(object):
         'step': 'str',
         'total_upload': 'int',
         'uploading_bytes_per_second': 'float',
-        'uploading_objects_per_second': 'float'
+        'uploading_objects_per_second': 'float',
+        'wait_reason': 'str'
     }
 
     attribute_map = {
@@ -103,10 +104,11 @@ class MigrationStat(object):
         'step': 'step',
         'total_upload': 'totalUpload',
         'uploading_bytes_per_second': 'uploadingBytesPerSecond',
-        'uploading_objects_per_second': 'uploadingObjectsPerSecond'
+        'uploading_objects_per_second': 'uploadingObjectsPerSecond',
+        'wait_reason': 'waitReason'
     }
 
-    def __init__(self, active_engines=None, active_slots=None, active_streams=None, bytes_failed=None, bytes_glacier_restore_started=None, bytes_not_matching_pattern=None, bytes_processed=None, bytes_skipped=None, bytes_skipped_glacier=None, bytes_uploaded=None, cleanup=None, created=None, dst_region=None, estimated=None, finished=None, initial_bytes=None, initial_objects=None, objects_failed=None, objects_glacier_restore_started=None, objects_not_matching_pattern=None, objects_processed=None, objects_skipped=None, objects_skipped_glacier=None, objects_uploaded=None, processing_objects_per_second=None, progress=None, retried=None, src_region=None, started=None, state=None, step=None, total_upload=None, uploading_bytes_per_second=None, uploading_objects_per_second=None, _configuration=None):  # noqa: E501
+    def __init__(self, active_engines=None, active_slots=None, active_streams=None, bytes_failed=None, bytes_glacier_restore_started=None, bytes_not_matching_pattern=None, bytes_processed=None, bytes_skipped=None, bytes_skipped_glacier=None, bytes_uploaded=None, cleanup=None, created=None, dst_region=None, estimated=None, finished=None, initial_bytes=None, initial_objects=None, objects_failed=None, objects_glacier_restore_started=None, objects_not_matching_pattern=None, objects_processed=None, objects_skipped=None, objects_skipped_glacier=None, objects_uploaded=None, processing_objects_per_second=None, progress=None, retried=None, src_region=None, started=None, state=None, step=None, total_upload=None, uploading_bytes_per_second=None, uploading_objects_per_second=None, wait_reason=None, _configuration=None):  # noqa: E501
         """MigrationStat - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -146,6 +148,7 @@ class MigrationStat(object):
         self._total_upload = None
         self._uploading_bytes_per_second = None
         self._uploading_objects_per_second = None
+        self._wait_reason = None
         self.discriminator = None
 
         if active_engines is not None:
@@ -216,6 +219,8 @@ class MigrationStat(object):
             self.uploading_bytes_per_second = uploading_bytes_per_second
         if uploading_objects_per_second is not None:
             self.uploading_objects_per_second = uploading_objects_per_second
+        if wait_reason is not None:
+            self.wait_reason = wait_reason
 
     @property
     def active_engines(self):
@@ -974,6 +979,36 @@ class MigrationStat(object):
         """
 
         self._uploading_objects_per_second = uploading_objects_per_second
+
+    @property
+    def wait_reason(self):
+        """Gets the wait_reason of this MigrationStat.  # noqa: E501
+
+        The reason why this mapping is in the WAITING state  # noqa: E501
+
+        :return: The wait_reason of this MigrationStat.  # noqa: E501
+        :rtype: str
+        """
+        return self._wait_reason
+
+    @wait_reason.setter
+    def wait_reason(self, wait_reason):
+        """Sets the wait_reason of this MigrationStat.
+
+        The reason why this mapping is in the WAITING state  # noqa: E501
+
+        :param wait_reason: The wait_reason of this MigrationStat.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["MIGRATION_QUEUED", "NO_ENGINES", "NO_ENGINE_RESOURCES"]  # noqa: E501
+        if (self._configuration.client_side_validation and
+                wait_reason not in allowed_values):
+            raise ValueError(
+                "Invalid value for `wait_reason` ({0}), must be one of {1}"  # noqa: E501
+                .format(wait_reason, allowed_values)
+            )
+
+        self._wait_reason = wait_reason
 
     def to_dict(self):
         """Returns the model properties as a dict"""
