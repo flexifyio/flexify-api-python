@@ -34,6 +34,7 @@ class StorageAccountSettingsRes(object):
     """
     swagger_types = {
         'anonymous': 'bool',
+        'azure_integration_id': 'int',
         'bucket_dot_encode_sequence': 'str',
         'custom_endpoint': 'str',
         'identity': 'str',
@@ -45,6 +46,7 @@ class StorageAccountSettingsRes(object):
 
     attribute_map = {
         'anonymous': 'anonymous',
+        'azure_integration_id': 'azureIntegrationId',
         'bucket_dot_encode_sequence': 'bucketDotEncodeSequence',
         'custom_endpoint': 'customEndpoint',
         'identity': 'identity',
@@ -54,13 +56,14 @@ class StorageAccountSettingsRes(object):
         'use_ssl': 'useSsl'
     }
 
-    def __init__(self, anonymous=None, bucket_dot_encode_sequence=None, custom_endpoint=None, identity=None, name=None, refresh_interval_sec=None, refresh_storages_stat=None, use_ssl=None, _configuration=None):  # noqa: E501
+    def __init__(self, anonymous=None, azure_integration_id=None, bucket_dot_encode_sequence=None, custom_endpoint=None, identity=None, name=None, refresh_interval_sec=None, refresh_storages_stat=None, use_ssl=None, _configuration=None):  # noqa: E501
         """StorageAccountSettingsRes - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._anonymous = None
+        self._azure_integration_id = None
         self._bucket_dot_encode_sequence = None
         self._custom_endpoint = None
         self._identity = None
@@ -72,6 +75,8 @@ class StorageAccountSettingsRes(object):
 
         if anonymous is not None:
             self.anonymous = anonymous
+        if azure_integration_id is not None:
+            self.azure_integration_id = azure_integration_id
         if bucket_dot_encode_sequence is not None:
             self.bucket_dot_encode_sequence = bucket_dot_encode_sequence
         if custom_endpoint is not None:
@@ -109,6 +114,29 @@ class StorageAccountSettingsRes(object):
         """
 
         self._anonymous = anonymous
+
+    @property
+    def azure_integration_id(self):
+        """Gets the azure_integration_id of this StorageAccountSettingsRes.  # noqa: E501
+
+        Id of Azure integration  # noqa: E501
+
+        :return: The azure_integration_id of this StorageAccountSettingsRes.  # noqa: E501
+        :rtype: int
+        """
+        return self._azure_integration_id
+
+    @azure_integration_id.setter
+    def azure_integration_id(self, azure_integration_id):
+        """Sets the azure_integration_id of this StorageAccountSettingsRes.
+
+        Id of Azure integration  # noqa: E501
+
+        :param azure_integration_id: The azure_integration_id of this StorageAccountSettingsRes.  # noqa: E501
+        :type: int
+        """
+
+        self._azure_integration_id = azure_integration_id
 
     @property
     def bucket_dot_encode_sequence(self):

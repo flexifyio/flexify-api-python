@@ -5,6 +5,7 @@ from __future__ import absolute_import
 # import apis into api package
 from flexify_api.api.auth_controller_api import AuthControllerApi
 from flexify_api.api.auth_sso_controller_api import AuthSsoControllerApi
+from flexify_api.api.azure_integration_o_auth_controller_api import AzureIntegrationOAuthControllerApi
 from flexify_api.api.billing_account_controller_api import BillingAccountControllerApi
 from flexify_api.api.cloud_locations_controller_api import CloudLocationsControllerApi
 from flexify_api.api.config_controller_api import ConfigControllerApi

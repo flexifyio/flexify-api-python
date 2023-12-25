@@ -79,6 +79,13 @@ Class | Method | HTTP request | Description
 *AuthSsoControllerApi* | [**get_device_code**](docs/AuthSsoControllerApi.md#get_device_code) | **GET** /backend/rest/auth/sso/device-code | getDeviceCode
 *AuthSsoControllerApi* | [**get_token_by_device_code**](docs/AuthSsoControllerApi.md#get_token_by_device_code) | **POST** /backend/rest/auth/sso/token-by-device-code | getTokenByDeviceCode
 *AuthSsoControllerApi* | [**refresh_token_for_device_code_flow**](docs/AuthSsoControllerApi.md#refresh_token_for_device_code_flow) | **POST** /backend/rest/auth/sso/token-refresh | refreshTokenForDeviceCodeFlow
+*AzureIntegrationOAuthControllerApi* | [**add_azure_integration**](docs/AzureIntegrationOAuthControllerApi.md#add_azure_integration) | **POST** /backend/rest/azure-integration | Add new Azure integration
+*AzureIntegrationOAuthControllerApi* | [**delete_azure_integration**](docs/AzureIntegrationOAuthControllerApi.md#delete_azure_integration) | **DELETE** /backend/rest/azure-integration/{azure-integration-id} | Deletes (hides) Azure integration by Id
+*AzureIntegrationOAuthControllerApi* | [**get_azure_integrations**](docs/AzureIntegrationOAuthControllerApi.md#get_azure_integrations) | **GET** /backend/rest/azure-integration | Get Azure integration by id
+*AzureIntegrationOAuthControllerApi* | [**get_config_for_storage_list**](docs/AzureIntegrationOAuthControllerApi.md#get_config_for_storage_list) | **GET** /backend/rest/azure-integration/oauth/config | Get OAuth configuration to authorize Azure integration
+*AzureIntegrationOAuthControllerApi* | [**get_device_code_for_storage_list**](docs/AzureIntegrationOAuthControllerApi.md#get_device_code_for_storage_list) | **GET** /backend/rest/azure-integration/oauth/device-code | Request device code to authorize Azure integration with device code flow
+*AzureIntegrationOAuthControllerApi* | [**get_storage_accounts_from_azure**](docs/AzureIntegrationOAuthControllerApi.md#get_storage_accounts_from_azure) | **GET** /backend/rest/azure-integration/{azure-integration-id}/storage-accounts-list | Use Azure integration to get list of storage accounts from Azure
+*AzureIntegrationOAuthControllerApi* | [**reauth_azure_integration**](docs/AzureIntegrationOAuthControllerApi.md#reauth_azure_integration) | **POST** /backend/rest/azure-integration/{azure-integration-id}/actions/reauth | Reauthenticate Azure integration
 *BillingAccountControllerApi* | [**get_costs_for_current_user_billing_account**](docs/BillingAccountControllerApi.md#get_costs_for_current_user_billing_account) | **GET** /backend/rest/account/costs | Get costs for current user
 *BillingAccountControllerApi* | [**get_current_user_billing_account**](docs/BillingAccountControllerApi.md#get_current_user_billing_account) | **GET** /backend/rest/account | Get billing account for current user
 *BillingAccountControllerApi* | [**get_payments_for_current_user**](docs/BillingAccountControllerApi.md#get_payments_for_current_user) | **GET** /backend/rest/account/payments | Get payments for current user
@@ -194,6 +201,7 @@ Class | Method | HTTP request | Description
 *PaymentsControllerApi* | [**payment_fulfilled**](docs/PaymentsControllerApi.md#payment_fulfilled) | **GET** /backend/rest/pay/paddle/webhook | paymentFulfilled
 *ProvidersControllerApi* | [**get_providers**](docs/ProvidersControllerApi.md#get_providers) | **GET** /backend/rest/providers | Get all storage providers
 *StorageAccountsControllerApi* | [**add_storage_account**](docs/StorageAccountsControllerApi.md#add_storage_account) | **POST** /backend/rest/storage-accounts | Add Storage Account with an optional list of buckets
+*StorageAccountsControllerApi* | [**add_storage_accounts_with_azure_integration**](docs/StorageAccountsControllerApi.md#add_storage_accounts_with_azure_integration) | **POST** /backend/rest/storage-accounts/azure-integration | Add multiple storage accounts with Azure integration
 *StorageAccountsControllerApi* | [**delete_storage_account**](docs/StorageAccountsControllerApi.md#delete_storage_account) | **DELETE** /backend/rest/storage-accounts/{storage-account-id} | Deletes (hides) storage account and all its buckets/containers
 *StorageAccountsControllerApi* | [**get_storage_account**](docs/StorageAccountsControllerApi.md#get_storage_account) | **GET** /backend/rest/storage-accounts/{storage-account-id} | Get storage account by id
 *StorageAccountsControllerApi* | [**get_storage_accounts**](docs/StorageAccountsControllerApi.md#get_storage_accounts) | **GET** /backend/rest/storage-accounts | Get all storage accounts for current user
@@ -221,9 +229,13 @@ Class | Method | HTTP request | Description
  - [AddMigrationRequest](docs/AddMigrationRequest.md)
  - [AddMigrationRequestMapping](docs/AddMigrationRequestMapping.md)
  - [AddStorageAccountRequest](docs/AddStorageAccountRequest.md)
+ - [AddStorageAccountsWithAzureLinkRequest](docs/AddStorageAccountsWithAzureLinkRequest.md)
  - [AuthCheckTokenAndGetUserResponse](docs/AuthCheckTokenAndGetUserResponse.md)
  - [AuthenticationRequest](docs/AuthenticationRequest.md)
  - [AuthenticationResponse](docs/AuthenticationResponse.md)
+ - [AzureIntegration](docs/AzureIntegration.md)
+ - [AzureStorageAccountInfo](docs/AzureStorageAccountInfo.md)
+ - [AzureSubscriptionInfoWithStorages](docs/AzureSubscriptionInfoWithStorages.md)
  - [BillingAccount](docs/BillingAccount.md)
  - [Bucket](docs/Bucket.md)
  - [BucketStat](docs/BucketStat.md)

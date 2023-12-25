@@ -36,6 +36,13 @@ class TestStorageAccountsControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_add_storage_accounts_with_azure_integration(self):
+        """Test case for add_storage_accounts_with_azure_integration
+
+        Add multiple storage accounts with Azure integration  # noqa: E501
+        """
+        pass
+
     def test_delete_storage_account(self):
         """Test case for delete_storage_account
 

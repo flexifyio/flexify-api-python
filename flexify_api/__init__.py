@@ -18,6 +18,7 @@ from __future__ import absolute_import
 # import apis into sdk package
 from flexify_api.api.auth_controller_api import AuthControllerApi
 from flexify_api.api.auth_sso_controller_api import AuthSsoControllerApi
+from flexify_api.api.azure_integration_o_auth_controller_api import AzureIntegrationOAuthControllerApi
 from flexify_api.api.billing_account_controller_api import BillingAccountControllerApi
 from flexify_api.api.cloud_locations_controller_api import CloudLocationsControllerApi
 from flexify_api.api.config_controller_api import ConfigControllerApi
@@ -47,9 +48,13 @@ from flexify_api.models.add_impersonate_from_user_request import AddImpersonateF
 from flexify_api.models.add_migration_request import AddMigrationRequest
 from flexify_api.models.add_migration_request_mapping import AddMigrationRequestMapping
 from flexify_api.models.add_storage_account_request import AddStorageAccountRequest
+from flexify_api.models.add_storage_accounts_with_azure_link_request import AddStorageAccountsWithAzureLinkRequest
 from flexify_api.models.auth_check_token_and_get_user_response import AuthCheckTokenAndGetUserResponse
 from flexify_api.models.authentication_request import AuthenticationRequest
 from flexify_api.models.authentication_response import AuthenticationResponse
+from flexify_api.models.azure_integration import AzureIntegration
+from flexify_api.models.azure_storage_account_info import AzureStorageAccountInfo
+from flexify_api.models.azure_subscription_info_with_storages import AzureSubscriptionInfoWithStorages
 from flexify_api.models.billing_account import BillingAccount
 from flexify_api.models.bucket import Bucket
 from flexify_api.models.bucket_stat import BucketStat

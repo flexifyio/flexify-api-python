@@ -33,6 +33,7 @@ class StorageAccountSettingsReq(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'azure_integration_id': 'int',
         'bucket_dot_encode_sequence': 'str',
         'credential': 'str',
         'custom_endpoint': 'str',
@@ -44,6 +45,7 @@ class StorageAccountSettingsReq(object):
     }
 
     attribute_map = {
+        'azure_integration_id': 'azureIntegrationId',
         'bucket_dot_encode_sequence': 'bucketDotEncodeSequence',
         'credential': 'credential',
         'custom_endpoint': 'customEndpoint',
@@ -54,12 +56,13 @@ class StorageAccountSettingsReq(object):
         'use_ssl': 'useSsl'
     }
 
-    def __init__(self, bucket_dot_encode_sequence=None, credential=None, custom_endpoint=None, identity=None, name=None, refresh_interval_sec=None, refresh_storages_stat=None, use_ssl=None, _configuration=None):  # noqa: E501
+    def __init__(self, azure_integration_id=None, bucket_dot_encode_sequence=None, credential=None, custom_endpoint=None, identity=None, name=None, refresh_interval_sec=None, refresh_storages_stat=None, use_ssl=None, _configuration=None):  # noqa: E501
         """StorageAccountSettingsReq - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
+        self._azure_integration_id = None
         self._bucket_dot_encode_sequence = None
         self._credential = None
         self._custom_endpoint = None
@@ -70,6 +73,8 @@ class StorageAccountSettingsReq(object):
         self._use_ssl = None
         self.discriminator = None
 
+        if azure_integration_id is not None:
+            self.azure_integration_id = azure_integration_id
         if bucket_dot_encode_sequence is not None:
             self.bucket_dot_encode_sequence = bucket_dot_encode_sequence
         if credential is not None:
@@ -86,6 +91,29 @@ class StorageAccountSettingsReq(object):
             self.refresh_storages_stat = refresh_storages_stat
         if use_ssl is not None:
             self.use_ssl = use_ssl
+
+    @property
+    def azure_integration_id(self):
+        """Gets the azure_integration_id of this StorageAccountSettingsReq.  # noqa: E501
+
+        Id of Azure integration  # noqa: E501
+
+        :return: The azure_integration_id of this StorageAccountSettingsReq.  # noqa: E501
+        :rtype: int
+        """
+        return self._azure_integration_id
+
+    @azure_integration_id.setter
+    def azure_integration_id(self, azure_integration_id):
+        """Sets the azure_integration_id of this StorageAccountSettingsReq.
+
+        Id of Azure integration  # noqa: E501
+
+        :param azure_integration_id: The azure_integration_id of this StorageAccountSettingsReq.  # noqa: E501
+        :type: int
+        """
+
+        self._azure_integration_id = azure_integration_id
 
     @property
     def bucket_dot_encode_sequence(self):
