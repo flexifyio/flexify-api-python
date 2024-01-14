@@ -128,7 +128,7 @@ class AzureIntegration(object):
         :param state: The state of this AzureIntegration.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AUTH_ERROR", "AUTH_EXPIRED", "OK"]  # noqa: E501
+        allowed_values = ["AUTH_ERROR", "AUTH_EXPIRED", "AUTH_PARTIAL", "OK"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 state not in allowed_values):
             raise ValueError(

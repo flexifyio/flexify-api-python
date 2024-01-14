@@ -36,6 +36,13 @@ class TestAzureIntegrationOAuthControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_auth_storage(self):
+        """Test case for auth_storage
+
+        Authenticate Azure integration storage access  # noqa: E501
+        """
+        pass
+
     def test_delete_azure_integration(self):
         """Test case for delete_azure_integration
 
@@ -50,17 +57,24 @@ class TestAzureIntegrationOAuthControllerApi(unittest.TestCase):
         """
         pass
 
-    def test_get_config_for_storage_list(self):
-        """Test case for get_config_for_storage_list
+    def test_get_config_for_azure_integration(self):
+        """Test case for get_config_for_azure_integration
 
         Get OAuth configuration to authorize Azure integration  # noqa: E501
         """
         pass
 
-    def test_get_device_code_for_storage_list(self):
-        """Test case for get_device_code_for_storage_list
+    def test_get_device_code_for_azure_integration_management(self):
+        """Test case for get_device_code_for_azure_integration_management
 
-        Request device code to authorize Azure integration with device code flow  # noqa: E501
+        Request device code to authorize Azure integration with device code flow (management access)  # noqa: E501
+        """
+        pass
+
+    def test_get_device_code_for_azure_integration_storage(self):
+        """Test case for get_device_code_for_azure_integration_storage
+
+        Request device code to authorize Azure integration with device code flow (storage access)  # noqa: E501
         """
         pass
 
