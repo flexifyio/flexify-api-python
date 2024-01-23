@@ -33,6 +33,7 @@ class AddMigrationRequestMapping(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'cdn_url': 'str',
         'dest_bucket_name': 'str',
         'dest_bucket_new_region': 'str',
         'dest_storage_account_id': 'int',
@@ -44,6 +45,7 @@ class AddMigrationRequestMapping(object):
     }
 
     attribute_map = {
+        'cdn_url': 'cdnUrl',
         'dest_bucket_name': 'destBucketName',
         'dest_bucket_new_region': 'destBucketNewRegion',
         'dest_storage_account_id': 'destStorageAccountId',
@@ -54,12 +56,13 @@ class AddMigrationRequestMapping(object):
         'source_storage_account_id': 'sourceStorageAccountId'
     }
 
-    def __init__(self, dest_bucket_name=None, dest_bucket_new_region=None, dest_storage_account_id=None, key_add_prefix=None, key_remove_prefix=None, objects_list_uri=None, source_bucket_name=None, source_storage_account_id=None, _configuration=None):  # noqa: E501
+    def __init__(self, cdn_url=None, dest_bucket_name=None, dest_bucket_new_region=None, dest_storage_account_id=None, key_add_prefix=None, key_remove_prefix=None, objects_list_uri=None, source_bucket_name=None, source_storage_account_id=None, _configuration=None):  # noqa: E501
         """AddMigrationRequestMapping - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
+        self._cdn_url = None
         self._dest_bucket_name = None
         self._dest_bucket_new_region = None
         self._dest_storage_account_id = None
@@ -70,6 +73,8 @@ class AddMigrationRequestMapping(object):
         self._source_storage_account_id = None
         self.discriminator = None
 
+        if cdn_url is not None:
+            self.cdn_url = cdn_url
         self.dest_bucket_name = dest_bucket_name
         if dest_bucket_new_region is not None:
             self.dest_bucket_new_region = dest_bucket_new_region
@@ -82,6 +87,29 @@ class AddMigrationRequestMapping(object):
             self.objects_list_uri = objects_list_uri
         self.source_bucket_name = source_bucket_name
         self.source_storage_account_id = source_storage_account_id
+
+    @property
+    def cdn_url(self):
+        """Gets the cdn_url of this AddMigrationRequestMapping.  # noqa: E501
+
+        CDN base URL for GET operations during migration  # noqa: E501
+
+        :return: The cdn_url of this AddMigrationRequestMapping.  # noqa: E501
+        :rtype: str
+        """
+        return self._cdn_url
+
+    @cdn_url.setter
+    def cdn_url(self, cdn_url):
+        """Sets the cdn_url of this AddMigrationRequestMapping.
+
+        CDN base URL for GET operations during migration  # noqa: E501
+
+        :param cdn_url: The cdn_url of this AddMigrationRequestMapping.  # noqa: E501
+        :type: str
+        """
+
+        self._cdn_url = cdn_url
 
     @property
     def dest_bucket_name(self):
