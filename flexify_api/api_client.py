@@ -1,8 +1,8 @@
 # coding: utf-8
 """
-    Flexify IO User REST API
+    Flexify.IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.15.0-SNAPSHOT
     Contact: info@flexify.io
@@ -74,7 +74,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'Swagger-Codegen/2.15.0-SNAPSHOT/python'
+        self.user_agent = 'Swagger-Codegen/2.15.0.dev/python'
         self.client_side_validation = configuration.client_side_validation
 
     def __del__(self):

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Flexify IO User REST API
+    Flexify.IO User REST API
 
-    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify IO REST API  # noqa: E501
+    + Get API token + Authorize using `Bearer TOKEN` + Enjoy Flexify.IO REST API  # noqa: E501
 
     OpenAPI spec version: 2.15.0-SNAPSHOT
     Contact: info@flexify.io
@@ -251,5 +251,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 2.15.0-SNAPSHOT\n"\
-               "SDK Package Version: 2.15.0-SNAPSHOT".\
+               "SDK Package Version: 2.15.0.dev".\
                format(env=sys.platform, pyversion=sys.version)
