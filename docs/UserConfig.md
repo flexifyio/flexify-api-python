@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**allow_dropbox_destinations** | **int** |  | [optional] 
 **max_active_migrations** | **int** |  | [optional] 
 **max_auto_deploy_engines_count** | **int** |  | [optional] 
 **max_endpoints** | **int** |  | [optional] 

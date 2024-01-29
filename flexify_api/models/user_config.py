@@ -33,6 +33,7 @@ class UserConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'allow_dropbox_destinations': 'int',
         'max_active_migrations': 'int',
         'max_auto_deploy_engines_count': 'int',
         'max_endpoints': 'int',
@@ -54,6 +55,7 @@ class UserConfig(object):
     }
 
     attribute_map = {
+        'allow_dropbox_destinations': 'allowDropboxDestinations',
         'max_active_migrations': 'maxActiveMigrations',
         'max_auto_deploy_engines_count': 'maxAutoDeployEnginesCount',
         'max_endpoints': 'maxEndpoints',
@@ -74,12 +76,13 @@ class UserConfig(object):
         'skip_auto_undeploy': 'skipAutoUndeploy'
     }
 
-    def __init__(self, max_active_migrations=None, max_auto_deploy_engines_count=None, max_endpoints=None, max_migration_copy_retries=None, max_migration_engines=None, max_migration_mappings=None, max_migration_ram_mb=None, max_migration_retries=None, max_migration_slots=None, max_migration_stream_ram_kb=None, max_migration_streams=None, max_migrations_in_queue=None, max_policy_rules_per_virtual_bucket=None, max_storage_accounts_per_endpoint=None, max_storages=None, max_storages_per_virtual_bucket=None, max_virtual_buckets_per_endpoint=None, skip_auto_undeploy=None, _configuration=None):  # noqa: E501
+    def __init__(self, allow_dropbox_destinations=None, max_active_migrations=None, max_auto_deploy_engines_count=None, max_endpoints=None, max_migration_copy_retries=None, max_migration_engines=None, max_migration_mappings=None, max_migration_ram_mb=None, max_migration_retries=None, max_migration_slots=None, max_migration_stream_ram_kb=None, max_migration_streams=None, max_migrations_in_queue=None, max_policy_rules_per_virtual_bucket=None, max_storage_accounts_per_endpoint=None, max_storages=None, max_storages_per_virtual_bucket=None, max_virtual_buckets_per_endpoint=None, skip_auto_undeploy=None, _configuration=None):  # noqa: E501
         """UserConfig - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
+        self._allow_dropbox_destinations = None
         self._max_active_migrations = None
         self._max_auto_deploy_engines_count = None
         self._max_endpoints = None
@@ -100,6 +103,8 @@ class UserConfig(object):
         self._skip_auto_undeploy = None
         self.discriminator = None
 
+        if allow_dropbox_destinations is not None:
+            self.allow_dropbox_destinations = allow_dropbox_destinations
         if max_active_migrations is not None:
             self.max_active_migrations = max_active_migrations
         if max_auto_deploy_engines_count is not None:
@@ -136,6 +141,27 @@ class UserConfig(object):
             self.max_virtual_buckets_per_endpoint = max_virtual_buckets_per_endpoint
         if skip_auto_undeploy is not None:
             self.skip_auto_undeploy = skip_auto_undeploy
+
+    @property
+    def allow_dropbox_destinations(self):
+        """Gets the allow_dropbox_destinations of this UserConfig.  # noqa: E501
+
+
+        :return: The allow_dropbox_destinations of this UserConfig.  # noqa: E501
+        :rtype: int
+        """
+        return self._allow_dropbox_destinations
+
+    @allow_dropbox_destinations.setter
+    def allow_dropbox_destinations(self, allow_dropbox_destinations):
+        """Sets the allow_dropbox_destinations of this UserConfig.
+
+
+        :param allow_dropbox_destinations: The allow_dropbox_destinations of this UserConfig.  # noqa: E501
+        :type: int
+        """
+
+        self._allow_dropbox_destinations = allow_dropbox_destinations
 
     @property
     def max_active_migrations(self):
