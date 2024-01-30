@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cdn_url** | **str** | CDN base URL for GET operations during migration | [optional] 
 **dest_bucket** | [**Bucket**](Bucket.md) | Destination bucket/container | 
 **dest_bucket_new_region** | **str** | Region where bucket should be created if missing | [optional] 
 **dest_storage_account** | [**StorageAccount**](StorageAccount.md) | Destination storage account | 
