@@ -1,17 +1,17 @@
-# Python API Client for Flexify.IO Management Console
+# Python API Client for Flexify IO Management Console
 
-With [Flexify<sup>©</sup> IO](https://flexify.io/), storing your data in a cloud does not imply dependency on a single provider anymore!
+With [Flexify IO](https://flexify.io/), storing your data in a cloud does not imply dependency on a single provider anymore!
 
 By unlocking your application from the specific cloud vendor or protocol, you finally gain the freedom to decide when and where to store your data. And we can migrate data too!
 
 + Get API token
-+ Enjoy Flexify.IO REST API
++ Enjoy Flexify IO REST API
+
+- API version: 2.14.1
 
 ## Requirements
 
 Python 2.7 and 3.4+
-
-Flexify.IO API version 2.15.0-SNAPSHOT
 
 ## Installation & Usage
 
