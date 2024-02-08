@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cdn_url** | **str** | CDN base URL for GET operations during migration | [optional] 
 **dest_bucket_name** | **str** | Name of source destination or container | 
 **dest_bucket_new_region** | **str** | Region where the destination bucket will be created if it does not exist. null to use cloud&#39;s default region | [optional] 
 **dest_storage_account_id** | **int** | ID of source destination account | 
